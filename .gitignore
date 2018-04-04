@@ -1,0 +1,4 @@
+*.DS_Store
+/Uploads/*
+/Languages/*
+index.php
