@@ -27,7 +27,7 @@
                         <h5 class="randomize text--article-color"><?php echo $destination_code; ?></h5>
                     </div>
                     <div class="label randomize">
-                        <img class="image" src="<?php bloginfo('template_url') ?>/img/label__guide.png"/>
+                        <img class="image" src="<?php bloginfo('template_url') ?>/assets/img/label__guide.png"/>
                     </div>
                     <h1><?php the_title(); ?><?php if(!empty(get_field('subtitle'))){echo '<br>' . get_field('subtitle');}?></h1>
                     <h5><? the_time(get_option('date_format')); ?></h5>
@@ -49,9 +49,9 @@
     if ($posts):
         while (have_rows('sections')): the_row();
             $template = get_sub_field('template');
-            get_template_part('template-parts/tranche', $template);
+            get_template_part('assets/template-parts/tranche', $template);
         endwhile;
-    get_template_part('template-parts/realated');
+    get_template_part('assets/views/content-realated');
     endif;
 ?>
 </div>

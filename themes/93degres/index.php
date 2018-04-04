@@ -90,7 +90,7 @@ Template Name: Homepage
         </div>
         <?php
                     else :
-                        get_template_part( 'template-parts/grid' );
+                        get_template_part( 'assets/views/content-grid' );
                     endif;
                 endwhile;
             endif;
@@ -124,7 +124,7 @@ Template Name: Homepage
     </div>
 </div>
 
-<?php include'inc/instagram.php'; ?>
+<?php include'assets/views/content-instagram.php'; ?>
 <?php get_footer(); ?>
 <script type="text/javascript">
     // Init Contr

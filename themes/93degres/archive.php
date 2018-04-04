@@ -58,12 +58,12 @@ Template Name: Archive
             $args = array( 'posts_per_page' => 6, 'paged' => $paged );
             $wp_query = new WP_Query($args);
             while ( have_posts() ) : the_post();
-                get_template_part( 'template-parts/grid' );
+                get_template_part('assets/views/content-grid');
             endwhile;
         ?>    
     </div>
 </div>
 
-<?php get_template_part('template-parts/pagination')?>
+<?php get_template_part('assets/views/content-pagination'); ?>
 <?php get_footer(); ?>
 <?php include'end.php' ?>

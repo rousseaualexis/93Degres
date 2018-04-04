@@ -84,10 +84,10 @@ $term = get_queried_object();
                         if ( have_posts() ) :
                     
                             while ( have_posts() ) : the_post();
-                                get_template_part( 'template-parts/grid' );
+                                get_template_part( 'assets/views/content-grid' );
                             endwhile;
                                 //<!-- pagination here -->
-                            get_template_part('template-parts/pagination');
+                            get_template_part('assets/views/content-pagination');
                             wp_reset_postdata();
                         else : ?>
                             <p>
@@ -105,10 +105,10 @@ $term = get_queried_object();
                         if ( have_posts() ) :
                     
                             while ( have_posts() ) : the_post();
-                                get_template_part( 'template-parts/grid' );
+                                get_template_part( 'assets/views/content-grid' );
                             endwhile;
                                 //<!-- pagination here -->
-                            get_template_part('template-parts/pagination');
+                            get_template_part('assets/views/content-pagination');
                             wp_reset_postdata();
                         else : ?>
                             <p>

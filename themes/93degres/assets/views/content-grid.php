@@ -22,7 +22,7 @@
                                 <h5 class="randomize text--guide-color"><?php echo $destination_code; ?></h5>
                             </div>
                             <div class="label randomize">
-                                <img class="image" src="<?php bloginfo('template_url') ?>/img/label__guide.png"/>
+                                <img class="image" src="<?php bloginfo('template_url') ?>/assets/img/label__guide.png"/>
                             </div>
                         </div>
                     </div>
@@ -64,7 +64,7 @@
                                 <h5 class="randomize text--article-color"><?php echo $destination_code; ?></h5>
                             </div>
                             <div class="label randomize">
-                                <img class="image" src="<?php bloginfo('template_url') ?>/img/label__carnet-de-voyage.png"/>
+                                <img class="image" src="<?php bloginfo('template_url') ?>/assets/img/label__carnet-de-voyage.png"/>
                             </div>
                         </div>
                     </div>

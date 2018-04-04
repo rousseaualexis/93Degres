@@ -37,7 +37,7 @@ Template Name: Guide
 $args = array( 'post_type' => array('travelguide'), 'travelguide', 'posts_per_page' => 6, 'paged' => $paged );
 $wp_query = new WP_Query($args);
 while ( have_posts() ) : the_post(); ?>
-                <?php get_template_part( 'template-parts/grid' );?>
+                <?php get_template_part( 'assets/views/content-grid' );?>
 
             <?php
             // End the loop.
@@ -47,6 +47,7 @@ while ( have_posts() ) : the_post(); ?>
         </div>
 
 
-<?php get_template_part('template-parts/pagination')?>
+
+<?php get_template_part('assets/views/content-pagination'); ?>
 <?php get_footer(); ?>
 <?php include'end.php' ?>
