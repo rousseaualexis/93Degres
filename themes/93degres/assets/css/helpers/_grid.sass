@@ -6,7 +6,6 @@
 %foo
     @include foo
 
-
 @for $i from 0 through 48
 
 	.col-xs-#{$i}
@@ -17,7 +16,7 @@
 	.col-xs-push-#{$i}
 		left: unquote((2.08333333 * $i)+"%")
 	.col-xs-offset-#{$i}
-		left: unquote((2.08333333 * $i)+"%")
+		margin-left: unquote((2.08333333 * $i)+"%")
 	.col-sm-#{$i}
 		@extend %foo
 	.col-md-#{$i}
@@ -35,11 +34,13 @@
 		.col-sm-push-#{$i}
 			left: unquote((2.08333333 * $i)+"%")
 		.col-sm-offset-#{$i}
-			left: unquote((2.08333333 * $i)+"%")
+			margin-left: unquote((2.08333333 * $i)+"%")
+
 
 @media screen and (min-width: $screen-md-min)
 
 	@for $i from 0 through 48
+
 		.col-md-#{$i}
 			width: unquote((2.08333333 * $i)+"%")
 		.col-md-pull-#{$i}
@@ -47,4 +48,4 @@
 		.col-md-push-#{$i}
 			left: unquote((2.08333333 * $i)+"%")
 		.col-md-offset-#{$i}
-			left: unquote((2.08333333 * $i)+"%")
+			margin-left: unquote((2.08333333 * $i)+"%")

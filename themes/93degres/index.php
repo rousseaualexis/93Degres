@@ -25,7 +25,7 @@ Template Name: Homepage
         ?>
         <div id="first-post">
                     <?php if('travelguide' === get_post_type()): ?>
-                        <div class="post post-guide guide-background-color col-xs-48 col-md-pull-3">
+                        <div class="post post-guide col-xs-48 col-md-pull-3">
                             <div id="first-post-texte" class="col-md-offset-4 col-md-17">
                                 <?php
                                     $id = get_the_id();
@@ -38,7 +38,7 @@ Template Name: Homepage
                                         $term_name = $term->name;
                                     }
                                 ?>
-                                <h2 class="categories text--guide-color">
+                                <h2 class="categories">
                                     <a href="<?php echo $term_url; ?>">
                                         <img src="<?php echo $flag_url;?>" alt="<?php echo $flag['alt'];?>"/ >
                                         <?php echo $term_name; ?>
@@ -46,7 +46,7 @@ Template Name: Homepage
                                     <span> - Guide</span>
                                 </h2>
                     <?php else: ?>
-                        <div class="post post-article article-background-color col-xs-48 col-md-pull-3">
+                        <div class="post post-article col-xs-48 col-md-pull-3">
                             <div id="first-post-texte" class="col-md-offset-4 col-md-17">
                                 <?php
                                     $id = get_the_id();
@@ -59,7 +59,7 @@ Template Name: Homepage
                                         $term_name = $term->name;
                                     }
                                 ?>
-                                <h2 class="categories text--article-color">
+                                <h2 class="categories">
                                     <a href="<?php echo $term_url; ?>">
                                         <img src="<?php echo $flag_url;?>" alt="<?php echo $flag['alt'];?>"/ >
                                         <?php echo $term_name; ?>

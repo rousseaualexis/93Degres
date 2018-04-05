@@ -1,5 +1,5 @@
 <?php if ('travelguide' === get_post_type()): ?>
-    <div class="anime post post--guide col-xs-40 col-xs-offset-4 col-sm-9 col-sm-offset-2 col-md-14 col-md-offset-1 ">
+    <div class="anime post post-guide col-xs-40 col-xs-offset-4 col-sm-9 col-sm-offset-2 col-md-14 col-md-offset-1 ">
             <?php
                 $thumbnail = get_field('thumbnail');
                 $thumbnail_url = $thumbnail['sizes']['thumbnail'];
@@ -15,7 +15,7 @@
             ?>  
             <a href="<?php the_permalink(); ?>">
                 <div class="image image--3-2 image_thumbnail" style="background-image: url('<?php echo $thumbnail_url;?>');" title="<?php echo $thumbnail['alt']; ?>">
-                    <div class="image_thumbnail--hover guide-background-color">
+                    <div class="image_thumbnail--hover">
                         <div class="table">
                             <div class="table-cell">👁</div>
                             <div class="country-code">
@@ -41,7 +41,7 @@
                 </a>
     </div>
 <?php else: ?>
-    <div class="anime post post--article col-xs-40 col-xs-offset-4 col-sm-9 col-sm-offset-2 col-md-14 col-md-offset-1 ">
+    <div class="anime post post-article col-xs-40 col-xs-offset-4 col-sm-9 col-sm-offset-2 col-md-14 col-md-offset-1 ">
             <?php
                 $thumbnail = get_field('thumbnail');
                 $thumbnail_url = $thumbnail['sizes']['thumbnail'];
@@ -57,7 +57,7 @@
             ?>  
             <a href="<?php the_permalink(); ?>">
                 <div class="image image--3-2 image_thumbnail" style="background-image: url('<?php echo $thumbnail_url;?>');" title="<?php echo $thumbnail['alt']; ?>">
-                    <div class="image_thumbnail--hover article-background-color">
+                    <div class="image_thumbnail--hover">
                         <div class="table">
                             <div class="table-cell">👁</div>
                             <div class="country-code">

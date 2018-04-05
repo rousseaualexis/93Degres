@@ -1,0 +1,167 @@
+
+h1 
+	font-family: $cormorant
+	letter-spacing: -0.03em
+	color: $color-dark
+	font-size: 80px
+
+h2 
+	font-family: $bebas
+	font-size: 14px
+	line-height: normal
+	letter-spacing: 0.4em
+	text-transform: none
+	color: $color-dark
+
+h3 
+	font-family: $cormorant
+	font-size: 4vw
+	line-height: 5vw
+	font-weight: 200
+	letter-spacing: -0.03em
+	color: $color-dark
+
+h4 
+	font-family: $cormorant
+	font-size: 17px
+	line-height: 28px
+	letter-spacing: -0.03em
+	color: $color-dark
+
+h5 
+	font-family: $bebas
+	font-size: 10px
+	font-weight: 600
+	color: $color-dark
+	opacity: 0.3
+	letter-spacing: 0.2em
+	
+a 
+	text-decoration: none
+	color: inherit
+
+p 
+	font-family: $montserrat
+	font-weight: 400
+	font-size: 14px
+	line-height: 32px
+	letter-spacing: -0.03em
+	color: $color-dark
+
+	a 
+		font-family: inherit
+		text-decoration: none
+		font-weight: inherit
+		font-size: inherit
+		font-weight: bolder
+		color: inherit
+		background-size: 100% 2px
+		background-repeat: no-repeat
+		background-image: linear-gradient(45deg, $color-93degres, $color-93degres )
+		background-position: center bottom
+		cursor: pointer
+		transition: background 0.4s cubic-bezier(.8,0,.2,1) 0s, color 0.4s cubic-bezier(.8,0,.2,1) 0s
+		&:hover 
+			color: $color-93degres
+		
+	
+
+blockquote 
+	
+	quotes: none
+	&:before 
+		content: ''
+		content: none
+	
+	&:after 
+		content: ''
+		content: none
+ul
+
+li
+	display: inline-block
+
+.table 
+	display: table
+	width: 100%
+	height: 100%
+
+.table-cell 
+	display: table-cell
+	vertical-align: middle
+
+
+.container 
+	padding-left: 0
+	padding-right: 0
+	margin-top: 8.33%
+	float: left
+
+.texte--center 
+	text-align: center
+
+.cta 
+	display: inline-block
+	border: solid 2px
+	//Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+	border-radius: 100px
+	padding: 13px 18px 13px 20px
+	font-family: $bebas
+	font-size: 12px
+	letter-spacing: 0.2em
+	&:hover 
+		background: $white
+
+.categories 
+	.cta 
+		letter-spacing: inherit
+		padding-top: 11px
+	
+	img 
+		height: 14px
+		position: relative
+		top: 2px	
+
+.label 
+	width: 100px
+
+.overflow 
+	overflow: hidden
+
+.image 
+	width: 100%
+	background-size: cover
+	background-position: center
+
+.cover-image 
+	margin-top: -8.33%
+
+.cover-gradient 
+	top: 0
+	bottom: 0
+	left: 0
+	right: 0
+	position: absolute
+	background-size: cover
+	background-position: center
+	background: color-dark
+	opacity: 0.4
+	background: linear-gradient(to bottom, rgba(0,0,0,0.33) 0,rgba(0,0,0,1) 100%)
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#54000000', endColorstr='#000000',GradientType=0 )
+
+.image--1-1 
+	padding-bottom: 100%
+
+.image--4-5 
+	padding-bottom: 80%
+
+.image--3-2 
+	padding-bottom: 66.66%
+
+.image--16-9 
+	padding-bottom: 56.25%
+
+.image--1-2 
+	padding-bottom: 50%
+
+

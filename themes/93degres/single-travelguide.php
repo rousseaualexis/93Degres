@@ -24,7 +24,7 @@
                         </a>
                     </h2>
                     <div class="country-code">
-                        <h5 class="randomize text--article-color"><?php echo $destination_code; ?></h5>
+                        <h5 class="randomize"><?php echo $destination_code; ?></h5>
                     </div>
                     <div class="label randomize">
                         <img class="image" src="<?php bloginfo('template_url') ?>/assets/img/label__guide.png"/>
@@ -38,12 +38,12 @@
                     </h3>
                 </div>
 </div>
-<div id="introduction__thumbnail" class="guide-background-color col-xs-48">
+<div id="introduction__thumbnail" class="col-xs-48">
 <div class="cover-image col-xs-40 col-xs-offset-4">
     <div class="image image--1-2" style="background-image: url('<?php echo $thumbnail_url; ?>');"></div>
 </div>
 </div>
-<div class="guide-background-color col-xs-48">
+<div id="sections" class="col-xs-48">
 <?php
     $posts = get_fields();
     if ($posts):
