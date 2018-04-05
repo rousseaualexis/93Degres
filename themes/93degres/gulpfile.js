@@ -40,7 +40,7 @@ var project 		= '93degres', // Project name, used for build zip.
 
 // Load plugins
 	var gulp     = require('gulp'),
-		browserSync  = require('browser-sync').create(), // Asynchronous browser loading on .scss file changes
+		browserSync  = require('browser-sync').create(), // Asynchronous browser loading on .sass file changes
 		reload       = browserSync.reload,
 		autoprefixer = require('gulp-autoprefixer'), // Autoprefixing magic
 		minifycss    = require('gulp-uglifycss'),
@@ -71,6 +71,8 @@ var project 		= '93degres', // Project name, used for build zip.
 gulp.task('browser-sync', function() {
 	var files = [
 					'**/*.php',
+					'**/*.js',
+					'**/*.sass',
 					'**/*.{png,jpg,gif}'
 				];
 	browserSync.init(files, {
@@ -91,7 +93,6 @@ gulp.task('browser-sync', function() {
 
 	});
 
- gulp.watch("./93degres/*.php").on("change", browserSync.reload);
 
 });
 
@@ -104,15 +105,15 @@ gulp.task('browser-sync', function() {
  * Sass output styles: https://web-design-weekly.com/2014/06/15/different-sass-output-styles/
 */
 gulp.task('styles', function () {
-	 	gulp.src('./assets/css/*.scss')
+	 	gulp.src('./assets/css/*.sass')
 				.pipe(plumber())
 				.pipe(sourcemaps.init())
 				.pipe(sass({
 					errLogToConsole: true,
 
-					outputStyle: 'compressed',
+					//outputStyle: 'compressed',
 					//outputStyle: 'compact',
-					// outputStyle: 'nested',
+					 outputStyle: 'nested',
 					// outputStyle: 'expanded',
 					precision: 10
 				}))
@@ -274,7 +275,7 @@ gulp.task('buildImages', function() {
  // Watch Task
  gulp.task('default', ['styles', 'vendorsJs', 'scriptsJs', 'images', 'browser-sync'], function () {
  	gulp.watch('./assets/img/raw/**/*', ['images']);
- 	gulp.watch('./assets/css/**/*.scss', ['styles']);
+ 	gulp.watch('./assets/css/**/*.sass', ['styles']);
  	gulp.watch('./assets/js/**/*.js', ['scriptsJs', browserSync.reload]);
 
  });
