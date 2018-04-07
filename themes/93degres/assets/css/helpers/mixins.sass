@@ -11,33 +11,39 @@
     font: inherit
     vertical-align: baseline
 
-
   // HTML5 display-role reset for older browsers
   article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section
     display: block
-  
-  body
+
+  body, html
     line-height: 1
-  
+    height: 100%
+
   ol, ul
     list-style: none
-  
+
   blockquote, q
     quotes: none
-  
+
   blockquote
     &:before, &:after
       content: ""
       content: none
-    
-  
+
   q
     &:before, &:after
       content: ""
       content: none
-    
-  
+
   table
     border-collapse: collapse
     border-spacing: 0
-  
+
+
+@mixin media-sm-and-less
+  @media only screen and (max-width : $screen-xs-max)
+    @content
+
+@mixin media-md-and-less
+  @media only screen and (max-width : $screen-md-min)
+    @content

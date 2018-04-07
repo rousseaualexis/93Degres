@@ -1,87 +1,17 @@
-
 @import "helpers/variables"
+@import "helpers/mixins"
 @import "helpers/grid"
 @import "helpers/fonts"
-@import "helpers/mixins"
 @include meyer-reset;
 
-
-
-
-
-#list-sous-cat 
-	text-align: left
-	margin-top: 50px
-	float: left
-	text-align: center
-	top: 8.33%
-	transition: all 0.75s 0.3s
-	
-	a 
-		color: color-dark
-		font-family: $bebas
-		font-weight: 600
-		text-transform: uppercase
-		letter-spacing: 0.3em
-		font-size: 28px
-		padding: 12px 0
-		background-size: 0 3px
-		transition: background 0.4s cubic-bezier(.8,0,.2,1) 0s
-		background-repeat: no-repeat
-		background-image: linear-gradient(45deg, $color-93degres, $color-93degres )
-		background-position: calc(50% - 0.2em) 2.4em
-		&:hover 
-			background-size: calc(100% - 0.3em) 3px
-		
-	
-	span 
-		color: color-dark
-		font-family: $bebas
-		font-weight: 600
-		text-transform: uppercase
-		letter-spacing: 0.4em
-		font-size: 12px
-		padding: 12px 0
-		display: inline
-		letter-spacing: 0.1em
-		position: relative
-		bottom: 9px
-	
-
-.list-sous-cat-element 
-	display: inline-block
-	margin: 12px 20px
-
-.country-code 
-	position: absolute
-	top: 43%
-	line-height: 0
-	left: -3%
-	right: -3%
-	text-align: left
-	z-index: 1
-	
-	h5 
-		font-size: 49vw
-		letter-spacing: normal
-		opacity: 0.15
-		padding-right: 15vw
-
-@import "components/comments"
-@import "components/navigation"
-@import "components/pagination"
-@import "components/instagram"
-@import "components/realated"
-@import "components/header"
-@import "components/template-parts"
 @import "components/theme"
-@import "components/grid"
-
-	
+@import "components/header"
 @import "pages/homepage"
+@import "components/instagram"
 @import "pages/single"
+@import "components/grid"
+@import "components/template-parts"
 @import "pages/category"
-
-
-.nav .pagination 
-	display: inline-block
+@import "components/realated"
+@import "components/pagination"
+@import "components/comments"

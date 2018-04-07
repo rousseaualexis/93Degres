@@ -1,5 +1,5 @@
 <?php if ('travelguide' === get_post_type()): ?>
-    <div class="anime post post-guide col-xs-40 col-xs-offset-4 col-sm-9 col-sm-offset-2 col-md-14 col-md-offset-1 ">
+    <div class="anime post post-guide col-xs-42 col-xs-offset-3 col-md-14 col-md-offset-1 ">
             <?php
                 $thumbnail = get_field('thumbnail');
                 $thumbnail_url = $thumbnail['sizes']['thumbnail'];
@@ -31,9 +31,8 @@
                 <h2 class="categories text--guide-color">
                     <a href="<?php echo $term_url; ?>">
                         <img src="<?php echo $flag_url;?>" alt="<?php echo $flag['alt'];?>"/ >
-                        <?php echo $term_name; ?>
+                        <?php echo $term_name; ?><span> - Guide</span>
                     </a>
-                    <span> - Guide</span>
                 </h2>
                 <a href="<?php the_permalink(); ?>">
                 <h1><?php the_title(); ?><?php if(!empty(get_field('subtitle'))){echo ' -&nbsp' . get_field('subtitle');}?></h1>
@@ -41,7 +40,7 @@
                 </a>
     </div>
 <?php else: ?>
-    <div class="anime post post-article col-xs-40 col-xs-offset-4 col-sm-9 col-sm-offset-2 col-md-14 col-md-offset-1 ">
+    <div class="anime post post-article col-xs-42 col-xs-offset-3 col-md-14 col-md-offset-1 ">
             <?php
                 $thumbnail = get_field('thumbnail');
                 $thumbnail_url = $thumbnail['sizes']['thumbnail'];

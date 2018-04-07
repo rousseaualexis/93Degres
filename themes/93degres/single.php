@@ -15,7 +15,7 @@
 ?>
 <div class="article">
     <div id="introduction" class="col-xs-48 col-xs-offset-0">
-                    <div id="introduction-title" class="col-xs-40 col-xs-offset-4">
+                    <div id="introduction-title" class="col-xs-42 col-xs-offset-3">
                         <h2 class="categories">
                             <a href="<?php echo $term_url; ?>">
                                 <img src="<?php echo $flag_url;?>" alt="<?php echo $flag['alt'];?>"/ >
@@ -32,12 +32,12 @@
                         <h1><?php the_title(); ?><?php if(!empty(get_field('subtitle'))){echo '<br>' . get_field('subtitle');}?></h1>
                         <h5><? the_time(get_option('date_format')); ?></h5>
                     </div>
-                    <h3 class="col-xs-32 col-xs-offset-8">
+                    <h3 class="col-xs-42 col-xs-offset-3 col-md-32 col-md-offset-8">
                         <?php echo get_field('introduction', false, false); ?>
                     </h3>
      </div>
     <div id="introduction__thumbnail" class="col-xs-48">
-        <div class="cover-image col-xs-40 col-xs-offset-4">
+        <div class="cover-image col-xs-42 col-xs-offset-3">
             <div class="image image--1-2" style="background-image: url('<?php echo $thumbnail_url; ?>');"></div>
         </div>
     </div>
@@ -55,7 +55,7 @@
     </div>
 </div>
 <div class="col-xs-48">
-    <div class="col-xs-24 col-xs-offset-12">
+    <div class="col-xs-42 col-xs-offset-3">
         <?php
             if (comments_open() || get_comments_number()): comments_template();
             endif;

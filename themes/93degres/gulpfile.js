@@ -40,7 +40,7 @@ var project 		= '93degres', // Project name, used for build zip.
 
 // Load plugins
 	var gulp     = require('gulp'),
-		browserSync  = require('browser-sync').create(), // Asynchronous browser loading on .sass file changes
+		browserSync  = require('browser-sync'), // Asynchronous browser loading on .sass file changes
 		reload       = browserSync.reload,
 		autoprefixer = require('gulp-autoprefixer'), // Autoprefixing magic
 		minifycss    = require('gulp-uglifycss'),
@@ -175,21 +175,6 @@ gulp.task('scriptsJs', function() {
 });
 
 
-/**
- * Images
- *
- * Look at src/images, optimize the images and send them to the appropriate place
-*/
-gulp.task('images', function() {
-
-// Add the newer pipe to pass through newer images only
-	return 	gulp.src(['./assets/img/raw/**/*.{png,jpg,gif}'])
-				.pipe(newer('./assets/img/'))
-				.pipe(rimraf({ force: true }))
-				.pipe(gulp.dest('./assets/img/'))
-				.pipe( notify( { message: 'Images task complete', onLast: true } ) );
-});
-
 
 /**
  * Clean gulp cache
@@ -273,8 +258,7 @@ gulp.task('buildImages', function() {
 
 
  // Watch Task
- gulp.task('default', ['styles', 'vendorsJs', 'scriptsJs', 'images', 'browser-sync'], function () {
- 	gulp.watch('./assets/img/raw/**/*', ['images']);
+ gulp.task('default', ['styles', 'vendorsJs', 'scriptsJs', 'browser-sync'], function () {
  	gulp.watch('./assets/css/**/*.sass', ['styles']);
  	gulp.watch('./assets/js/**/*.js', ['scriptsJs', browserSync.reload]);
 

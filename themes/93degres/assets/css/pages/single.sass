@@ -1,39 +1,3 @@
-#introduction 
-	text-align: center
-	padding-top: 12.5%
-	overflow: hidden
-
-	h5 
-		margin-top: 20px
-		letter-spacing: 0.4em
-	
-	h3 
-		font-size: 30px
-		line-height: 60px
-		text-align: center
-		font-style: italic
-	
-	.categories 
-		margin-bottom: 30px
-		z-index: 2
-	
-	.randomize 
-		z-index: -2
-	
-	.country-code
-
-		h5 
-			font-size: 250px
-			letter-spacing: normal
-			padding-right: 0
-	
-#introduction-title 
-	padding-bottom: 4.16%
-
-#introduction__thumbnail 
-	margin-top: 16.66%
-	padding-bottom: 8.33%
-
 .article 
 
 	.country-code h5, .categories 
@@ -41,5 +5,51 @@
 
 	#sections, #introduction__thumbnail
 		background: $color-article-light
+
+.article, .guide
+	h1
+		+media-sm-and-less
+			font-size: 45px
+
+#introduction
+	text-align: center
+	padding-top: 12.5%
+	overflow: hidden
+
+	+media-sm-and-less
+		overflow: initial;
+
+	&-title
+		padding-bottom: 4.16%
+
+		.categories 
+			margin-bottom: 30px
+			z-index: 2
+
+		.randomize 
+			z-index: -2
+
+	h3 
+		font-size: 30px
+		line-height: 60px
+		text-align: center
+		font-style: italic
+
+		+media-sm-and-less
+			font-size: 24px
+			line-height: 32px
+	
+	.country-code
+
+		h5 
+			font-size: 250px
+
+			+media-sm-and-less
+				font-size: 150px
+
+	&__thumbnail
+		margin-top: 16.66%
+		padding-bottom: 8.33%
+
 
 

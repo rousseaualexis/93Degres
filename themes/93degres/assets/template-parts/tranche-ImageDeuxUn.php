@@ -9,7 +9,7 @@
         ?> 
     
         
-        <div class="deuxtiersimage col-xs-20 col-xs-offset-2 col-sm-12  col-sm-offset-2 col-md-22 col-md-offset-6">
+        <div class="deuxtiersimage col-xs-48 col-xs-offset-0 col-sm-24 col-sm-offset-3 col-md-22 col-md-offset-6">
         <img src="<?php echo $deuximage_url ?>"/>
         <?php if (!empty($deuximage_caption)): ?>
             <p class="caption">
@@ -18,7 +18,7 @@
         <?php endif; ?>
         </div>
         
-        <div class="untiersimage col-xs-20 col-xs-offset-2  col-sm-6 col-sm-offset-2 col-md-12 col-md-offset-2">
+        <div class="untiersimage col-xs-48 col-xs-offset-0  col-sm-15 col-sm-offset-3 col-md-12 col-md-offset-2">
             <img src="<?php echo $unimage_url?>"/>
         <?php if (!empty($unimage_caption)): ?>
             <p class="caption">

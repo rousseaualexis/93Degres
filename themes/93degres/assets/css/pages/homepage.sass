@@ -1,38 +1,88 @@
+#home-posts
+	+media-sm-and-less
+		margin-top: 100px
+
 #first-post 
 	font-size: 0
 	min-height: 70vh
-	
-	h1 
-		z-index: 2
-		position: relative
-		width: 100%
-		font-size: 70px
-		line-height: 74px
-		padding-top: 15px
-	
-	h4 
-		width: 100%
-		font-size: 20px
-		line-height: 32px
-	
-	.cta 
+
+	&-texte
+		display: inline-block
 		float: none
+		vertical-align: middle
+		z-index: 2
+
+		+media-sm-and-less
+			padding-top: 50%
+
+		h1 
+			z-index: 2
+			position: relative
+			width: 100%
+			font-size: 70px
+			line-height: 74px
+			padding-top: 15px
+
+			+media-sm-and-less
+				font-size: 40px
+				line-height: normal
 	
+		h4 
+			width: 100%
+			font-size: 20px
+			line-height: 32px
+
+		.categories 
+			top: initial
+			height: auto
+
+		.cta 
+		float: none
+
+
+	&-image
+		display: inline-block
+		float: none
+		vertical-align: middle
+		overflow: hidden
+
+		+media-sm-and-less
+			position: absolute
+			display: block
+			float: left
+			top: 4.25%
+			left: 0
+
+			.image
+				+media-sm-and-less
+					padding-bottom: 50%
+
+
 	.post 
 		padding-top: 8.33%
 		padding-bottom: 16.66%
 		margin-bottom: -12.5%
-	
-	.categories 
-		top: initial
-		height: auto
 
-	.country-code 
+		+media-sm-and-less
+			padding-bottom: 25%
+
+
+
+		&-article
+			background: $color-article-light
+
+		&-guide
+			background: $color-guide-light
+
+		&-advice
+			background: $color-advice-light
+
+	.country-code
+		position: absolute
 		top: 43%
 		line-height: 0
 		left: -3%
 		right: -3%
-		text-align: left
 		z-index: 1
 		
 		h5 
@@ -42,39 +92,37 @@
 			padding-right: 15vw
 	
 
-#first-post-texte, #first-post-image 
-	display: inline-block
-	float: none
-	vertical-align: middle
-
-#first-post-image 
-	overflow: hidden
-
 #destinations 
 	padding-top: 8.33%
 	padding-bottom: 8.33%
 	text-align: center
-	margin-bottom: 8.33%
+	background: $color-article-light
+	
 	h3 
 		font-size: 120px
 		color: $color-93degres
 		margin-bottom: 4.16%
+
+
+		+media-sm-and-less
+			font-size: 60px
 	
 	li 
 		vertical-align: middle
 		margin-bottom: 30px
-		
+			
 		a 
+			font-size: 18px
 			padding: 30px
-		
-	
-	h2 
-		font-size: 18px
 	
 
-#about 
-	margin-bottom: 8.33%
+#about
+	
 	.cta 
 		margin-top: 4.16%
 		border-color: $color-93degres
+
+
+		+media-sm-and-less
+			margin-top: 30px
 	

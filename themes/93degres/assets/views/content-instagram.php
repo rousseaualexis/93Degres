@@ -17,7 +17,7 @@ $indata = json_decode($json_object);
 // echo $indata->data[3]->images->thumbnail->url;      //for thumbnail
 //for standard res echo $indata->data[3]->images->standard_resolution->url; 
 ?>
-<div id="instagram" class="col-xs-40 col-xs-offset-4">
+<div id="instagram" class="container col-xs-42 col-xs-offset-3">
     <h3 class="col-xs-48">Instagram</h3>
     <ul class="instagram_shots">
         <li class="anime">

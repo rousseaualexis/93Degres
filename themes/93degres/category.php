@@ -3,20 +3,19 @@ get_header();
 $term = get_queried_object();
 ?>
 
-<div id="cover-top"class="overflow col-xs-48">
+<div id="cover-categorie"class="overflow col-xs-48">
     <div id="cover-container" class="col-xs-48 col-md-48 col-md-offset-0">    
         <?php
             $thumbnail = get_field('thumbnail', $term);
             $thumbnail_url = $thumbnail['sizes']['large'];
             $destination_code = get_field('destination_code', $term);
-            echo $thumbnail_url;
             $term_url = get_term_link($term);
             $term_name = $term->name;
         ?>
         <div class="table">
             <div id="cover-container-text" class="table-cell">
                 <h1><?php echo the_archive_title(); ?></h1>
-                <div class="categories">
+                <!--<div id="list-sous-cat" class="col-xs-offset-3 col-xs-42">
                     <?php 
             $this_category = get_category( $cat );
             $child_categories=get_categories( array( 
@@ -35,7 +34,7 @@ $term = get_queried_object();
                 esc_html($category->name),
                 esc_html($category->category_count));
                 echo sprintf(esc_html__('%s', 'textdomain'), $category_link); }
-        ?>
+        ?> !-->
                 </div>
             </div>
             <div class="cover-image" style="background-image: url('<?php echo $thumbnail_url; ?>');">
@@ -49,7 +48,7 @@ $term = get_queried_object();
 </div>
 
 <div class="overflow col-xs-48">
-    <div id="list-sous-cat" class="col-xs-offset-4 col-xs-40">    
+    <div id="list-sous-cat" class="col-xs-offset-3 col-xs-42">    
         <?php 
             $this_category = get_category( $cat );
             $child_categories=get_categories( array( 
@@ -119,47 +118,74 @@ $term = get_queried_object();
                                                                     
         </div>
     </div>
-
 <?php
     $why_we_like = get_field('why_we_like', $term);
-    if (!empty($why_we_like)) {
-        echo  '
-        <div class="article-background-color col-xs-48">
-            <div id="why-we-like" class="col-xs-34 col-xs-offset-7">
-                <h3>' . $why_we_like  .  '</h3>
-            </div>
-        </div>';
-    }
+    if (!empty($why_we_like)) :
 ?>
-<?php
-
-    $what_we_like = get_field('what_we_like', $term);
-    if (!empty($what_we_like)) {
-        echo  '
-        <div class="article-background-color col-xs-48">
-            <div id="what-we-like" class="col-xs-40 col-xs-offset-4">
-            <h2>Nos endroits favoris</h2>';
-
-        while (have_rows('what_we_like', $term)): the_row();
-            $image = get_sub_field('image');
-            $image_url = $image['sizes']['medium'];
-            $title  = get_sub_field('title');
-            $link = get_sub_field('link');
-            ?>
-            <div class="favorite-place">
-                <div class="table image" style="background-image: url('<?php echo $image_url; ?>');">
-                    <a class="table-cell" href="<?php echo $link; ?>">
-                        <h2><?php echo $title; ?></h2>
-                    </a>
+        <div id="why-we-like" class="container col-xs-48">
+            <div id="why-we-like__content">
+                <h2>Pourquoi on aime ?</h2>
+                <div class="col-xs-34 col-xs-offset-7">
+                    <h3> <?php echo $why_we_like ?></h3>
                 </div>
             </div>
-            <?php
-        endwhile;
+            <div class="stamp randomize">
+                <img class="image" src="<?php bloginfo('template_url') ?>/assets/img/wave.png"/>
+            </div>
+        </div>
+<?  endif;
+?>
+<?php
+    $what_we_like = get_field('what_we_like', $term);
+    if (!empty($what_we_like)) :
         echo  '
+        <div id="what-we-like" class="container col-xs-48">
+            <h2 class="col-xs-42 col-xs-offset-3">Nos endroits favoris</h2>
+            <div id="what-we-like__content" class="col-xs-48">
+            ';
+            while (have_rows('what_we_like', $term)): the_row();
+                $image = get_sub_field('image');
+                $image_url = $image['sizes']['medium'];
+                $title  = get_sub_field('title');
+                $link = get_sub_field('link');
+                ?>
+                <div class="favorite-place col-xs-11 col-xs-offset-1">
+                    <div class="image" style="background-image: url('<?php echo $image_url; ?>');">
+                        <div class="table">
+                            <a class="table-cell" href="<?php echo $link; ?>">
+                                <h3><?php echo $title; ?></h3>
+                            </a>
+                        </div>
+
+            <div class="cover-gradient"></div>
+                    </div>
+                </div><div class="favorite-place col-xs-11 col-xs-offset-1">
+                    <div class="image" style="background-image: url('<?php echo $image_url; ?>');">
+                        <div class="table">
+                            <a class="table-cell" href="<?php echo $link; ?>">
+                                <h3><?php echo $title; ?></h3>
+                            </a>
+                        </div>
+
+            <div class="cover-gradient"></div>
+                    </div>
+                </div><div class="favorite-place col-xs-11 col-xs-offset-1">
+                    <div class="image" style="background-image: url('<?php echo $image_url; ?>');">
+                        <div class="table">
+                            <a class="table-cell" href="<?php echo $link; ?>">
+                                <h3><?php echo $title; ?></h3>
+                            </a>
+                        </div>
+
+            <div class="cover-gradient"></div>
+                    </div>
+                </div>
+                <?php
+            endwhile;
+            echo  '
             </div>
         </div>';
-
-    }
+    endif;
 ?>
     <?php get_footer(); ?>
 <?php include'end.php' ?>

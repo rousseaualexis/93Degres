@@ -1,15 +1,3 @@
-#first-post
-
-	.post-article
-		background: $color-article-light
-
-	.post-guide
-		background: $color-guide-light
-
-	.post-advice
-		background: $color-advice-light
-
-
 .post-article 
 
 	a .cta 
@@ -18,9 +6,6 @@
 	
 	.country-code h5, .categories 
 		color: $color-article-dark
-
-	.img-thumbnail--hover
-		background: $color-article-light
 
 	a .image .image_thumbnail--hover
 		background: $color-article-light
@@ -34,8 +19,8 @@
 	.country-code h5, .categories 
 		color: $color-guide-dark
 
-	.img-thumbnail--hover
-		background: $color-article-light
+	a .image .image_thumbnail--hover
+		background: $color-guide-light
 		
 
 .post 
@@ -43,16 +28,26 @@
 	float: none
 	vertical-align: top
 	margin-bottom: 6.25%
+
+	+media-sm-and-less
+		margin-bottom: 60px
+
 	h1 
 		padding-bottom: 15px
 		padding-top: 60px
 		width: 85%
 		font-size: 30px
 		line-height: normal
+
+		+media-sm-and-less
+			width: 100%
 	
 	.image_thumbnail 
 		position: relative
 		overflow: hidden
+
+		+media-sm-and-less
+			padding-bottom: 50%
 	
 	.image_thumbnail--hover 
 		position: absolute
@@ -73,14 +68,15 @@
 			bottom: 20%
 			line-height: 0
 			text-align: left
+			
 			h5 
 				font-size: 360px
 				transition: all 0.6s cubic-bezier(.4,0,.2,1)
+				letter-spacing: 0;
 			
 		
 		.label 
 			width: 200px
-			//Instead of the line below you could use @include transition($transition-1, $transition-2, $transition-3, $transition-4, $transition-5, $transition-6, $transition-7, $transition-8, $transition-9, $transition-10)
 			transition: all 0.6s cubic-bezier(.4,0,.2,1)
 		
 		.table-cell 
@@ -104,6 +100,9 @@
 		display: block
 		padding-bottom: 20px
 		width: 85%
+
+		+media-sm-and-less
+			width: 100%
 
 	h5 
 		display: block

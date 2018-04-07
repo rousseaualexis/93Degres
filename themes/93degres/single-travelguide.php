@@ -14,7 +14,7 @@
         }
 ?>
 <div id="introduction" class="overflow post-guide col-xs-48 col-xs-offset-0">
-                <div id="introduction-title" class="col-xs-40 col-xs-offset-4">
+                <div id="introduction-title" class="col-xs-42 col-xs-offset-3">
                     <h2 class="categories">
                         <a href="<?php echo $term_url; ?>">
                           
@@ -39,7 +39,7 @@
                 </div>
 </div>
 <div id="introduction__thumbnail" class="col-xs-48">
-<div class="cover-image col-xs-40 col-xs-offset-4">
+<div class="cover-image col-xs-42 col-xs-offset-3">
     <div class="image image--1-2" style="background-image: url('<?php echo $thumbnail_url; ?>');"></div>
 </div>
 </div>

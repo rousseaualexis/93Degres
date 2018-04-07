@@ -7,7 +7,7 @@ Template Name: Archive
 
 
 <div class="overflow col-xs-48">
-    <div class="col-md-push-3 col-xs-48">
+    <div id="list-sous-cat" class="col-md-push-4 col-xs-42">
 <?php
             //list terms in a given taxonomy using wp_list_categories  (also useful as a widget)
 
@@ -39,7 +39,7 @@ Template Name: Archive
                     $counts{$catname} = $count;
                     $catlinks{$catname} = $catlink;
                     $category_link = sprintf( 
-                    '<a href="%1$s" alt="%2$s">%3$s</a><span>(%4$s)</span>',
+                    '<a href="%1$s" alt="%2$s">%3$s<span>(%4$s)</span></a>',
                     esc_url( $catlink),
                     esc_attr( sprintf( __( 'View all posts in %s', 'textdomain' ), $catname ) ),
                     esc_html( $catname ),
@@ -53,7 +53,7 @@ Template Name: Archive
 </div>
 
 <div class="overflow col-xs-48">
-    <div class="col-md-push-3 col-xs-48">
+    <div class="col-md-push-3 col-xs-44">
         <?php $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
             $args = array( 'posts_per_page' => 6, 'paged' => $paged );
             $wp_query = new WP_Query($args);

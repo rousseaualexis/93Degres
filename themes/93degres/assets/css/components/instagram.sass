@@ -1,15 +1,19 @@
-
 #instagram 
-	margin-bottom: 6.25%
 	text-align: center
 	
 	h3 
 		margin-bottom: 2.15%
 		color: $color-93degres
+		+media-sm-and-less
+			margin-bottom: 30px
+			font-size: 60px
 	
 	.cta 
 		border-color: $color-93degres
 		margin-top: 4.16%
+
+		+media-sm-and-less
+			margin-top: 30px;
 	
 
 .instagram_shots 
@@ -20,6 +24,9 @@
 		float: left
 		width: 25%
 		overflow: hidden
+
+		+media-sm-and-less
+			width: 50%
 		
 		img 
 			width: 100%
@@ -28,8 +35,5 @@
 		&:nth-child(2n) 
 			margin-top: 4.16%
 
-
-.ie7 .instagram_shots li 
-	display: inline
-	width: 16.66%
-	zoom: 1
+			+media-sm-and-less
+				margin-top: 0
