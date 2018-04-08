@@ -1,10 +1,10 @@
 .article 
 	overflow: hidden
 	
-	.country-code h5, .categories, .date h5 
+	.country-code h5, .categories, .date h5, .deux-tiers__chapter h3, .title-content h5
 		color: $color-article-dark
 
-	#sections, #introduction__thumbnail
+	#introduction, #realated, .un-tiers__text
 		background: $color-article-light
 
 .article, .guide
@@ -15,6 +15,7 @@
 #introduction
 	text-align: center
 	padding-top: 12.5%
+	padding-bottom: 16.66%
 
 	+media-sm-and-less
 		overflow: initial;
@@ -51,6 +52,7 @@
 		bottom: 0
 		line-height: 0
 		text-align: left
+		z-index: 0
 		
 		h5 
 			left: 200%
@@ -68,6 +70,7 @@
 		bottom: 100%
 		left: 33%
 		right: 65%
+		z-index: 0
 		
 		img
 
@@ -84,6 +87,7 @@
 		bottom: 10%
 		left: 40%
 		right: 40%
+		z-index: 0
 
 		h5	
 			font-size: 20px
@@ -91,8 +95,7 @@
 			opacity: 0.75	
 
 	&__thumbnail
-		margin-top: 16.66%
-		padding-bottom: 8.33%
+		padding-bottom: 4.16%
 
 		.image
 			margin-top: -8.33%

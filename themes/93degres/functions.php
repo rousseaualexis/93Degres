@@ -56,29 +56,7 @@ register_post_type(
   )
 );
     
-    /*
-register_taxonomy(
-  'guidecategory',
-  'travelguide',
-  array(
-    'label' => 'Types',
-    'labels' => array(
-    'name' => 'Types',
-    'singular_name' => 'Type',
-    'all_items' => 'Tous les types',
-    'edit_item' => 'Éditer le type',
-    'view_item' => 'Voir le type',
-    'update_item' => 'Mettre à jour le type',
-    'add_new_item' => 'Ajouter un type',
-    'new_item_name' => 'Nouveau type',
-    'search_items' => 'Rechercher parmi les types',
-    'popular_items' => 'Types les plus utilisés'
-  ),
-  'hierarchical' => true
-      
-  )
-);
-register_taxonomy_for_object_type( 'guidecategory', 'travelguide' );*/
+
 }
 
 
@@ -162,6 +140,15 @@ function tiny_mce_remove_unused_formats($init) {
 
 
 
+function the_field_without_wpautop( $field_name ) {
+    
+    remove_filter('acf_the_content', 'wpautop');
+    
+    the_field( $field_name );
+    
+    add_filter('acf_the_content', 'wpautop');
+    
+}
 
 
 // ADD STYLE TO TINY MCE

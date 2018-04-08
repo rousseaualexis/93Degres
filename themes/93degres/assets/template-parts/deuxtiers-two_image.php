@@ -1,15 +1,15 @@
-<div class="container_article col-xs-48 anime tranche__imagedeuxun">
+
         <?php
-        $deuximage = get_sub_field('deuxtiersimage');
+        $deuximage = get_sub_field('image_01');
         $deuximage_url = $deuximage['sizes']['medium'];
         $deuximage_caption = $deuximage['caption'];
-        $unimage= get_sub_field('untiersimage');
+        $unimage= get_sub_field('image_02');
         $unimage_url = $unimage['sizes']['medium'];
         $unimage_caption = $unimage['caption'];
         ?> 
     
-        
-        <div class="deuxtiersimage col-xs-48 col-xs-offset-0 col-sm-24 col-sm-offset-3 col-md-22 col-md-offset-6">
+        <div class="deux-tiers">
+        <div class="deux-tiers__two-image col-xs-48 col-xs-offset-0 col-sm-24 col-sm-offset-3 col-md-22 col-md-offset-0">
         <img src="<?php echo $deuximage_url ?>"/>
         <?php if (!empty($deuximage_caption)): ?>
             <p class="caption">
@@ -18,7 +18,7 @@
         <?php endif; ?>
         </div>
         
-        <div class="untiersimage col-xs-48 col-xs-offset-0  col-sm-15 col-sm-offset-3 col-md-12 col-md-offset-2">
+        <div class="deux-tiers__two-image col-xs-48 col-xs-offset-0  col-sm-15 col-sm-offset-3 col-md-22 col-md-offset-4">
             <img src="<?php echo $unimage_url?>"/>
         <?php if (!empty($unimage_caption)): ?>
             <p class="caption">
@@ -26,5 +26,5 @@
             </p>
         <?php endif; ?>
         </div>
+    </div>
 
-</div>
