@@ -60,18 +60,20 @@
 
 */
 
+
 $( document ).ready(function() {
     $( '.randomize' ).each(function() {
+        $minRotate = -45;
+        $maxRotate = 45;
         $holder    = $(this).parent();
-        $divWidth  = $holder.width() * 0.65;
-        $divHeight = $holder.height()* 0.65;
-        $degree = Math.random() * 45;
+        $divWidth  = $holder.width() * 0.15;
+        $divHeight = $holder.height()* 0.15;
+        $degree = Math.floor(Math.random()*( $maxRotate - $minRotate + 1 ) + $minRotate);
 
            $(this).css({
                 'position' : 'absolute',
-                'left': Math.floor( Math.random() * Number( $divWidth) ),
-                'top' : Math.floor( Math.random() * Number( $divHeight) ),
-                'top' : Math.floor( Math.random() * Number( $divHeight) ),
+                'left': Math.floor( Math.random() * 100 ) + '%',
+                'top' : Math.floor( Math.random() * 100 ) + '%',
                 '-webkit-transform': 'rotate(' + $degree + 'deg)',
                 '-moz-transform': 'rotate(' + $degree + 'deg)',
                 '-ms-transform': 'rotate(' + $degree + 'deg)',

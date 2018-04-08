@@ -123,14 +123,12 @@ $term = get_queried_object();
     if (!empty($why_we_like)) :
 ?>
         <div id="why-we-like" class="container col-xs-48">
-            <div id="why-we-like__content">
+            <div id="why-we-like__content" class="col-xs-34 col-xs-offset-7">
                 <h2>Pourquoi on aime ?</h2>
-                <div class="col-xs-34 col-xs-offset-7">
-                    <h3> <?php echo $why_we_like ?></h3>
-                </div>
+                <h3> <?php echo $why_we_like ?></h3>
             </div>
-            <div class="stamp randomize">
-                <img class="image" src="<?php bloginfo('template_url') ?>/assets/img/wave.png"/>
+            <div class="stamp">
+                <img src="<?php bloginfo('template_url') ?>/assets/img/wave.png"/>
             </div>
         </div>
 <?  endif;

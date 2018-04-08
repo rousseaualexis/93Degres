@@ -1542,9 +1542,6 @@ li {
   position: relative;
   top: 2px; }
 
-.label {
-  width: 100px; }
-
 .overflow {
   overflow: hidden; }
 
@@ -1610,7 +1607,7 @@ li {
     #list-sous-cat a:hover {
       background-size: 100% 5px; }
   #list-sous-cat span {
-    color: color-dark;
+    color: #3c2626;
     font-family: "bebas_neue_bold", sans-serif;
     font-weight: 600;
     text-transform: uppercase;
@@ -1679,14 +1676,14 @@ li {
     font-weight: 700;
     font-size: 10px;
     padding: 12px 11px 12px 15px;
-    color: color-dark;
+    color: #3c2626;
     border: 1px solid #3c2626;
     text-decoration: none;
     display: block;
     line-height: 1; }
   .menu-principal-container .current {
     color: #ffffff;
-    background: color-dark; }
+    background: #3c2626; }
 
 @media only screen and (max-width: 767px) {
   #home-posts {
@@ -1825,11 +1822,12 @@ li {
         .instagram_shots li:nth-child(2n) {
           margin-top: 0; } }
 
-.article .country-code h5, .article .categories {
-  color: #e0ad86; }
-
-.article #sections, .article #introduction__thumbnail {
-  background: #f7f2ea; }
+.article {
+  overflow: hidden; }
+  .article .country-code h5, .article .categories, .article .date h5 {
+    color: #e0ad86; }
+  .article #sections, .article #introduction__thumbnail {
+    background: #f7f2ea; }
 
 @media only screen and (max-width: 767px) {
   .article h1, .guide h1 {
@@ -1837,8 +1835,7 @@ li {
 
 #introduction {
   text-align: center;
-  padding-top: 12.5%;
-  overflow: hidden; }
+  padding-top: 12.5%; }
   @media only screen and (max-width: 767px) {
     #introduction {
       overflow: initial; } }
@@ -1849,6 +1846,9 @@ li {
       z-index: 2; }
     #introduction-title .randomize {
       z-index: -2; }
+  #introduction h1 {
+    width: 100%;
+    float: left; }
   #introduction h3 {
     font-size: 30px;
     line-height: 60px;
@@ -1858,20 +1858,62 @@ li {
       #introduction h3 {
         font-size: 24px;
         line-height: 32px; } }
-  #introduction .country-code h5 {
-    font-size: 250px; }
-    @media only screen and (max-width: 767px) {
-      #introduction .country-code h5 {
-        font-size: 150px; } }
+  #introduction .country-code {
+    position: absolute;
+    left: 33%;
+    right: 33%;
+    top: 33%;
+    bottom: 0;
+    line-height: 0;
+    text-align: left; }
+    #introduction .country-code h5 {
+      left: 200%;
+      -webkit-transition: all 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+      transition: all 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+      -webkit-transition-delay: 200ms;
+              transition-delay: 200ms;
+      font-size: 24vw;
+      letter-spacing: 0;
+      opacity: 0.15; }
+  #introduction .label {
+    position: absolute;
+    top: -50%;
+    bottom: 100%;
+    left: 33%;
+    right: 65%; }
+    #introduction .label img {
+      left: -200%;
+      top: -200%;
+      -webkit-transition: all 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+      transition: all 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+      -webkit-transition-delay: 200ms;
+              transition-delay: 200ms;
+      width: 100px;
+      opacity: 0.5; }
+  #introduction .date {
+    position: absolute;
+    top: 80%;
+    bottom: 10%;
+    left: 40%;
+    right: 40%; }
+    #introduction .date h5 {
+      font-size: 20px;
+      opacity: 1;
+      opacity: 0.75; }
   #introduction__thumbnail {
     margin-top: 16.66%;
     padding-bottom: 8.33%; }
+    #introduction__thumbnail .image {
+      margin-top: -8.33%; }
+
+#sections {
+  padding-bottom: 4.16%; }
 
 .post-article a .cta {
   color: #e0ad86;
   border-color: #e0ad86; }
 
-.post-article .country-code h5, .post-article .categories {
+.post-article .country-code h5, .post-article .categories, .post-article .date h5 {
   color: #e0ad86; }
 
 .post-article a .image .image_thumbnail--hover {
@@ -1881,7 +1923,7 @@ li {
   color: #708555;
   border-color: #708555; }
 
-.post-guide .country-code h5, .post-guide .categories {
+.post-guide .country-code h5, .post-guide .categories, .post-guide .date h5 {
   color: #708555; }
 
 .post-guide a .image .image_thumbnail--hover {
@@ -1922,29 +1964,48 @@ li {
     transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1); }
     .post .image_thumbnail--hover .country-code {
       position: absolute;
-      left: -20px;
-      right: -20px;
-      top: 20%;
-      bottom: 20%;
+      left: 0;
+      right: 33%;
+      top: 50%;
+      bottom: 1vw;
       line-height: 0;
       text-align: left; }
       .post .image_thumbnail--hover .country-code h5 {
-        font-size: 360px;
+        font-size: 16vw;
         -webkit-transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
         transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-        letter-spacing: 0; }
+        letter-spacing: 0;
+        opacity: 0.15; }
     .post .image_thumbnail--hover .label {
-      width: 200px;
-      -webkit-transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-      transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1); }
+      position: absolute;
+      top: 0;
+      bottom: 65%;
+      left: 0;
+      right: 66%; }
+      .post .image_thumbnail--hover .label img {
+        width: 200px;
+        -webkit-transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        opacity: 0.5; }
+    .post .image_thumbnail--hover .date {
+      position: absolute;
+      top: 10%;
+      bottom: 65%;
+      left: 25%;
+      right: 10%; }
+      .post .image_thumbnail--hover .date h5 {
+        -webkit-transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        font-size: 50px;
+        opacity: 1;
+        opacity: 0.75; }
     .post .image_thumbnail--hover .table-cell {
       font-size: 72px;
       line-height: 0;
-      z-index: 2;
       position: relative; }
     .post .image_thumbnail--hover h5 {
-      font-size: 120px;
-      padding-right: 0; }
+      padding-right: 0;
+      letter-spacing: 0; }
   .post .categories {
     display: block;
     position: relative;
@@ -1962,10 +2023,12 @@ li {
   .post:hover .image_thumbnail--hover {
     opacity: 1;
     margin-top: 0; }
-    .post:hover .image_thumbnail--hover .label {
+    .post:hover .image_thumbnail--hover .label img {
       width: 100px; }
     .post:hover .image_thumbnail--hover .country-code h5 {
-      font-size: 180px; }
+      font-size: 10vw; }
+    .post:hover .image_thumbnail--hover .date h5 {
+      font-size: 20px; }
 
 .container_article {
   padding-left: 0;
@@ -2008,7 +2071,7 @@ li {
   width: 100%; }
 
 .deuxtierstexte blockquote p {
-  color: color-dark;
+  color: #3c2626;
   margin: 60px auto;
   font-family: "Cormorant", serif;
   font-weight: 200;
@@ -2055,23 +2118,56 @@ li {
     #why-we-like__content h2 {
       display: inline-block;
       letter-spacing: 0.4em;
-      padding: 20px;
+      padding: 20px 0;
       margin-bottom: 4.16%;
-      color: #e0ad86;
-      border: solid 2px #e0ad86;
-      border-radius: 4px; }
+      position: relative; }
+      #why-we-like__content h2:before, #why-we-like__content h2:after {
+        content: "";
+        position: absolute;
+        margin-left: 50%;
+        left: -12px;
+        width: 25px;
+        height: 4px;
+        background: #fcc30f; }
+      #why-we-like__content h2:before {
+        top: 0; }
+      #why-we-like__content h2:after {
+        bottom: 0; }
     #why-we-like__content h3 {
       text-align: center;
       font-size: 45px;
       line-height: 60px; }
   #why-we-like .stamp {
-    width: 270px;
-    z-index: 0;
-    opacity: 0.3;
-    position: absolute; }
+    position: absolute;
+    top: -20px;
+    left: 55%;
+    width: 20%; }
+    #why-we-like .stamp img {
+      width: 100%;
+      z-index: 0;
+      opacity: 0.3;
+      position: absolute; }
 
 #what-we-like {
   text-align: center; }
+  #what-we-like h2 {
+    display: inline-block;
+    letter-spacing: 0.4em;
+    padding: 20px 0;
+    margin-bottom: 4.16%;
+    position: relative; }
+    #what-we-like h2:before, #what-we-like h2:after {
+      content: "";
+      position: absolute;
+      margin-left: 50%;
+      left: -12px;
+      width: 25px;
+      height: 4px;
+      background: #fcc30f; }
+    #what-we-like h2:before {
+      top: 0; }
+    #what-we-like h2:after {
+      bottom: 0; }
   #what-we-like__content {
     right: 1.04%; }
     #what-we-like__content h3 {
@@ -2084,10 +2180,6 @@ li {
       font-size: 28px;
       line-height: 30px;
       z-index: 1; }
-  #what-we-like h2 {
-    margin-bottom: 4.16%;
-    font-size: 18px;
-    letter-spacing: 0.4em; }
 
 .favorite-place {
   display: inline-block;
@@ -2106,7 +2198,7 @@ li {
   #realated .trait {
     height: 80px;
     width: 2px;
-    background: color-dark;
+    background: #3c2626;
     position: absolute;
     left: -50%;
     right: -50%;
@@ -2117,6 +2209,10 @@ li {
     float: none;
     background: none;
     padding-bottom: 4.16%; }
+  #realated .post h1 {
+    width: 100%; }
+  #realated .post h4 {
+    width: 100%; }
 
 #pagination_container {
   text-align: center;
@@ -2162,9 +2258,9 @@ li {
   line-height: 20px;
   font-weight: 800;
   text-decoration: none;
-  color: color-dark; }
+  color: #3c2626; }
   .fn a {
-    color: color-dark;
+    color: #3c2626;
     font-size: 12px; }
 
 .comment-meta {
@@ -2176,12 +2272,12 @@ li {
     margin-top: 3px;
     font-size: 16px;
     line-height: 16px;
-    color: color-dark;
+    color: #3c2626;
     font-weight: 400;
     font-size: 12px;
     font-family: "Cormorant", serif; }
   .comment-meta a {
-    color: color-dark;
+    color: #3c2626;
     font-weight: 400;
     font-size: 12px;
     font-family: "Cormorant", serif; }
@@ -2219,12 +2315,12 @@ input {
   width: 100%;
   font-size: 11px;
   padding: 15px 0 15px 15px;
-  border: 1px solid rgba(32, 32, 32, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.05);
   margin-top: 25px;
   font-family: "Montserrat", sans-serif; }
   input:focus {
     outline: none;
-    background: rgba(32, 32, 32, 0.1); }
+    background: rgba(0, 0, 0, 0.05); }
 
 .comment-form-author {
   padding-right: 17px; }
@@ -2253,30 +2349,31 @@ input {
 
 select:focus {
   outline: none;
-  background: rgba(32, 32, 32, 0.1); }
+  background: rgba(0, 0, 0, 0.05); }
 
 textarea:focus {
   outline: none;
-  background: rgba(32, 32, 32, 0.1); }
+  background: rgba(0, 0, 0, 0.05); }
 
 button:focus {
   outline: none;
-  background: rgba(32, 32, 32, 0.1); }
+  background: rgba(0, 0, 0, 0.05); }
 
 .comment-form textarea {
   resize: none;
   width: 100%;
   font-size: 13px;
   padding: 15px 0 15px 15px;
-  border: 1px solid rgba(32, 32, 32, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.05);
   margin-top: 25px;
   font-family: "Montserrat", sans-serif; }
 
 .form-submit input {
   font-family: "Montserrat", sans-serif;
+  border: none;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.4em;
   color: #ffffff;
-  background: color-dark;
+  background: #3c2626;
   cursor: pointer; }

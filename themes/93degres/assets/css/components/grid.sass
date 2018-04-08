@@ -4,7 +4,7 @@
 		color: $color-article-dark
 		border-color: $color-article-dark
 	
-	.country-code h5, .categories 
+	.country-code h5, .categories, .date h5 
 		color: $color-article-dark
 
 	a .image .image_thumbnail--hover
@@ -16,7 +16,7 @@
 		color: $color-guide-dark
 		border-color: $color-guide-dark
 	
-	.country-code h5, .categories 
+	.country-code h5, .categories, .date h5
 		color: $color-guide-dark
 
 	a .image .image_thumbnail--hover
@@ -62,32 +62,54 @@
 		.country-code 
 
 			position: absolute
-			left: -20px
-			right: -20px
-			top: 20%
-			bottom: 20%
+			left: 0
+			right: 33%
+			top: 50%
+			bottom: 1vw
 			line-height: 0
 			text-align: left
 			
 			h5 
-				font-size: 360px
+				font-size: 16vw
 				transition: all 0.6s cubic-bezier(.4,0,.2,1)
 				letter-spacing: 0;
+				opacity: 0.15
 			
 		
-		.label 
-			width: 200px
-			transition: all 0.6s cubic-bezier(.4,0,.2,1)
+		.label
+
+			position: absolute
+			top: 0
+			bottom: 65%
+			left: 0
+			right: 66%
+			
+			img
+				width: 200px
+				transition: all 0.6s cubic-bezier(.4,0,.2,1)
+				opacity: 0.5
 		
+		.date
+			position: absolute
+			top: 10%
+			bottom: 65%
+			left: 25%
+			right: 10%
+
+			h5	
+				transition: all 0.6s cubic-bezier(.4,0,.2,1)
+				font-size: 50px
+				opacity: 1
+				opacity: 0.75
+
 		.table-cell 
 			font-size: 72px
 			line-height: 0
-			z-index: 2
 			position: relative
 		
 		h5 
-			font-size: 120px
 			padding-right: 0
+			letter-spacing: 0
 		
 	
 	.categories 
@@ -111,11 +133,14 @@
 		.image_thumbnail--hover 
 			opacity: 1
 			margin-top: 0
-			.label 
+			.label img
 				width: 100px
 			
 			.country-code h5 
-				font-size: 180px
+				font-size: 10vw
+
+			.date h5
+				font-size: 20px
 
 
 

@@ -18,12 +18,15 @@
                     <div class="image_thumbnail--hover">
                         <div class="table">
                             <div class="table-cell">👁</div>
-                            <div class="country-code">
-                                <h5 class="randomize text--guide-color"><?php echo $destination_code; ?></h5>
-                            </div>
-                            <div class="label randomize">
-                                <img class="image" src="<?php bloginfo('template_url') ?>/assets/img/label__guide.png"/>
-                            </div>
+                        </div>
+                        <div class="country-code">
+                            <h5 class="randomize"><?php echo $destination_code; ?></h5>
+                        </div>
+                        <div class="label">
+                            <img class="randomize" src="<?php bloginfo('template_url') ?>/assets/img/label__guide.png"/>
+                        </div>
+                        <div class="date">
+                            <h5 class="randomize"> <?php the_time(get_option('date_format')); ?></h5>
                         </div>
                     </div>
                 </div>
@@ -58,14 +61,20 @@
                 <div class="image image--3-2 image_thumbnail" style="background-image: url('<?php echo $thumbnail_url;?>');" title="<?php echo $thumbnail['alt']; ?>">
                     <div class="image_thumbnail--hover">
                         <div class="table">
-                            <div class="table-cell">👁</div>
-                            <div class="country-code">
-                                <h5 class="randomize text--article-color"><?php echo $destination_code; ?></h5>
-                            </div>
-                            <div class="label randomize">
-                                <img class="image" src="<?php bloginfo('template_url') ?>/assets/img/label__carnet-de-voyage.png"/>
+                            <div class="table-cell">
+                            👁
                             </div>
                         </div>
+                        <div class="country-code">
+                            <h5 class="randomize"><?php echo $destination_code; ?></h5>
+                        </div>
+                        <div class="label">
+                            <img class="randomize" src="<?php bloginfo('template_url') ?>/assets/img/label__carnet-de-voyage.png"/>
+                        </div>
+                        <div class="date">
+                            <h5 class="randomize"> <?php the_time(get_option('date_format')); ?></h5>
+                        </div>
+                            
                     </div>
                 </div>
                
@@ -79,7 +88,6 @@
             <a href="<?php the_permalink(); ?>">  
                 <h1><?php the_title(); ?><?php if(!empty(get_field('subtitle'))){echo ' -&nbsp' . get_field('subtitle');}?></h1>
                 <h4><?php echo get_field('summary'); ?></h4>
-                <h5 style="width: 100%; float: left;"> <?php the_time(get_option('date_format')); ?></h5>
             </a>
     </div>
 <?php endif; ?>

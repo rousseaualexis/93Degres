@@ -13,7 +13,7 @@
             $term_name = $term->name;
         }
 ?>
-<div class="article">
+<div class="article container">
     <div id="introduction" class="col-xs-48 col-xs-offset-0">
                     <div id="introduction-title" class="col-xs-42 col-xs-offset-3">
                         <h2 class="categories">
@@ -23,14 +23,16 @@
              
                             </a>
                         </h2>
-                        <div class="country-code">
+                        <div id="country-code" class="country-code">
                             <h5 class="randomize"><?php echo $destination_code; ?></h5>
                         </div>
-                        <div class="label randomize">
-                            <img class="image" src="<?php bloginfo('template_url') ?>/assets/img/label__carnet-de-voyage.png"/>
+                        <div id="label" class="label">
+                            <img class="randomize" src="<?php bloginfo('template_url') ?>/assets/img/label__carnet-de-voyage.png"/>
+                        </div>
+                        <div id="date" class="date">
+                            <h5 class="randomize"><? the_time(get_option('date_format')); ?></h5>
                         </div>
                         <h1><?php the_title(); ?><?php if(!empty(get_field('subtitle'))){echo '<br>' . get_field('subtitle');}?></h1>
-                        <h5><? the_time(get_option('date_format')); ?></h5>
                     </div>
                     <h3 class="col-xs-42 col-xs-offset-3 col-md-32 col-md-offset-8">
                         <?php echo get_field('introduction', false, false); ?>
@@ -49,13 +51,14 @@
                     $template = get_sub_field('template');
                     get_template_part('assets/template-parts/tranche', $template);
                 endwhile;
-            get_template_part('views/content-realated');
             endif;
         ?>
     </div>
+    <?php get_template_part('assets/views/content-realated', $template); ?>
 </div>
+
 <div class="col-xs-48">
-    <div class="col-xs-42 col-xs-offset-3">
+    <div class="col-xs-42 col-xs-offset-3 col-sm-32 col-sm-offset-8 col-md-24 col-md-offset-12">
         <?php
             if (comments_open() || get_comments_number()): comments_template();
             endif;
@@ -63,4 +66,29 @@
     </div>
 </div>
 <?php get_footer(); ?>
+<script>
+window.requestAnimationFrame = window.requestAnimationFrame
+|| window.mozRequestAnimationFrame
+|| window.webkitRequestAnimationFrame
+|| window.msRequestAnimationFrame
+|| function(f){setTimeout(f, 1000/60)}
+
+var country_code = document.getElementById('country-code')
+var label = document.getElementById('label')
+var date = document.getElementById('date')
+
+function parallax(){
+var scrolltop = window.pageYOffset // get number of pixels document has scrolled vertically 
+country_code.style.marginTop = scrolltop * .5 + 'px' // move b_lines at 20% of scroll rate
+label.style.marginTop = scrolltop * .15 + 'px' // move b_lines at 20% of scroll rate
+date.style.marginTop = scrolltop * .1 + 'px' // move b_lines at 20% of scroll rate
+country_code.style.transform = 'rotate(' + -scrolltop * .025 + 'deg)' // move b_lines at 20% of scroll rate
+label.style.transform = 'rotate(' +scrolltop * 0.03 + 'deg)' // move b_lines at 20% of scroll rate
+date.style.transform = 'rotate(' +scrolltop * 0.01 + 'deg)' // move b_lines at 20% of scroll rate
+}
+
+window.addEventListener('scroll', function(){ // on page scroll
+ requestAnimationFrame(parallax) // call parallaxbubbles() on next available screen paint
+}, false);
+</script>
 <?php include'end.php' ?>

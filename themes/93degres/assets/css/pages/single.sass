@@ -1,6 +1,7 @@
 .article 
-
-	.country-code h5, .categories 
+	overflow: hidden
+	
+	.country-code h5, .categories, .date h5 
 		color: $color-article-dark
 
 	#sections, #introduction__thumbnail
@@ -14,7 +15,6 @@
 #introduction
 	text-align: center
 	padding-top: 12.5%
-	overflow: hidden
 
 	+media-sm-and-less
 		overflow: initial;
@@ -28,6 +28,9 @@
 
 		.randomize 
 			z-index: -2
+	h1
+		width: 100%
+		float: left
 
 	h3 
 		font-size: 30px
@@ -39,17 +42,63 @@
 			font-size: 24px
 			line-height: 32px
 	
-	.country-code
+	.country-code 
 
+		position: absolute
+		left: 33%
+		right: 33%
+		top: 33%
+		bottom: 0
+		line-height: 0
+		text-align: left
+		
 		h5 
-			font-size: 250px
+			left: 200%
+			transition: all 1.2s cubic-bezier(.4,0,.2,1)
+			transition-delay: 200ms
+			font-size: 24vw
+			letter-spacing: 0;
+			opacity: 0.15
+			
+		
+	.label
 
-			+media-sm-and-less
-				font-size: 150px
+		position: absolute
+		top: -50%
+		bottom: 100%
+		left: 33%
+		right: 65%
+		
+		img
+
+			left: -200%
+			top: -200%
+			transition: all 1.2s cubic-bezier(.4,0,.2,1)
+			transition-delay: 200ms
+			width: 100px
+			opacity: 0.5
+		
+	.date
+		position: absolute
+		top: 80%
+		bottom: 10%
+		left: 40%
+		right: 40%
+
+		h5	
+			font-size: 20px
+			opacity: 1
+			opacity: 0.75	
 
 	&__thumbnail
 		margin-top: 16.66%
 		padding-bottom: 8.33%
+
+		.image
+			margin-top: -8.33%
+
+#sections
+	padding-bottom: 4.16%
 
 
 

@@ -7,7 +7,7 @@ if ($posts): ?>
 <?php 
     foreach($posts as $post): // variable must be called $post (IMPORTANT)
         setup_postdata($post);
-        include'grid.php';
+        include'content-grid.php';
     endforeach;
     wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly
 ?>
