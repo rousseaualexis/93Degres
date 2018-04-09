@@ -1435,7 +1435,7 @@ h2 {
 h3 {
   font-family: "Cormorant", serif;
   font-size: 4vw;
-  line-height: 5vw;
+  line-height: 5.25vw;
   font-weight: 200;
   letter-spacing: -0.03em;
   color: #3c2626; }
@@ -1690,7 +1690,8 @@ li {
 
 #first-post {
   font-size: 0;
-  min-height: 70vh; }
+  min-height: 70vh;
+  z-index: -1; }
   #first-post-texte {
     display: inline-block;
     float: none;
@@ -1935,7 +1936,8 @@ li {
   display: inline-block;
   float: none;
   vertical-align: top;
-  margin-bottom: 6.25%; }
+  margin-bottom: 6.25%;
+  z-index: 1; }
   @media only screen and (max-width: 767px) {
     .post {
       margin-bottom: 60px; } }
@@ -2111,6 +2113,8 @@ li {
 .full-width--container .full-width {
   margin-bottom: 4.16%;
   float: left; }
+  .full-width--container .full-width blockquote {
+    padding: 8.33% 0; }
 
 .full-width--container .un-tiers__image img {
   width: 100%; }
