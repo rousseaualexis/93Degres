@@ -1971,11 +1971,17 @@ li {
       top: 50%;
       bottom: 1vw;
       line-height: 0;
-      text-align: left; }
+      text-align: left;
+      margin-top: 200px;
+      opacity: 0;
+      -webkit-transform: rotate(30deg);
+              transform: rotate(30deg);
+      -webkit-transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+      transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+      -webkit-transition-delay: 0.05s;
+              transition-delay: 0.05s; }
       .post .image_thumbnail--hover .country-code h5 {
-        font-size: 16vw;
-        -webkit-transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-        transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        font-size: 10vw;
         letter-spacing: 0;
         opacity: 0.15; }
     .post .image_thumbnail--hover .label {
@@ -1983,22 +1989,34 @@ li {
       top: 0;
       bottom: 65%;
       left: 0;
-      right: 66%; }
+      right: 66%;
+      margin-left: -200px;
+      opacity: 0;
+      -webkit-transform: rotate(0deg);
+              transform: rotate(0deg);
+      -webkit-transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+      transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+      -webkit-transition-delay: 0.05s;
+              transition-delay: 0.05s; }
       .post .image_thumbnail--hover .label img {
-        width: 200px;
-        -webkit-transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-        transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        width: 100px;
         opacity: 0.5; }
     .post .image_thumbnail--hover .date {
       position: absolute;
       top: 10%;
       bottom: 65%;
       left: 25%;
-      right: 10%; }
+      right: 10%;
+      margin-left: 200px;
+      opacity: 0;
+      -webkit-transform: rotate(0deg);
+              transform: rotate(0deg);
+      -webkit-transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+      transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+      -webkit-transition-delay: 0.05s;
+              transition-delay: 0.05s; }
       .post .image_thumbnail--hover .date h5 {
-        -webkit-transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-        transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-        font-size: 50px;
+        font-size: 20px;
         opacity: 1;
         opacity: 0.75; }
     .post .image_thumbnail--hover .table-cell {
@@ -2025,12 +2043,21 @@ li {
   .post:hover .image_thumbnail--hover {
     opacity: 1;
     margin-top: 0; }
-    .post:hover .image_thumbnail--hover .label img {
-      width: 100px; }
-    .post:hover .image_thumbnail--hover .country-code h5 {
-      font-size: 10vw; }
-    .post:hover .image_thumbnail--hover .date h5 {
-      font-size: 20px; }
+    .post:hover .image_thumbnail--hover .label {
+      -webkit-transform: rotate(0deg);
+              transform: rotate(0deg);
+      margin-left: 0;
+      opacity: 1; }
+    .post:hover .image_thumbnail--hover .country-code {
+      -webkit-transform: rotate(0deg);
+              transform: rotate(0deg);
+      margin-top: 0;
+      opacity: 1; }
+    .post:hover .image_thumbnail--hover .date {
+      -webkit-transform: rotate(0deg);
+              transform: rotate(0deg);
+      margin-left: 0;
+      opacity: 1; }
 
 .deux-tiers--container .deux-tiers {
   clear: both;
@@ -2216,8 +2243,7 @@ li {
     width: 100%; }
 
 #pagination_container {
-  text-align: center;
-  float: none; }
+  text-align: center; }
 
 .nav .pagination {
   display: inline-block; }
