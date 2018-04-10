@@ -6,7 +6,7 @@
 ?>
 	<div class="un-tiers un-tiers__text col-xs-40 col-md-36">
         <?php 
-        if (!empty($icon) && !empty($title)): ?>
+        if (!empty($icon) || !empty($title)): ?>
         	<div class="title">
         <?php if (!empty($icon)): ?>
         <img src="<?php echo $icon_url; ?>" />

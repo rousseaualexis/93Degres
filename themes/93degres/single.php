@@ -13,7 +13,7 @@
             $term_name = $term->name;
         }
 ?>
-<div class="article container">
+<div id="article" class="container">
     <div id="introduction" class="col-xs-48 col-xs-offset-0">
                     <div id="introduction-title" class="col-xs-42 col-xs-offset-3">
                         <h2 class="categories">
