@@ -7,6 +7,15 @@
 	#introduction, #realated, .un-tiers__text
 		background: $color-article-light
 
+	#layout
+
+		.deux-tiers__chapter ~ .deux-tiers__paragraph
+
+			&:first-of-type
+				&:first-letter
+					color: $color-article-dark
+
+
 #article, #guide
 	h1
 		+media-sm-and-less
@@ -100,8 +109,19 @@
 		.image
 			margin-top: -8.33%
 
-#sections
-	padding-bottom: 4.16%
 
+#layout
 
+	.deux-tiers__chapter ~ .deux-tiers__paragraph
 
+		&:first-of-type
+			&:first-letter
+				float: left
+				font-weight: 800
+				font-size: 4em
+				color: #000099
+				margin-top: 7px
+				margin-right: 0.20em
+				line-height: 90%
+
+	

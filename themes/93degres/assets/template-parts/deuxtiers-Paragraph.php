@@ -1,13 +1,10 @@
-
-        <?php
-        
-        $deuxtexte = get_sub_field('paragraph');
-        
-        ?> 
+<?php
+        $texte = strip_tags(get_sub_field('paragraph'), '<br><em><strong><a>');
+?> 
     
         
-        <div class="deux-tiers deux-tiers__paragraph col-xs-42 col-xs-offset-3 col-sm-24 col-md-40 col-md-offset-4">
+        <p class="deux-tiers deux-tiers__paragraph col-xs-42 col-xs-offset-3 col-sm-24 col-md-40 col-md-offset-4">
         
-                <?php echo $deuxtexte ?>
+                <?php echo $texte ?>
             
-            </div>
+            </p>

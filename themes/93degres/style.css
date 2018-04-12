@@ -1527,6 +1527,8 @@ table {
     color: #e0ad86; }
   #article #introduction, #article #realated, #article .un-tiers__text {
     background: #f7f2ea; }
+  #article #layout .deux-tiers__chapter ~ .deux-tiers__paragraph:first-of-type:first-letter {
+    color: #e0ad86; }
 
 @media only screen and (max-width: 767px) {
   #article h1, #guide h1 {
@@ -1608,8 +1610,14 @@ table {
     #introduction__thumbnail .image {
       margin-top: -8.33%; }
 
-#sections {
-  padding-bottom: 4.16%; }
+#layout .deux-tiers__chapter ~ .deux-tiers__paragraph:first-of-type:first-letter {
+  float: left;
+  font-weight: 800;
+  font-size: 4em;
+  color: #000099;
+  margin-top: 7px;
+  margin-right: 0.20em;
+  line-height: 90%; }
 
 #cover-categorie {
   height: 65%; }
