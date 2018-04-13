@@ -1,3 +1,37 @@
+@charset "UTF-8";
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body, html {
+  line-height: 1;
+  height: 100%; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after {
+  content: "";
+  content: none; }
+
+q:before, q:after {
+  content: "";
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
 .col-xs-0, .col-sm-0, .col-md-0, .col-xs-1, .col-sm-1, .col-md-1, .col-xs-2, .col-sm-2, .col-md-2, .col-xs-3, .col-sm-3, .col-md-3, .col-xs-4, .col-sm-4, .col-md-4, .col-xs-5, .col-sm-5, .col-md-5, .col-xs-6, .col-sm-6, .col-md-6, .col-xs-7, .col-sm-7, .col-md-7, .col-xs-8, .col-sm-8, .col-md-8, .col-xs-9, .col-sm-9, .col-md-9, .col-xs-10, .col-sm-10, .col-md-10, .col-xs-11, .col-sm-11, .col-md-11, .col-xs-12, .col-sm-12, .col-md-12, .col-xs-13, .col-sm-13, .col-md-13, .col-xs-14, .col-sm-14, .col-md-14, .col-xs-15, .col-sm-15, .col-md-15, .col-xs-16, .col-sm-16, .col-md-16, .col-xs-17, .col-sm-17, .col-md-17, .col-xs-18, .col-sm-18, .col-md-18, .col-xs-19, .col-sm-19, .col-md-19, .col-xs-20, .col-sm-20, .col-md-20, .col-xs-21, .col-sm-21, .col-md-21, .col-xs-22, .col-sm-22, .col-md-22, .col-xs-23, .col-sm-23, .col-md-23, .col-xs-24, .col-sm-24, .col-md-24, .col-xs-25, .col-sm-25, .col-md-25, .col-xs-26, .col-sm-26, .col-md-26, .col-xs-27, .col-sm-27, .col-md-27, .col-xs-28, .col-sm-28, .col-md-28, .col-xs-29, .col-sm-29, .col-md-29, .col-xs-30, .col-sm-30, .col-md-30, .col-xs-31, .col-sm-31, .col-md-31, .col-xs-32, .col-sm-32, .col-md-32, .col-xs-33, .col-sm-33, .col-md-33, .col-xs-34, .col-sm-34, .col-md-34, .col-xs-35, .col-sm-35, .col-md-35, .col-xs-36, .col-sm-36, .col-md-36, .col-xs-37, .col-sm-37, .col-md-37, .col-xs-38, .col-sm-38, .col-md-38, .col-xs-39, .col-sm-39, .col-md-39, .col-xs-40, .col-sm-40, .col-md-40, .col-xs-41, .col-sm-41, .col-md-41, .col-xs-42, .col-sm-42, .col-md-42, .col-xs-43, .col-sm-43, .col-md-43, .col-xs-44, .col-sm-44, .col-md-44, .col-xs-45, .col-sm-45, .col-md-45, .col-xs-46, .col-sm-46, .col-md-46, .col-xs-47, .col-sm-47, .col-md-47, .col-xs-48, .col-sm-48, .col-md-48 {
   position: relative;
   min-height: 1px;
@@ -1380,44 +1414,17 @@
     margin-left: 99.99999984%; } }
 
 @font-face {
-  font-family: 'bebas_neue_bold';
-  src: url("assets/css/fonts/bebasneue_bold-webfont.eot");
-  src: url("assets/css/fonts/bebasneue_bold-webfont.eot?#iefix") format("embedded-opentype"), url("assets/css/fonts/bebasneue_bold-webfont.woff2") format("woff2"), url("assets/css/fonts/bebasneue_bold-webfont.woff") format("woff"), url("assets/css/fonts/bebasneue_bold-webfont.ttf") format("truetype"), url("assets/css/fonts/bebasneue_bold-webfont.svg#bebas_neuebold") format("svg");
+  font-family: 'leaguegothic';
+  src: url("assets/css/fonts/leaguegothic-regular-webfont.eot");
+  src: url("assets/css/fonts/leaguegothic-regular-webfont.eot?#iefix") format("embedded-opentype"), url("assets/css/fonts/leaguegothic-regular-webfont.woff2") format("woff2"), url("assets/css/fonts/leaguegothic-regular-webfont.woff") format("woff"), url("assets/css/fonts/leaguegothic-regular-webfont.ttf") format("truetype"), url("assets/css/fonts/leaguegothic-regular-webfont.svg#bebas_neuebold") format("svg");
+  font-weight: normal; }
+
+@font-face {
+  font-family: 'leaguegothic-condensed';
+  src: url("assets/css/fonts/leaguegothic-condensedregular-webfont.eot");
+  src: url("assets/css/fonts/leaguegothic-condensedregular-webfont.eot?#iefix") format("embedded-opentype"), url("assets/css/fonts/leaguegothic-condensedregular-webfont.woff2") format("woff2"), url("assets/css/fonts/leaguegothic-condensedregular-webfont.woff") format("woff"), url("assets/css/fonts/leaguegothic-condensedregular-webfont.ttf") format("truetype"), url("assets/css/fonts/leaguegothic-condensedregular-webfont.svg#bebas_neuebold") format("svg");
   font-weight: normal;
   font-style: normal; }
-
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline; }
-
-article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
-  display: block; }
-
-body, html {
-  line-height: 1;
-  height: 100%; }
-
-ol, ul {
-  list-style: none; }
-
-blockquote, q {
-  quotes: none; }
-
-blockquote:before, blockquote:after {
-  content: "";
-  content: none; }
-
-q:before, q:after {
-  content: "";
-  content: none; }
-
-table {
-  border-collapse: collapse;
-  border-spacing: 0; }
 
 @media only screen and (max-width: 767px) {
   #home-posts {
@@ -1431,29 +1438,31 @@ table {
     display: inline-block;
     float: none;
     vertical-align: middle;
-    z-index: 2;
-    float: none; }
+    z-index: 2; }
     @media only screen and (max-width: 767px) {
       #first-post-texte {
         padding-top: 50%; } }
     #first-post-texte h1 {
       z-index: 2;
       position: relative;
+      color: #ffffff;
       width: 100%;
-      font-size: 70px;
-      line-height: 74px;
+      font-size: 7.15vw;
+      line-height: 7.15vw;
       padding-top: 15px; }
       @media only screen and (max-width: 767px) {
         #first-post-texte h1 {
           font-size: 40px;
           line-height: normal; } }
     #first-post-texte h4 {
-      width: 100%;
-      font-size: 20px;
-      line-height: 32px; }
+      width: 55%; }
     #first-post-texte .categories {
       top: initial;
       height: auto; }
+    #first-post-texte .cta {
+      float: none;
+      border: none;
+      background: #ffffff; }
   #first-post-image {
     display: inline-block;
     float: none;
@@ -1484,28 +1493,31 @@ table {
       background: #e8f0f3; }
   #first-post .country-code {
     position: absolute;
-    top: 43%;
+    top: 46%;
     line-height: 0;
     left: -3%;
     right: -3%;
     z-index: 1; }
     #first-post .country-code h5 {
       font-size: 49vw;
-      letter-spacing: normal;
       opacity: 0.15;
-      padding-right: 15vw; }
+      padding-right: 19vw; }
 
 #destinations {
-  padding-top: 8.33%;
+  margin-top: 8.33%;
+  padding-top: 12.5%;
   padding-bottom: 8.33%;
   text-align: center;
   background: #f7f2ea; }
-  #destinations h3 {
-    font-size: 120px;
+  #destinations h5 {
+    font-family: "leaguegothic", sans-serif;
+    font-size: 12vw;
     color: #fcc30f;
-    margin-bottom: 4.16%; }
+    margin-bottom: 4.16%;
+    position: absolute;
+    top: -7vw; }
     @media only screen and (max-width: 767px) {
-      #destinations h3 {
+      #destinations h5 {
         font-size: 60px; } }
   #destinations li {
     vertical-align: middle;
@@ -1517,6 +1529,8 @@ table {
 #about .cta {
   margin-top: 4.16%;
   border-color: #fcc30f; }
+  #about .cta:after {
+    content: '👌'; }
   @media only screen and (max-width: 767px) {
     #about .cta {
       margin-top: 30px; } }
@@ -1552,8 +1566,8 @@ table {
     width: 100%;
     float: left; }
   #introduction h3 {
-    font-size: 30px;
-    line-height: 60px;
+    font-size: 20px;
+    line-height: 40px;
     text-align: center;
     font-style: italic; }
     @media only screen and (max-width: 767px) {
@@ -1735,49 +1749,115 @@ table {
       letter-spacing: 0.4em;
       margin-bottom: 30px; }
 
+*::-moz-selection {
+  background-color: #fcc30f; }
+
+*::selection {
+  background-color: #fcc30f; }
+
 h1 {
-  font-family: "Cormorant", serif;
-  letter-spacing: -0.03em;
+  font-family: "leaguegothic", sans-serif;
   color: #3c2626;
-  font-size: 80px; }
+  font-size: 100px;
+  line-height: 100px;
+  text-transform: uppercase; }
+  h1 span {
+    padding: 7px 10px;
+    font-size: 24px;
+    background: #3c2626;
+    position: absolute;
+    white-space: nowrap;
+    bottom: 6.43vw;
+    margin-bottom: -43px;
+    margin-left: 10px;
+    text-transform: none;
+    line-height: normal; }
 
-h2 {
-  font-family: "bebas_neue_bold", sans-serif;
-  font-size: 14px;
-  line-height: normal;
-  text-transform: none;
-  color: #3c2626; }
-
-h3 {
-  font-family: "Cormorant", serif;
-  font-size: 4vw;
+h2, blockquote {
+  font-family: "Montserrat", sans-serif;
+  font-size: 3.2vw;
   line-height: 5.25vw;
-  font-weight: 200;
-  letter-spacing: -0.03em;
+  font-weight: 800;
+  letter-spacing: -0.05em;
   color: #3c2626; }
   @media only screen and (max-width: 767px) {
-    h3 {
+    h2, blockquote {
       font-size: 27px;
       line-height: normal; } }
 
+h3 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 30px;
+  line-height: 40px;
+  font-style: italic;
+  letter-spacing: -0.03em;
+  color: #3c2626; }
+
 h4 {
-  font-family: "Cormorant", serif;
-  font-size: 17px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
   line-height: 28px;
+  font-style: italic;
   letter-spacing: -0.03em;
   color: #3c2626; }
 
 h5 {
-  font-family: "bebas_neue_bold", sans-serif;
-  font-size: 10px;
-  font-weight: 600;
+  font-family: "leaguegothic-condensed", sans-serif;
+  font-size: 49vw;
   color: #3c2626;
-  letter-spacing: 0.2em; }
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none; }
 
 a {
+  font-family: "leaguegothic", sans-serif;
   text-decoration: none;
   color: inherit;
-  letter-spacing: 0.4em; }
+  letter-spacing: 0.2em;
+  font-size: 14px; }
+  a h1 {
+    letter-spacing: 0; }
+  a .cta {
+    text-transform: uppercase;
+    display: inline-block;
+    border: solid 2px;
+    border-radius: 100px;
+    padding: 15px 18px 13px 20px;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+    -webkit-transition: all 0.45s cubic-bezier(0.4, 0, 0, 1);
+    transition: all 0.45s cubic-bezier(0.4, 0, 0, 1); }
+    a .cta:after {
+      content: '👉';
+      font-size: 20px;
+      margin-top: -4px;
+      margin-left: -10px;
+      opacity: 0;
+      position: absolute;
+      -webkit-transition: all 0.45s cubic-bezier(0.4, 0, 0, 1);
+      transition: all 0.45s cubic-bezier(0.4, 0, 0, 1); }
+    a .cta:hover {
+      -webkit-transform: scale(1.2);
+              transform: scale(1.2);
+      padding-right: 40px; }
+      a .cta:hover:after {
+        margin-left: 5px;
+        opacity: 1;
+        position: absolute; }
+
+.categories {
+  text-transform: uppercase;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none; }
+  .categories img {
+    height: 14px;
+    position: relative;
+    top: 2px; }
 
 p {
   font-family: "Montserrat", sans-serif;
@@ -1837,26 +1917,6 @@ li {
 .texte--center {
   text-align: center; }
 
-.cta {
-  display: inline-block;
-  border: solid 2px;
-  border-radius: 100px;
-  padding: 13px 18px 13px 20px;
-  font-family: "bebas_neue_bold", sans-serif;
-  font-size: 12px;
-  letter-spacing: 0.2em; }
-  .cta:hover {
-    background: #ffffff; }
-
-.categories .cta {
-  letter-spacing: inherit;
-  padding-top: 11px; }
-
-.categories img {
-  height: 14px;
-  position: relative;
-  top: 2px; }
-
 .overflow {
   overflow: hidden; }
 
@@ -1905,7 +1965,6 @@ li {
   top: 8.33%; }
   #list-sous-cat a {
     color: #3c2626;
-    font-family: "bebas_neue_bold", sans-serif;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.3em;
@@ -1923,7 +1982,6 @@ li {
       background-size: 100% 5px; }
   #list-sous-cat span {
     color: #3c2626;
-    font-family: "bebas_neue_bold", sans-serif;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.4em;
@@ -1976,7 +2034,6 @@ li {
     text-transform: uppercase;
     letter-spacing: 0.4em; }
   .menu-principal-container a {
-    font-family: "bebas_neue_bold", sans-serif;
     padding: 12px 11px 12px 15px;
     border: 1px solid #3c2626;
     font-size: 12px;
@@ -2012,6 +2069,8 @@ li {
   #instagram .cta {
     border-color: #fcc30f;
     margin-top: 4.16%; }
+    #instagram .cta:after {
+      content: '\270C'; }
     @media only screen and (max-width: 767px) {
       #instagram .cta {
         margin-top: 30px; } }
@@ -2046,6 +2105,9 @@ li {
 .post-article a .image .image_thumbnail--hover {
   background: #f7f2ea; }
 
+.post-article h1 span {
+  background: #e0ad86; }
+
 .post-guide a .cta {
   color: #708555;
   border-color: #708555; }
@@ -2066,7 +2128,6 @@ li {
     .post {
       margin-bottom: 60px; } }
   .post h1 {
-    padding-bottom: 15px;
     padding-top: 60px;
     width: 85%;
     font-size: 30px;
@@ -2159,6 +2220,7 @@ li {
     top: 35px; }
   .post h4 {
     display: block;
+    padding-top: 15px;
     padding-bottom: 20px;
     width: 85%; }
     @media only screen and (max-width: 767px) {
@@ -2196,15 +2258,13 @@ li {
   .deux-tiers--container .deux-tiers__chapter {
     margin-bottom: 2.5%;
     margin-top: -2.5%; }
-    .deux-tiers--container .deux-tiers__chapter h3 {
-      font-size: 48px;
-      line-height: normal; }
-      .deux-tiers--container .deux-tiers__chapter h3 em {
-        font-family: "bebas_neue_bold", sans-serif;
-        color: #3c2626;
-        letter-spacing: 0.4em;
-        font-size: 14px;
-        font-style: normal; }
+    .deux-tiers--container .deux-tiers__chapter h3 em {
+      font-family: "leaguegothic", sans-serif;
+      color: #3c2626;
+      text-transform: uppercase;
+      letter-spacing: 0.4em;
+      font-size: 14px;
+      font-style: normal; }
   .deux-tiers--container .deux-tiers__one-image img, .deux-tiers--container .deux-tiers__two-image img {
     width: 100%; }
 
@@ -2234,6 +2294,8 @@ li {
       display: table-cell;
       vertical-align: middle; }
       .un-tiers--container .un-tiers__text .title-content h5 {
+        font-family: "leaguegothic", sans-serif;
+        text-transform: uppercase;
         font-size: 14px;
         letter-spacing: 0.4em;
         text-align: left; }

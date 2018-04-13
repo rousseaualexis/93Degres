@@ -31,12 +31,10 @@
                     </div>
                 </div>
             </a>
-                <h2 class="categories text--guide-color">
-                    <a href="<?php echo $term_url; ?>">
-                        <img src="<?php echo $flag_url;?>" alt="<?php echo $flag['alt'];?>"/ >
-                        <?php echo $term_name; ?><span> - Guide</span>
-                    </a>
-                </h2>
+                <a class="categories text--guide-color" href="<?php echo $term_url; ?>">
+                    <img src="<?php echo $flag_url;?>" alt="<?php echo $flag['alt'];?>"/ >
+                    <?php echo $term_name; ?><span> - Guide</span>
+                </a>
                 <a href="<?php the_permalink(); ?>">
                 <h1><?php the_title(); ?><?php if(!empty(get_field('subtitle'))){echo ' -&nbsp' . get_field('subtitle');}?></h1>
                 <h4><?php echo get_field('summary'); ?></h4>
@@ -79,12 +77,10 @@
                 </div>
                
             </a>
-            <h2 class="categories text--article-color">
-                <a href="<?php echo $term_url; ?>">
-                    <img src="<?php echo $flag_url;?>" alt="<?php echo $flag['alt'];?>"/ >
-                    <?php echo $term_name; ?>
-                </a>
-            </h2>
+            <a class="categories text--article-color" href="<?php echo $term_url; ?>">
+                <img src="<?php echo $flag_url;?>" alt="<?php echo $flag['alt'];?>"/ >
+                <?php echo $term_name; ?>
+            </a>
             <a href="<?php the_permalink(); ?>">  
                 <h1><?php the_title(); ?><?php if(!empty(get_field('subtitle'))){echo ' -&nbsp' . get_field('subtitle');}?></h1>
                 <h4><?php echo get_field('summary'); ?></h4>
