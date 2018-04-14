@@ -1426,6 +1426,9 @@ table {
   font-weight: normal;
   font-style: normal; }
 
+#first-post .post-article h1 span {
+  background: #3c2626; }
+
 @media only screen and (max-width: 767px) {
   #home-posts {
     margin-top: 100px; } }
@@ -1450,6 +1453,17 @@ table {
       font-size: 7.15vw;
       line-height: 7.15vw;
       padding-top: 15px; }
+      #first-post-texte h1 span {
+        font-size: 24px;
+        position: absolute;
+        bottom: 6.43vw;
+        margin-bottom: -43px;
+        margin-left: 10px;
+        padding: 7px 10px;
+        font-size: 24px;
+        white-space: nowrap;
+        line-height: normal;
+        display: initial; }
       @media only screen and (max-width: 767px) {
         #first-post-texte h1 {
           font-size: 40px;
@@ -1458,7 +1472,8 @@ table {
       width: 55%; }
     #first-post-texte .categories {
       top: initial;
-      height: auto; }
+      float: none;
+      display: inline-block; }
     #first-post-texte .cta {
       float: none;
       border: none;
@@ -1479,9 +1494,10 @@ table {
     #first-post-image .image {
       padding-bottom: 50%; } }
   #first-post .post {
-    padding-top: 8.33%;
+    padding-top: 6.25%;
     padding-bottom: 16.66%;
-    margin-bottom: -12.5%; }
+    margin-bottom: -12.5%;
+    cursor: initial; }
     @media only screen and (max-width: 767px) {
       #first-post .post {
         padding-bottom: 25%; } }
@@ -1493,7 +1509,7 @@ table {
       background: #e8f0f3; }
   #first-post .country-code {
     position: absolute;
-    top: 46%;
+    top: 43%;
     line-height: 0;
     left: -3%;
     right: -3%;
@@ -1510,7 +1526,7 @@ table {
   text-align: center;
   background: #f7f2ea; }
   #destinations h5 {
-    font-family: "leaguegothic", sans-serif;
+    font-family: "leaguegothic", "impact", sans-serif;
     font-size: 12vw;
     color: #fcc30f;
     margin-bottom: 4.16%;
@@ -1521,19 +1537,22 @@ table {
         font-size: 60px; } }
   #destinations li {
     vertical-align: middle;
-    margin-bottom: 30px; }
+    margin: 20px 20px; }
     #destinations li a {
+      text-transform: uppercase;
       font-size: 18px;
-      padding: 30px; }
+      padding: 10px 6px 10px 11px; }
 
-#about .cta {
-  margin-top: 4.16%;
-  border-color: #fcc30f; }
-  #about .cta:after {
-    content: '👌'; }
-  @media only screen and (max-width: 767px) {
-    #about .cta {
-      margin-top: 30px; } }
+#about {
+  padding-bottom: 30px; }
+  #about .cta {
+    margin-top: 4.16%;
+    border-color: #fcc30f; }
+    #about .cta:after {
+      content: '👌'; }
+    @media only screen and (max-width: 767px) {
+      #about .cta {
+        margin-top: 30px; } }
 
 #article {
   overflow: hidden; }
@@ -1756,28 +1775,20 @@ table {
   background-color: #fcc30f; }
 
 h1 {
-  font-family: "leaguegothic", sans-serif;
+  font-family: "leaguegothic", "impact", sans-serif;
   color: #3c2626;
   font-size: 100px;
   line-height: 100px;
   text-transform: uppercase; }
   h1 span {
-    padding: 7px 10px;
     font-size: 24px;
-    background: #3c2626;
-    position: absolute;
-    white-space: nowrap;
-    bottom: 6.43vw;
-    margin-bottom: -43px;
-    margin-left: 10px;
-    text-transform: none;
-    line-height: normal; }
+    text-transform: none; }
 
 h2, blockquote {
   font-family: "Montserrat", sans-serif;
   font-size: 3.2vw;
   line-height: 5.25vw;
-  font-weight: 800;
+  font-weight: 600;
   letter-spacing: -0.05em;
   color: #3c2626; }
   @media only screen and (max-width: 767px) {
@@ -1802,7 +1813,7 @@ h4 {
   color: #3c2626; }
 
 h5 {
-  font-family: "leaguegothic-condensed", sans-serif;
+  font-family: "leaguegothic-condensed", "impact", sans-serif;
   font-size: 49vw;
   color: #3c2626;
   -webkit-user-select: none;
@@ -1811,7 +1822,7 @@ h5 {
           user-select: none; }
 
 a {
-  font-family: "leaguegothic", sans-serif;
+  font-family: "leaguegothic", "impact", sans-serif;
   text-decoration: none;
   color: inherit;
   letter-spacing: 0.2em;
@@ -1849,15 +1860,28 @@ a {
         position: absolute; }
 
 .categories {
+  cursor: pointer;
   text-transform: uppercase;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
-          user-select: none; }
+          user-select: none;
+  background-size: 0 4px;
+  -webkit-transition: all 0.45s cubic-bezier(0.4, 0, 0, 1) 0s;
+  transition: all 0.45s cubic-bezier(0.4, 0, 0, 1) 0s;
+  background-repeat: no-repeat;
+  background-image: linear-gradient(45deg, #fcc30f, #fcc30f);
+  background-position: 50% 47%;
+  padding: 15px 4px 15px 7px;
+  left: 28px; }
   .categories img {
-    height: 14px;
-    position: relative;
-    top: 2px; }
+    width: 20px;
+    position: absolute;
+    top: 14px;
+    left: -26px; }
+  .categories:hover {
+    background-size: 100% 4px;
+    color: #3c2626 !important; }
 
 p {
   font-family: "Montserrat", sans-serif;
@@ -2027,22 +2051,17 @@ li {
     margin: 0;
     padding: 0; }
   .menu-principal-container li {
-    margin: 0 10px 0 0;
+    margin: 10px 0 0 20px;
     padding: 0;
     float: left;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.4em; }
   .menu-principal-container a {
-    padding: 12px 11px 12px 15px;
-    border: 1px solid #3c2626;
-    font-size: 12px;
-    text-decoration: none;
-    display: block;
-    line-height: 1; }
-    .menu-principal-container a:hover {
-      background: #3c2626;
-      color: #ffffff; }
+    padding: 12px 6px 12px 10px;
+    color: #3c2626;
+    cursor: pointer;
+    display: block; }
   .menu-principal-container span {
     font-family: "Montserrat", sans-serif;
     font-weight: 700;
@@ -2105,7 +2124,7 @@ li {
 .post-article a .image .image_thumbnail--hover {
   background: #f7f2ea; }
 
-.post-article h1 span {
+.post-article #first-post-texte h1 span {
   background: #e0ad86; }
 
 .post-guide a .cta {
@@ -2119,6 +2138,7 @@ li {
   background: #e5ede1; }
 
 .post {
+  cursor: pointer;
   display: inline-block;
   float: none;
   vertical-align: top;
@@ -2132,6 +2152,10 @@ li {
     width: 85%;
     font-size: 30px;
     line-height: normal; }
+    .post h1 span {
+      font-size: 20px;
+      position: relative;
+      display: block; }
     @media only screen and (max-width: 767px) {
       .post h1 {
         width: 100%; } }
@@ -2150,7 +2174,9 @@ li {
     right: 10px;
     opacity: 0;
     -webkit-transition: all 0.45s cubic-bezier(0.4, 0, 0, 1);
-    transition: all 0.45s cubic-bezier(0.4, 0, 0, 1); }
+    transition: all 0.45s cubic-bezier(0.4, 0, 0, 1);
+    -webkit-transition-delay: 0.20s;
+            transition-delay: 0.20s; }
     .post .image_thumbnail--hover .country-code {
       position: absolute;
       left: -10%;
@@ -2158,17 +2184,15 @@ li {
       top: 50%;
       bottom: 1vw;
       line-height: 0;
-      text-align: left;
-      margin-top: 200px;
-      opacity: 0;
-      -webkit-transform: rotate(30deg);
-              transform: rotate(30deg);
-      -webkit-transition: all 0.45s cubic-bezier(0.4, 0, 0, 1);
-      transition: all 0.45s cubic-bezier(0.4, 0, 0, 1);
-      -webkit-transition-delay: 0.15s;
-              transition-delay: 0.15s; }
+      text-align: left; }
       .post .image_thumbnail--hover .country-code h5 {
-        font-size: 14vw;
+        -webkit-transform: rotate(30deg);
+                transform: rotate(30deg);
+        -webkit-transition: all 0.45s cubic-bezier(0.4, 0, 0, 1);
+        transition: all 0.45s cubic-bezier(0.4, 0, 0, 1);
+        -webkit-transition-delay: 0.15s;
+                transition-delay: 0.15s;
+        font-size: 24vw;
         letter-spacing: 0;
         opacity: 0.15; }
     .post .image_thumbnail--hover .label {
@@ -2176,48 +2200,44 @@ li {
       top: 0;
       bottom: 65%;
       left: 0;
-      right: 66%;
-      margin-left: -200px;
-      opacity: 0;
-      -webkit-transform: rotate(0deg);
-              transform: rotate(0deg);
-      -webkit-transition: all 0.45s cubic-bezier(0.4, 0, 0, 1);
-      transition: all 0.45s cubic-bezier(0.4, 0, 0, 1);
-      -webkit-transition-delay: 0.15s;
-              transition-delay: 0.15s; }
+      right: 66%; }
       .post .image_thumbnail--hover .label img {
-        width: 100px;
+        -webkit-transform: rotate(0deg);
+                transform: rotate(0deg);
+        -webkit-transition: all 0.45s cubic-bezier(0.4, 0, 0, 1);
+        transition: all 0.45s cubic-bezier(0.4, 0, 0, 1);
+        -webkit-transition-delay: 0.15s;
+                transition-delay: 0.15s;
+        width: 200px;
         opacity: 0.5; }
     .post .image_thumbnail--hover .date {
       position: absolute;
       top: 10%;
-      bottom: 65%;
+      bottom: 75%;
       left: 25%;
-      right: 10%;
-      margin-left: 200px;
-      opacity: 0;
-      -webkit-transform: rotate(0deg);
-              transform: rotate(0deg);
-      -webkit-transition: all 0.45s cubic-bezier(0.4, 0, 0, 1);
-      transition: all 0.45s cubic-bezier(0.4, 0, 0, 1);
-      -webkit-transition-delay: 0.15s;
-              transition-delay: 0.15s; }
+      right: 10%; }
       .post .image_thumbnail--hover .date h5 {
-        font-size: 20px;
+        -webkit-transform: rotate(0deg);
+                transform: rotate(0deg);
+        -webkit-transition: all 0.45s cubic-bezier(0.4, 0, 0, 1);
+        transition: all 0.45s cubic-bezier(0.4, 0, 0, 1);
+        -webkit-transition-delay: 0.15s;
+                transition-delay: 0.15s;
+        font-size: 60px;
         opacity: 1;
         opacity: 0.75; }
     .post .image_thumbnail--hover .table-cell {
       font-size: 72px;
       line-height: 0;
-      position: relative; }
+      position: relative;
+      z-index: 2; }
     .post .image_thumbnail--hover h5 {
       padding-right: 0;
       letter-spacing: 0; }
   .post .categories {
-    display: block;
     position: relative;
-    height: 0;
-    top: 35px; }
+    float: left;
+    top: 15px; }
   .post h4 {
     display: block;
     padding-top: 15px;
@@ -2230,26 +2250,24 @@ li {
     display: block; }
   .post:hover .image_thumbnail--hover {
     opacity: 1;
-    margin-top: 0;
     top: 10px;
     bottom: 10px;
     left: 10px;
-    right: 10px; }
-    .post:hover .image_thumbnail--hover .label {
+    right: 10px;
+    -webkit-transition-delay: 0s;
+            transition-delay: 0s; }
+    .post:hover .image_thumbnail--hover .label img {
       -webkit-transform: rotate(0deg);
               transform: rotate(0deg);
-      margin-left: 0;
-      opacity: 1; }
-    .post:hover .image_thumbnail--hover .country-code {
+      width: 100px; }
+    .post:hover .image_thumbnail--hover .country-code h5 {
+      font-size: 14vw;
       -webkit-transform: rotate(0deg);
-              transform: rotate(0deg);
-      margin-top: 0;
-      opacity: 1; }
-    .post:hover .image_thumbnail--hover .date {
+              transform: rotate(0deg); }
+    .post:hover .image_thumbnail--hover .date h5 {
+      font-size: 30px;
       -webkit-transform: rotate(0deg);
-              transform: rotate(0deg);
-      margin-left: 0;
-      opacity: 1; }
+              transform: rotate(0deg); }
 
 .deux-tiers--container .deux-tiers {
   clear: both;
@@ -2259,7 +2277,7 @@ li {
     margin-bottom: 2.5%;
     margin-top: -2.5%; }
     .deux-tiers--container .deux-tiers__chapter h3 em {
-      font-family: "leaguegothic", sans-serif;
+      font-family: "leaguegothic", "impact", sans-serif;
       color: #3c2626;
       text-transform: uppercase;
       letter-spacing: 0.4em;
@@ -2294,7 +2312,7 @@ li {
       display: table-cell;
       vertical-align: middle; }
       .un-tiers--container .un-tiers__text .title-content h5 {
-        font-family: "leaguegothic", sans-serif;
+        font-family: "leaguegothic", "impact", sans-serif;
         text-transform: uppercase;
         font-size: 14px;
         letter-spacing: 0.4em;
@@ -2373,7 +2391,7 @@ li {
 .fn {
   float: left;
   padding-left: 15px;
-  font-family: "Cormorant", serif;
+  font-family: "leaguegothic", "impact", sans-serif;
   font-size: 12px;
   line-height: 20px;
   font-weight: 800;
@@ -2395,12 +2413,11 @@ li {
     color: #3c2626;
     font-weight: 400;
     font-size: 12px;
-    font-family: "Cormorant", serif; }
+    font-family: "leaguegothic", "impact", sans-serif; }
   .comment-meta a {
     color: #3c2626;
     font-weight: 400;
-    font-size: 12px;
-    font-family: "Cormorant", serif; }
+    font-size: 12px; }
 
 .reply {
   margin-left: 65px;
@@ -2409,8 +2426,7 @@ li {
   .reply a {
     color: #3c2626;
     font-weight: 800;
-    font-size: 12px;
-    font-family: "Cormorant", serif; }
+    font-size: 12px; }
 
 #reply-title a {
   color: inherit;

@@ -4,11 +4,7 @@ Template Name: Homepage
 */
 ?>
 <?php get_header(); ?>
-<style>
-.page_item a, .menu-item a{
-    color: #000000;
-}
-</style>
+
 <div id="home-posts" class="overflow col-xs-48">
     <div class="col-xs-48 col-xs-push-0 col-md-push-3">
         <?php
@@ -39,10 +35,7 @@ Template Name: Homepage
                                     }
                                 ?>
 
-                                <a class="categories" href="<?php echo $term_url; ?>">
-                                    <img src="<?php echo $flag_url;?>" alt="<?php echo $flag['alt'];?>"/ >
-                                    <?php echo $term_name; ?> <span> - Guide</span>
-                                </a>
+                                <a class="categories" href="<?php echo $term_url; ?>"><img src="<?php echo $flag_url;?>" alt="<?php echo $flag['alt'];?>"/ ><?php echo $term_name; ?> <span> - Guide</span></a>
                                     
                     <?php else: ?>
                         <div class="post post-article col-xs-pull-0 col-xs-48 col-md-pull-3">
@@ -58,10 +51,7 @@ Template Name: Homepage
                                         $term_name = $term->name;
                                     }
                                 ?>
-                                <a class="categories" href="<?php echo $term_url; ?>">
-                                    <img src="<?php echo $flag_url;?>" alt="<?php echo $flag['alt'];?>"/ >
-                                    <?php echo $term_name; ?>
-                                </a>
+                                <a class="categories" href="<?php echo $term_url; ?>"><img src="<?php echo $flag_url;?>" alt="<?php echo $flag['alt'];?>"/ ><?php echo $term_name; ?></a>
                     <?php endif; ?>
                                 <h1><?php the_title(); ?><?php if(!empty(get_field('subtitle'))){echo '<span>' . get_field('subtitle') . '</span>';}?></h1>
                                 <h4><?php echo get_field('summary'); ?></h4>
@@ -107,7 +97,7 @@ Template Name: Homepage
             $category_link = get_category_link( $category );
     ?>
     <li>
-            <a href="<?php echo esc_url( $category_link ); ?>"> <?php echo $category->name; ?></a>
+            <a class="categories" href="<?php echo esc_url( $category_link ); ?>"> <?php echo $category->name; ?></a>
     </li>
     <?php } ?>
 </div>

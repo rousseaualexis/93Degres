@@ -26,7 +26,8 @@
             'echo'        => true,
             'show_home'   => false,
             'link_before' => '',
-            'link_after'  => ''
+            'link_after'  => '',
+            'link_class'  => 'categories'
             );
             wp_nav_menu( $args ); ?>
     </div>

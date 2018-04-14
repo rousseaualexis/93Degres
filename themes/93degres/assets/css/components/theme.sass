@@ -9,22 +9,14 @@ h1
 	text-transform: uppercase
 
 	span
-		padding: 7px 10px;
-		font-size: 24px;
-		background: $color-dark
-		position: absolute
-		white-space: nowrap
-		bottom: 6.43vw
-		margin-bottom: -43px
-		margin-left: 10px
+		font-size: 24px
 		text-transform: none
-		line-height: normal
 
 h2, blockquote 
 	font-family: $montserrat
 	font-size: 3.2vw
 	line-height: 5.25vw
-	font-weight: 800
+	font-weight: 600
 	letter-spacing: -0.05em
 	color: $color-dark
 
@@ -93,13 +85,27 @@ a
 				position: absolute
 	
 .categories
+	cursor: pointer
 	text-transform: uppercase
 	user-select: none
+	background-size: 0 4px
+	transition: all .45s cubic-bezier(.4,0,0,1) 0s
+	background-repeat: no-repeat
+	background-image: linear-gradient(45deg, $color-93degres, $color-93degres )
+	background-position: 50% 47%
+	padding: 15px 4px 15px 7px
+	left: 28px
 
 	img 
-		height: 14px
-		position: relative
-		top: 2px	
+		width: 20px
+		position: absolute
+		top: 14px
+		left: -26px
+	
+	&:hover 
+		background-size: 100% 4px
+		color: $color-dark !important
+
 
 p 
 	font-family: $montserrat
