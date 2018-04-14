@@ -497,3 +497,11 @@ function jdn_post_type_terms_clauses( $clauses, $taxonomy, $args ) {
  }
  return $clauses;
 }
+
+
+
+function add_menuclass ($ulcalss) {
+    return preg_replace('/<a /', '<a class="categories ', $ulcalss);
+}
+
+add_filter ('wp_nav_menu', 'add_menuclass');
