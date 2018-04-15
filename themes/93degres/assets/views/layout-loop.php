@@ -3,17 +3,6 @@
     <?php
         if( have_rows('layout') ):
             while ( have_rows('layout') ) : the_row();
-                if( get_row_layout() == 'deux_tiers' ):
-                    if (have_rows('deux_tiers')) :  
-                        echo '<div class="deux-tiers--container col-md-26 col-md-offset-4">';
-                        while (have_rows('deux_tiers')): the_row();
-                            $template = get_sub_field('bloc');
-                            get_template_part('assets/views/template-parts/deuxtiers', $template);
-                        endwhile;
-                        echo '</div>';
-                    endif;
-                endif;
-                
                 if( get_row_layout() == 'deux_tiers_un_tiers' ):
                     echo '<div class="deux-tiers--un-tiers col-xs-48">';
                     if (have_rows('deux_tiers')) :
