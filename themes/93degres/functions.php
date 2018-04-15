@@ -13,10 +13,10 @@ function startwordpress_google_fonts() {
                 //wp_enqueue_style( 'Lora');
                 //wp_register_style('NunitoSans', 'https://fonts.googleapis.com/css?family=Nunito+Sans:400,400i,700,700i');
                 //wp_enqueue_style( 'NunitoSans');
-                wp_register_style('Montserrat', 'https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,700i');
+                wp_register_style('Montserrat', 'https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,700i,900');
                 wp_enqueue_style( 'Montserrat');
-                wp_register_style('Cormorant', 'https://fonts.googleapis.com/css?family=Cormorant+Garamond:300,400,400i,600,600i');
-                wp_enqueue_style( 'Cormorant');
+                //wp_register_style('Cormorant', 'https://fonts.googleapis.com/css?family=Cormorant+Garamond:300,400,400i,600,600i');
+                //wp_enqueue_style( 'Cormorant');
         }
 
 add_action('wp_print_styles', 'startwordpress_google_fonts');
@@ -26,41 +26,117 @@ add_action('wp_print_styles', 'startwordpress_google_fonts');
 add_theme_support( 'title-tag' );
 
 
+function remove_menus(){
+  //remove_menu_page( 'edit.php');                   //Posts  
+}
+add_action( 'admin_menu', 'remove_menus' );
+
+add_action( 'admin_bar_menu', 'remove_default_post_type_menu_bar', 999 );
+
+function remove_default_post_type_menu_bar( $wp_admin_bar ) {
+    $wp_admin_bar->remove_node( 'new-post' );
+}
+
+add_action( 'wp_dashboard_setup', 'remove_draft_widget', 999 );
+
+function remove_draft_widget(){
+    remove_meta_box( 'dashboard_quick_press', 'dashboard', 'side' );
+}
+
+
 
 add_action('init', 'my_custom_init');
 function my_custom_init()
 {
 register_post_type(
-  'travelguide',
+  'carnets',
   array(
-    'label' => 'Travel Guides',
+    'label' => 'carnet',
     'labels' => array(
-      'name' => 'Travel Guides',
-      'singular_name' => 'Travel Guide',
-      'all_items' => 'Tous les Travel Guides',
-      'add_new_item' => 'Ajouter un Travel Guide',
-      'edit_item' => 'Éditer le Travel Guide',
-      'new_item' => 'Nouveau Travel Guide',
-      'view_item' => 'Voir le Travel Guide',
-      'search_items' => 'Rechercher parmi les Travel Guides',
-      'not_found' => 'Pas de Travel Guide trouvé',
-      'not_found_in_trash'=> 'Pas de Travel Guide dans la corbeille'
+      'name' => 'Articles',
+      'singular_name' => 'Article',
+      'all_items' => 'Tous les Articles',
+      'add_new_item' => 'Ajouter un Article',
+      'edit_item' => 'Éditer le Article',
+      'new_item' => 'Nouveau Article',
+      'view_item' => 'Voir le Article',
+      'search_items' => 'Rechercher parmi les Article',
+      'not_found' => 'Pas de Article trouvé',
+      'not_found_in_trash'=> 'Pas de Article dans la corbeille'
       ),
     'public' => true,
     'capability_type' => 'post',
     'supports' => array(
-      'title'
+      'title', 'comments'
     ),
     'has_archive' => true,
-      'taxonomies' => array('category')
+      'taxonomies' => array('category'),
+    'menu_position' => 4,
+    'rewrite' => array(
+        'slug' => 'carnets-de-voyage')
+  )
+);
+
+register_post_type(
+  'guides',
+  array(
+    'label' => 'Guides',
+    'labels' => array(
+      'name' => 'Guides',
+      'singular_name' => 'Guide',
+      'all_items' => 'Tous les Guides',
+      'add_new_item' => 'Ajouter un Guide',
+      'edit_item' => 'Éditer le Guide',
+      'new_item' => 'Nouveau Guide',
+      'view_item' => 'Voir le Guide',
+      'search_items' => 'Rechercher parmi les Guides',
+      'not_found' => 'Pas de Guide trouvé',
+      'not_found_in_trash'=> 'Pas de Guide dans la corbeille'
+      ),
+    'public' => true,
+    'capability_type' => 'post',
+    'supports' => array(
+      'title', 'comments'
+    ),
+    'has_archive' => true,
+      'taxonomies' => array('category'),
+    'menu_position' => 4,
+    'rewrite' => array(
+        'slug' => 'nos-petites-adresses')
+  )
+);
+
+register_post_type(
+  'conseils',
+  array(
+    'label' => 'Conseil',
+    'labels' => array(
+      'name' => 'Conseil',
+      'singular_name' => 'Conseil',
+      'all_items' => 'Tous les Conseils',
+      'add_new_item' => 'Ajouter un Conseil',
+      'edit_item' => 'Éditer  le Conseil',
+      'new_item' => 'Nouveau Conseil',
+      'view_item' => 'Voir le Conseil',
+      'search_items' => 'Rechercher parmi les Conseil',
+      'not_found' => 'Pas de Conseil trouvé',
+      'not_found_in_trash'=> 'Pas de Conseil dans la corbeille'
+      ),
+    'public' => true,
+    'capability_type' => 'post',
+    'supports' => array(
+      'title', 'comments'
+    ),
+    'has_archive' => true,
+    'taxonomies' => array('category'),
+    'menu_position' => 5,
+    'rewrite' => array(
+        'slug' => 'nos-conseils')
   )
 );
     
 
 }
-
-
-
 
 function wp_list_categories_for_post_type($post_type, $args = '') {
     $exclude = array();
@@ -85,15 +161,7 @@ function wp_list_categories_for_post_type($post_type, $args = '') {
     wp_list_categories($args);
 }
 
-// ADD COMMMENT
-function default_comments_on( $data ) {
-    if( $data['post_type'] == 'travelguide' ) {
-        $data['comment_status'] = 'open';
-    }
 
-    return $data;
-}
-add_filter( 'wp_insert_post_data', 'default_comments_on' );
 
 function improved_trim_excerpt($text) {
     global $post;
@@ -136,18 +204,6 @@ function tiny_mce_remove_unused_formats($init) {
     // Add block format elements you want to show in dropdown
     $init['block_formats'] = 'Paragraph=p;Heading 1=h1;Heading 2=h2;Heading 3=h3;Heading 4=h4;Heading 5=h5;Heading 6=h6;Address=address;Pre=pre';
     return $init;
-}
-
-
-
-function the_field_without_wpautop( $field_name ) {
-    
-    remove_filter('acf_the_content', 'wpautop');
-    
-    the_field( $field_name );
-    
-    add_filter('acf_the_content', 'wpautop');
-    
 }
 
 
@@ -452,7 +508,7 @@ function pressPagination($pages = '', $range = 2)
 function custom_post_type_cat_filter($query) {
   if ( !is_admin() && $query->is_main_query() ) {
     if ($query->is_category()) {
-      $query->set( 'post_type', array( 'post', 'travelguide' ) );
+      $query->set( 'post_type', array( 'carnets', 'guides', 'conseils' ) );
     }
   }
 }
@@ -499,9 +555,3 @@ function jdn_post_type_terms_clauses( $clauses, $taxonomy, $args ) {
 }
 
 
-
-function add_menuclass ($ulcalss) {
-    return preg_replace('/<a /', '<a class="categories ', $ulcalss);
-}
-
-add_filter ('wp_nav_menu', 'add_menuclass');

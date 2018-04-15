@@ -1,10 +1,10 @@
-#article 
+#article
 	overflow: hidden
 	
 	.country-code h5, .categories, .date h5, .deux-tiers__chapter h3, .title-content h5
 		color: $color-article-dark
 
-	#introduction, #realated, .un-tiers__text
+	#introduction, #realated, .un-tiers__text, .deux-tiers__aside
 		background: $color-article-light
 
 	#layout
@@ -15,11 +15,48 @@
 				&:first-letter
 					color: $color-article-dark
 
+#guide
+	overflow: hidden
+	
+	.country-code h5, .categories, .date h5, .deux-tiers__chapter h3, .title-content h5
+		color: $color-guide-dark
 
-#article, #guide
-	h1
-		+media-sm-and-less
-			font-size: 45px
+	#introduction, #realated, .un-tiers__text, .deux-tiers__aside
+		background: $color-guide-light
+
+	#layout
+
+		.deux-tiers__chapter ~ .deux-tiers__paragraph
+
+			&:first-of-type
+				&:first-letter
+					color: $color-guide-dark
+
+#conseil
+	overflow: hidden
+	
+	.country-code h5, .categories, .date h5, .deux-tiers__chapter h3, .title-content h5
+		color: $color-conseil-dark
+
+	#introduction, #realated, .un-tiers__text, .deux-tiers__aside
+		background: $color-conseil-light
+
+	#layout
+
+		.deux-tiers__chapter ~ .deux-tiers__paragraph
+
+			&:first-of-type
+				&:first-letter
+					color: $color-conseil-dark
+
+
+#article, #guide, #conseil
+
+	#introduction
+
+		h1
+			+media-sm-and-less
+				font-size: 45px
 
 #introduction
 	text-align: center
@@ -32,8 +69,11 @@
 	&-title
 		padding-bottom: 4.16%
 
-		.categories 
+		.categories
+			display: inline-block
+			position: relative
 			margin-bottom: 30px
+			left: 15px
 			z-index: 2
 
 		.randomize 
@@ -41,6 +81,12 @@
 	h1
 		width: 100%
 		float: left
+		position: relative
+		z-index: 1
+
+		span
+			display: inherit
+			margin-top: 30px
 
 	h3 
 		font-size: 20px
@@ -99,8 +145,8 @@
 		z-index: 0
 
 		h5	
-			font-size: 20px
-			opacity: 1
+			font-size: 30px
+			letter-spacing: 0.2em
 			opacity: 0.75	
 
 	&__thumbnail
@@ -117,9 +163,8 @@
 		&:first-of-type
 			&:first-letter
 				float: left
-				font-weight: 800
+				font-weight: 900
 				font-size: 4em
-				color: #000099
 				margin-top: 7px
 				margin-right: 0.20em
 				line-height: 90%

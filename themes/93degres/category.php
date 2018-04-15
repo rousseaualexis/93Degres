@@ -96,7 +96,7 @@ $term = get_queried_object();
                 else{
                     $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
                     $title = get_the_archive_title();
-                    $args = array('post_type'=> array('post' , 'travelguide'),
+                    $args = array('post_type'=> array('post' , 'guides', 'conseils'),
                                   'category_name' => $title,
                                   'paged' => $paged );
                     $wp_query = new WP_Query($args);       

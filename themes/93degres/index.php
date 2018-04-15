@@ -9,7 +9,7 @@ Template Name: Homepage
     <div class="col-xs-48 col-xs-push-0 col-md-push-3">
         <?php
             $args = array(
-                'post_type' => array('travelguide', 'post'),
+                'post_type' => array('conseils', 'guides', 'carnets'),
                 'posts_per_page' => 4
             );
             $myquery = new WP_Query( $args );
@@ -20,7 +20,7 @@ Template Name: Homepage
                     if($count == 1) :
         ?>
         <div id="first-post">
-                    <?php if('travelguide' === get_post_type()): ?>
+                    <?php if('guides' === get_post_type()): ?>
                         <div class="post post-guide col-xs-pull-0 col-xs-48 col-md-pull-3">
                             <div id="first-post-texte" class="col-xs-42 col-xs-pull-0 col-xs-offset-3 col-md-push-6 col-md-offset-0 col-md-20">
                                 <?php
@@ -36,8 +36,24 @@ Template Name: Homepage
                                 ?>
 
                                 <a class="categories" href="<?php echo $term_url; ?>"><img src="<?php echo $flag_url;?>" alt="<?php echo $flag['alt'];?>"/ ><?php echo $term_name; ?> <span> - Guide</span></a>
+                    <?php elseif('conseils' === get_post_type()): ?>
+                        <div class="post post-conseil col-xs-pull-0 col-xs-48 col-md-pull-3">
+                            <div id="first-post-texte" class="col-xs-42 col-xs-pull-0 col-xs-offset-3 col-md-push-6 col-md-offset-0 col-md-20">
+                                <?php
+                                    $id = get_the_id();
+                                    $terms = get_the_terms( $id, 'category' );
+                                    foreach($terms as $term) {
+                                        $destination_code = get_field('destination_code', $term);
+                                        $flag = get_field('flag', $term);
+                                        $flag_url = $flag['sizes']['thumbnail'];
+                                        $term_url = get_term_link($term);
+                                        $term_name = $term->name;
+                                    }
+                                ?>
+
+                                <a class="categories" href="<?php echo $term_url; ?>"><img src="<?php echo $flag_url;?>" alt="<?php echo $flag['alt'];?>"/ ><?php echo $term_name; ?> <span> - Guide</span></a>
                                     
-                    <?php else: ?>
+                    <?php elseif('carnets' === get_post_type()):  ?>
                         <div class="post post-article col-xs-pull-0 col-xs-48 col-md-pull-3">
                             <div id="first-post-texte" class="col-xs-42 col-xs-pull-0 col-xs-offset-3 col-md-push-6 col-md-offset-0 col-md-20">
                                 <?php

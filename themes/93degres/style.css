@@ -1426,9 +1426,6 @@ table {
   font-weight: normal;
   font-style: normal; }
 
-#first-post .post-article h1 span {
-  background: #3c2626; }
-
 @media only screen and (max-width: 767px) {
   #home-posts {
     margin-top: 100px; } }
@@ -1505,7 +1502,7 @@ table {
       background: #f7f2ea; }
     #first-post .post-guide {
       background: #e5ede1; }
-    #first-post .post-advice {
+    #first-post .post-conseil {
       background: #e8f0f3; }
   #first-post .country-code {
     position: absolute;
@@ -1558,13 +1555,31 @@ table {
   overflow: hidden; }
   #article .country-code h5, #article .categories, #article .date h5, #article .deux-tiers__chapter h3, #article .title-content h5 {
     color: #e0ad86; }
-  #article #introduction, #article #realated, #article .un-tiers__text {
+  #article #introduction, #article #realated, #article .un-tiers__text, #article .deux-tiers__aside {
     background: #f7f2ea; }
   #article #layout .deux-tiers__chapter ~ .deux-tiers__paragraph:first-of-type:first-letter {
     color: #e0ad86; }
 
+#guide {
+  overflow: hidden; }
+  #guide .country-code h5, #guide .categories, #guide .date h5, #guide .deux-tiers__chapter h3, #guide .title-content h5 {
+    color: #708555; }
+  #guide #introduction, #guide #realated, #guide .un-tiers__text, #guide .deux-tiers__aside {
+    background: #e5ede1; }
+  #guide #layout .deux-tiers__chapter ~ .deux-tiers__paragraph:first-of-type:first-letter {
+    color: #708555; }
+
+#conseil {
+  overflow: hidden; }
+  #conseil .country-code h5, #conseil .categories, #conseil .date h5, #conseil .deux-tiers__chapter h3, #conseil .title-content h5 {
+    color: #0080ff; }
+  #conseil #introduction, #conseil #realated, #conseil .un-tiers__text, #conseil .deux-tiers__aside {
+    background: #e8f0f3; }
+  #conseil #layout .deux-tiers__chapter ~ .deux-tiers__paragraph:first-of-type:first-letter {
+    color: #0080ff; }
+
 @media only screen and (max-width: 767px) {
-  #article h1, #guide h1 {
+  #article #introduction h1, #guide #introduction h1, #conseil #introduction h1 {
     font-size: 45px; } }
 
 #introduction {
@@ -1577,13 +1592,21 @@ table {
   #introduction-title {
     padding-bottom: 4.16%; }
     #introduction-title .categories {
+      display: inline-block;
+      position: relative;
       margin-bottom: 30px;
+      left: 15px;
       z-index: 2; }
     #introduction-title .randomize {
       z-index: -2; }
   #introduction h1 {
     width: 100%;
-    float: left; }
+    float: left;
+    position: relative;
+    z-index: 1; }
+    #introduction h1 span {
+      display: inherit;
+      margin-top: 30px; }
   #introduction h3 {
     font-size: 20px;
     line-height: 40px;
@@ -1635,8 +1658,8 @@ table {
     right: 40%;
     z-index: 0; }
     #introduction .date h5 {
-      font-size: 20px;
-      opacity: 1;
+      font-size: 30px;
+      letter-spacing: 0.2em;
       opacity: 0.75; }
   #introduction__thumbnail {
     padding-bottom: 4.16%; }
@@ -1645,9 +1668,8 @@ table {
 
 #layout .deux-tiers__chapter ~ .deux-tiers__paragraph:first-of-type:first-letter {
   float: left;
-  font-weight: 800;
+  font-weight: 900;
   font-size: 4em;
-  color: #000099;
   margin-top: 7px;
   margin-right: 0.20em;
   line-height: 90%; }
@@ -1782,7 +1804,8 @@ h1 {
   text-transform: uppercase; }
   h1 span {
     font-size: 24px;
-    text-transform: none; }
+    text-transform: none;
+    line-height: initial; }
 
 h2, blockquote {
   font-family: "Montserrat", sans-serif;
@@ -1805,11 +1828,11 @@ h3 {
   color: #3c2626; }
 
 h4 {
-  font-family: "Montserrat", sans-serif;
+  font-family: "leaguegothic", "impact", sans-serif;
   font-size: 14px;
+  text-transform: uppercase;
   line-height: 28px;
-  font-style: italic;
-  letter-spacing: -0.03em;
+  letter-spacing: 0.2em;
   color: #3c2626; }
 
 h5 {
@@ -2005,6 +2028,7 @@ li {
     #list-sous-cat a:hover {
       background-size: 100% 5px; }
   #list-sous-cat span {
+    font-family: "leaguegothic", "impact", sans-serif;
     color: #3c2626;
     font-weight: 600;
     text-transform: uppercase;
@@ -2137,10 +2161,26 @@ li {
 .post-guide a .image .image_thumbnail--hover {
   background: #e5ede1; }
 
+.post-guide #first-post-texte h1 span {
+  background: #708555; }
+
+.post-conseil a .cta {
+  color: #0080ff;
+  border-color: #0080ff; }
+
+.post-conseil .country-code h5, .post-conseil .categories, .post-conseil .date h5 {
+  color: #0080ff; }
+
+.post-conseil a .image .image_thumbnail--hover {
+  background: #e8f0f3; }
+
+.post-conseil #first-post-texte h1 span {
+  background: #0080ff; }
+
 .post {
   cursor: pointer;
   display: inline-block;
-  float: none;
+  float: left;
   vertical-align: top;
   margin-bottom: 6.25%;
   z-index: 1; }
@@ -2151,7 +2191,9 @@ li {
     padding-top: 60px;
     width: 85%;
     font-size: 30px;
-    line-height: normal; }
+    line-height: normal;
+    margin-top: -15px;
+    position: relative; }
     .post h1 span {
       font-size: 20px;
       position: relative;
@@ -2175,8 +2217,8 @@ li {
     opacity: 0;
     -webkit-transition: all 0.45s cubic-bezier(0.4, 0, 0, 1);
     transition: all 0.45s cubic-bezier(0.4, 0, 0, 1);
-    -webkit-transition-delay: 0.20s;
-            transition-delay: 0.20s; }
+    -webkit-transition-delay: 0.1s;
+            transition-delay: 0.1s; }
     .post .image_thumbnail--hover .country-code {
       position: absolute;
       left: -10%;
@@ -2190,8 +2232,8 @@ li {
                 transform: rotate(30deg);
         -webkit-transition: all 0.45s cubic-bezier(0.4, 0, 0, 1);
         transition: all 0.45s cubic-bezier(0.4, 0, 0, 1);
-        -webkit-transition-delay: 0.15s;
-                transition-delay: 0.15s;
+        -webkit-transition-delay: 0.05s;
+                transition-delay: 0.05s;
         font-size: 24vw;
         letter-spacing: 0;
         opacity: 0.15; }
@@ -2206,8 +2248,8 @@ li {
                 transform: rotate(0deg);
         -webkit-transition: all 0.45s cubic-bezier(0.4, 0, 0, 1);
         transition: all 0.45s cubic-bezier(0.4, 0, 0, 1);
-        -webkit-transition-delay: 0.15s;
-                transition-delay: 0.15s;
+        -webkit-transition-delay: 0.05s;
+                transition-delay: 0.05s;
         width: 200px;
         opacity: 0.5; }
     .post .image_thumbnail--hover .date {
@@ -2221,8 +2263,8 @@ li {
                 transform: rotate(0deg);
         -webkit-transition: all 0.45s cubic-bezier(0.4, 0, 0, 1);
         transition: all 0.45s cubic-bezier(0.4, 0, 0, 1);
-        -webkit-transition-delay: 0.15s;
-                transition-delay: 0.15s;
+        -webkit-transition-delay: 0.05s;
+                transition-delay: 0.05s;
         font-size: 60px;
         opacity: 1;
         opacity: 0.75; }
@@ -2236,15 +2278,17 @@ li {
       letter-spacing: 0; }
   .post .categories {
     position: relative;
-    float: left;
-    top: 15px; }
-  .post h4 {
+    margin: auto;
+    top: 25px;
+    z-index: 2; }
+  .post p {
     display: block;
+    font-style: italic;
     padding-top: 15px;
     padding-bottom: 20px;
     width: 85%; }
     @media only screen and (max-width: 767px) {
-      .post h4 {
+      .post p {
         width: 100%; } }
   .post h5 {
     display: block; }
@@ -2273,18 +2317,22 @@ li {
   clear: both;
   margin-bottom: 8.33%;
   float: left; }
+  @media only screen and (max-width: 767px) {
+    .deux-tiers--container .deux-tiers {
+      margin-bottom: 0; } }
   .deux-tiers--container .deux-tiers__chapter {
-    margin-bottom: 2.5%;
-    margin-top: -2.5%; }
-    .deux-tiers--container .deux-tiers__chapter h3 em {
-      font-family: "leaguegothic", "impact", sans-serif;
-      color: #3c2626;
-      text-transform: uppercase;
-      letter-spacing: 0.4em;
-      font-size: 14px;
-      font-style: normal; }
+    margin-bottom: 2.5%; }
+  @media only screen and (max-width: 767px) {
+    .deux-tiers--container .deux-tiers__one-image, .deux-tiers--container .deux-tiers__two-image {
+      margin-bottom: 8.33%; } }
   .deux-tiers--container .deux-tiers__one-image img, .deux-tiers--container .deux-tiers__two-image img {
     width: 100%; }
+  @media only screen and (max-width: 767px) {
+    .deux-tiers--container .deux-tiers__paragraph {
+      margin-bottom: 8.33%; } }
+  .deux-tiers--container .deux-tiers__aside {
+    padding-top: 8.33%;
+    padding-bottom: 8.33%; }
 
 .un-tiers--container .un-tiers {
   clear: right;
@@ -2311,20 +2359,24 @@ li {
     .un-tiers--container .un-tiers__text .title-content {
       display: table-cell;
       vertical-align: middle; }
-      .un-tiers--container .un-tiers__text .title-content h5 {
-        font-family: "leaguegothic", "impact", sans-serif;
-        text-transform: uppercase;
-        font-size: 14px;
-        letter-spacing: 0.4em;
-        text-align: left; }
   .un-tiers--container .un-tiers__image img {
     width: 100%; }
 
 .full-width--container .full-width {
   margin-bottom: 4.16%;
   float: left; }
+  @media only screen and (max-width: 767px) {
+    .full-width--container .full-width {
+      margin-bottom: 0; } }
   .full-width--container .full-width blockquote {
     padding: 8.33% 0; }
+    @media only screen and (max-width: 767px) {
+      .full-width--container .full-width blockquote {
+        margin-bottom: 8.33%; } }
+
+@media only screen and (max-width: 767px) {
+  .full-width--container .un-tiers__image {
+    margin-bottom: 8.33%; } }
 
 .full-width--container .un-tiers__image img {
   width: 100%; }
@@ -2334,6 +2386,9 @@ li {
   padding-top: 6.25%;
   padding-bottom: 2.25%;
   background: #ffffff; }
+  @media only screen and (max-width: 767px) {
+    #realated {
+      padding-top: 16.66%; } }
   #realated .trait {
     height: 80px;
     width: 2px;
@@ -2348,6 +2403,11 @@ li {
     float: none;
     background: none;
     padding-bottom: 4.16%; }
+    @media only screen and (max-width: 767px) {
+      #realated .title h3 {
+        padding-bottom: 8.33%; } }
+  #realated .post .categories {
+    left: 20px; }
   #realated .post h1 {
     width: 100%; }
   #realated .post h4 {
@@ -2505,9 +2565,9 @@ button:focus {
   font-family: "Montserrat", sans-serif; }
 
 .form-submit input {
-  font-family: "Montserrat", sans-serif;
+  font-family: "leaguegothic", "impact", sans-serif;
+  font-size: 16px;
   border: none;
-  font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.4em;
   color: #ffffff;
