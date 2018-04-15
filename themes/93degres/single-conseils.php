@@ -34,7 +34,7 @@
             </div>
             <h1><?php the_title(); ?><?php if(!empty(get_field('subtitle'))){echo '<br><span>' . get_field('subtitle') . '</span>';}?></h1>
         </div>
-        <h3 class="col-xs-42 col-xs-offset-3 col-md-32 col-md-offset-8"><?php echo strip_tags(get_field('introduction'), '<br><em><strong>');?></h3>
+        <h3 class="col-xs-42 col-xs-offset-3 col-md-32 col-md-offset-8"><?php echo strip_tags(get_field('introduction'), '<br>');?></h3>
      </div>
 
     <div id="introduction__thumbnail" class="col-xs-48">

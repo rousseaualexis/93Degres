@@ -15,6 +15,7 @@
                 endif;
                 
                 if( get_row_layout() == 'deux_tiers_un_tiers' ):
+                    echo '<div class="deux-tiers--un-tiers col-xs-48">';
                     if (have_rows('deux_tiers')) :
                         echo '<div class="deux-tiers--container col-md-26 col-md-offset-4">';
                         while (have_rows('deux_tiers')): the_row();
@@ -32,6 +33,7 @@
                         endwhile;
                         echo '</div>';
                     endif;
+                    echo '</div>';
                 endif;
                 
                 if( get_row_layout() == 'full_width' ):
