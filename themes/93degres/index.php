@@ -13,7 +13,7 @@ Template Name: Homepage
                 'posts_per_page' => 4
             );
             $myquery = new WP_Query( $args );
-            if (have_posts()) :
+            if ($myquery->have_posts()) :
                 $post = $posts[0]; $count=0;
                 while ($myquery->have_posts()) : $myquery->the_post();
                     $count++;
@@ -70,7 +70,7 @@ Template Name: Homepage
                                 <a class="categories" href="<?php echo $term_url; ?>"><img src="<?php echo $flag_url;?>" alt="<?php echo $flag['alt'];?>"/ ><?php echo $term_name; ?></a>
                     <?php endif; ?>
                                 <h1><?php the_title(); ?><?php if(!empty(get_field('subtitle'))){echo '<span>' . get_field('subtitle') . '</span>';}?></h1>
-                                <h4><?php echo get_field('summary'); ?></h4>
+                                <p><?php echo get_field('summary'); ?></p>
                                 <a href="<?php the_permalink(); ?>"><div class="cta">Lire la suite</div>
                                 </a>
                             </div>

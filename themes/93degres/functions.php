@@ -555,3 +555,20 @@ function jdn_post_type_terms_clauses( $clauses, $taxonomy, $args ) {
 }
 
 
+
+defined( 'ABSPATH' ) OR exit;
+/* Plugin Name: TinyMCE break instead of paragraph */
+function mytheme_tinymce_settings( $tinymce_init_settings ) {
+    $tinymce_init_settings['forced_root_block'] = false;
+    return $tinymce_init_settings;
+}
+add_filter( 'tiny_mce_before_init', 'mytheme_tinymce_settings' );
+
+
+remove_filter ( 'the_content', 'wpautop' );
+add_filter ( 'the_content', 'add_newlines_to_post_content' );
+function add_newlines_to_post_content( $content ) {
+    return nl2br( $content );
+}
+
+

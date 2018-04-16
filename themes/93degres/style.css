@@ -1465,7 +1465,7 @@ table {
         #first-post-texte h1 {
           font-size: 40px;
           line-height: normal; } }
-    #first-post-texte h4 {
+    #first-post-texte p {
       width: 55%; }
     #first-post-texte .categories {
       top: initial;
@@ -1838,6 +1838,8 @@ h3 {
   font-style: italic;
   letter-spacing: -0.03em;
   color: #3c2626; }
+  h3 em {
+    font-style: normal; }
 
 h4 {
   font-family: "leaguegothic", "impact", sans-serif;
