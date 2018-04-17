@@ -43,8 +43,19 @@
 					font-size: 40px
 					line-height: normal
 
+			.line-0
+			    
+			    left: -100%
+			    position: relative
+			    transition: all 1.2s cubic-bezier(.4,0,.2,1)
+			    transition-delay: 100ms
+
 			.line-1
+			    left: -100%
+			    position: relative
 			    margin-left: 16.66%
+			    transition: all 1.2s cubic-bezier(.4,0,.2,1)
+			    transition-delay: 300ms
 			    
 			    &:before
 			    	content: ''
@@ -56,8 +67,11 @@
 			    	left: 0%
 
 			.line-2
-
-			    margin-left: 8.33%
+				left: -100%
+				position: relative
+				margin-left: 8.33%
+				transition: all 1.2s cubic-bezier(.4,0,.2,1)
+				transition-delay: 400ms
 
 		p
 			width: 55%

@@ -1465,8 +1465,21 @@ table {
         #first-post-texte #title strong {
           font-size: 40px;
           line-height: normal; } }
+    #first-post-texte #title .line-0 {
+      left: -100%;
+      position: relative;
+      -webkit-transition: all 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+      transition: all 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+      -webkit-transition-delay: 100ms;
+              transition-delay: 100ms; }
     #first-post-texte #title .line-1 {
-      margin-left: 16.66%; }
+      left: -100%;
+      position: relative;
+      margin-left: 16.66%;
+      -webkit-transition: all 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+      transition: all 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+      -webkit-transition-delay: 300ms;
+              transition-delay: 300ms; }
       #first-post-texte #title .line-1:before {
         content: '';
         top: 11.4vw;
@@ -1476,7 +1489,13 @@ table {
         width: 12.5%;
         left: 0%; }
     #first-post-texte #title .line-2 {
-      margin-left: 8.33%; }
+      left: -100%;
+      position: relative;
+      margin-left: 8.33%;
+      -webkit-transition: all 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+      transition: all 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+      -webkit-transition-delay: 400ms;
+              transition-delay: 400ms; }
     #first-post-texte p {
       width: 55%; }
     #first-post-texte .categories {

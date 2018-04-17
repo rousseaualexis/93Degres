@@ -77,10 +77,10 @@ Template Name: Homepage
                             </div>
                         <?php 
                             $thumbnail = get_field( 'thumbnail' );
-                            $thumbnail_url = $thumbnail['url'];
+                            $thumbnail_url = $thumbnail['sizes']['large'];
                         ?>
                             <div id="first-post-image" class="col-xs-42 col-xs-offset-3 col-md-offset-0 col-md-push-25 col-md-31">
-                                <div class="image" style="background-image: url('<?php echo $thumbnail['url'];?>');" title="<?php echo $thumbnail['alt']; ?>">
+                                <div class="image" style="background-image: url('<?php echo $thumbnail_url;?>');" title="<?php echo $thumbnail['alt']; ?>">
                                 </div>
                             </div>
                             <div class="country-code">
@@ -133,6 +133,23 @@ Template Name: Homepage
     // Refresh all instances
     Marquee3k.refreshAll();
 
-var span=$("h1 strong","#first-post").text(),nthLine=function(){var s=$("h1","#first-post")[0].childNodes[0].nodeValue.split(" "),e=s[0],t=[];$("#title").append('<h1 id="sample">'+s[0]+"</h1>");for(var n=$("#sample").height(),h=1;h<s.length;h++){var l=$("#sample").html();e=e+" "+s[h],marker=[h],$("#sample").html(l+" "+s[h]),n!==$("#sample").height()&&(e=e.substring(0,e.length-(s[h].length+1)),t.push(e),e=s[h],n=$("#sample").height())}t.push(e),e="";for(h=0;h<t.length;h++)e=e+' <span class="line-'+[h]+'">'+t[h]+"</span>";$("#sample").remove(),e=e.substring(1),$("h1","#first-post").html(e).append("<strong>"+span+"</strong>"),console.log(span)};nthLine(),$(window).resize(nthLine);
+
+
+
+
+$(window).on('load', function() {
+
+
+  var span=$("h1 strong","#first-post").text(),nthLine=function(){var s=$("h1","#first-post")[0].childNodes[0].nodeValue.split(" "),e=s[0],t=[];$("#title").append('<h1 id="sample">'+s[0]+"</h1>");for(var n=$("#sample").height(),h=1;h<s.length;h++){var l=$("#sample").html();e=e+" "+s[h],marker=[h],$("#sample").html(l+" "+s[h]),n!==$("#sample").height()&&(e=e.substring(0,e.length-(s[h].length+1)),t.push(e),e=s[h],n=$("#sample").height())}t.push(e),e="";for(h=0;h<t.length;h++)e=e+' <span class="line-'+[h]+'">'+t[h]+"</span>";$("#sample").remove(),e=e.substring(1),$("h1","#first-post").html(e).append("<strong>"+span+"</strong>"),console.log(span)};nthLine(),$(window).resize(nthLine);
+  $(window).ready(function() {
+    $('.line-0').css({'left' : '0%'});
+    $('.line-1').css({'left' : '0%'});
+    $('.line-2').css({'left' : '0%'});
+
+});});
+
+
+
+
 </script>
 <?php include'end.php' ?>
