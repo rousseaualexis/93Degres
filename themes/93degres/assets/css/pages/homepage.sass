@@ -5,27 +5,29 @@
 #first-post 
 	font-size: 0
 	min-height: 70vh
-	z-index: -1
 
 	&-texte
 		display: inline-block
 		float: none
 		vertical-align: middle
 		z-index: 2
+		margin-top: 12.5%
 
 		+media-sm-and-less
 			padding-top: 50%
 
-		h1 
-			z-index: 2
-			position: relative
-			color: $white
-			width: 100%
-			font-size: 7.15vw
-			line-height: 7.15vw
-			padding-top: 15px
+		#title
 
-			span
+			h1 
+				z-index: 2
+				position: relative
+				color: $white
+				width: 100%
+				font-size: 7.2vw
+				line-height: 7.2vw
+				padding-top: 15px
+
+			strong
 				font-size: 24px;
 				position: absolute
 				bottom: 6.43vw
@@ -37,9 +39,25 @@
 				line-height: normal
 				display: initial
 
-			+media-sm-and-less
-				font-size: 40px
-				line-height: normal
+				+media-sm-and-less
+					font-size: 40px
+					line-height: normal
+
+			.line-1
+			    margin-left: 16.66%
+			    
+			    &:before
+			    	content: ''
+			    	top: 11.4vw
+			    	position: absolute
+			    	height: 6px
+			    	background: $white
+			    	width: 12.5%
+			    	left: 0%
+
+			.line-2
+
+			    margin-left: 8.33%
 
 		p
 			width: 55%
@@ -48,19 +66,26 @@
 			top: initial
 			float: none;
 			display: inline-block;
+			margin-bottom: 30px
 
 
 		.cta 
 			float: none
 			border: none
 			background: $white
+			margin-top: 30px
+
 
 
 	&-image
+		position: absolute
 		display: inline-block
 		float: none
 		vertical-align: middle
 		overflow: hidden
+		position: absolute
+		bottom: 0
+		top: 16.66%
 
 		+media-sm-and-less
 			position: absolute
@@ -69,20 +94,21 @@
 			top: 4.25%
 			left: 0
 
-			.image
-				+media-sm-and-less
-					padding-bottom: 50%
+		.image
+			height: 100%
+			+media-sm-and-less
+				padding-bottom: 50%
 
 
-	.post 
+	&.post 
 		padding-top: 6.25%
 		padding-bottom: 16.66%
-		margin-bottom: -12.5%
+		padding-bottom: 4.16%
+		//margin-bottom: -12.5%
 		cursor: initial
 
 		+media-sm-and-less
 			padding-bottom: 25%
-
 
 
 		&-article

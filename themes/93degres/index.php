@@ -19,9 +19,9 @@ Template Name: Homepage
                     $count++;
                     if($count == 1) :
         ?>
-        <div id="first-post">
+        
                     <?php if('guides' === get_post_type()): ?>
-                        <div class="post post-guide col-xs-pull-0 col-xs-48 col-md-pull-3">
+                        <div id="first-post" class="post post-guide col-xs-pull-0 col-xs-48 col-md-pull-3">
                             <div id="first-post-texte" class="col-xs-42 col-xs-pull-0 col-xs-offset-3 col-md-push-6 col-md-offset-0 col-md-20">
                                 <?php
                                     $id = get_the_id();
@@ -37,7 +37,7 @@ Template Name: Homepage
 
                                 <a class="categories" href="<?php echo $term_url; ?>"><img src="<?php echo $flag_url;?>" alt="<?php echo $flag['alt'];?>"/ ><?php echo $term_name; ?> <span> - Guide</span></a>
                     <?php elseif('conseils' === get_post_type()): ?>
-                        <div class="post post-conseil col-xs-pull-0 col-xs-48 col-md-pull-3">
+                        <div id="first-post" class="post post-conseil col-xs-pull-0 col-xs-48 col-md-pull-3">
                             <div id="first-post-texte" class="col-xs-42 col-xs-pull-0 col-xs-offset-3 col-md-push-6 col-md-offset-0 col-md-20">
                                 <?php
                                     $id = get_the_id();
@@ -54,8 +54,8 @@ Template Name: Homepage
                                 <a class="categories" href="<?php echo $term_url; ?>"><img src="<?php echo $flag_url;?>" alt="<?php echo $flag['alt'];?>"/ ><?php echo $term_name; ?> <span> - Guide</span></a>
                                     
                     <?php elseif('carnets' === get_post_type()):  ?>
-                        <div class="post post-article col-xs-pull-0 col-xs-48 col-md-pull-3">
-                            <div id="first-post-texte" class="col-xs-42 col-xs-pull-0 col-xs-offset-3 col-md-push-6 col-md-offset-0 col-md-20">
+                        <div id="first-post" class="post post-article col-xs-pull-0 col-xs-48 col-md-pull-15">
+                            <div id="first-post-texte" class="col-xs-42 col-xs-pull-0 col-xs-offset-3 col-md-push-6 col-md-offset-12 col-md-20">
                                 <?php
                                     $id = get_the_id();
                                     $terms = get_the_terms( $id, 'category' );
@@ -69,8 +69,9 @@ Template Name: Homepage
                                 ?>
                                 <a class="categories" href="<?php echo $term_url; ?>"><img src="<?php echo $flag_url;?>" alt="<?php echo $flag['alt'];?>"/ ><?php echo $term_name; ?></a>
                     <?php endif; ?>
-                                <h1><?php the_title(); ?><?php if(!empty(get_field('subtitle'))){echo '<span>' . get_field('subtitle') . '</span>';}?></h1>
-                                <p><?php echo get_field('summary'); ?></p>
+                                <div id="title">
+                                <h1><?php the_title(); ?><?php if(!empty(get_field('subtitle'))){echo '<strong>' . get_field('subtitle') . '</strong>';}?></h1></div>
+                                <p> <?php echo get_field('summary'); ?></p>
                                 <a href="<?php the_permalink(); ?>"><div class="cta">Lire la suite</div>
                                 </a>
                             </div>
@@ -78,8 +79,8 @@ Template Name: Homepage
                             $thumbnail = get_field( 'thumbnail' );
                             $thumbnail_url = $thumbnail['url'];
                         ?>
-                            <div id="first-post-image" class="col-xs-42 col-xs-offset-3 col-md-offset-0 col-md-pull-1 col-md-25">
-                                <div class="image image--4-5" style="background-image: url('<?php echo $thumbnail['url'];?>');" title="<?php echo $thumbnail['alt']; ?>">
+                            <div id="first-post-image" class="col-xs-42 col-xs-offset-3 col-md-offset-0 col-md-push-25 col-md-31">
+                                <div class="image" style="background-image: url('<?php echo $thumbnail['url'];?>');" title="<?php echo $thumbnail['alt']; ?>">
                                 </div>
                             </div>
                             <div class="country-code">
@@ -89,7 +90,6 @@ Template Name: Homepage
                         </div>
                     </div>
 
-                        </div>
         </div>
         <?php
                     else :
@@ -132,5 +132,7 @@ Template Name: Homepage
     Marquee3k.init();
     // Refresh all instances
     Marquee3k.refreshAll();
+
+var span=$("h1 strong","#first-post").text(),nthLine=function(){var s=$("h1","#first-post")[0].childNodes[0].nodeValue.split(" "),e=s[0],t=[];$("#title").append('<h1 id="sample">'+s[0]+"</h1>");for(var n=$("#sample").height(),h=1;h<s.length;h++){var l=$("#sample").html();e=e+" "+s[h],marker=[h],$("#sample").html(l+" "+s[h]),n!==$("#sample").height()&&(e=e.substring(0,e.length-(s[h].length+1)),t.push(e),e=s[h],n=$("#sample").height())}t.push(e),e="";for(h=0;h<t.length;h++)e=e+' <span class="line-'+[h]+'">'+t[h]+"</span>";$("#sample").remove(),e=e.substring(1),$("h1","#first-post").html(e).append("<strong>"+span+"</strong>"),console.log(span)};nthLine(),$(window).resize(nthLine);
 </script>
 <?php include'end.php' ?>

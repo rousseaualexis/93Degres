@@ -13,8 +13,8 @@ function startwordpress_google_fonts() {
                 //wp_enqueue_style( 'Lora');
                 //wp_register_style('NunitoSans', 'https://fonts.googleapis.com/css?family=Nunito+Sans:400,400i,700,700i');
                 //wp_enqueue_style( 'NunitoSans');
-                wp_register_style('Montserrat', 'https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,700i,900');
-                wp_enqueue_style( 'Montserrat');
+                //wp_register_style('Montserrat', 'https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,700i,900');
+                //wp_enqueue_style( 'Montserrat');
                 //wp_register_style('Cormorant', 'https://fonts.googleapis.com/css?family=Cormorant+Garamond:300,400,400i,600,600i');
                 //wp_enqueue_style( 'Cormorant');
         }
