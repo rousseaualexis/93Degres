@@ -1437,8 +1437,7 @@ table {
     display: inline-block;
     float: none;
     vertical-align: middle;
-    z-index: 2;
-    margin-top: 12.5%; }
+    z-index: 2; }
     @media only screen and (max-width: 767px) {
       #first-post-texte {
         padding-top: 50%; } }
@@ -1450,21 +1449,33 @@ table {
       font-size: 7.2vw;
       line-height: 7.2vw;
       padding-top: 15px; }
-    #first-post-texte #title strong {
-      font-size: 24px;
+    #first-post-texte #title p {
+      font-family: "leaguegothic", "impact", sans-serif;
       position: absolute;
-      bottom: 6.43vw;
       margin-bottom: -43px;
       margin-left: 10px;
-      padding: 7px 10px;
-      font-size: 24px;
-      white-space: nowrap;
       line-height: normal;
-      display: initial; }
+      display: initial;
+      overflow: hidden;
+      width: auto;
+      color: #ffffff;
+      text-transform: initial; }
       @media only screen and (max-width: 767px) {
-        #first-post-texte #title strong {
+        #first-post-texte #title p {
           font-size: 40px;
           line-height: normal; } }
+      #first-post-texte #title p strong {
+        font-size: 24px;
+        position: relative;
+        font-style: normal;
+        padding: 7px 10px;
+        font-weight: normal;
+        white-space: nowrap;
+        left: -100%;
+        -webkit-transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        -webkit-transition-delay: 0.9s;
+                transition-delay: 0.9s; }
     #first-post-texte #title .line-0 {
       left: -100%;
       position: relative;
@@ -1478,16 +1489,17 @@ table {
       margin-left: 16.66%;
       -webkit-transition: all 1.2s cubic-bezier(0.4, 0, 0.2, 1);
       transition: all 1.2s cubic-bezier(0.4, 0, 0.2, 1);
-      -webkit-transition-delay: 300ms;
-              transition-delay: 300ms; }
+      -webkit-transition-delay: 200ms;
+              transition-delay: 200ms; }
       #first-post-texte #title .line-1:before {
         content: '';
-        top: 11.4vw;
+        top: 3.85vw;
+        margin-top: 3px;
         position: absolute;
         height: 6px;
         background: #ffffff;
-        width: 12.5%;
-        left: 0%; }
+        width: 16.66%;
+        left: -23%; }
     #first-post-texte #title .line-2 {
       left: -100%;
       position: relative;
@@ -1496,27 +1508,24 @@ table {
       transition: all 1.2s cubic-bezier(0.4, 0, 0.2, 1);
       -webkit-transition-delay: 400ms;
               transition-delay: 400ms; }
-    #first-post-texte p {
-      width: 55%; }
     #first-post-texte .categories {
       top: initial;
       float: none;
       display: inline-block;
-      margin-bottom: 30px; }
+      margin-bottom: 10px; }
     #first-post-texte .cta {
       float: none;
       border: none;
       background: #ffffff;
-      margin-top: 30px; }
+      margin-top: 40px; }
   #first-post-image {
     position: absolute;
-    display: inline-block;
-    float: none;
-    vertical-align: middle;
-    overflow: hidden;
-    position: absolute;
-    bottom: 0;
-    top: 16.66%; }
+    top: -12.5%;
+    bottom: -12.5%;
+    width: 150%;
+    left: 35%;
+    z-index: -1;
+    overflow: hidden; }
     @media only screen and (max-width: 767px) {
       #first-post-image {
         position: absolute;
@@ -1525,12 +1534,18 @@ table {
         top: 4.25%;
         left: 0; } }
     #first-post-image .image {
-      height: 100%; }
+      height: 100%;
+      left: -100%;
+      position: relative;
+      -webkit-transition: all 1.4s cubic-bezier(0.4, 0, 0.2, 1);
+      transition: all 1.4s cubic-bezier(0.4, 0, 0.2, 1);
+      -webkit-transition-delay: 100ms;
+              transition-delay: 100ms; }
       @media only screen and (max-width: 767px) {
         #first-post-image .image {
           padding-bottom: 50%; } }
   #first-post.post {
-    padding-top: 6.25%;
+    padding-top: 12.5%;
     padding-bottom: 16.66%;
     padding-bottom: 4.16%;
     cursor: initial; }
@@ -1538,9 +1553,9 @@ table {
       #first-post.post {
         padding-bottom: 25%; } }
     #first-post.post-article {
-      background: #f7f2ea; }
+      background: #ffe08c; }
     #first-post.post-guide {
-      background: #e5ede1; }
+      background: #99bb6f; }
     #first-post.post-conseil {
       background: #e8f0f3; }
   #first-post .country-code {
@@ -1560,7 +1575,7 @@ table {
   padding-top: 12.5%;
   padding-bottom: 8.33%;
   text-align: center;
-  background: #f7f2ea; }
+  background: #ffe08c; }
   #destinations h5 {
     font-family: "leaguegothic", "impact", sans-serif;
     font-size: 12vw;
@@ -1593,28 +1608,28 @@ table {
 #article {
   overflow: hidden; }
   #article .country-code h5, #article .categories, #article .date h5, #article .deux-tiers__chapter h3, #article .deux-tiers__aside h3, #article .title-content h5, #article p a:hover {
-    color: #e0ad86; }
+    color: #ffbc00; }
   #article #introduction, #article #realated, #article .un-tiers__text, #article .deux-tiers__aside {
-    background: #f7f2ea; }
+    background: #ffe08c; }
   #article p a {
-    background-image: linear-gradient(45deg, #e0ad86, #e0ad86); }
+    background-image: linear-gradient(45deg, #ffbc00, #ffbc00); }
     #article p a:hover {
-      color: #e0ad86; }
+      color: #ffbc00; }
   #article #layout .deux-tiers__chapter ~ .deux-tiers__paragraph:first-of-type:first-letter {
-    color: #e0ad86; }
+    color: #ffbc00; }
 
 #guide {
   overflow: hidden; }
   #guide .country-code h5, #guide .categories, #guide .date h5, #guide .deux-tiers__chapter h3, #guide .deux-tiers__aside h3, #guide .title-content h5, #guide p a:hover {
-    color: #708555; }
+    color: #5f8f24; }
   #guide #introduction, #guide #realated, #guide .un-tiers__text, #guide .deux-tiers__aside {
-    background: #e5ede1; }
+    background: #99bb6f; }
   #guide p a {
-    background-image: linear-gradient(45deg, #708555, #708555); }
+    background-image: linear-gradient(45deg, #5f8f24, #5f8f24); }
     #guide p a:hover {
-      color: #708555; }
+      color: #5f8f24; }
   #guide #layout .deux-tiers__chapter ~ .deux-tiers__paragraph:first-of-type:first-letter {
-    color: #708555; }
+    color: #5f8f24; }
 
 #conseil {
   overflow: hidden; }
@@ -1748,7 +1763,7 @@ table {
 #why-we-like {
   padding-top: 8.33%;
   padding-bottom: 8.33%;
-  background: #f7f2ea;
+  background: #ffe08c;
   text-align: center; }
   #why-we-like__content {
     z-index: 2;
@@ -1832,7 +1847,7 @@ table {
   overflow: hidden;
   width: 100%; }
   #about #introduction, #about .un-tiers__text {
-    background: #f7f2ea; }
+    background: #ffe08c; }
   #about #introduction {
     padding-bottom: 8.33%;
     margin-bottom: 8.33%; }
@@ -1910,7 +1925,7 @@ a {
     display: inline-block;
     border: solid 2px;
     border-radius: 100px;
-    padding: 15px 18px 13px 20px;
+    padding: 17px 23px 15px 25px;
     -webkit-user-select: none;
        -moz-user-select: none;
         -ms-user-select: none;
@@ -1934,6 +1949,9 @@ a {
         margin-left: 5px;
         opacity: 1;
         position: absolute; }
+    a .cta:active {
+      -webkit-transform: scale(1.1);
+              transform: scale(1.1); }
 
 .categories {
   cursor: pointer;
@@ -2195,30 +2213,30 @@ li {
           margin-top: 0; } }
 
 .post-article a .cta {
-  color: #e0ad86;
-  border-color: #e0ad86; }
+  color: #ffbc00;
+  border-color: #ffbc00; }
 
 .post-article .country-code h5, .post-article .categories, .post-article .date h5 {
-  color: #e0ad86; }
+  color: #ffbc00; }
 
 .post-article a .image .image_thumbnail--hover {
-  background: #f7f2ea; }
+  background: #ffe08c; }
 
 .post-article #first-post-texte strong {
-  background: #e0ad86; }
+  background: #ffbc00; }
 
 .post-guide a .cta {
-  color: #708555;
-  border-color: #708555; }
+  color: #5f8f24;
+  border-color: #5f8f24; }
 
 .post-guide .country-code h5, .post-guide .categories, .post-guide .date h5 {
-  color: #708555; }
+  color: #5f8f24; }
 
 .post-guide a .image .image_thumbnail--hover {
-  background: #e5ede1; }
+  background: #99bb6f; }
 
 .post-guide #first-post-texte strong {
-  background: #708555; }
+  background: #5f8f24; }
 
 .post-conseil a .cta {
   color: #0080ff;
