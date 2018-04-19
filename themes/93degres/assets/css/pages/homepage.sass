@@ -38,83 +38,87 @@
 		+media-sm-and-less
 			padding-top: 50%
 
-		#title
+		.title
+			overflow: hidden
 
-			h1 
-				z-index: 2
-				position: relative
-				color: $white
+		h1 
+			z-index: 2
+			position: relative
+			color: $white
+			width: auto
+			font-size: 7.2vw
+			line-height: 6.2vw
+			padding-top: 0
+
+			span
 				width: 100%
-				font-size: 7.2vw
-				line-height: 7.2vw
-				padding-top: 0
+				display: block
 
-				span
-					width: 100%
-					display: block
+			& > div
 
-			
-
-
-			p
-				font-family: $leaguegothic
-				position: absolute
-				margin-bottom: -43px
-				margin-left: 10px
-				line-height: normal
-				display: initial
-				overflow: hidden
-				width: auto
-				color: #ffffff
-				text-transform: initial
-
-
-				+media-sm-and-less
-					font-size: 40px
-					line-height: normal
-
-				strong
-					font-size: 24px
-					position: relative
-					font-style: normal
-					padding: 7px 10px
-					font-weight: normal
-					white-space: nowrap
-					left: -100%
-					transition: all 0.6s cubic-bezier(.4,0,.2,1)
-					transition-delay: 0.9s
+				&:nth-child(1)
 					
+					display: block
+				    position: relative
+				    
+				&:nth-child(2)
+					
+					display: block
+					position: relative
+					margin-left: 16.66%
+				    
+					&:before
+						content: ''
+						top: 3.85vw
+						margin-top: 3px
+						position: absolute
+						height: 6px
+						background: $white
+						width: 16.66%
+						left: -23%
 
-			.line-0
-			    
-			    left: -100%
-			    position: relative
-			    transition: all 1.2s cubic-bezier(.4,0,.2,1)
-			    transition-delay: 100ms
+				&:nth-child(3)
+					
+					display: block
+					position: relative
+					margin-left: 8.33%
 
-			.line-1
-			    left: -100%
-			    position: relative
-			    margin-left: 16.66%
-			    transition: all 1.2s cubic-bezier(.4,0,.2,1)
-			    transition-delay: 200ms
-			    
-			    &:before
-			    	content: ''
-			    	top: 3.85vw
-			    	margin-top: 3px
-			    	position: absolute
-			    	height: 6px
-			    	background: $white
-			    	width: 16.66%
-			    	left: -23%
+				&:nth-last-child(1)
+					display: initial
+					float: left
+			.wordsplit
+				overflow: hidden
+				padding-top: 1vw
+					
+		
 
-			.line-2
-				left: -100%
+
+		p
+			font-family: $leaguegothic
+			position: absolute
+			margin-bottom: -43px
+			margin-left: 10px
+			line-height: normal
+			display: initial
+			overflow: hidden
+			width: auto
+			color: #ffffff
+			text-transform: initial
+
+
+			+media-sm-and-less
+				font-size: 40px
+				line-height: normal
+
+			strong
+				font-size: 24px
 				position: relative
-				margin-left: 8.33%
-				transition: all 1.2s cubic-bezier(.4,0,.2,1)
-				transition-delay: 400ms
+				font-style: normal
+				padding: 7px 10px
+				font-weight: normal
+				white-space: nowrap
+
+		
 
 		.categories 
 			top: 8.33%
@@ -150,10 +154,7 @@
 
 		.image
 			height: 100%
-			left: -100%
 			position: relative
-			transition: all 1.4s cubic-bezier(.4,0,.2,1)
-			transition-delay: 100ms
 			+media-sm-and-less
 				padding-bottom: 50%
 
@@ -212,4 +213,14 @@
 
 		+media-sm-and-less
 			margin-top: 30px
+
+
+.mask
+	position: fixed
+	background: red
+	z-index: 2
+	top: 0
+	bottom: 0
+	left: 0
+	right: 0
 	

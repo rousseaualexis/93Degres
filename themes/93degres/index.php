@@ -39,9 +39,8 @@ Template Name: Homepage
                                     }
                                 ?>
                                 <a class="categories" href="<?php echo $term_url; ?>"><img src="<?php echo $flag_url;?>" alt="<?php echo $flag['alt'];?>"/ ><?php echo $term_name; ?></a>
-
                                 <div id="title">
-                                <h1><?php the_title(); ?><?php if(!empty(get_field('subtitle'))){echo '<strong><p>' . get_field('subtitle') . '<p></strong>';}?></h1></div>
+                                <h1><?php the_title(); ?></h1><?php if(!empty(get_field('subtitle'))){echo '<p><strong>' . get_field('subtitle') . '</strong></p>';}?></div>
                                 <a class="col-xs-offset-14" href="<?php the_permalink(); ?>"><div class="cta">Découvrir</div>
                                 </a>
                                 <?php 
@@ -97,6 +96,62 @@ Template Name: Homepage
 
 <?php //include'assets/views/content-instagram.php'; ?>
 <?php get_footer(); ?>
-<script type="text/javascript">Marquee3k.init();Marquee3k.refreshAll();$(window).on('load', function() {
-  var span=$("h1 strong","#first-post").text(),nthLine=function(){var s=$("h1","#first-post")[0].childNodes[0].nodeValue.split(" "),e=s[0],t=[];$("#title").append('<h1 id="sample">'+s[0]+"</h1>");for(var n=$("#sample").height(),h=1;h<s.length;h++){var l=$("#sample").html();e=e+" "+s[h],marker=[h],$("#sample").html(l+" "+s[h]),n!==$("#sample").height()&&(e=e.substring(0,e.length-(s[h].length+1)),t.push(e),e=s[h],n=$("#sample").height())}t.push(e),e="";for(h=0;h<t.length;h++)e=e+' <span class="line-'+[h]+'">'+t[h]+"</span>";$("#sample").remove(),e=e.substring(1),$("h1","#first-post").html(e).append("<p><strong>"+span+"</strong></p>"),$('#first-post p strong:empty').closest('p').remove();};nthLine(),$(window).resize(nthLine);$(window).ready(function() {$('.line-0').css({'left' : '0%'});$('.line-1').css({'left' : '0%'});$('.line-2').css({'left' : '0%'});$('strong', '#title').css({'left' : '0%'});$('.image', '#first-post-image').css({'left' : '0%'});});});</script>
+<script type="text/javascript">
+
+$(document).ready(function() {
+    $(".mask").css("display", "block");
+    $(".mask").fadeOut(2000);
+ 
+    $("a").click(function(event){
+        event.preventDefault();
+        linkLocation = this.href;
+        $('.mask').fadeIn('slow', redirectPage);
+      
+    });
+         
+    function redirectPage() {
+        window.location = linkLocation;
+    }
+});
+Marquee3k.init();Marquee3k.refreshAll();
+   
+$(window).on('load', function() {
+/*
+    var span = $("h1 strong", "#first-post").text(),
+        nthLine = function() {
+            var s = $("h1", "#first-post")[0].childNodes[0].nodeValue.split(" "),
+                e = s[0],
+                t = [];
+            $("#title").append('<h1 id="sample">' + s[0] + "</h1>");
+            for (var n = $("#sample").height(), h = 1; h < s.length; h++) {
+                var l = $("#sample").html();
+                e = e + " " + s[h], marker = [h], $("#sample").html(l + " " + s[h]), n !== $("#sample").height() && (e = e.substring(0, e.length - (s[h].length + 1)), t.push(e), e = s[h], n = $("#sample").height())
+            }
+            t.push(e), e = "";
+            for (h = 0; h < t.length; h++) e = e + ' <span class="line-' + [h] + '">' + t[h] + "</span>";
+            $("#sample").remove(), e = e.substring(1), $("h1", "#first-post").html(e).append("<p><strong>" + span + "</strong></p>"), $('#first-post p strong:empty').closest('p').remove();
+        };
+    nthLine(), $(window).resize(nthLine);
+    $(window).ready(function() {
+        $('.line-0').css({
+            'left': '0%'
+        });
+        $('.line-1').css({
+            'left': '0%'
+        });
+        $('.line-2').css({
+            'left': '0%'
+        });
+        $('strong', '#title').css({
+            'left': '0%'
+        });
+        $('.image', '#first-post-image').css({
+            'left': '0%'
+        });
+
+    });
+    */
+});
+
+</script>
 <?php include'end.php' ?>
