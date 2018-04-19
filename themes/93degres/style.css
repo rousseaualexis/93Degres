@@ -1433,11 +1433,29 @@ table {
 #first-post {
   font-size: 0;
   min-height: 70vh; }
+  #first-post.post {
+    padding-top: 8.33%;
+    padding-bottom: 12.5%;
+    margin-bottom: -8.33%;
+    min-height: 75vh;
+    display: table;
+    cursor: initial; }
+    @media only screen and (max-width: 767px) {
+      #first-post.post {
+        padding-bottom: 25%; } }
+    #first-post.post-article {
+      background: #ffe08c; }
+    #first-post.post-guide {
+      background: #99bb6f; }
+    #first-post.post-conseil {
+      background: #e8f0f3; }
   #first-post-texte {
-    display: inline-block;
+    display: table-cell;
     float: none;
     vertical-align: middle;
-    z-index: 2; }
+    z-index: 2;
+    padding-top: 8.33%;
+    padding-bottom: 8.33%; }
     @media only screen and (max-width: 767px) {
       #first-post-texte {
         padding-top: 50%; } }
@@ -1448,7 +1466,10 @@ table {
       width: 100%;
       font-size: 7.2vw;
       line-height: 7.2vw;
-      padding-top: 15px; }
+      padding-top: 0; }
+      #first-post-texte #title h1 span {
+        width: 100%;
+        display: block; }
     #first-post-texte #title p {
       font-family: "leaguegothic", "impact", sans-serif;
       position: absolute;
@@ -1509,10 +1530,11 @@ table {
       -webkit-transition-delay: 400ms;
               transition-delay: 400ms; }
     #first-post-texte .categories {
-      top: initial;
+      top: 8.33%;
+      margin-top: -10px;
       float: none;
       display: inline-block;
-      margin-bottom: 10px; }
+      position: absolute; }
     #first-post-texte .cta {
       float: none;
       border: none;
@@ -1520,8 +1542,8 @@ table {
       margin-top: 40px; }
   #first-post-image {
     position: absolute;
-    top: -12.5%;
-    bottom: -12.5%;
+    top: 0%;
+    bottom: 0%;
     width: 150%;
     left: 35%;
     z-index: -1;
@@ -1544,20 +1566,6 @@ table {
       @media only screen and (max-width: 767px) {
         #first-post-image .image {
           padding-bottom: 50%; } }
-  #first-post.post {
-    padding-top: 12.5%;
-    padding-bottom: 16.66%;
-    padding-bottom: 4.16%;
-    cursor: initial; }
-    @media only screen and (max-width: 767px) {
-      #first-post.post {
-        padding-bottom: 25%; } }
-    #first-post.post-article {
-      background: #ffe08c; }
-    #first-post.post-guide {
-      background: #99bb6f; }
-    #first-post.post-conseil {
-      background: #e8f0f3; }
   #first-post .country-code {
     position: absolute;
     top: 43%;
@@ -1950,8 +1958,8 @@ a {
         opacity: 1;
         position: absolute; }
     a .cta:active {
-      -webkit-transform: scale(1.1);
-              transform: scale(1.1); }
+      -webkit-transform: scale(1.05);
+              transform: scale(1.05); }
 
 .categories {
   cursor: pointer;

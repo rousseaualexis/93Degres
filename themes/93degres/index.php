@@ -26,7 +26,7 @@ Template Name: Homepage
                     <?php elseif('carnets' === get_post_type()):  ?>
                         <div id="first-post" class="post post-article col-xs-pull-0 col-xs-48 col-md-pull-15">
                     <?php endif; ?>
-                            <div id="first-post-texte" class="col-xs-42 col-xs-pull-0 col-xs-offset-3 col-md-push-6 col-md-offset-12 col-md-20">
+                            <div id="first-post-texte" class="col-xs-42 col-xs-pull-0 col-xs-offset-3 col-md-push-19 col-md-offset-12 col-md-20">
                                 <?php
                                     $id = get_the_id();
                                     $terms = get_the_terms( $id, 'category' );
@@ -98,5 +98,5 @@ Template Name: Homepage
 <?php //include'assets/views/content-instagram.php'; ?>
 <?php get_footer(); ?>
 <script type="text/javascript">Marquee3k.init();Marquee3k.refreshAll();$(window).on('load', function() {
-  var span=$("h1 strong","#first-post").text(),nthLine=function(){var s=$("h1","#first-post")[0].childNodes[0].nodeValue.split(" "),e=s[0],t=[];$("#title").append('<h1 id="sample">'+s[0]+"</h1>");for(var n=$("#sample").height(),h=1;h<s.length;h++){var l=$("#sample").html();e=e+" "+s[h],marker=[h],$("#sample").html(l+" "+s[h]),n!==$("#sample").height()&&(e=e.substring(0,e.length-(s[h].length+1)),t.push(e),e=s[h],n=$("#sample").height())}t.push(e),e="";for(h=0;h<t.length;h++)e=e+' <span class="line-'+[h]+'">'+t[h]+"</span>";$("#sample").remove(),e=e.substring(1),$("h1","#first-post").html(e).append("<p><strong>"+span+"</strong></p>"),console.log(span)};nthLine(),$(window).resize(nthLine);$(window).ready(function() {$('.line-0').css({'left' : '0%'});$('.line-1').css({'left' : '0%'});$('.line-2').css({'left' : '0%'});$('strong', '#title').css({'left' : '0%'});$('.image', '#first-post-image').css({'left' : '0%'});});});</script>
+  var span=$("h1 strong","#first-post").text(),nthLine=function(){var s=$("h1","#first-post")[0].childNodes[0].nodeValue.split(" "),e=s[0],t=[];$("#title").append('<h1 id="sample">'+s[0]+"</h1>");for(var n=$("#sample").height(),h=1;h<s.length;h++){var l=$("#sample").html();e=e+" "+s[h],marker=[h],$("#sample").html(l+" "+s[h]),n!==$("#sample").height()&&(e=e.substring(0,e.length-(s[h].length+1)),t.push(e),e=s[h],n=$("#sample").height())}t.push(e),e="";for(h=0;h<t.length;h++)e=e+' <span class="line-'+[h]+'">'+t[h]+"</span>";$("#sample").remove(),e=e.substring(1),$("h1","#first-post").html(e).append("<p><strong>"+span+"</strong></p>"),$('#first-post p strong:empty').closest('p').remove();};nthLine(),$(window).resize(nthLine);$(window).ready(function() {$('.line-0').css({'left' : '0%'});$('.line-1').css({'left' : '0%'});$('.line-2').css({'left' : '0%'});$('strong', '#title').css({'left' : '0%'});$('.image', '#first-post-image').css({'left' : '0%'});});});</script>
 <?php include'end.php' ?>

@@ -6,11 +6,35 @@
 	font-size: 0
 	min-height: 70vh
 
+
+	&.post 
+		padding-top: 8.33%
+		padding-bottom: 12.5%
+		margin-bottom: -8.33%
+		min-height: 75vh
+		display: table
+		cursor: initial
+
+		+media-sm-and-less
+			padding-bottom: 25%
+
+
+		&-article
+			background: $color-article-light
+
+		&-guide
+			background: $color-guide-light
+
+		&-conseil
+			background: $color-conseil-light
+
 	&-texte
-		display: inline-block
+		display: table-cell
 		float: none
 		vertical-align: middle
 		z-index: 2
+		padding-top: 8.33%
+		padding-bottom: 8.33%
 		+media-sm-and-less
 			padding-top: 50%
 
@@ -23,7 +47,11 @@
 				width: 100%
 				font-size: 7.2vw
 				line-height: 7.2vw
-				padding-top: 15px
+				padding-top: 0
+
+				span
+					width: 100%
+					display: block
 
 			
 
@@ -89,10 +117,11 @@
 				transition-delay: 400ms
 
 		.categories 
-			top: initial
-			float: none;
-			display: inline-block;
-			margin-bottom: 10px
+			top: 8.33%
+			margin-top: -10px
+			float: none
+			display: inline-block
+			position: absolute
 
 
 		.cta 
@@ -105,8 +134,8 @@
 
 	&-image
 		position: absolute
-		top: -12.5%
-		bottom: -12.5%
+		top: 0%
+		bottom: 0%
 		width: 150%
 		left: 35%
 		z-index: -1
@@ -127,27 +156,6 @@
 			transition-delay: 100ms
 			+media-sm-and-less
 				padding-bottom: 50%
-
-
-	&.post 
-		padding-top: 12.5%
-		padding-bottom: 16.66%
-		padding-bottom: 4.16%
-		//margin-bottom: -12.5%
-		cursor: initial
-
-		+media-sm-and-less
-			padding-bottom: 25%
-
-
-		&-article
-			background: $color-article-light
-
-		&-guide
-			background: $color-guide-light
-
-		&-conseil
-			background: $color-conseil-light
 
 	.country-code
 		position: absolute
