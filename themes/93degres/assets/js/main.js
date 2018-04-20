@@ -153,7 +153,7 @@ var site = (function() {
 
             canReveal = true;
             allModules();
-        }, 50);
+        }, 200);
     }
 /*  =============================================================================
         PRELOADER
@@ -239,6 +239,7 @@ var site = (function() {
     ============================================================================== */
 
     var hero = function(){
+
         var $el = $('#first-post-texte');
         var $text = $("#title h1")
             var split = new SplitText($text,{charsClass: "charsplit", wordsClass: "wordsplit"
@@ -256,10 +257,27 @@ var site = (function() {
             );*/
             var tl = new TimelineLite();
 
-            tl.from($el.find('.image'), 1.4, {y:'100%', ease:Power4.easeOut}, 0.1);
+            tl.from($('.mask'), 1.4, {display: 'block', ease:Power1.easeOut}, 0.2);
+            tl.to($('.mask'), 1.4, {alpha: 0, display: 'none', ease:Power1.easeOut}, 0.2);
+            tl.from($el.find('.image'), 1.4, {y:'100%', ease:Power4.easeOut}, 0.3);
             tl.staggerFrom($el.find('h1 .charsplit'), 1.2, {y:'150%', ease:Power4.easeOut}, 0.01, '-=1');
             tl.from($el.find('p'), 0.8, {width:'0', ease:Power4.easeInOut}, '-=0.6');
             tl.from($el.find('.cta'), 1, {y:'300%', ease:Power4.easeOut}, '-=1.6');
+
+
+            
+ 
+    $("a").click(function(event){
+        event.preventDefault();
+        linkLocation = this.href;
+        $('.mask').fadeIn('slow', redirectPage);
+      
+    });
+         
+    function redirectPage() {
+        window.location = linkLocation;
+    }
+
              }
     var paralol = function(){
 

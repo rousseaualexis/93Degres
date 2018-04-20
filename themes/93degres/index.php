@@ -98,21 +98,6 @@ Template Name: Homepage
 <?php get_footer(); ?>
 <script type="text/javascript">
 
-$(document).ready(function() {
-    $(".mask").css("display", "block");
-    $(".mask").fadeOut(2000);
- 
-    $("a").click(function(event){
-        event.preventDefault();
-        linkLocation = this.href;
-        $('.mask').fadeIn('slow', redirectPage);
-      
-    });
-         
-    function redirectPage() {
-        window.location = linkLocation;
-    }
-});
 Marquee3k.init();Marquee3k.refreshAll();
    
 $(window).on('load', function() {

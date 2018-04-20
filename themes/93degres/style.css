@@ -1459,16 +1459,19 @@ table {
     @media only screen and (max-width: 767px) {
       #first-post-texte {
         padding-top: 50%; } }
-    #first-post-texte .title {
-      overflow: hidden; }
+    #first-post-texte #title {
+      overflow: hidden;
+      margin-top: -2vw;
+      padding-bottom: 1vw; }
     #first-post-texte h1 {
       z-index: 2;
       position: relative;
       color: #ffffff;
       width: auto;
       font-size: 7.2vw;
-      line-height: 6.2vw;
-      padding-top: 0; }
+      line-height: 7.2vw;
+      padding-top: 0;
+      top: 3vw; }
       #first-post-texte h1 span {
         width: 100%;
         display: block; }
@@ -1497,11 +1500,13 @@ table {
         float: left; }
       #first-post-texte h1 .wordsplit {
         overflow: hidden;
-        padding-top: 1vw; }
+        padding-top: 1vw;
+        margin-top: -3vw; }
     #first-post-texte p {
       font-family: "leaguegothic", "impact", sans-serif;
       position: absolute;
       margin-bottom: -43px;
+      margin-top: 2vw;
       margin-left: 10px;
       line-height: normal;
       display: initial;
