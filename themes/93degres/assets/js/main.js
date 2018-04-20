@@ -24,22 +24,6 @@ $( document ).ready(function() {
 
 // ===================================== INITIAL ===================================== //
 var tools = (function() { 
-    /**
-     * Init tools
-     */
-    var init = function() {
-        bindEvents();
-    }
-
-
-    /**
-     * Bind events
-     */
-    var bindEvents = function() {
-        // Prevent image dragging
-        $('body').on('mousedown', 'img', function() { return false; });
-    }
-
 
     /**
      * Check if device is desktop
@@ -75,7 +59,6 @@ var tools = (function() {
     }
 
   return {
-        init: init,
         isDesktop: isDesktop,
         isTablet: isTablet,
         isSmartphone: isSmartphone,
@@ -86,8 +69,8 @@ var tools = (function() {
 var site = (function() { 
     var init = function() {
         // Tools
-        tools.init();
-        bindEvents();
+        //tools.init();
+        onClick();
 
         // init modules that requires being init only once
         //modulesOnce();
@@ -142,16 +125,8 @@ var site = (function() {
      * Init page
      */
     var pageInit = function() {
-        linkTransition = false;
-        $('.js-link').removeClass('js-link');
-
-        // Global things to do on page init
-        $(window).trigger('resize');
-
-        canReveal = false;
         setTimeout(function(){
-
-            canReveal = true;
+            $(document).scrollTop(0)
             allModules();
         }, 200);
     }
@@ -164,34 +139,13 @@ var site = (function() {
      */
     var showPreloader = function() {
 
-        TweenLite.set($('.sitenav--logo'),             {alpha:0});
-        TweenLite.set($('.sitenav--menu-link-text'),   {alpha:0});
-        TweenLite.set($('.sitenav--menu-link-stroke'), {alpha:0});
-        TweenLite.set($('.sitesurnav li'),             {alpha:0});
-
-        TweenLite.to($('.preload'), 1, {alpha:0, delay:1.25, onComplete:function(){
-            $('.preload').remove();
+        TweenLite.to($('.mask'), 0.5, {bottom:'100%', delay:0.75, onComplete:function(){
+            $('.mask').remove();
         }});
 
-        /*TweenLite.set($('.sitesurnav'), {alpha:0});
-        TweenLite.set($('.sitenav'), {alpha:0});*/
-
-        /*var tl1 = new TimelineLite();
-        tl1.staggerFromTo($('.preload--shapes-1 .preload--shape'), 1.2, {alpha:0, y:20}, {alpha:1, y:0, ease:Power3.easeOut}, 0.1, 0.25);
-        tl1.staggerFromTo($('.preload--shapes-2 .preload--shape'), 1,   {alpha:0, y:20}, {alpha:1, y:0, ease:Power3.easeOut}, 0.1, 0.25);
-        tl1.staggerTo($('.preload--shapes-1 .preload--shape'), .5, {alpha:0, y:-20, ease:Power3.easeIn}, 0.05, 0.2+2);
-        tl1.staggerTo($('.preload--shapes-2 .preload--shape'), .5, {alpha:0, y:-20, ease:Power3.easeIn}, 0.05,   2);
-        tl1.to($('.preload'), .5, {alpha:0, ease:Power3.easeIn, onComplete:function(){
-            $('.preload').remove();
-        }}, 2.5);
-
         setTimeout(function(){
             init();
-        }, 3200);*/
-
-        setTimeout(function(){
-            init();
-        }, 1500);
+        }, 100);
     }
 
 
@@ -199,26 +153,43 @@ var site = (function() {
             Events
     ============================================================== */
 
-        var bindEvents = function() {
+        var onClick = function() {
             $('body').on('click', 'a', function(e){
             var url = $(this).attr('href');
+
             // check if the link has a hash
-            if (url.charAt(0) === "#") {
-                e.preventDefault();
-                // if the link has only "#"
-                if (url.length == 1) {
-                    smoothScrollTo(0);
+                if (url.charAt(0) === "#") {
+                    e.preventDefault();
+                    // if the link has only "#"
+                    if (url.length == 1) {
+                        smoothScrollTo(0);
+                        return;
+                    }
+                    // #someElement
+                    var $target = $(url)
+                    if (!$target.length)
+                        return;
+                    smoothScrollTo($target.offset().top);
                     return;
                 }
-                // #someElement
-                var $target = $(url)
-                if (!$target.length)
-                    return;
 
-                smoothScrollTo($target.offset().top);
-                return;
-            }
-        });
+                else{      
+                             e.preventDefault();            
+                    //wait 600 ms and redirect to the URL we grabbed earlier
+                    mask = $("<div/>").appendTo("body").addClass('mask');
+                    var tl = new TimelineLite();
+  
+                    tl.from(mask, 0.1, {display: "none", opacity: 0});
+                    tl.to(mask, 0.75, {display:"block", opacity:1, onComplete:function(){
+                setTimeout(function(){ 
+                        window.location = url;
+                    }, 200, url);
+            }, ease:Power1.easeInOut}, 0);
+                  
+                   
+                }
+            });
+
 
         }
 
@@ -228,8 +199,9 @@ var site = (function() {
     ============================================================================== */
 
   var allModules = function() {
-
-        hero();
+        firstPost();
+        navItem();
+    
     }
 
 
@@ -238,47 +210,36 @@ var site = (function() {
         MODULES
     ============================================================================== */
 
-    var hero = function(){
-
+     var firstPost = function(){
         var $el = $('#first-post-texte');
-        var $text = $("#title h1")
+        var $text = $("#title h1");
+        var split = new SplitText($text,{charsClass: "charsplit", wordsClass: "wordsplit"});
+        var tl = new TimelineLite();
+
+            tl.from($el.find('.image'), 1.8, {y:'100%', ease:Power4.easeOut}, 0.4);
+            tl.from($text, 1.2, {x:'-100%', ease:Power4.easeOut}, 0.6);
+            tl.staggerFrom($el.find('h1 .charsplit'), 1.2, {y:'150%', ease:Power4.easeOut}, 0.01, '-=1');
+            tl.from($el.find('strong'), 0.8, {left:'-100%', ease:Power4.easeOut}, '-=0.6');
+            tl.from($el.find('.cta'), 1, {y:'300%', ease:Power4.easeOut}, '-=1.6');
+    }
+
+
+    var navItem = function(){
+
+        var $el = $('#header');
+        var $text = $(".menu a")
             var split = new SplitText($text,{charsClass: "charsplit", wordsClass: "wordsplit"
                 }
             );
-
-        //new SplitText(('#title') ,{linesChars:"split-line-overflow"})
-           /* var split = new SplitText(
-                ('#title'),{
-                    type: 'lines',
-                    linesClass: 'split-line-overflow',
-                    wordsClass: 'split-word',
-                    charsClass: 'split-char'
-                }
-            );*/
             var tl = new TimelineLite();
-
-            tl.from($('.mask'), 1.4, {display: 'block', ease:Power1.easeOut}, 0.2);
-            tl.to($('.mask'), 1.4, {alpha: 0, display: 'none', ease:Power1.easeOut}, 0.2);
-            tl.from($el.find('.image'), 1.4, {y:'100%', ease:Power4.easeOut}, 0.3);
-            tl.staggerFrom($el.find('h1 .charsplit'), 1.2, {y:'150%', ease:Power4.easeOut}, 0.01, '-=1');
-            tl.from($el.find('p'), 0.8, {width:'0', ease:Power4.easeInOut}, '-=0.6');
-            tl.from($el.find('.cta'), 1, {y:'300%', ease:Power4.easeOut}, '-=1.6');
+            tl.staggerFrom($el.find('.charsplit'), 1.2, {y:'400%', ease:Power4.easeOut}, 0.01, 0.5);
 
 
-            
- 
-    $("a").click(function(event){
-        event.preventDefault();
-        linkLocation = this.href;
-        $('.mask').fadeIn('slow', redirectPage);
-      
-    });
-         
-    function redirectPage() {
-        window.location = linkLocation;
+
+
     }
 
-             }
+    /*
     var paralol = function(){
 
         scrollTop = $(window).scrollTop();
@@ -313,7 +274,7 @@ var site = (function() {
             });
         }
 
-    }
+    }*/
 
 
 return {
