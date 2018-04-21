@@ -16,7 +16,8 @@ Template Name: Guides
             $taxonomy = 'category';
             $args = array(
                           'taxonomy' => $taxonomy,
-                          'post_type' => $post_type
+                          'post_type' => $post_type,
+                          
         );?>
         <?php
             $categories = get_categories($args);
@@ -56,17 +57,19 @@ Template Name: Guides
 </div>
 
 <div class="overflow col-xs-48">
-    <div class="scroll-reveal grid col-md-push-3 col-xs-44">
+    <div class="grid col-md-push-3 col-xs-44">
         <?php $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
-            $args = array('post_type' => array('carnets'), 'posts_per_page' => 6, 'paged' => $paged );
+            $args = array('post_type' => array('carnets'), 'posts_per_page' => 9, 'paged' => $paged );
             $wp_query = new WP_Query($args);
             while ( have_posts() ) : the_post();
                 get_template_part('assets/views/content-grid');
+
             endwhile;
+
+get_template_part('assets/views/content-pagination');
         ?>    
     </div>
 </div>
 
-<?php get_template_part('assets/views/content-pagination'); ?>
 <?php get_footer(); ?>
 <?php include'end.php' ?>

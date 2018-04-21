@@ -10,12 +10,15 @@ Template Name: Guides
 <div class="overflow col-xs-48">
     <div id="list-sous-cat" class="col-md-push-4 col-xs-42">
 <?php
+$paged = ( get_query_var( 'paged' ) ) ? absint( get_query_var( 'paged' ) ) : 1;
             //list terms in a given taxonomy using wp_list_categories  (also useful as a widget)
             $post_type = 'guides';
             $taxonomy = 'category';
             $args = array(
                           'taxonomy' => $taxonomy,
-                          'post_type' => $post_type
+                          'post_type' => $post_type,
+
+    'paged' => $paged,
         );?>
         <?php
             $categories = get_categories($args);

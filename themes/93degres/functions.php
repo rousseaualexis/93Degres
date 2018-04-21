@@ -3,20 +3,14 @@
 // Add scripts and stylesheets
 function startwordpress_scripts() {
     wp_enqueue_style( 'blog', get_template_directory_uri() . '/style.css' );
-    //wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/js/bootstrap.min.js', array( 'jquery' ), '3.3.6', true );
-}
+ }
+
 add_action( 'wp_enqueue_scripts', 'startwordpress_scripts' );
 
-
+// ENQUEUE GOOGLE FONTS
 function startwordpress_google_fonts() {
-                //wp_register_style('Lora', 'https://fonts.googleapis.com/css?family=Lora:400,700');
-                //wp_enqueue_style( 'Lora');
-                //wp_register_style('NunitoSans', 'https://fonts.googleapis.com/css?family=Nunito+Sans:400,400i,700,700i');
-                //wp_enqueue_style( 'NunitoSans');
                 wp_register_style('Montserrat', 'https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,700i,900');
                 wp_enqueue_style( 'Montserrat');
-                //wp_register_style('Cormorant', 'https://fonts.googleapis.com/css?family=Cormorant+Garamond:300,400,400i,600,600i');
-                //wp_enqueue_style( 'Cormorant');
         }
 
 add_action('wp_print_styles', 'startwordpress_google_fonts');
@@ -25,9 +19,9 @@ add_action('wp_print_styles', 'startwordpress_google_fonts');
 // Support Global name of the Website
 add_theme_support( 'title-tag' );
 
-
+// FUNCTIONS TO REMOVE BASE POST FROM THE ADMIN
 function remove_menus(){
-  //remove_menu_page( 'edit.php');                   //Posts  
+  remove_menu_page( 'edit.php');                   //Posts  
 }
 add_action( 'admin_menu', 'remove_menus' );
 
@@ -44,7 +38,7 @@ function remove_draft_widget(){
 }
 
 
-
+// ADD CUSTOM POST TYPES
 add_action('init', 'my_custom_init');
 function my_custom_init()
 {
@@ -138,6 +132,8 @@ register_post_type(
 
 }
 
+/*
+
 function wp_list_categories_for_post_type($post_type, $args = '') {
     $exclude = array();
 
@@ -160,33 +156,7 @@ function wp_list_categories_for_post_type($post_type, $args = '') {
     // List categories
     wp_list_categories($args);
 }
-
-
-
-function improved_trim_excerpt($text) {
-    global $post;
-    if ( '' == $text ) {
-        $text = get_the_content('');
-        $text = apply_filters('excerpt', $text);
-        $text = str_replace(']]>', ']]&gt;', $text);
-        $text = preg_replace('@<script[^>]*?>.*?</script>@si', '', $text);
-        $text = strip_tags($text, '<p><a><strong><br /><font><h2><h3><span>');
-        $excerpt_length = 20;
-        $words = explode(' ', $text, $excerpt_length + 1);
-        if (count($words)> $excerpt_length) {
-            array_pop($words);
-            array_push($words, '...');
-            $text = implode(' ', $words);
-        }
-    }
-    return $text;
-}
- 
-remove_filter('get_the_excerpt', 'wp_trim_excerpt');
-add_filter('get_the_excerpt', 'improved_trim_excerpt');
-
-
-
+*/
 
 // REMOVE WP EMOJI
 remove_action('wp_head', 'print_emoji_detection_script', 7);
@@ -195,14 +165,13 @@ remove_action('wp_print_styles', 'print_emoji_styles');
 remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
 remove_action( 'admin_print_styles', 'print_emoji_styles' );
 
-
-
-
-// Do NOT include the opening php tag above
+/*
+ * Modify TinyMCE editor to remove H1.
+ */
 add_filter('tiny_mce_before_init', 'tiny_mce_remove_unused_formats' );
 function tiny_mce_remove_unused_formats($init) {
     // Add block format elements you want to show in dropdown
-    $init['block_formats'] = 'Paragraph=p;Heading 1=h1;Heading 2=h2;Heading 3=h3;Heading 4=h4;Heading 5=h5;Heading 6=h6;Address=address;Pre=pre';
+    $init['block_formats'] = 'Paragraph=p;Heading 2=h2;Heading 3=h3;Heading 4=h4;Heading 5=h5;Heading 6=h6;Address=address;Pre=pre';
     return $init;
 }
 
@@ -371,7 +340,8 @@ add_filter('comment_form_defaults', 'wpsites_modify_text_before_comment_form');
 
 
 
-// DELETE CATEGORY MARK
+// DELETE CATEGORY MARK such as category:
+// Return an alternate title, without prefix, for every type used in the get_the_archive_title().
 add_filter('get_the_archive_title', function ($title) {
     if ( is_category() ) {
         $title = single_cat_title( '', false );
@@ -417,7 +387,7 @@ add_filter('get_the_archive_title', function ($title) {
 
 
 
-// pagination
+// PAGINATION
 function pagination($query) {  
     
     $baseURL="http://".$_SERVER['HTTP_HOST'];
@@ -504,6 +474,7 @@ function pressPagination($pages = '', $range = 2)
        }
  
 }
+ /////////////////////////
 
 function custom_post_type_cat_filter($query) {
   if ( !is_admin() && $query->is_main_query() ) {
@@ -570,5 +541,33 @@ add_filter ( 'the_content', 'add_newlines_to_post_content' );
 function add_newlines_to_post_content( $content ) {
     return nl2br( $content );
 }
+
+
+
+
+/**
+ * Wordpress has a known bug with the posts_per_page value and overriding it using
+ * query_posts. The result is that although the number of allowed posts_per_page
+ * is abided by on the first page, subsequent pages give a 404 error and act as if
+ * there are no more custom post type posts to show and thus gives a 404 error.
+ *
+ * This fix is a nicer alternative to setting the blog pages show at most value in the
+ * WP Admin reading options screen to a low value like 1.
+ *
+ */
+function custom_posts_per_page( $query ) {
+
+    if ( $query->is_archive('carnets') ) {
+        set_query_var('posts_per_page', 1);
+    }
+    else if ( $query->is_archive('guides') ) {
+        set_query_var('posts_per_page', 1);
+    }
+    else if ( $query->is_archive('conseils') ) {
+        set_query_var('posts_per_page', 1);
+    }
+}
+add_action( 'pre_get_posts', 'custom_posts_per_page' );
+
 
 

@@ -102,39 +102,20 @@ var site = (function() {
     var onClick = function() {
         $("body").on("click", "a", function(e){
         var url = $(this).attr('href');
-        var target = $(this).attr('target');
+        var isblank = this.target === '_blank';
         // check if the link has a hash
-            if (url.charAt(0) === "#") {
+
+
+
+                if (isblank) {
                 e.preventDefault();
                 // if the link has only "#"
-                if (url.length == 1) {
-                    smoothScrollTo(0);
-                    return;
-                }
-                // #someElement
-                var $target = $(url)
-                if (!$target.length)
-                    return;
-                smoothScrollTo($target.offset().top);
+                window.open(url);
                 return;
-            }
-            else if (target === "_blank") {
-                e.preventDefault();
-                // if the link has only "#"
-                window.open(url);
-                return false;
 
             }
-            else if (url.indexOf(window.location.href) > -1) {
-                e.preventDefault();
-                // if the link has only "#"
-                window.open(url);
-                return false;
-
-            }
-
-            else{      
-                e.preventDefault();            
+            else{     
+                e.preventDefault();  
                 mask = $("<div/>").appendTo("body").addClass("mask");
                 var tl = new TimelineLite();
                     tl.from(mask, 0.3, {display: "none", top: "100%", onComplete:function(){
@@ -262,7 +243,7 @@ var homepage = (function() {
 
         if ($el.is('.grid')) {
             tl = new TimelineLite();
-            tl.staggerFrom($el.find('.post'), 1.8, {y:'200%', ease:Power4.easeOut}, 0.02, 0.02);
+            tl.staggerFrom($el.find('.post'), 1.8, {y:'200%', ease:Power4.easeOut}, 0.1, 0.2);
         }
 
         else if ($el.is('#destinations h5')) {
@@ -316,6 +297,7 @@ var allArticles = (function() {
     
     var init = function() {
         
+        $('body').on('reveal', '.scroll-reveal', scrollRevealHandler);
     }
 
     var scrollRevealHandler = function(){
@@ -324,9 +306,21 @@ var allArticles = (function() {
         if ($el.hasClass('scroll-reveal--revealed'))
             return;
 
-        if ($el.is('.grid')) {
-            tl = new TimelineLite();
-            tl.staggerFrom($el.find('.post'), 1.8, {y:'200%', ease:Power4.easeOut}, 0.02, 0.02);
+        if ($el.is('.post')) {
+
+
+
+            $('.post').each(function(index, element){
+                if ($('.post').hasClass('scroll-reveal--revealed'))
+                    return false;
+                else{
+                TweenLite.from(element, 1.8, {y: 200, delay: index * 0.1, ease:Power4.easeOut})
+                }
+                
+            })
+
+          /* tl = new TimelineLite();
+            tl.staggerFromTo($el.children(), 1.8, {y:'200%', ease:Power4.easeOut}, 0.2); */
         }
     }
 
