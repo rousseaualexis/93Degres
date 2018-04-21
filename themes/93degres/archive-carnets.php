@@ -3,6 +3,8 @@
 Template Name: Guides
 */
 ?>
+<?php include'head.php';?>
+<body class="all-articles">
 <?php get_header(); ?>
 
 
@@ -54,7 +56,7 @@ Template Name: Guides
 </div>
 
 <div class="overflow col-xs-48">
-    <div class="col-md-push-3 col-xs-44">
+    <div class="scroll-reveal grid col-md-push-3 col-xs-44">
         <?php $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
             $args = array('post_type' => array('carnets'), 'posts_per_page' => 6, 'paged' => $paged );
             $wp_query = new WP_Query($args);

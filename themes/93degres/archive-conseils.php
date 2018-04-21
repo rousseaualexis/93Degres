@@ -2,7 +2,8 @@
 /*
 Template Name: Conseils
 */
-?>
+?><?php include'head.php';?>
+<body class="all-articles">
 <?php get_header(); ?>
 
 <div class="overflow col-xs-48">

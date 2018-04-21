@@ -2,7 +2,8 @@
 /*
 Template Name: Guides
 */
-?>
+?><?php include'head.php';?>
+<body class="all-articles">
 <?php get_header(); ?>
 
 

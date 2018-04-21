@@ -1519,7 +1519,8 @@ table {
         font-style: normal;
         padding: 7px 10px;
         font-weight: normal;
-        white-space: nowrap; }
+        white-space: nowrap;
+        letter-spacing: 0em; }
     .first-post-texte .categories {
       top: 12.5%;
       float: none;
@@ -1575,7 +1576,8 @@ table {
     color: #fcc30f;
     margin-bottom: 4.16%;
     position: absolute;
-    top: -7vw; }
+    top: -7vw;
+    overflow: hidden; }
     @media only screen and (max-width: 767px) {
       #destinations h5 {
         font-size: 60px; } }

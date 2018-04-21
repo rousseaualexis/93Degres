@@ -102,6 +102,7 @@ var site = (function() {
     var onClick = function() {
         $("body").on("click", "a", function(e){
         var url = $(this).attr('href');
+        var target = $(this).attr('target');
         // check if the link has a hash
             if (url.charAt(0) === "#") {
                 e.preventDefault();
@@ -116,6 +117,20 @@ var site = (function() {
                     return;
                 smoothScrollTo($target.offset().top);
                 return;
+            }
+            else if (target === "_blank") {
+                e.preventDefault();
+                // if the link has only "#"
+                window.open(url);
+                return false;
+
+            }
+            else if (url.indexOf(window.location.href) > -1) {
+                e.preventDefault();
+                // if the link has only "#"
+                window.open(url);
+                return false;
+
             }
 
             else{      
@@ -136,7 +151,7 @@ var site = (function() {
      */
     var pageInit = function() {
         setTimeout(function(){
-            $(document).scrollTop(0)
+            //$(document).scrollTop(0)
             allModules();
         }, 200);
     }
@@ -180,16 +195,22 @@ var site = (function() {
     var scrollReveal = function() {
 
         //get viewport size
-        var windowHeight = $(window).height(),
+        var windowHeight = $(window).innerHeight(),
             windowWidth = $(window).width(),
             initialScroll = $(window).scrollTop(),
             items = $('.scroll-reveal'),
+            bottomScreen = windowHeight + initialScroll
             scroll;
 
         //hide anything not in the viewport
         items.each(function(){
-            if($(this).offset().top >= windowHeight){
-                $(this).removeClass('scroll-reveal--revealed');
+            if(bottomScreen > $(this).offset().top){
+                var $self = $(this);
+                setTimeout(function(){
+                    $self.trigger('reveal');
+                    $self.addClass('scroll-reveal--revealed')
+                }, 400);
+               
             }
         });
 
@@ -203,14 +224,14 @@ var site = (function() {
             if ($self.hasClass('scroll-reveal--revealed')) {
                         return;
                     }
-            else{
+
             var offsetTop = $self.offset().top;
 
             if (scroll + windowHeight >= offsetTop) {
 
                 $self.trigger('reveal');
                 $self.addClass('scroll-reveal--revealed')
-                        }}
+                        }   
             });
                              });
 
@@ -232,48 +253,6 @@ var homepage = (function() {
         firstPost();
         $('body').on('reveal', '.scroll-reveal', scrollRevealHandler);
     }
-/*
-    // left: 37, up: 38, right: 39, down: 40,
-// spacebar: 32, pageup: 33, pagedown: 34, end: 35, home: 36
-var keys = [37, 38, 39, 40];
-
-function preventDefault(e) {
-  e = e || window.event;
-  if (e.preventDefault)
-      e.preventDefault();
-  e.returnValue = false;  
-}
-
-function keydown(e) {
-    for (var i = keys.length; i--;) {
-        if (e.keyCode === keys[i]) {
-            preventDefault(e);
-            return;
-        }
-    }
-}
-
-function wheel(e) {
-  preventDefault(e);
-}
-
-function disable_scroll() {
-  if (window.addEventListener) {
-      window.addEventListener('DOMMouseScroll', wheel, false);
-  }
-  window.onmousewheel = document.onmousewheel = wheel;
-  document.onkeydown = keydown;
-}
-
-function enable_scroll() {
-    if (window.removeEventListener) {
-        window.removeEventListener('DOMMouseScroll', wheel, false);
-    }
-    window.onmousewheel = document.onmousewheel = document.onkeydown = null;  
-}*/
-
-    
-
 
     var scrollRevealHandler = function(){
         var $el = $(this);
@@ -289,7 +268,7 @@ function enable_scroll() {
         else if ($el.is('#destinations h5')) {
             var split = new SplitText($el,{charsClass: "charsplit", wordsClass: "wordsplit"});
             tl = new TimelineLite();
-            tl.staggerFrom($el.find('.charsplit'), 1.4, {y:'200%', ease:Power4.easeOut}, 0.01, 0.2);
+            tl.staggerFrom($el.find('.charsplit'), 1.2, {y:'200%', ease:Power4.easeOut}, 0.04, 0.2);
         }
 
         else if ($el.is('#destinations li')) {
@@ -308,10 +287,7 @@ function enable_scroll() {
         }
     }
 
-
-
     var firstPost = function(){
-        //disable_scroll();
         
         var $el = $('.first-post-texte'),
             $text = $("#title h1"),
@@ -326,8 +302,32 @@ function enable_scroll() {
             tl.staggerFrom($el.find('.categories .wordsplit'), 0.6, {y:'300%', ease:Power2.easeOut}, 0.1, '-=1.1');
             tl.staggerFrom($el.find('h1 .charsplit'), 1.2, {y:'150%', ease:Power4.easeOut}, 0.01, '-=1');
             tl.from($el.find('.trait'), 0.6, {scaleX:'0', transformOrigin:"left", ease:Power4.easeOut}, 2);
-            tl.from($el.find('strong'), 0.8, {left:'-100%', ease:Power4.easeOut}, '-=0.8');
-            tl.from($el.find('.a-cta'), 1, {opacity:0, y:'300%', /* onComplete:function(){enable_scroll();}, */ease:Power4.easeOut}, '-=1.6');
+            tl.from($el.find('strong'), 0.8, {left:'-120%', ease:Power4.easeOut}, '-=0.8');
+            tl.from($el.find('.a-cta'), 1, {opacity:0, y:'300%', ease:Power4.easeOut}, '-=1.6');
+    }
+
+
+return {
+        init: init
+    }
+
+})();
+var allArticles = (function() {
+    
+    var init = function() {
+        
+    }
+
+    var scrollRevealHandler = function(){
+        var $el = $(this);
+
+        if ($el.hasClass('scroll-reveal--revealed'))
+            return;
+
+        if ($el.is('.grid')) {
+            tl = new TimelineLite();
+            tl.staggerFrom($el.find('.post'), 1.8, {y:'200%', ease:Power4.easeOut}, 0.02, 0.02);
+        }
     }
 
 
@@ -342,5 +342,11 @@ site.showPreloader();
     {   
         setTimeout(function(){
             homepage.init();
+        }, 200);
+    };
+    if( $('body').hasClass('all-articles') === true ) 
+    {   
+        setTimeout(function(){
+            allArticles.init();
         }, 200);
     };

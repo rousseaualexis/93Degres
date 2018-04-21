@@ -98,7 +98,7 @@ Template Name: Homepage
     </div>
 </div>
 
-<?php //include'assets/views/content-instagram.php'; ?>
+<?php include'assets/views/content-instagram.php'; ?>
 <?php get_footer(); ?>
 <script type="text/javascript">
 
