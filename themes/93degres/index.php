@@ -43,7 +43,7 @@ Template Name: Homepage
                                 <a class="categories" href="<?php echo $term_url; ?>"><img src="<?php echo $flag_url;?>" alt="<?php echo $flag['alt'];?>"/ ><div><?php echo $term_name; ?></div></a>
                                 <div id="title">
                                 <h1><?php the_title(); ?></h1><?php if(!empty(get_field('subtitle'))){echo '<p><strong>' . get_field('subtitle') . '</strong></p>';}?></div>
-                                <a class="col-xs-offset-14" href="<?php the_permalink(); ?>"><div class="cta">Découvrir</div>
+                                <a class="a-cta col-xs-offset-14" href="<?php the_permalink(); ?>"><div class="cta">Découvrir</div>
                                 </a>
                                 <?php 
                             $thumbnail = get_field( 'thumbnail' );
@@ -91,10 +91,10 @@ Template Name: Homepage
     <?php } ?>
 </div>
 </div>
-<div id="about" class="scroll-reveal container col-xs-48">
+<div id="about" class="container col-xs-48">
     <div class="texte--center col-xs-42 col-xs-offset-3 col-sm-32 col-sm-offset-8">
-        <h2>Nous sommes Agathe&nbsp&&nbspAlexis, deux directeurs artistiques parisiens, passionnés de&nbspvoyage, de design et de photographie.</h2>
-        <a href="<?php the_permalink(); ?>"><div class="cta">En savoir plus</div></a>
+        <h2 class="scroll-reveal">Nous sommes Agathe&nbsp&&nbspAlexis, deux directeurs artistiques parisiens, passionnés de&nbspvoyage, de design et de photographie.</h2>
+        <a class="scroll-reveal a-cta" href="<?php the_permalink(); ?>"><div class="cta">En savoir plus</div></a>
     </div>
 </div>
 

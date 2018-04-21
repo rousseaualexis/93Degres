@@ -294,14 +294,17 @@ function enable_scroll() {
 
         else if ($el.is('#destinations li')) {
             tl = new TimelineLite();
-            tl.staggerTo($el, 1, {y:'500%', ease:Power4.easeOut}, 1);
+            tl.staggerFrom($el, 1, {y:'500%', ease:Power4.easeOut}, 0.5, 0.2);
         }
 
-        else if ($el.is('#about')) {
-            $title = $el.find('h2');
-            var split = new SplitText($title,{charsClass: "charsplit", wordsClass: "wordsplit"});
+        else if ($el.is('#about h2')) {
+            var split = new SplitText($el,{charsClass: "charsplit", wordsClass: "wordsplit"});
             tl = new TimelineLite();
-            tl.staggerFrom($el.find('.wordsplit'), 1, {y:'200%', ease:Power4.easeOut}, 0.05, 0.3);
+            tl.staggerFrom($el.find('.wordsplit'), 1, {y:'200%', ease:Power4.easeOut}, 0.05, 0.2);
+        }
+        else if ($el.is('#about .a-cta')) {
+            tl = new TimelineLite();
+            tl.from($el, 1, {y:'100%', ease:Power4.easeOut}, 0.5);
         }
     }
 
@@ -324,7 +327,7 @@ function enable_scroll() {
             tl.staggerFrom($el.find('h1 .charsplit'), 1.2, {y:'150%', ease:Power4.easeOut}, 0.01, '-=1');
             tl.from($el.find('.trait'), 0.6, {scaleX:'0', transformOrigin:"left", ease:Power4.easeOut}, 2);
             tl.from($el.find('strong'), 0.8, {left:'-100%', ease:Power4.easeOut}, '-=0.8');
-            tl.from($el.find('.cta'), 1, {opacity:0, y:'300%', /* onComplete:function(){enable_scroll();}, */ease:Power4.easeOut}, '-=1.6');
+            tl.from($el.find('.a-cta'), 1, {opacity:0, y:'300%', /* onComplete:function(){enable_scroll();}, */ease:Power4.easeOut}, '-=1.6');
     }
 
 

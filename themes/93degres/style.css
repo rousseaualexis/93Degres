@@ -1591,8 +1591,10 @@ table {
   padding-bottom: 30px; }
   #about h2 {
     overflow: hidden; }
+  #about a {
+    display: inline-block; }
   #about .cta {
-    margin-top: 4.16%;
+    margin-top: 25%;
     border-color: #fcc30f; }
     #about .cta:after {
       content: '👌'; }
@@ -1935,8 +1937,8 @@ a {
        -moz-user-select: none;
         -ms-user-select: none;
             user-select: none;
-    -webkit-transition: scale 0.45s cubic-bezier(0.4, 0, 0, 1);
-    transition: scale 0.45s cubic-bezier(0.4, 0, 0, 1); }
+    -webkit-transition: all 0.45s cubic-bezier(0.4, 0, 0, 1);
+    transition: all 0.45s cubic-bezier(0.4, 0, 0, 1); }
     a .cta:after {
       content: '👉';
       font-size: 20px;
