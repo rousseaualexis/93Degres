@@ -3,6 +3,8 @@
 Template Name: Homepage
 */
 ?>
+<?php include'head.php'; ?>
+<body class="homepage">
 <?php get_header(); ?>
 
 <div id="home-posts" class="overflow col-xs-48">
@@ -20,13 +22,13 @@ Template Name: Homepage
                     if($count == 1) :
         ?>
                     <?php if('guides' === get_post_type()): ?>
-                        <div id="first-post" class="post post-guide col-xs-pull-0 col-xs-48 col-md-pull-15">
+                        <div class="first-post post-guide col-xs-pull-0 col-xs-48 col-md-pull-15">
                     <?php elseif('conseils' === get_post_type()): ?>
-                        <div id="first-post" class="post post-conseil col-xs-pull-0 col-xs-48 col-md-pull-15">
+                        <div class="first-post post-conseil col-xs-pull-0 col-xs-48 col-md-pull-15">
                     <?php elseif('carnets' === get_post_type()):  ?>
-                        <div id="first-post" class="post post-article col-xs-pull-0 col-xs-48 col-md-pull-15">
+                        <div class="first-post post-article col-xs-pull-0 col-xs-48 col-md-pull-15">
                     <?php endif; ?>
-                            <div id="first-post-texte" class="col-xs-42 col-xs-pull-0 col-xs-offset-3 col-md-push-19 col-md-offset-12 col-md-20">
+                            <div class="first-post-texte col-xs-42 col-xs-pull-0 col-xs-offset-3 col-md-push-19 col-md-offset-12 col-md-20">
                                 <?php
                                     $id = get_the_id();
                                     $terms = get_the_terms( $id, 'category' );
@@ -47,7 +49,7 @@ Template Name: Homepage
                             $thumbnail = get_field( 'thumbnail' );
                             $thumbnail_url = $thumbnail['sizes']['large'];
                         ?>
-                            <div id="first-post-image" class="col-xs-42 col-xs-offset-3 col-md-offset-0 col-md-push-25 col-md-31">
+                            <div class="first-post-image col-xs-42 col-xs-offset-3 col-md-offset-0 col-md-push-25 col-md-31">
                                 <div class="image" style="background-image: url('<?php echo $thumbnail_url;?>');" title="<?php echo $thumbnail['alt']; ?>">
                                 </div>
                             </div>
@@ -60,17 +62,19 @@ Template Name: Homepage
                         </div>
                     </div>
         </div>
+        <div class="grid scroll-reveal" style="width: 100%; float: left; position: relative;">
         <?php
                     else :
-                        get_template_part( 'assets/views/content-grid' );
+                            get_template_part( 'assets/views/content-grid' );
                     endif;
                 endwhile;
             endif;
         ?>
     </div>
+    </div>
 </div>
 <div id="destinations" class="container col-xs-48">
-    <h5 class="col-xs-48">Destinations</h5>
+    <h5 class="scroll-reveal col-xs-48">Destinations</h5>
     <div class="col-xs-42 col-xs-offset-3">
     <?php
         $args = array(
@@ -81,13 +85,13 @@ Template Name: Homepage
         foreach ( $categories as $category ) {
             $category_link = get_category_link( $category );
     ?>
-        <li>
+        <li class="scroll-reveal">
             <a class="categories" href="<?php echo esc_url( $category_link ); ?>"> <?php echo $category->name; ?></a>
         </li>
     <?php } ?>
 </div>
 </div>
-<div id="about" class="container col-xs-48">
+<div id="about" class="scroll-reveal container col-xs-48">
     <div class="texte--center col-xs-42 col-xs-offset-3 col-sm-32 col-sm-offset-8">
         <h2>Nous sommes Agathe&nbsp&&nbspAlexis, deux directeurs artistiques parisiens, passionnés de&nbspvoyage, de design et de photographie.</h2>
         <a href="<?php the_permalink(); ?>"><div class="cta">En savoir plus</div></a>
@@ -98,9 +102,8 @@ Template Name: Homepage
 <?php get_footer(); ?>
 <script type="text/javascript">
 
-$("h1 > div").after('<div>lol</div>');
 Marquee3k.init();Marquee3k.refreshAll();
 
 
 </script>
-<?php include'end.php' ?>
+<?php include'end.php'; ?>

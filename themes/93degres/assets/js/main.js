@@ -9,14 +9,14 @@ $( document ).ready(function() {
         $degree = Math.floor(Math.random()*( $maxRotate - $minRotate + 1 ) + $minRotate);
 
            $(this).css({
-                'position' : 'absolute',
-                'left': Math.floor( Math.random() * 100 ) + '%',
-                'top' : Math.floor( Math.random() * 100 ) + '%',
-                '-webkit-transform': 'rotate(' + $degree + 'deg)',
-                '-moz-transform': 'rotate(' + $degree + 'deg)',
-                '-ms-transform': 'rotate(' + $degree + 'deg)',
-                '-o-transform': 'rotate(' + $degree + 'deg)',
-                'transform': 'rotate(' + $degree + 'deg)'
+                "position" : "absolute",
+                "left": Math.floor( Math.random() * 100 ) + "%",
+                "top" : Math.floor( Math.random() * 100 ) + "%",
+                "-webkit-transform": "rotate(" + $degree + "deg)",
+                "-moz-transform": "rotate(" + $degree + "deg)",
+                "-ms-transform": "rotate(" + $degree + "deg)",
+                "-o-transform": "rotate(" + $degree + "deg)",
+                "transform": "rotate(" + $degree + "deg)"
            });        
     })
 });
@@ -67,59 +67,69 @@ var tools = (function() {
 
 })();
 var site = (function() { 
+
+    /*  =============================================================================
+        PRELOADER
+    ============================================================================== */
+
+    /**
+     * Show preloader
+     */
+    var showPreloader = function() {
+
+        TweenLite.to($(".mask"), 0.5, {bottom:"100%", delay:0.75, onComplete:function(){
+            $(".mask").remove();
+        }});
+
+        setTimeout(function(){
+            init();
+        }, 100);
+    }
+
+
+
     var init = function() {
         // Tools
         //tools.init();
         onClick();
-
         // init modules that requires being init only once
         //modulesOnce();
-
         // Init page
         pageInit();
     }
 
-    /**
-     * Init parallax
-     */
-    var scrollParallaxInit = function() {
-        var scrollElements = $('.scroll-parallax');
-        scrollElements.each(function() {
-            var level = $(this).attr('para-strength') || 1;
-            $(this).attr('para-strength', level);
+
+    var onClick = function() {
+        $("body").on("click", "a", function(e){
+        var url = $(this).attr('href');
+        // check if the link has a hash
+            if (url.charAt(0) === "#") {
+                e.preventDefault();
+                // if the link has only "#"
+                if (url.length == 1) {
+                    smoothScrollTo(0);
+                    return;
+                }
+                // #someElement
+                var $target = $(url)
+                if (!$target.length)
+                    return;
+                smoothScrollTo($target.offset().top);
+                return;
+            }
+
+            else{      
+                e.preventDefault();            
+                mask = $("<div/>").appendTo("body").addClass("mask");
+                var tl = new TimelineLite();
+                    tl.from(mask, 0.3, {display: "none", top: "100%", onComplete:function(){
+                        setTimeout(function(){ 
+                            window.location = url;
+                        }, 200, url);
+                    }});        
+            }
         });
-        scrollParallaxResize();
     }
-
-
-    /**
-     * Resize parallax
-     */
-    var scrollParallaxResize = function() {
-        $('.scroll-parallax').each(function() {
-            var element = $(this);
-            var transform = element.css('transform');
-
-            element.css({transform: ''});
-            var offTop = element.offset().top;
-            element.css({transform: transform});
-
-            element.attr('data-top',    offTop);
-            element.attr('data-bottom', offTop+element.outerHeight());
-            element.attr('data-start',  offTop-$(window).height());
-            element.attr('data-stop',   offTop+element.outerHeight());
-        });
-    }
-
-   /**
-     * Resize container
-     */
-    var resizeContainer = function() {
-        /*var container = $('.scroll-container');
-        containerHeight = container.outerHeight();
-        $('body').css({height: containerHeight});*/
-    }
-
 
     /**
      * Init page
@@ -130,68 +140,13 @@ var site = (function() {
             allModules();
         }, 200);
     }
-/*  =============================================================================
-        PRELOADER
-    ============================================================================== */
-
-    /**
-     * Show preloader
-     */
-    var showPreloader = function() {
-
-        TweenLite.to($('.mask'), 0.5, {bottom:'100%', delay:0.75, onComplete:function(){
-            $('.mask').remove();
-        }});
-
-        setTimeout(function(){
-            init();
-        }, 100);
-    }
 
 
     /*============================================================
             Events
     ============================================================== */
 
-        var onClick = function() {
-            $('body').on('click', 'a', function(e){
-            var url = $(this).attr('href');
-
-            // check if the link has a hash
-                if (url.charAt(0) === "#") {
-                    e.preventDefault();
-                    // if the link has only "#"
-                    if (url.length == 1) {
-                        smoothScrollTo(0);
-                        return;
-                    }
-                    // #someElement
-                    var $target = $(url)
-                    if (!$target.length)
-                        return;
-                    smoothScrollTo($target.offset().top);
-                    return;
-                }
-
-                else{      
-                             e.preventDefault();            
-                    //wait 600 ms and redirect to the URL we grabbed earlier
-                    mask = $("<div/>").appendTo("body").addClass('mask');
-                    var tl = new TimelineLite();
-  
-                    tl.from(mask, 0.1, {display: "none", opacity: 0});
-                    tl.to(mask, 0.75, {display:"block", opacity:1, onComplete:function(){
-                setTimeout(function(){ 
-                        window.location = url;
-                    }, 200, url);
-            }, ease:Power1.easeInOut}, 0);
-                  
-                   
-                }
-            });
-
-
-        }
+    
 
 
  /*  =============================================================================
@@ -199,9 +154,8 @@ var site = (function() {
     ============================================================================== */
 
   var allModules = function() {
-        firstPost();
         navItem();
-    
+        scrollReveal();
     }
 
 
@@ -210,77 +164,59 @@ var site = (function() {
         MODULES
     ============================================================================== */
 
-     var firstPost = function(){
-        var $el = $('#first-post-texte');
-        var $text = $("#title h1");
-        var $categories = $el.find('.categories div');
-        var split = new SplitText($text,{charsClass: "charsplit", wordsClass: "wordsplit"});
-        var splitCategories = new SplitText($categories,{charsClass: "charsplit", wordsClass: "wordsplit"});
-        var tl = new TimelineLite();
-
-            tl.from($el.find('.image'), 1.8, {y:'100%', ease:Power4.easeOut}, 1.2);
-                                                tl.from($text, 1.2, {x:'-100%', ease:Power4.easeOut}, 1.4);
-            tl.from($el.find('.categories img'), 0.6, {y:'300%', ease:Power2.easeOut}, '-=1.2');
-            tl.staggerFrom($el.find('.categories .wordsplit'), 0.6, {y:'300%', ease:Power2.easeOut}, 0.1, '-=1');
-
-            tl.staggerFrom($el.find('h1 .charsplit'), 1.2, {y:'150%', ease:Power4.easeOut}, 0.01, '-=1');
-
-            tl.from($el.find('strong'), 0.8, {left:'-100%', ease:Power4.easeOut}, '-=0.6');
-            tl.from($el.find('.cta'), 1, {y:'300%', ease:Power4.easeOut}, '-=1.6');
-    }
-
-
+    
     var navItem = function(){
 
-        var $el = $('#header');
-        var $text = $(".menu a")
-            var split = new SplitText($text,{charsClass: "charsplit", wordsClass: "wordsplit"
-                }
-            );
-            var tl = new TimelineLite();
-            tl.staggerFrom($el.find('.charsplit'), 1.2, {y:'400%', ease:Power4.easeOut}, 0.008, 0.6);
+        var $el = $('#header'),
+            $text = $('.menu a'),
+            split = new SplitText($text,{charsClass: 'charsplit', wordsClass: 'wordsplit'}),
+            tl = new TimelineLite();
+            tl.staggerFrom($el.find('.wordsplit'), 1.2, {y:'400%', ease:Power4.easeOut}, 0.03, 1);
+        }
 
 
 
+
+    var scrollReveal = function() {
+
+        //get viewport size
+        var windowHeight = $(window).height(),
+            windowWidth = $(window).width(),
+            initialScroll = $(window).scrollTop(),
+            items = $('.scroll-reveal'),
+            scroll;
+
+        //hide anything not in the viewport
+        items.each(function(){
+            if($(this).offset().top >= windowHeight){
+                $(this).removeClass('scroll-reveal--revealed');
+            }
+        });
+
+        //on scroll
+        $(window).scroll(function (event) {
+            //get the current scroll position
+            scroll = $(window).scrollTop();
+            items.each( function(){
+            //show anything that is now in view (scroll + windowHeight)
+            var $self = $(this);
+            if ($self.hasClass('scroll-reveal--revealed')) {
+                        return;
+                    }
+            else{
+            var offsetTop = $self.offset().top;
+
+            if (scroll + windowHeight >= offsetTop) {
+
+                $self.trigger('reveal');
+                $self.addClass('scroll-reveal--revealed')
+                        }}
+            });
+                             });
 
     }
 
-    /*
-    var paralol = function(){
 
-        scrollTop = $(window).scrollTop();
-        var windowHeight = $(window).height();
-
-        // Move parallax
-        var scrollElements = $('.scroll-parallax');
-        if (scrollElements != null) {
-            scrollElements.each(function() {
-                var element = $(this);
-                var offsetTop = element.attr('data-top');
-                var offsetBottom = element.attr('data-bottom');
-
-                var level = Number(element.attr('para-strength')/2.5);
-                var amplitude = -windowHeight;
-                var movement = amplitude/(5/level);
-
-                if (offsetTop > (scrollTop+(windowHeight*1.3))) {
-                    element.css({transform: 'translate3d(0, '+(-movement*0.5)+'px, 0)'});
-                } else if (offsetBottom < (scrollTop*0.7)) {
-                    element.css({transform: 'translate3d(0, '+(movement*0.5)+'px, 0)'});
-                } else if (offsetTop < (scrollTop+(windowHeight*1.3)) && offsetBottom > (scrollTop*0.7)) {
-                    var start = element.attr('data-start');
-                    var stop = element.attr('data-stop');
-                    var percent = (scrollTop-start)/(stop-start);
-                    percent = percent-0.5;
-
-                    var destY = movement*percent;
-                    //TweenLite.to(element, .75, { y:destY, ease:Power3.easeOut, force3D : true });
-                    TweenLite.set(element, { y:destY });
-                }
-            });
-        }
-
-    }*/
 
 
 return {
@@ -289,5 +225,119 @@ return {
   
 
 })();
+
+var homepage = (function() {
+    
+    var init = function() {
+        firstPost();
+        $('body').on('reveal', '.scroll-reveal', scrollRevealHandler);
+    }
+/*
+    // left: 37, up: 38, right: 39, down: 40,
+// spacebar: 32, pageup: 33, pagedown: 34, end: 35, home: 36
+var keys = [37, 38, 39, 40];
+
+function preventDefault(e) {
+  e = e || window.event;
+  if (e.preventDefault)
+      e.preventDefault();
+  e.returnValue = false;  
+}
+
+function keydown(e) {
+    for (var i = keys.length; i--;) {
+        if (e.keyCode === keys[i]) {
+            preventDefault(e);
+            return;
+        }
+    }
+}
+
+function wheel(e) {
+  preventDefault(e);
+}
+
+function disable_scroll() {
+  if (window.addEventListener) {
+      window.addEventListener('DOMMouseScroll', wheel, false);
+  }
+  window.onmousewheel = document.onmousewheel = wheel;
+  document.onkeydown = keydown;
+}
+
+function enable_scroll() {
+    if (window.removeEventListener) {
+        window.removeEventListener('DOMMouseScroll', wheel, false);
+    }
+    window.onmousewheel = document.onmousewheel = document.onkeydown = null;  
+}*/
+
+    
+
+
+    var scrollRevealHandler = function(){
+        var $el = $(this);
+
+        if ($el.hasClass('scroll-reveal--revealed'))
+            return;
+
+        if ($el.is('.grid')) {
+            tl = new TimelineLite();
+            tl.staggerFrom($el.find('.post'), 1.8, {y:'200%', ease:Power4.easeOut}, 0.02, 0.02);
+        }
+
+        else if ($el.is('#destinations h5')) {
+            var split = new SplitText($el,{charsClass: "charsplit", wordsClass: "wordsplit"});
+            tl = new TimelineLite();
+            tl.staggerFrom($el.find('.charsplit'), 1.4, {y:'200%', ease:Power4.easeOut}, 0.01, 0.2);
+        }
+
+        else if ($el.is('#destinations li')) {
+            tl = new TimelineLite();
+            tl.staggerTo($el, 1, {y:'500%', ease:Power4.easeOut}, 1);
+        }
+
+        else if ($el.is('#about')) {
+            $title = $el.find('h2');
+            var split = new SplitText($title,{charsClass: "charsplit", wordsClass: "wordsplit"});
+            tl = new TimelineLite();
+            tl.staggerFrom($el.find('.wordsplit'), 1, {y:'200%', ease:Power4.easeOut}, 0.05, 0.3);
+        }
+    }
+
+
+
+    var firstPost = function(){
+        //disable_scroll();
+        
+        var $el = $('.first-post-texte'),
+            $text = $("#title h1"),
+            $categories = $el.find('.categories div'),
+            split = new SplitText($text,{charsClass: "charsplit", wordsClass: "wordsplit"}),
+            splitCategories = new SplitText($categories,{charsClass: "charsplit", wordsClass: "wordsplit"});
+        $("h1 > div:nth-child(2)").append('<div class="trait"></div>');
+        var tl = new TimelineLite();
+
+            tl.from($el.find('.image'), 1.8, {y:'200%', ease:Power4.easeOut}, 0.2);
+            tl.from($el.find('.categories img'), 0.6, {y:'300%', ease:Power2.easeOut}, '-=1.2');
+            tl.staggerFrom($el.find('.categories .wordsplit'), 0.6, {y:'300%', ease:Power2.easeOut}, 0.1, '-=1.1');
+            tl.staggerFrom($el.find('h1 .charsplit'), 1.2, {y:'150%', ease:Power4.easeOut}, 0.01, '-=1');
+            tl.from($el.find('.trait'), 0.6, {scaleX:'0', transformOrigin:"left", ease:Power4.easeOut}, 2);
+            tl.from($el.find('strong'), 0.8, {left:'-100%', ease:Power4.easeOut}, '-=0.8');
+            tl.from($el.find('.cta'), 1, {opacity:0, y:'300%', /* onComplete:function(){enable_scroll();}, */ease:Power4.easeOut}, '-=1.6');
+    }
+
+
+return {
+        init: init
+    }
+
+})();
 // Launch site
 site.showPreloader();
+    if( $('body').hasClass('homepage') === true ) 
+    {   
+        setTimeout(function(){
+            homepage.init();
+        }, 200);
+    };

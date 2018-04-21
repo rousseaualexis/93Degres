@@ -2,23 +2,20 @@
 	+media-sm-and-less
 		margin-top: 100px
 
-#first-post 
+.first-post 
 	font-size: 0
 	min-height: 70vh
+	padding-top: 120px
+	padding-bottom: 12.5%
+	margin-bottom: -8.33%
+	min-height: 75vh
+	display: table
+	cursor: initial
 
+	+media-sm-and-less
+		padding-bottom: 25%
 
 	&.post 
-		padding-top: 120px
-		padding-bottom: 12.5%
-		margin-bottom: -8.33%
-		min-height: 75vh
-		display: table
-		cursor: initial
-
-		+media-sm-and-less
-			padding-bottom: 25%
-
-
 		&-article
 			background: $color-article-light
 
@@ -53,6 +50,8 @@
 
 			& > div
 
+				
+
 				&:nth-child(1)
 					
 					display: block
@@ -63,16 +62,6 @@
 					display: block
 					position: relative
 					margin-left: 16.66%
-				    
-					&:before
-						content: ''
-						top: 3.85vw
-						margin-top: 3px
-						position: absolute
-						height: 6px
-						background: $white
-						width: 16.66%
-						left: -20%
 
 				&:nth-child(3)
 					
@@ -83,6 +72,15 @@
 				&:nth-last-child(1)
 					display: initial
 					float: left
+
+				.trait
+					top: 3.85vw
+					margin-top: 3px
+					position: absolute
+					height: 6px
+					background: $white
+					width: 16.66%
+					left: -20%
 
 				.wordsplit
 					padding-top: 1vw
@@ -201,6 +199,9 @@
 
 #about
 	padding-bottom: 30px
+
+	h2
+		overflow: hidden
 
 	.cta 
 		margin-top: 4.16%
