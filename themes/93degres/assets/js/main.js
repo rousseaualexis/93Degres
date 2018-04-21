@@ -213,12 +213,18 @@ var site = (function() {
      var firstPost = function(){
         var $el = $('#first-post-texte');
         var $text = $("#title h1");
+        var $categories = $el.find('.categories div');
         var split = new SplitText($text,{charsClass: "charsplit", wordsClass: "wordsplit"});
+        var splitCategories = new SplitText($categories,{charsClass: "charsplit", wordsClass: "wordsplit"});
         var tl = new TimelineLite();
 
-            tl.from($el.find('.image'), 1.8, {y:'100%', ease:Power4.easeOut}, 0.4);
-            tl.from($text, 1.2, {x:'-100%', ease:Power4.easeOut}, 0.6);
+            tl.from($el.find('.image'), 1.8, {y:'100%', ease:Power4.easeOut}, 1.2);
+                                                tl.from($text, 1.2, {x:'-100%', ease:Power4.easeOut}, 1.4);
+            tl.from($el.find('.categories img'), 0.6, {y:'300%', ease:Power2.easeOut}, '-=1.2');
+            tl.staggerFrom($el.find('.categories .wordsplit'), 0.6, {y:'300%', ease:Power2.easeOut}, 0.1, '-=1');
+
             tl.staggerFrom($el.find('h1 .charsplit'), 1.2, {y:'150%', ease:Power4.easeOut}, 0.01, '-=1');
+
             tl.from($el.find('strong'), 0.8, {left:'-100%', ease:Power4.easeOut}, '-=0.6');
             tl.from($el.find('.cta'), 1, {y:'300%', ease:Power4.easeOut}, '-=1.6');
     }
@@ -232,7 +238,7 @@ var site = (function() {
                 }
             );
             var tl = new TimelineLite();
-            tl.staggerFrom($el.find('.charsplit'), 1.2, {y:'400%', ease:Power4.easeOut}, 0.01, 0.5);
+            tl.staggerFrom($el.find('.charsplit'), 1.2, {y:'400%', ease:Power4.easeOut}, 0.008, 0.6);
 
 
 

@@ -38,7 +38,7 @@ Template Name: Homepage
                                         $term_name = $term->name;
                                     }
                                 ?>
-                                <a class="categories" href="<?php echo $term_url; ?>"><img src="<?php echo $flag_url;?>" alt="<?php echo $flag['alt'];?>"/ ><?php echo $term_name; ?></a>
+                                <a class="categories" href="<?php echo $term_url; ?>"><img src="<?php echo $flag_url;?>" alt="<?php echo $flag['alt'];?>"/ ><div><?php echo $term_name; ?></div></a>
                                 <div id="title">
                                 <h1><?php the_title(); ?></h1><?php if(!empty(get_field('subtitle'))){echo '<p><strong>' . get_field('subtitle') . '</strong></p>';}?></div>
                                 <a class="col-xs-offset-14" href="<?php the_permalink(); ?>"><div class="cta">Découvrir</div>
