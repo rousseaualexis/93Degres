@@ -1526,6 +1526,9 @@ table {
       float: none;
       display: inline-block;
       position: absolute; }
+    .first-post-texte .a-cta {
+      display: block;
+      clear: both; }
     .first-post-texte .cta {
       float: none;
       border: none;
@@ -1796,13 +1799,13 @@ table {
   #why-we-like__content {
     z-index: 2;
     position: relative; }
-    #why-we-like__content h2 {
+    #why-we-like__content h4 {
       display: inline-block;
       letter-spacing: 0.4em;
       padding: 20px 0;
       margin-bottom: 4.16%;
       position: relative; }
-      #why-we-like__content h2:before, #why-we-like__content h2:after {
+      #why-we-like__content h4:before, #why-we-like__content h4:after {
         content: "";
         position: absolute;
         margin-left: 50%;
@@ -1810,9 +1813,9 @@ table {
         width: 25px;
         height: 4px;
         background: #fcc30f; }
-      #why-we-like__content h2:before {
+      #why-we-like__content h4:before {
         top: 0; }
-      #why-we-like__content h2:after {
+      #why-we-like__content h4:after {
         bottom: 0; }
     #why-we-like__content h3 {
       text-align: center;
@@ -1831,13 +1834,13 @@ table {
 
 #what-we-like {
   text-align: center; }
-  #what-we-like h2 {
+  #what-we-like h4 {
     display: inline-block;
     letter-spacing: 0.4em;
     padding: 20px 0;
     margin-bottom: 4.16%;
     position: relative; }
-    #what-we-like h2:before, #what-we-like h2:after {
+    #what-we-like h4:before, #what-we-like h4:after {
       content: "";
       position: absolute;
       margin-left: 50%;
@@ -1845,9 +1848,9 @@ table {
       width: 25px;
       height: 4px;
       background: #fcc30f; }
-    #what-we-like h2:before {
+    #what-we-like h4:before {
       top: 0; }
-    #what-we-like h2:after {
+    #what-we-like h4:after {
       bottom: 0; }
   #what-we-like__content {
     right: 1.04%; }

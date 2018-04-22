@@ -104,8 +104,8 @@ $term = get_queried_object();
 ?>
         <div id="why-we-like" class="container col-xs-48">
             <div id="why-we-like__content" class="col-xs-34 col-xs-offset-7">
-                <h2>Pourquoi on aime ?</h2>
-                <h3> <?php echo $why_we_like ?></h3>
+                <h4>Pourquoi on aime ?</h4>
+                <p> <?php echo $why_we_like ?></p>
             </div>
             <div class="stamp">
                 <img src="<?php bloginfo('template_url') ?>/assets/img/wave.png"/>
@@ -118,7 +118,7 @@ $term = get_queried_object();
     if (!empty($what_we_like)) :
         echo  '
         <div id="what-we-like" class="container col-xs-48">
-            <h2 class="col-xs-42 col-xs-offset-3">Nos endroits favoris</h2>
+            <h4 class="col-xs-42 col-xs-offset-3">Nos endroits favoris</h4>
             <div id="what-we-like__content" class="col-xs-48">
             ';
             while (have_rows('what_we_like', $term)): the_row();
