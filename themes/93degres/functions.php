@@ -555,19 +555,19 @@ function add_newlines_to_post_content( $content ) {
  * WP Admin reading options screen to a low value like 1.
  *
  */
-function custom_posts_per_page( $query ) {
+add_action( 'pre_get_posts', 'wpsites_cpt_archive_items' );
+function wpsites_cpt_archive_items( $query ) {
+if( $query->is_main_query() && !is_admin() && is_post_type_archive( 'carnets' ) ) {
+        $query->set( 'posts_per_page', '9' );
+    }
+if( $query->is_main_query() && !is_admin() && is_post_type_archive( 'guides' ) ) {
+        $query->set( 'posts_per_page', '9' );
+    }
+if( $query->is_main_query() && !is_admin() && is_post_type_archive( 'conseils' ) ) {
+        $query->set( 'posts_per_page', '9' );
+    }
 
-    if ( $query->is_archive('carnets') ) {
-        set_query_var('posts_per_page', 1);
-    }
-    else if ( $query->is_archive('guides') ) {
-        set_query_var('posts_per_page', 1);
-    }
-    else if ( $query->is_archive('conseils') ) {
-        set_query_var('posts_per_page', 1);
-    }
 }
-add_action( 'pre_get_posts', 'custom_posts_per_page' );
 
 
 
