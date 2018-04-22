@@ -4,8 +4,9 @@
     $icon_url = $icon['sizes']['medium'];
 	$title = get_sub_field('title');
 ?>
-<div class="un-tiers un-tiers__text col-xs-40 col-md-36">
+
     <?php if (!empty($icon) || !empty($title)): ?>
+    <div class="un-tiers un-tiers__text col-xs-40 col-md-36">
     	<div class="title">
             <?php if (!empty($icon)): ?>
                 <img src="<?php echo $icon_url; ?>" />
@@ -18,6 +19,9 @@
             </div>
             <?php endif; ?>
         </div>
+   <?php else :?>
+    <div class="un-tiers col-xs-40 col-md-36">
+
    <?php endif;
     echo $paragraph ?>
 </div>

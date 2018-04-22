@@ -1559,8 +1559,8 @@ table {
     position: absolute;
     top: 43%;
     line-height: 0;
-    left: -3%;
-    right: -3%;
+    left: 25%;
+    width: 100%;
     z-index: 1; }
     .first-post .country-code h5 {
       font-size: 49vw;
@@ -1594,7 +1594,7 @@ table {
 
 #about {
   padding-bottom: 30px; }
-  #about h2 {
+  #about h2 > div {
     overflow: hidden; }
   #about .cta {
     margin-top: 4.16%;
@@ -1624,6 +1624,8 @@ table {
     background-image: linear-gradient(45deg, #ffbc00, #ffbc00); }
     #article p a:hover {
       color: #ffbc00; }
+  #article #introduction h4 {
+    background: #ffbc00; }
   #article #layout .deux-tiers__chapter ~ .deux-tiers__paragraph:first-of-type:first-letter {
     color: #ffbc00; }
 
@@ -1637,6 +1639,8 @@ table {
     background-image: linear-gradient(45deg, #5f8f24, #5f8f24); }
     #guide p a:hover {
       color: #5f8f24; }
+  #guide #introduction h4 {
+    background: #5f8f24; }
   #guide #layout .deux-tiers__chapter ~ .deux-tiers__paragraph:first-of-type:first-letter {
     color: #5f8f24; }
 
@@ -1650,6 +1654,8 @@ table {
     background-image: linear-gradient(45deg, #0080ff, #0080ff); }
     #conseil p a:hover {
       color: #0080ff; }
+  #conseil #introduction h4 {
+    background: #0080ff; }
   #conseil #layout .deux-tiers__chapter ~ .deux-tiers__paragraph:first-of-type:first-letter {
     color: #0080ff; }
 
@@ -1675,13 +1681,23 @@ table {
     #introduction-title .randomize {
       z-index: -2; }
   #introduction h1 {
+    padding-top: 1vw;
     width: 100%;
-    float: left;
     position: relative;
-    z-index: 1; }
-    #introduction h1 span {
-      display: inherit;
-      margin-top: 30px; }
+    z-index: 1;
+    color: #ffffff;
+    overflow: hidden; }
+  #introduction h4 {
+    font-size: 24px;
+    letter-spacing: initial;
+    padding: 8px 14px;
+    margin-top: 1vw;
+    z-index: 2;
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    color: #ffffff;
+    background: #3c2626; }
   #introduction h3 {
     font-size: 20px;
     line-height: 40px;
@@ -1691,6 +1707,8 @@ table {
       #introduction h3 {
         font-size: 24px;
         line-height: 32px; } }
+    #introduction h3 > div {
+      overflow: hidden; }
   #introduction .country-code {
     position: absolute;
     left: 33%;
@@ -1708,7 +1726,7 @@ table {
               transition-delay: 200ms;
       font-size: 24vw;
       letter-spacing: 0;
-      opacity: 0.15; }
+      opacity: 0.3; }
   #introduction .label {
     position: absolute;
     top: -50%;
@@ -2472,34 +2490,38 @@ li {
         margin-right: 15px;
         display: table-cell;
         vertical-align: middle; }
-      .un-tiers--container .un-tiers__text p {
-        opacity: 0.65; }
-        .un-tiers--container .un-tiers__text p a {
-          opacity: 1; }
-      .un-tiers--container .un-tiers__text .title-content {
-        display: table-cell;
-        vertical-align: middle; }
-    .un-tiers--container .un-tiers__image img {
+  .un-tiers--container p {
+    opacity: 0.65; }
+    .un-tiers--container p a {
+      opacity: 1; }
+    .un-tiers--container p .title-content {
+      display: table-cell;
+      vertical-align: middle; }
+    .un-tiers--container p__image img {
       width: 100%; }
 
-.full-width--container .full-width {
-  margin-bottom: 4.16%;
-  float: left; }
-  @media only screen and (max-width: 767px) {
-    .full-width--container .full-width {
-      margin-bottom: 0; } }
-  .full-width--container .full-width blockquote {
-    padding: 8.33% 0; }
+.full-width--container {
+  font-size: 0; }
+  .full-width--container .full-width {
+    margin-bottom: 4.16%;
+    float: left; }
     @media only screen and (max-width: 767px) {
-      .full-width--container .full-width blockquote {
+      .full-width--container .full-width {
+        margin-bottom: 0; } }
+    .full-width--container .full-width blockquote {
+      padding: 8.33% 0; }
+      @media only screen and (max-width: 767px) {
+        .full-width--container .full-width blockquote {
+          margin-bottom: 8.33%; } }
+  .full-width--container .un-tiers {
+    display: inline-block;
+    vertical-align: middle;
+    float: none; }
+    @media only screen and (max-width: 767px) {
+      .full-width--container .un-tiers__image {
         margin-bottom: 8.33%; } }
-
-@media only screen and (max-width: 767px) {
-  .full-width--container .un-tiers__image {
-    margin-bottom: 8.33%; } }
-
-.full-width--container .un-tiers__image img {
-  width: 100%; }
+    .full-width--container .un-tiers__image img {
+      width: 100%; }
 
 #realated {
   text-align: center;

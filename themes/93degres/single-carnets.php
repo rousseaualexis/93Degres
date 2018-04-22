@@ -1,5 +1,5 @@
 <?php include'head.php'; ?>
-<body>
+<body class="single">
 <?php get_header(); ?>
 <?php $thumbnail = get_field('thumbnail');
     if ($thumbnail) :
@@ -19,11 +19,10 @@
 
 <div id="article" class="container col-xs-48">
     <div id="introduction" class="col-xs-48 col-xs-offset-0">
-        <div id="introduction-title" class="col-xs-42 col-xs-offset-3">
+        <div id="introduction-title" class="col-xs-36 col-xs-offset-6">
             <a class="categories" href="<?php echo $term_url; ?>">
                 <img src="<?php echo $flag_url;?>" alt="<?php echo $flag['alt'];?>"/ >
-                <?php echo $term_name; ?>
-
+                <div><?php echo $term_name; ?></div>
             </a>
             <div id="country-code" class="country-code">
                 <h5 class="randomize"><?php echo $destination_code; ?></h5>
@@ -34,14 +33,14 @@
             <div id="date" class="date">
                 <h5 class="randomize"><? the_time(get_option('date_format')); ?></h5>
             </div>
-            <h1><?php the_title(); ?><?php if(!empty(get_field('subtitle'))){echo '<br><span>' . get_field('subtitle') . '</span>';}?></h1>
+            <h1><?php the_title(); ?></h1><?php if(!empty(get_field('subtitle'))){echo '<h4>' . get_field('subtitle') . '</h4>';}?>
         </div>
-        <h3 class="col-xs-42 col-xs-offset-3 col-md-32 col-md-offset-8"><?php echo strip_tags(get_field('introduction'), '<br><em><strong>');?></h3>
+        <h3 class="col-xs-42 col-xs-offset-3 col-md-28 col-md-offset-10"><?php echo strip_tags(get_field('introduction'), '<br><em><strong>');?></h3>
      </div>
 
     <div id="introduction__thumbnail" class="col-xs-48">
         <div class="cover-image col-xs-42 col-xs-offset-3 col-md-40 col-md-offset-4">
-            <div class="image image--1-2" style="background-image: url('<?php echo $thumbnail_url; ?>');"></div>
+            <div class="scroll-reveal image image--1-2" style="background-image: url('<?php echo $thumbnail_url; ?>');"></div>
         </div>
     </div>
     <?php include'assets/views/layout-loop.php'; ?>

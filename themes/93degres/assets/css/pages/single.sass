@@ -12,6 +12,9 @@
 		&:hover
 			color: $color-carnet-dark
 
+	#introduction h4
+		background: $color-carnet-dark
+
 	#layout
 
 		.deux-tiers__chapter ~ .deux-tiers__paragraph
@@ -34,6 +37,9 @@
 		&:hover
 			color: $color-guide-dark
 
+	#introduction h4
+		background: $color-guide-dark
+
 	#layout
 
 		.deux-tiers__chapter ~ .deux-tiers__paragraph
@@ -55,6 +61,9 @@
 		background-image: linear-gradient(45deg, $color-conseil-dark, $color-conseil-dark)
 		&:hover
 			color: $color-conseil-dark
+
+	#introduction h4
+		background: $color-conseil-dark
 
 	#layout
 
@@ -94,14 +103,24 @@
 		.randomize 
 			z-index: -2
 	h1
+		padding-top: 1vw
 		width: 100%
-		float: left
 		position: relative
 		z-index: 1
+		color: $white
+		overflow: hidden
 
-		span
-			display: inherit
-			margin-top: 30px
+	h4
+		font-size: 24px
+		letter-spacing: initial
+		padding: 8px 14px
+		margin-top: 1vw
+		z-index: 2
+		position: relative
+		display: inline-block
+		overflow: hidden
+		color: $white
+		background: $color-dark
 
 	h3 
 		font-size: 20px
@@ -112,6 +131,8 @@
 		+media-sm-and-less
 			font-size: 24px
 			line-height: 32px
+		&>div
+			overflow: hidden
 	
 	.country-code 
 
@@ -130,7 +151,7 @@
 			transition-delay: 200ms
 			font-size: 24vw
 			letter-spacing: 0;
-			opacity: 0.15
+			opacity: 0.3
 			
 		
 	.label

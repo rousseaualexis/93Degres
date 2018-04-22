@@ -304,6 +304,7 @@ var archive = (function() {
         $('body').on('reveal', '.scroll-reveal', scrollRevealHandler);
     }
 
+
     var scrollRevealHandler = function(){
         var $el = $(this);
 
@@ -332,6 +333,58 @@ return {
     }
 
 })();
+var single = (function() {
+    
+    var init = function() {
+        introduction();
+        $('body').on('reveal', '.scroll-reveal', scrollRevealHandler);
+    }
+
+
+var introduction = function(){
+        
+            var $title = $("#introduction h1"),
+            $subtitle = $("#introduction h4"),
+            $summary = $("#introduction h3");
+            $categories = $("#introduction .categories");
+            var splitTitle = new SplitText($title,{charsClass: "charsplit", wordsClass: "wordsplit"});
+            var splitSubtitle = new SplitText($subtitle,{charsClass: "charsplit", wordsClass: "wordsplit"});
+            var splitSummary = new SplitText($summary,{charsClass: "charsplit", wordsClass: "wordsplit"});
+            var splitCategories = new SplitText($categories.find('div'),{charsClass: "charsplit", wordsClass: "wordsplit"});
+                var tl = new TimelineLite();
+
+                tl.staggerFrom($categories.find('img'), 1, {y:'250%', ease:Power2.easeOut}, 0.1, 0.8);
+                tl.staggerFrom($categories.find('.wordsplit'), 1, {y:'250%', ease:Power2.easeOut}, 0.1, '-=0.8');
+                tl.staggerFrom($title.find('.charsplit'), 1, {y:'250%', ease:Power2.easeOut}, 0.01, '-=1.4');
+                tl.staggerFrom($subtitle.find('.charsplit'), 1, {y:'250%', ease:Power2.easeOut}, 0.01, '-=1');
+                tl.staggerFrom($summary.find('.wordsplit'), 1, {y:'250%', ease:Power2.easeOut}, 0.02, '-=1.2');
+    }
+
+    var scrollRevealHandler = function(){
+        var $el = $(this);
+
+        if ($el.hasClass('scroll-reveal--revealed'))
+            return;
+
+        if ($el.is('.deux-tiers')) {
+                
+            tl = new TimelineLite();
+            tl.staggerFromTo($el.children(), 1.8, {y:'200%', ease:Power4.easeOut}, 0.2);
+        }
+
+        if ($el.is('#introduction__thumbnail .image')) {
+                
+            tl = new TimelineLite();
+            tl.staggerFrom($el, 1.8, {y:'200%', ease:Power4.easeOut}, 0.1, 0.2);
+        }
+    }
+
+
+return {
+        init: init
+    }
+
+})();
 // Launch site
 site.showPreloader();
     if( $('body').hasClass('homepage') === true ) 
@@ -348,5 +401,13 @@ site.showPreloader();
     {   
         setTimeout(function(){
             archive.init();
+        }, 200);
+    };
+    if( $('body').hasClass('single') === true )
+        $('body').removeClass('single'); 
+        $('body').removeAttr('class');
+    {   
+        setTimeout(function(){
+            single.init();
         }, 200);
     };
