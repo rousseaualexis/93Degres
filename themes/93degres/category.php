@@ -1,9 +1,10 @@
+<?php include'head.php'; ?>
+<body>
 <?php
 get_header(); 
 $term = get_queried_object();
 ?>
-
-<div id="cover-categorie"class="overflow col-xs-48">
+<div id="cover-categorie" class="overflow col-xs-48">
     <div id="cover-container" class="col-xs-48 col-md-48 col-md-offset-0">    
         <?php
             $thumbnail = get_field('thumbnail', $term);
@@ -15,58 +16,37 @@ $term = get_queried_object();
         <div class="table">
             <div id="cover-container-text" class="table-cell">
                 <h1><?php echo the_archive_title(); ?></h1>
-                <!--<div id="list-sous-cat" class="col-xs-offset-3 col-xs-42">
-                    <?php 
-            $this_category = get_category( $cat );
-            $child_categories=get_categories( array( 
-                'child_of' => $this_category->cat_ID,
-                'post_type' => $_GET['type'],
-                'taxonomy' => 'category',
-                'hide_empty' => 1));
-            foreach ($child_categories as $category) {
-                $category_link = sprintf('<div class="list-sous-cat-element"><h2>
-                <a href="%1$s" alt="%2$s">%3$s</a>
-                <span>(%4$s)</span> 
-                </h2> 
-                </div>',
-                esc_url(get_category_link($category->term_id)),
-                esc_attr(sprintf(__('View all posts in %s', 'textdomain'), $category->name)),
-                esc_html($category->name),
-                esc_html($category->category_count));
-                echo sprintf(esc_html__('%s', 'textdomain'), $category_link); }
-        ?> !-->
                 </div>
             </div>
-            <div class="cover-image" style="background-image: url('<?php echo $thumbnail_url; ?>');">
-                <div class="country-code">
+            <div class="country-code">
+                <div id="marquee" class="marquee3k" data-speed="1.5" data-reverse="true">
                     <h5><?php echo $destination_code; ?></h5>
                 </div>
             </div>
+            <div class="cover-image" style="background-image: url('<?php echo $thumbnail_url; ?>');"></div>
             <div class="cover-gradient"></div>
         </div>
     </div>
 </div>
-
 <div class="overflow col-xs-48">
     <div id="list-sous-cat" class="col-xs-offset-3 col-xs-42">    
         <?php 
-            $this_category = get_category( $cat );
-            $child_categories=get_categories( array( 
-                'child_of' => $this_category->cat_ID,
-                'post_type' => $_GET['type'],
-                'taxonomy' => 'category',
-                'hide_empty' => 1));
-            foreach ($child_categories as $category) {
-                $category_link = sprintf('<div class="list-sous-cat-element">
-                <a href="%1$s" alt="%2$s">%3$s</a>
-                <span>(%4$s)</span>  
-                </div>',
-                esc_url(get_category_link($category->term_id)),
-                esc_attr(sprintf(__('View all posts in %s', 'textdomain'), $category->name)),
-                esc_html($category->name),
-                esc_html($category->category_count));
-                echo sprintf(esc_html__('%s', 'textdomain'), $category_link); }
-        ?>
+    $this_category = get_category( $cat );
+    $child_categories=get_categories( array( 
+        'child_of' => $this_category->cat_ID,
+        'post_type' => $_GET['type'],
+        'taxonomy' => 'category',
+        'hide_empty' => 1));
+    foreach ($child_categories as $category) {
+        $category_link = sprintf('<div class="list-sous-cat-element">
+            <a href="%1$s" alt="%2$s">%3$s</a>
+            <span>(%4$s)</span>  
+        </div>
+        
+        ', esc_url(get_category_link($category->term_id)), esc_attr(sprintf(__('View all posts in %s', 'textdomain'), $category->name)), esc_html($category->name), esc_html($category->category_count));
+        echo sprintf(esc_html__('%s', 'textdomain'), $category_link); }
+
+    ?>
     </div>
 </div>
 
@@ -96,7 +76,7 @@ $term = get_queried_object();
                 else{
                     $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
                     $title = get_the_archive_title();
-                    $args = array('post_type'=> array('post' , 'guides', 'conseils'),
+                    $args = array('post_type'=> array('carnets' , 'guides', 'conseils'),
                                   'category_name' => $title,
                                   'paged' => $paged );
                     $wp_query = new WP_Query($args);       
@@ -185,5 +165,8 @@ $term = get_queried_object();
         </div>';
     endif;
 ?>
-    <?php get_footer(); ?>
+<?php get_footer(); ?>
+<script type="text/javascript">
+Marquee3k.init();Marquee3k.refreshAll();
+</script>
 <?php include'end.php' ?>

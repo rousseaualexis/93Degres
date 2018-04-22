@@ -270,10 +270,6 @@ var homepage = (function() {
             tl = new TimelineLite();
             tl.staggerFrom($el.find('.wordsplit'), 1, {y:'200%', ease:Power4.easeOut}, 0.05, 0.2);
         }
-        else if ($el.is('#about .a-cta')) {
-            tl = new TimelineLite();
-            tl.from($el, 1, {y:'100%', ease:Power4.easeOut}, 0.5);
-        }
     }
 
     var firstPost = function(){

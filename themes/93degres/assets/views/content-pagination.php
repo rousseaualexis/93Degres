@@ -3,8 +3,8 @@
         the_posts_pagination( array(
             'type' => 'list',
             'screen_reader_text' => ' ', 
-            'prev_text'          => __( 'Previous page'),
-            'next_text'          => __( 'Next page'),
+            'prev_text'          => __( 'Précédente'),
+            'next_text'          => __( 'Suivante'),
         ) );
     ?>
  </div>

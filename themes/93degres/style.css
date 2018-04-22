@@ -1593,10 +1593,8 @@ table {
   padding-bottom: 30px; }
   #about h2 {
     overflow: hidden; }
-  #about a {
-    display: inline-block; }
   #about .cta {
-    margin-top: 25%;
+    margin-top: 4.16%;
     border-color: #fcc30f; }
     #about .cta:after {
       content: '👌'; }
@@ -1763,6 +1761,28 @@ table {
       position: absolute;
       background-size: cover;
       background-position: center; }
+    #cover-categorie #cover-container .table {
+      z-index: 2;
+      position: relative; }
+    #cover-categorie #cover-container .country-code {
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      top: 0;
+      z-index: 0; }
+      #cover-categorie #cover-container .country-code div {
+        height: 100%;
+        width: 100%;
+        position: relative; }
+        #cover-categorie #cover-container .country-code div h5 {
+          z-index: 2;
+          color: #ffffff;
+          position: relative;
+          top: 52.5%;
+          line-height: 0;
+          font-size: 65vh;
+          padding-right: 23vw;
+          opacity: 0.2; }
   #cover-categorie h1, #cover-categorie h2 {
     color: #ffffff; }
   #cover-categorie .cover-gradient {
@@ -1863,6 +1883,12 @@ table {
       font-size: 18px;
       letter-spacing: 0.4em;
       margin-bottom: 30px; }
+
+.cover-archive {
+  height: 30%;
+  margin-bottom: 8.33%; }
+  .cover-archive--carnets {
+    background: #ffe08c; }
 
 *::-moz-selection {
   background-color: #fcc30f; }
@@ -2064,7 +2090,7 @@ li {
   background-size: cover;
   background-position: center;
   background: #3c2626;
-  opacity: 0.4;
+  opacity: 0.25;
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0, rgba(0, 0, 0, 0.33)), to(black));
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0.33) 0, black 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#54000000', endColorstr='#000000',GradientType=0 ); }
@@ -2101,7 +2127,6 @@ li {
   top: 8.33%; }
   #list-sous-cat a {
     color: #3c2626;
-    font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.3em;
     padding: 12px;
@@ -2119,7 +2144,6 @@ li {
   #list-sous-cat span {
     font-family: "leaguegothic", "impact", sans-serif;
     color: #3c2626;
-    font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.4em;
     font-size: 12px;
@@ -2692,8 +2716,7 @@ input {
     top: -16px; }
 
 #respond #reply-title {
-  margin-bottom: 10px;
-  text-align: center; }
+  margin-bottom: 10px; }
 
 select:focus {
   outline: none;
