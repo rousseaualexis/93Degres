@@ -9,8 +9,8 @@
     $image_03_url = $image_03['sizes']['medium'];
     $image_03_caption = $image_03['caption'];
 ?>  
-<div class="full-width">
-	<div class="un-tiers un-tiers__image col-xs-42 col-xs-offset-3 col-md-12 col-md-offset-4">
+<div class="full-width col-xs-48">
+	<div class="scroll-reveal un-tiers un-tiers__image col-xs-42 col-xs-offset-3 col-md-12 col-md-offset-4">
         <img src="<?php echo $image_01_url; ?>" />
         <?php if (!empty($image_01_caption)): ?>
             <p class="caption">
@@ -18,7 +18,7 @@
             </p>
         <?php endif; ?>
     </div>
-    <div class="un-tiers un-tiers__image col-xs-42 col-xs-offset-3 col-md-12 col-md-offset-2">
+    <div class="scroll-reveal un-tiers un-tiers__image col-xs-42 col-xs-offset-3 col-md-12 col-md-offset-2">
         <img src="<?php echo $image_02_url; ?>" />
         <?php if (!empty($image_02_caption)): ?>
             <p class="caption">
@@ -26,7 +26,7 @@
             </p>
         <?php endif; ?>
     </div>
-    <div class="un-tiers un-tiers__image col-xs-42 col-xs-offset-3 col-md-12 col-md-offset-2">
+    <div class="scroll-reveal un-tiers un-tiers__image col-xs-42 col-xs-offset-3 col-md-12 col-md-offset-2">
         <img src="<?php echo $image_03_url; ?>" />
         <?php if (!empty($image_03_caption)): ?>
             <p class="caption">

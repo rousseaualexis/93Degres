@@ -1698,16 +1698,15 @@ table {
     overflow: hidden;
     color: #ffffff;
     background: #3c2626; }
-  #introduction h3 {
+  #introduction p {
     font-size: 20px;
     line-height: 40px;
-    text-align: center;
-    font-style: italic; }
+    text-align: center; }
     @media only screen and (max-width: 767px) {
-      #introduction h3 {
+      #introduction p {
         font-size: 24px;
         line-height: 32px; } }
-    #introduction h3 > div {
+    #introduction p > div {
       overflow: hidden; }
   #introduction .country-code {
     position: absolute;
@@ -1755,9 +1754,9 @@ table {
       letter-spacing: 0.2em;
       opacity: 0.75; }
   #introduction__thumbnail {
-    padding-bottom: 4.16%; }
-    #introduction__thumbnail .image {
-      margin-top: -8.33%; }
+    margin-bottom: 4.16%;
+    margin-top: -6.25%;
+    overflow: hidden; }
 
 #layout .deux-tiers__chapter ~ .deux-tiers__paragraph:first-of-type:first-letter {
   float: left;
@@ -1766,6 +1765,9 @@ table {
   margin-top: 7px;
   margin-right: 0.20em;
   line-height: 90%; }
+
+#realated .post p {
+  width: 100%; }
 
 #cover-categorie {
   height: 65%; }

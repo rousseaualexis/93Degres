@@ -6,7 +6,7 @@
 ?>
 
     <?php if (!empty($icon) || !empty($title)): ?>
-    <div class="un-tiers un-tiers__text col-xs-40 col-md-36">
+    <div class="scroll-reveal un-tiers un-tiers__text col-xs-40 col-md-36">
     	<div class="title">
             <?php if (!empty($icon)): ?>
                 <img src="<?php echo $icon_url; ?>" />

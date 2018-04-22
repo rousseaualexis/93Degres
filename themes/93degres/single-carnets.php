@@ -33,9 +33,9 @@
             <div id="date" class="date">
                 <h5 class="randomize"><? the_time(get_option('date_format')); ?></h5>
             </div>
-            <h1><?php the_title(); ?></h1><?php if(!empty(get_field('subtitle'))){echo '<h4>' . get_field('subtitle') . '</h4>';}?>
+            <h1><?php the_title(); ?></h1><?php if(!empty(get_field('subtitle'))){echo '<h4>' . wp_encode_emoji(get_field('subtitle')) . '</h4>';}?>
         </div>
-        <h3 class="col-xs-42 col-xs-offset-3 col-md-28 col-md-offset-10"><?php echo strip_tags(get_field('introduction'), '<br><em><strong>');?></h3>
+        <div class="col-xs-42 col-xs-offset-3 col-md-28 col-md-offset-10"><?php echo get_field('introduction');?></div>
      </div>
 
     <div id="introduction__thumbnail" class="col-xs-48">
@@ -49,7 +49,7 @@
 <?php include'assets/views/comments.php'; ?>
 
 <?php get_footer(); ?>
-<script>
+<script>/*
 window.requestAnimationFrame = window.requestAnimationFrame
 || window.mozRequestAnimationFrame
 || window.webkitRequestAnimationFrame
@@ -73,5 +73,6 @@ date.style.transform = 'rotate(' +scrolltop * 0.01 + 'deg)' // move b_lines at 2
 window.addEventListener('scroll', function(){ // on page scroll
  requestAnimationFrame(parallax) // call parallaxbubbles() on next available screen paint
 }, false);
+*/
 </script>
 <?php include'end.php'; ?>
