@@ -1,4 +1,4 @@
-<div id="pagination_container" class="anime col-xs-20 col-xs-offset-2 col-sm-18 col-sm-offset-3">
+<div id="pagination_container" class="anime col-xs-48">
     <?php
         the_posts_pagination( array(
             'type' => 'list',

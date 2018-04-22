@@ -253,8 +253,16 @@ var homepage = (function() {
         }
 
         else if ($el.is('#destinations li')) {
-            tl = new TimelineLite();
-            tl.staggerFrom($el, 1, {y:'500%', ease:Power4.easeOut}, 0.5, 0.2);
+            $('#destinations li').each(function(index, element){
+                if ($('#destinations li').hasClass('scroll-reveal--revealed'))
+                    return false;
+                else{
+                TweenLite.from(element, 1.8, {y: 150, delay: index * 0.1, ease:Power4.easeOut})
+                }
+                
+            })
+           // tl = new TimelineLite();
+           // tl.staggerFrom($el, 1, {y:'500%', ease:Power4.easeOut}, 0.5, 0.2);
         }
 
         else if ($el.is('#about h2')) {
@@ -293,7 +301,7 @@ return {
     }
 
 })();
-var allArticles = (function() {
+var archive = (function() {
     
     var init = function() {
         
@@ -308,19 +316,17 @@ var allArticles = (function() {
 
         if ($el.is('.post')) {
 
-
-
             $('.post').each(function(index, element){
                 if ($('.post').hasClass('scroll-reveal--revealed'))
                     return false;
                 else{
-                TweenLite.from(element, 1.8, {y: 200, delay: index * 0.1, ease:Power4.easeOut})
+                TweenLite.from(element, 1.2, {y: 400, delay: index * 0.1, ease:Power4.easeOut})
                 }
                 
             })
 
-          /* tl = new TimelineLite();
-            tl.staggerFromTo($el.children(), 1.8, {y:'200%', ease:Power4.easeOut}, 0.2); */
+            //tl = new TimelineLite();
+            //tl.staggerFromTo($el.children(), 1.8, {y:'200%', ease:Power4.easeOut}, 0.2);
         }
     }
 
@@ -333,14 +339,18 @@ return {
 // Launch site
 site.showPreloader();
     if( $('body').hasClass('homepage') === true ) 
+        $('body').removeClass('homepage'); 
+        $('body').removeAttr('class');
     {   
         setTimeout(function(){
             homepage.init();
         }, 200);
     };
-    if( $('body').hasClass('all-articles') === true ) 
+    if( $('body').hasClass('archive') === true )
+        $('body').removeClass('archive'); 
+        $('body').removeAttr('class');
     {   
         setTimeout(function(){
-            allArticles.init();
+            archive.init();
         }, 200);
     };

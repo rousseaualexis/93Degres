@@ -19,6 +19,14 @@ add_action('wp_print_styles', 'startwordpress_google_fonts');
 // Support Global name of the Website
 add_theme_support( 'title-tag' );
 
+
+// REMOVE BASE TEXTE EDITOR
+function remove_pages_editor(){
+    remove_post_type_support( 'post', 'editor' );
+}   
+add_action( 'init', 'remove_pages_editor' );
+
+
 // FUNCTIONS TO REMOVE BASE POST FROM THE ADMIN
 function remove_menus(){
   remove_menu_page( 'edit.php');                   //Posts  
@@ -132,6 +140,17 @@ register_post_type(
 
 }
 
+/* Show Custom post Types on categorie page */
+function custom_post_type_cat_filter($query) {
+  if ( !is_admin() && $query->is_main_query() ) {
+    if ($query->is_category()) {
+      $query->set( 'post_type', array( 'carnets', 'guides', 'conseils' ) );
+    }
+  }
+}
+
+add_action('pre_get_posts','custom_post_type_cat_filter');
+
 /*
 
 function wp_list_categories_for_post_type($post_type, $args = '') {
@@ -225,13 +244,6 @@ function tinymce_paste_options($init) {
     return $init;
 }
 if( is_admin() ) add_filter('tiny_mce_before_init', 'tinymce_paste_options');
-
-
-// REMOVE BASE TEXTE EDITOR
-function remove_pages_editor(){
-    remove_post_type_support( 'post', 'editor' );
-}   
-add_action( 'init', 'remove_pages_editor' );
 
 
 
@@ -476,58 +488,6 @@ function pressPagination($pages = '', $range = 2)
 }
  /////////////////////////
 
-function custom_post_type_cat_filter($query) {
-  if ( !is_admin() && $query->is_main_query() ) {
-    if ($query->is_category()) {
-      $query->set( 'post_type', array( 'carnets', 'guides', 'conseils' ) );
-    }
-  }
-}
-
-add_action('pre_get_posts','custom_post_type_cat_filter');
-
-add_filter( 'terms_clauses', 'jdn_post_type_terms_clauses', 10, 3 );
-function jdn_post_type_terms_clauses( $clauses, $taxonomy, $args ) {
- // Make sure we have a post_type argument to run with.
- if( !isset( $args['post_type'] ) || empty( $args['post_type'] ) )
- return $clauses;
- 
- global $wpdb;
- // Setup the post types in an array
- $post_types = array();
- 
- // If the argument is an array, check each one and cycle through the post types
- if( is_array( $args['post_type'] ) ) {
- 
- // All possible, public post types
- $possible_post_types = get_post_types( array( 'public' => true ) );
- 
- // Cycle through the post types, add them to our array if they are public
- foreach( $args['post_type'] as $post_type ) {
- if( in_array( $post_type, $possible_post_types ) )
- $post_types[] = "'" . esc_attr( $post_type ) . "\'";
- }
- 
- // If the post type argument is a string, not an array
- } elseif( is_string( $args['post_type'] ) ) {
- $post_types[] = "'" . esc_attr( $args['post_type'] ) . "'";
- }
- // If we have valid post types, build the new sql
- if( !empty( $post_types ) ) {
- $post_types_string = implode( ',', $post_types );
- $fields = str_replace( 'tt.*', 'tt.term_taxonomy_id, tt.term_id, tt.taxonomy, tt.description, tt.parent', $clauses['fields'] );
- 
- $clauses['fields'] = 'DISTINCT ' . esc_sql( $fields ) . ', COUNT(t.term_id) AS count';
- $clauses['join'] .= ' INNER JOIN ' . $wpdb->term_relationships . ' AS r ON r.term_taxonomy_id = tt.term_taxonomy_id INNER JOIN ' . $wpdb->posts . ' AS p ON p.ID = r.object_id';
- $clauses['where'] .= ' AND p.post_type IN (' . $post_types_string . ')';
- $clauses['orderby'] = 'GROUP BY t.term_id ' . $clauses['orderby'];
- }
- return $clauses;
-}
-
-
-
-defined( 'ABSPATH' ) OR exit;
 /* Plugin Name: TinyMCE break instead of paragraph */
 function mytheme_tinymce_settings( $tinymce_init_settings ) {
     $tinymce_init_settings['forced_root_block'] = false;
@@ -541,8 +501,6 @@ add_filter ( 'the_content', 'add_newlines_to_post_content' );
 function add_newlines_to_post_content( $content ) {
     return nl2br( $content );
 }
-
-
 
 
 /**

@@ -2271,7 +2271,7 @@ li {
 .post {
   cursor: pointer;
   display: inline-block;
-  float: left;
+  float: none;
   vertical-align: top;
   margin-bottom: 6.25%;
   z-index: 1; }
@@ -2507,10 +2507,69 @@ li {
     width: 100%; }
 
 #pagination_container {
-  text-align: center; }
+  text-align: center;
+  float: none;
+  margin-bottom: 8.33%; }
 
 .nav .pagination {
   display: inline-block; }
+
+.pagination li {
+  border-radius: 5000px;
+  overflow: hidden;
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  min-width: 60px;
+  min-height: 60px;
+  -webkit-transition: all 2s;
+  transition: all 2s; }
+  .pagination li:before {
+    content: '';
+    background: #f5f5f5;
+    position: absolute;
+    top: 50%;
+    bottom: 50%;
+    left: 50%;
+    right: 50%;
+    border-radius: 5000px;
+    -moz-transition: all 0.6s cubic-bezier(0.4, 0, 0, 1);
+    -ms-transition: all 0.6s cubic-bezier(0.4, 0, 0, 1);
+    -o-transition: all 0.6s cubic-bezier(0.4, 0, 0, 1);
+    -webkit-transition: all 0.6s cubic-bezier(0.4, 0, 0, 1); }
+  .pagination li:hover:before {
+    top: -50%;
+    bottom: -50%;
+    left: -50%;
+    right: -50%;
+    -moz-transition: all 1s cubic-bezier(0, 0, 0, 1);
+    -ms-transition: all 1s cubic-bezier(0, 0, 0, 1);
+    -o-transition: all 1s cubic-bezier(0, 0, 0, 1);
+    -webkit-transition: all 1s cubic-bezier(0, 0, 0, 1); }
+  .pagination li .page-numbers {
+    font-family: "leaguegothic", "impact", sans-serif;
+    font-size: 12px;
+    font-weight: normal;
+    border-radius: 5000px;
+    position: absolute;
+    text-align: center;
+    padding: 30px 0;
+    line-height: 0;
+    width: 60px;
+    left: -50%;
+    right: -50%;
+    margin: auto;
+    top: 0;
+    cursor: pointer; }
+  .pagination li .current {
+    background: #f5f5f5;
+    cursor: initial; }
+  .pagination li .prev, .pagination li .next {
+    position: relative;
+    padding: 24px 24px;
+    left: 0;
+    right: 0;
+    top: 20px; }
 
 .comment {
   margin-bottom: 40px; }
