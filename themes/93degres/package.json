@@ -33,5 +33,8 @@
     "gulp-uglify": "^3.0.0",
     "gulp-uglifycss": "^1.0.9",
     "gulp-zip": "^4.1.0"
+  },
+  "dependencies": {
+    "npm": "^5.8.0"
   }
 }

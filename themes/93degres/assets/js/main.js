@@ -352,7 +352,7 @@ var introduction = function(){
             $categories = $("#introduction .categories");
             var splitTitle = new SplitText($title,{charsClass: "charsplit", wordsClass: "wordsplit"});
             var splitSubtitle = new SplitText($subtitle,{charsClass: "charsplit", wordsClass: "wordsplit"});
-            var splitSummary = new SplitText($summary,{charsClass: "charsplit", wordsClass: "wordsplit"});
+            var splitSummary = new SplitText($summary,{wordsClass: "wordsplit"});
             var splitCategories = new SplitText($categories.find('div'),{charsClass: "charsplit", wordsClass: "wordsplit"});
                 var tl = new TimelineLite();
 
@@ -361,6 +361,8 @@ var introduction = function(){
                 tl.staggerFrom($title.find('.charsplit'), 1, {y:'250%', ease:Power2.easeOut}, 0.01, '-=1.4');
                 tl.staggerFrom($subtitle.find('.charsplit'), 1, {y:'250%', ease:Power2.easeOut}, 0.01, '-=1');
                 tl.staggerFrom($summary.find('.wordsplit'), 1, {y:'250%', ease:Power2.easeOut}, 0.012, '-=1.2');
+
+     
     }
 
     var scrollRevealHandler = function(){
