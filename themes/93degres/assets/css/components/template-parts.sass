@@ -1,10 +1,12 @@
 .deux-tiers--container
 
+	overflow: hidden
+
 	.deux-tiers
 		clear: both
 		margin-bottom: 8.33%
 		float: left
-		+media-sm-and-less
+		+media-md-and-less
 			margin-bottom: 0
 
 		&__chapter
@@ -32,10 +34,12 @@
 
 .un-tiers--container
 
+	overflow: hidden
+
 	position: absolute
 	margin-left: 66.66%
 
-	+media-sm-and-less
+	+media-md-and-less
 		position: relative
 		margin-left: 6.24999999%
 
@@ -77,6 +81,7 @@
 
 .full-width--container
 	font-size: 0
+	overflow: hidden
 	
 	.full-width
 		margin-bottom: 4.16%
@@ -88,7 +93,7 @@
 		blockquote
 			padding: 8.33% 0
 
-			+media-sm-and-less
+			+media-md-and-less
 				margin-bottom: 8.33%
 		
 	.un-tiers
@@ -98,7 +103,7 @@
 
 		&__image
 
-			+media-sm-and-less
+			+media-md-and-less
 				margin-bottom: 8.33%
 
 			img

@@ -1572,7 +1572,7 @@ table {
   padding-top: 12.5%;
   padding-bottom: 8.33%;
   text-align: center;
-  background: #ffe08c; }
+  background: #f7f2ea; }
   #destinations h5 {
     font-family: "leaguegothic", "impact", sans-serif;
     font-size: 12vw;
@@ -1618,7 +1618,7 @@ table {
   overflow: hidden; }
   #article .country-code h5, #article .categories, #article .date h5, #article .deux-tiers__chapter h3, #article .deux-tiers__aside h3, #article .title-content h5, #article p a:hover {
     color: #ffbc00; }
-  #article #introduction, #article #realated, #article .un-tiers__text, #article .deux-tiers__aside {
+  #article #introduction, #article .un-tiers__text, #article .deux-tiers__aside {
     background: #ffe08c; }
   #article p a {
     background-image: linear-gradient(45deg, #ffbc00, #ffbc00); }
@@ -1633,7 +1633,7 @@ table {
   overflow: hidden; }
   #guide .country-code h5, #guide .categories, #guide .date h5, #guide .deux-tiers__chapter h3, #guide .deux-tiers__aside h3, #guide .title-content h5, #guide p a:hover {
     color: #5f8f24; }
-  #guide #introduction, #guide #realated, #guide .un-tiers__text, #guide .deux-tiers__aside {
+  #guide #introduction, #guide .un-tiers__text, #guide .deux-tiers__aside {
     background: #99bb6f; }
   #guide p a {
     background-image: linear-gradient(45deg, #5f8f24, #5f8f24); }
@@ -1648,7 +1648,7 @@ table {
   overflow: hidden; }
   #conseil .country-code h5, #conseil .categories, #conseil .date h5, #conseil .deux-tiers__chapter h3, #conseil .deux-tiers__aside h3, #conseil .title-content h5, #conseil p a:hover {
     color: #0080ff; }
-  #conseil #introduction, #conseil #realated, #conseil .un-tiers__text, #conseil .deux-tiers__aside {
+  #conseil #introduction, #conseil .un-tiers__text, #conseil .deux-tiers__aside {
     background: #e8f0f3; }
   #conseil p a {
     background-image: linear-gradient(45deg, #0080ff, #0080ff); }
@@ -1676,7 +1676,6 @@ table {
       display: inline-block;
       position: relative;
       margin-bottom: 30px;
-      left: 15px;
       z-index: 2; }
     #introduction-title .randomize {
       z-index: -2; }
@@ -1814,7 +1813,7 @@ table {
 #why-we-like {
   padding-top: 8.33%;
   padding-bottom: 8.33%;
-  background: #ffe08c;
+  background: #f7f2ea;
   text-align: center; }
   #why-we-like__content {
     z-index: 2;
@@ -1898,11 +1897,14 @@ table {
   overflow: hidden;
   width: 100%; }
   #about #introduction, #about .un-tiers__text {
-    background: #ffe08c; }
+    background: #f7f2ea; }
   #about #introduction {
     padding-bottom: 8.33%;
     margin-bottom: 8.33%; }
+    #about #introduction h1 {
+      color: #fcc30f; }
     #about #introduction h2 {
+      color: #3c2626;
       font-size: 18px;
       letter-spacing: 0.4em;
       margin-bottom: 30px; }
@@ -1911,7 +1913,7 @@ table {
   height: 30%;
   margin-bottom: 8.33%; }
   .cover-archive--carnets {
-    background: #ffe08c; }
+    background: #f7f2ea; }
 
 *::-moz-selection {
   background-color: #fcc30f; }
@@ -2444,33 +2446,36 @@ li {
       -webkit-transform: rotate(0deg);
               transform: rotate(0deg); }
 
-.deux-tiers--container .deux-tiers {
-  clear: both;
-  margin-bottom: 8.33%;
-  float: left; }
-  @media only screen and (max-width: 767px) {
-    .deux-tiers--container .deux-tiers {
-      margin-bottom: 0; } }
-  .deux-tiers--container .deux-tiers__chapter {
-    margin-bottom: 2.5%; }
-  @media only screen and (max-width: 767px) {
-    .deux-tiers--container .deux-tiers__one-image, .deux-tiers--container .deux-tiers__two-image {
-      margin-bottom: 8.33%; } }
-  .deux-tiers--container .deux-tiers__one-image img, .deux-tiers--container .deux-tiers__two-image img {
-    width: 100%; }
-  @media only screen and (max-width: 767px) {
-    .deux-tiers--container .deux-tiers__paragraph {
-      margin-bottom: 8.33%; } }
-  .deux-tiers--container .deux-tiers__aside {
-    padding-top: 8.33%;
-    padding-bottom: 8.33%; }
-    .deux-tiers--container .deux-tiers__aside h3 {
+.deux-tiers--container {
+  overflow: hidden; }
+  .deux-tiers--container .deux-tiers {
+    clear: both;
+    margin-bottom: 8.33%;
+    float: left; }
+    @media only screen and (max-width: 992px) {
+      .deux-tiers--container .deux-tiers {
+        margin-bottom: 0; } }
+    .deux-tiers--container .deux-tiers__chapter {
       margin-bottom: 2.5%; }
+    @media only screen and (max-width: 767px) {
+      .deux-tiers--container .deux-tiers__one-image, .deux-tiers--container .deux-tiers__two-image {
+        margin-bottom: 8.33%; } }
+    .deux-tiers--container .deux-tiers__one-image img, .deux-tiers--container .deux-tiers__two-image img {
+      width: 100%; }
+    @media only screen and (max-width: 767px) {
+      .deux-tiers--container .deux-tiers__paragraph {
+        margin-bottom: 8.33%; } }
+    .deux-tiers--container .deux-tiers__aside {
+      padding-top: 8.33%;
+      padding-bottom: 8.33%; }
+      .deux-tiers--container .deux-tiers__aside h3 {
+        margin-bottom: 2.5%; }
 
 .un-tiers--container {
+  overflow: hidden;
   position: absolute;
   margin-left: 66.66%; }
-  @media only screen and (max-width: 767px) {
+  @media only screen and (max-width: 992px) {
     .un-tiers--container {
       position: relative;
       margin-left: 6.24999999%; } }
@@ -2503,7 +2508,8 @@ li {
       width: 100%; }
 
 .full-width--container {
-  font-size: 0; }
+  font-size: 0;
+  overflow: hidden; }
   .full-width--container .full-width {
     margin-bottom: 4.16%;
     float: left; }
@@ -2512,14 +2518,14 @@ li {
         margin-bottom: 0; } }
     .full-width--container .full-width blockquote {
       padding: 8.33% 0; }
-      @media only screen and (max-width: 767px) {
+      @media only screen and (max-width: 992px) {
         .full-width--container .full-width blockquote {
           margin-bottom: 8.33%; } }
   .full-width--container .un-tiers {
     display: inline-block;
     vertical-align: middle;
     float: none; }
-    @media only screen and (max-width: 767px) {
+    @media only screen and (max-width: 992px) {
       .full-width--container .un-tiers__image {
         margin-bottom: 8.33%; } }
     .full-width--container .un-tiers__image img {
@@ -2529,7 +2535,8 @@ li {
   text-align: center;
   padding-top: 6.25%;
   padding-bottom: 2.25%;
-  background: #ffffff; }
+  margin-top: 6.25%;
+  background: #f7f2ea; }
   @media only screen and (max-width: 767px) {
     #realated {
       padding-top: 16.66%; } }
@@ -2577,7 +2584,7 @@ li {
   transition: all 2s; }
   .pagination li:before {
     content: '';
-    background: #f5f5f5;
+    background: #f7f2ea;
     position: absolute;
     top: 50%;
     bottom: 50%;
@@ -2613,7 +2620,7 @@ li {
     top: 0;
     cursor: pointer; }
   .pagination li .current {
-    background: #f5f5f5;
+    background: #f7f2ea;
     cursor: initial; }
   .pagination li .prev, .pagination li .next {
     position: relative;
@@ -2772,6 +2779,6 @@ button:focus {
   border: none;
   text-transform: uppercase;
   letter-spacing: 0.4em;
-  color: #ffffff;
+  color: #f7f2ea;
   background: #3c2626;
   cursor: pointer; }

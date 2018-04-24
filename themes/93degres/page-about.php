@@ -3,6 +3,8 @@
 Template Name: À propos
 */
 ?>
+<?php include'head.php'; ?>
+<body>
 <?php get_header(); ?>
 <?php $thumbnail = get_field('thumbnail');
     if ($thumbnail) :
