@@ -373,18 +373,18 @@ var introduction = function(){
 
         if ($el.is('.deux-tiers')) {
             tl = new TimelineLite();
-            tl.staggerFrom($el, 1.8, {y:'150%', ease:Power4.easeOut}, 0.2);
+            tl.staggerFrom($el, 1.8, {alpha: 0, y:'150%', ease:Power4.easeOut}, 0.2);
         }
 
         else if ($el.is('.un-tiers')) {
             tl = new TimelineLite();
-            tl.staggerFrom($el, 1.8, {y:'150%', ease:Power4.easeOut}, 0.2);
+            tl.staggerFrom($el, 1.8, {alpha: 0, y:'150%', ease:Power4.easeOut}, 0.2);
         }
 
         else if ($el.is('#introduction__thumbnail .image')) {
                 
             tl = new TimelineLite();
-            tl.staggerFrom($el, 1.8, {y:'150%', ease:Power4.easeOut}, 0.1, 0.2);
+            tl.staggerFrom($el, 1.8, {alpha: 0, y:'150%', ease:Power4.easeOut}, 0.1, 0.2);
         }
     }
 

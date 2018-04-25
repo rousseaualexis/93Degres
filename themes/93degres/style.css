@@ -1618,7 +1618,7 @@ table {
   overflow: hidden; }
   #article .country-code h5, #article .categories, #article .date h5, #article .deux-tiers__chapter h3, #article .deux-tiers__aside h3, #article .title-content h5, #article p a:hover {
     color: #ffbc00; }
-  #article #introduction, #article .un-tiers__text, #article .deux-tiers__aside {
+  #article #introduction, #article .un-tiers__text {
     background: #ffe08c; }
   #article p a {
     background-image: linear-gradient(45deg, #ffbc00, #ffbc00); }
@@ -1633,7 +1633,7 @@ table {
   overflow: hidden; }
   #guide .country-code h5, #guide .categories, #guide .date h5, #guide .deux-tiers__chapter h3, #guide .deux-tiers__aside h3, #guide .title-content h5, #guide p a:hover {
     color: #5f8f24; }
-  #guide #introduction, #guide .un-tiers__text, #guide .deux-tiers__aside {
+  #guide #introduction, #guide .un-tiers__text {
     background: #99bb6f; }
   #guide p a {
     background-image: linear-gradient(45deg, #5f8f24, #5f8f24); }
@@ -1648,7 +1648,7 @@ table {
   overflow: hidden; }
   #conseil .country-code h5, #conseil .categories, #conseil .date h5, #conseil .deux-tiers__chapter h3, #conseil .deux-tiers__aside h3, #conseil .title-content h5, #conseil p a:hover {
     color: #0080ff; }
-  #conseil #introduction, #conseil .un-tiers__text, #conseil .deux-tiers__aside {
+  #conseil #introduction, #conseil .un-tiers__text {
     background: #e8f0f3; }
   #conseil p a {
     background-image: linear-gradient(45deg, #0080ff, #0080ff); }
@@ -2446,30 +2446,48 @@ li {
       -webkit-transform: rotate(0deg);
               transform: rotate(0deg); }
 
+#layout .deux-tiers__chapter ~ .deux-tiers__paragraph:first-of-type:first-letter {
+  float: left;
+  font-weight: 900;
+  font-size: 4em;
+  margin-top: 7px;
+  margin-right: 0.20em;
+  line-height: 90%; }
+
+#layout p {
+  margin-bottom: 30px; }
+
 .deux-tiers--container {
   overflow: hidden; }
   .deux-tiers--container .deux-tiers {
     clear: both;
-    margin-bottom: 8.33%;
+    padding-bottom: 8.33%;
     float: left; }
     @media only screen and (max-width: 992px) {
       .deux-tiers--container .deux-tiers {
         margin-bottom: 0; } }
     .deux-tiers--container .deux-tiers__chapter {
+      padding-bottom: 0;
       margin-bottom: 2.5%; }
     @media only screen and (max-width: 767px) {
       .deux-tiers--container .deux-tiers__one-image, .deux-tiers--container .deux-tiers__two-image {
         margin-bottom: 8.33%; } }
     .deux-tiers--container .deux-tiers__one-image img, .deux-tiers--container .deux-tiers__two-image img {
       width: 100%; }
-    @media only screen and (max-width: 767px) {
-      .deux-tiers--container .deux-tiers__paragraph {
-        margin-bottom: 8.33%; } }
+    .deux-tiers--container .deux-tiers__paragraph {
+      margin-bottom: -30px; }
+      @media only screen and (max-width: 767px) {
+        .deux-tiers--container .deux-tiers__paragraph {
+          margin-bottom: 8.33%; } }
     .deux-tiers--container .deux-tiers__aside {
+      background: #f7f2ea;
       padding-top: 8.33%;
-      padding-bottom: 8.33%; }
+      padding-bottom: 8.33%;
+      margin-bottom: 8.33%; }
       .deux-tiers--container .deux-tiers__aside h3 {
         margin-bottom: 2.5%; }
+      .deux-tiers--container .deux-tiers__aside p:nth-last-child(1), .deux-tiers--container .deux-tiers__aside h3:nth-last-child(1) {
+        margin-bottom: 0; }
 
 .un-tiers--container {
   overflow: hidden;
@@ -2517,7 +2535,7 @@ li {
       .full-width--container .full-width {
         margin-bottom: 0; } }
     .full-width--container .full-width blockquote {
-      padding: 8.33% 0; }
+      padding: 4.16% 0; }
       @media only screen and (max-width: 992px) {
         .full-width--container .full-width blockquote {
           margin-bottom: 8.33%; } }

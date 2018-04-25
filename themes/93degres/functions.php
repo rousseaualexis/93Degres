@@ -526,8 +526,37 @@ if( $query->is_main_query() && !is_admin() && is_post_type_archive( 'conseils' )
     }
 
 }
+/*-------------------------------------------------------------------------------
+    Custom Columns
+-------------------------------------------------------------------------------*/
+add_filter('manage_guides_posts_columns' , 'mysite_add_columns');
+add_filter('manage_conseils_posts_columns' , 'mysite_add_columns');
+add_filter('manage_carnets_posts_columns' , 'mysite_add_columns');
 
+function mysite_add_columns( $columns ) {
 
+  $columns = array(
+    'cb'           => '<input type="checkbox" />',
+    'title'        => 'Title',
+    'subtitle'     => 'Subtitle',
+    'categories'   => 'Categories',
+    'date'         =>  'Date',
+  );
+  return $columns;
+}
 
+add_action( 'manage_guides_posts_custom_column', 'mysite_custom_columns', 10, 2 );
+add_action( 'manage_conseils_posts_custom_column', 'mysite_custom_columns', 10, 2 );
+add_action( 'manage_carnets_posts_custom_column', 'mysite_custom_columns', 10, 2 );
 
+function mysite_custom_columns( $column ) {
 
+  global $post;
+
+  switch ( $column ) {
+    case 'subtitle':
+      echo get_field( "subtitle", $post->ID );
+      break;
+  }
+
+}
