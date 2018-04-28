@@ -1893,21 +1893,39 @@ table {
     height: 100%;
     display: block; }
 
-#about {
+.about {
   overflow: hidden;
   width: 100%; }
-  #about #introduction, #about .un-tiers__text {
-    background: #f7f2ea; }
-  #about #introduction {
+  .about--content {
+    background: #f7f2ea;
+    margin-bottom: 8.33%;
+    padding-top: 16.66%;
     padding-bottom: 8.33%;
-    margin-bottom: 8.33%; }
-    #about #introduction h1 {
+    position: relative; }
+    @media only screen and (max-width: 767px) {
+      .about--content {
+        top: 120px; } }
+    .about--content h1 {
+      overflow: hidden;
+      padding-top: 2vw;
+      margin-top: -2vw;
+      position: absolute;
+      font-size: 16vw;
+      left: -1vw;
+      line-height: 14vw;
       color: #fcc30f; }
-    #about #introduction h2 {
-      color: #3c2626;
-      font-size: 18px;
-      letter-spacing: 0.4em;
+      @media only screen and (max-width: 767px) {
+        .about--content h1 {
+          position: relative;
+          left: 6.25%; } }
+    .about--content h3 {
+      color: #fcc30f; }
+    .about--content #social, .about--content #contact {
       margin-bottom: 30px; }
+    .about--content #summary {
+      overflow: hidden; }
+      .about--content #summary p {
+        margin-bottom: 30px; }
 
 .cover-archive {
   height: 30%;
@@ -2193,7 +2211,7 @@ li {
       background: #ffffff;
       margin-top: 0; } }
   #header img {
-    width: 100%; }
+    width: 80px; }
 
 #nav {
   position: fixed;
@@ -2202,16 +2220,17 @@ li {
 
 .menu-principal-container {
   position: relative;
-  float: right;
-  position: relative;
-  right: 50px;
-  font-size: 16px; }
+  width: 100%;
+  text-align: center;
+  font-size: 16px;
+  left: -80px; }
   @media only screen and (max-width: 767px) {
     .menu-principal-container {
-      display: none; } }
+      left: 0; } }
   .menu-principal-container ul {
-    margin: 0;
-    padding: 0; }
+    display: inline-block;
+    padding: 0;
+    margin: auto; }
   .menu-principal-container li {
     margin: 10px 0 0 20px;
     padding: 0;

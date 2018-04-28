@@ -1,20 +1,40 @@
-#about 
+.about 
 	overflow: hidden
 	width: 100%
 	
-	#introduction, .un-tiers__text
+	&--content
 		background: $color-base-light
-
-
-	#introduction
-		padding-bottom: 8.33%
 		margin-bottom: 8.33%
+		padding-top: 16.66%
+		padding-bottom: 8.33%
+		position: relative
+
+		+media-sm-and-less
+			top: 120px
+				
 
 		h1
+			overflow: hidden
+			padding-top: 2vw
+			margin-top: -2vw
+			position: absolute
+			font-size: 16vw
+			left: -1vw
+			line-height: 14vw
 			color: $color-93degres
 
-		h2
-			color: $color-dark
-			font-size: 18px
-			letter-spacing: 0.4em
+			+media-sm-and-less
+				position: relative
+				left: 6.25%
+
+		h3
+			color: $color-93degres
+
+		#social, #contact
 			margin-bottom: 30px
+
+		#summary
+			overflow: hidden
+			p
+				margin-bottom: 30px
+

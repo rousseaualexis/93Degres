@@ -94,16 +94,13 @@ Template Name: Homepage
 <div id="about" class="container col-xs-48">
     <div class="texte--center col-xs-42 col-xs-offset-3 col-sm-32 col-sm-offset-8">
         <h2 class="scroll-reveal">Nous sommes Agathe&nbsp&&nbspAlexis, deux directeurs artistiques parisiens, passionnés de&nbspvoyage, de design et de photographie.</h2>
-        <a class="scroll-reveal a-cta" href="<?php the_permalink(); ?>"><div class="cta">En savoir plus</div></a>
+        <a class="scroll-reveal a-cta" href="<?php echo get_bloginfo( 'wpurl' );?>/a-propos"><div class="cta">En savoir plus</div></a>
     </div>
 </div>
 
 <?php include'assets/views/content-instagram.php'; ?>
 <?php get_footer(); ?>
 <script type="text/javascript">
-
 Marquee3k.init();Marquee3k.refreshAll();
-
-
 </script>
 <?php include'end.php'; ?>

@@ -373,18 +373,88 @@ var introduction = function(){
 
         if ($el.is('.deux-tiers')) {
             tl = new TimelineLite();
-            tl.staggerFrom($el, 1.8, {alpha: 0, y:'150%', ease:Power4.easeOut}, 0.2);
+            tl.staggerFrom($el, 1.8, {alpha: 0, bottom:'100%', ease:Power4.easeOut}, 0.2);
         }
 
         else if ($el.is('.un-tiers')) {
             tl = new TimelineLite();
-            tl.staggerFrom($el, 1.8, {alpha: 0, y:'150%', ease:Power4.easeOut}, 0.2);
+            tl.staggerFrom($el, 1.8, {alpha: 0, y:'100%', ease:Power4.easeOut}, 0.2);
         }
 
         else if ($el.is('#introduction__thumbnail .image')) {
                 
             tl = new TimelineLite();
-            tl.staggerFrom($el, 1.8, {alpha: 0, y:'150%', ease:Power4.easeOut}, 0.1, 0.2);
+            tl.staggerFrom($el, 1.8, {alpha: 0, height:'0', ease:Power4.easeOut}, 0.1, 0.2);
+        }
+
+        else if ($el.is('.full-width blockquote')) {
+
+            var splitQuote = new SplitText($el,{charsClass: "charsplit", wordsClass: "wordsplit"});
+                
+            tl = new TimelineLite();
+            tl.staggerFrom($el.find('.wordsplit'), 1, {y:'250%', ease:Power2.easeOut}, 0.02, 0.3);
+        }
+    }
+
+
+return {
+        init: init
+    }
+
+})();
+
+
+var about = (function() {
+    
+    var init = function() {
+        summary();
+        $('body').on('reveal', '.scroll-reveal', scrollRevealHandler);
+    }
+
+
+var summary = function(){
+        
+            var $title = $(".about--content h1"),
+            $social = $("#social"),
+            $summary = $("#summary p");
+            $contact = $("#contact");
+            var splitTitle = new SplitText($title,{charsClass: "charsplit", wordsClass: "wordsplit"});
+            var $summaryline = $("#summary > div");
+                var tl = new TimelineLite();
+
+                tl.staggerFrom($title.find('.charsplit'), 1, {y:'250%', ease:Power2.easeOut}, 0.05, 0.6);
+
+     
+    }
+
+    var scrollRevealHandler = function(){
+        var $el = $(this);
+
+        if ($el.hasClass('scroll-reveal--revealed'))
+            return;
+
+        if ($el.is('.deux-tiers')) {
+            tl = new TimelineLite();
+            tl.staggerFrom($el, 1.8, {alpha: 0, bottom:'100%', ease:Power4.easeOut}, 0.2);
+        }
+
+        else if ($el.is('.un-tiers')) {
+            tl = new TimelineLite();
+            tl.staggerFrom($el, 1.8, {alpha: 0, y:'100%', ease:Power4.easeOut}, 0.2);
+        }
+
+        else if ($el.is('#introduction__thumbnail .image')) {
+                
+            tl = new TimelineLite();
+            tl.staggerFrom($el, 1.8, {alpha: 0, height:'0', ease:Power4.easeOut}, 0.1, 0.2);
+        }
+
+        else if ($el.is('.full-width blockquote')) {
+
+            var splitQuote = new SplitText($el,{charsClass: "charsplit", wordsClass: "wordsplit"});
+                
+            tl = new TimelineLite();
+            tl.staggerFrom($el.find('.wordsplit'), 1, {y:'250%', ease:Power2.easeOut}, 0.02, 0.3);
         }
     }
 
@@ -397,26 +467,34 @@ return {
 // Launch site
 site.showPreloader();
     if( $('body').hasClass('homepage') === true ) 
-        $('body').removeClass('homepage'); 
+        
+    {   $('body').removeClass('homepage'); 
         $('body').removeAttr('class');
-    {   
         setTimeout(function(){
             homepage.init();
         }, 200);
     };
     if( $('body').hasClass('archive') === true )
-        $('body').removeClass('archive'); 
+        
+    {   $('body').removeClass('archive'); 
         $('body').removeAttr('class');
-    {   
         setTimeout(function(){
             archive.init();
         }, 200);
     };
     if( $('body').hasClass('single') === true )
-        $('body').removeClass('single'); 
+        
+    {   $('body').removeClass('single'); 
         $('body').removeAttr('class');
-    {   
         setTimeout(function(){
             single.init();
+        }, 200);
+    };
+    if( $('body').hasClass('about') === true )
+        
+    {   $('body').removeClass('about'); 
+        $('body').removeAttr('class');
+        setTimeout(function(){
+            about.init();
         }, 200);
     };
