@@ -9,14 +9,17 @@
 		height: 100px;
 		background: $white
 		margin-top: 0
-	
+	#logo
+		z-index: 2
+
+		+media-sm-and-less
+			margin-top: 15px
 	img 
 		width: 80px
 
-#nav 
-	position: fixed
-	right: 4.16%
-	z-index: 100
+		+media-sm-and-less
+			width: 100px
+
 
 .menu-principal-container 
 	position: relative
@@ -27,11 +30,18 @@
 
 	+media-sm-and-less
 		left: 0
+		height: 100vh
+		background: $color-93degres
+		display: none
 	
 	ul 
 		display: inline-block
 		padding: 0
 		margin: auto
+
+		+media-sm-and-less
+			display: table-cell
+			vertical-align: middle
 
 	li 
 		margin: 10px 0 0 20px
@@ -41,6 +51,12 @@
 		text-transform: uppercase
 		letter-spacing: 0.4em
 		overflow: hidden
+
+		+media-sm-and-less
+			display: inline-block
+			width: 100%
+			margin: 10px 0
+
 
 	a 
 		padding: 12px 6px 12px 10px
@@ -63,6 +79,56 @@
 	.current 
 		color: $white
 		background: $color-dark
+.menu
+	display: none
+
+
+.mobile-menu
+	overflow: hidden
+	width: 25px
+	height: 27px
+	cursor: pointer
+	position: fixed
+	right: 4.16%
+	z-index: 110
+	margin-top: 40px
+	display: none
+
+	+media-sm-and-less
+		display: block
+
+	span
+		display: block
+		height: 2px
+		margin-top: 8px
+		width: inherit
+		position: relative
+
+.mobile-menu span, .mobile-menu span:after, .mobile-menu span:before
+	background: #000
+	border-radius: 5px
+
+.mobile-menu span:after, .mobile-menu span:before
+	width: inherit
+	content: ""
+	height: inherit
+	position: absolute
+
+.mobile-menu span
+	&:after
+		top: -8px
+
+.mobile-menu span
+	&:before
+		bottom: -8px
+
+
+.active-menu
+	display: table
+	top: 0
+	position: absolute
+
+
 			
 
 	

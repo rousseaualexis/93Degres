@@ -43,13 +43,13 @@ Template Name: Homepage
                                 <a class="categories" href="<?php echo $term_url; ?>"><img src="<?php echo $flag_url;?>" alt="<?php echo $flag['alt'];?>"/ ><div><?php echo $term_name; ?></div></a>
                                 <div id="title">
                                 <h1><?php the_title(); ?></h1><?php if(!empty(get_field('subtitle'))){echo '<p><strong>' . get_field('subtitle') . '</strong></p>';}?></div>
-                                <a class="a-cta col-xs-offset-14" href="<?php the_permalink(); ?>"><div class="cta">Découvrir</div>
+                                <a class="a-cta col-xs-offset-0 col-md-offset-14" href="<?php the_permalink(); ?>"><div class="cta">Découvrir</div>
                                 </a>
                                 <?php 
                             $thumbnail = get_field( 'thumbnail' );
                             $thumbnail_url = $thumbnail['sizes']['large'];
                         ?>
-                            <div class="first-post-image col-xs-42 col-xs-offset-3 col-md-offset-0 col-md-push-25 col-md-31">
+                            <div class="first-post-image col-xs-42 col-xs-offset-0 col-md-offset-0 col-md-push-25 col-md-31">
                                 <div class="image" style="background-image: url('<?php echo $thumbnail_url;?>');" title="<?php echo $thumbnail['alt']; ?>">
                                 </div>
                             </div>

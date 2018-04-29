@@ -2,15 +2,14 @@
 	text-align: center
 	
 	h3 
-		margin-bottom: 2.15%
+		margin-bottom: ($desktop-margin / 4)
 		color: $color-93degres
 		+media-sm-and-less
 			margin-bottom: 30px
-			font-size: 60px
 	
 	.cta 
 		border-color: $color-93degres
-		margin-top: 4.16%
+		margin-top: ($desktop-margin / 2)
 
 		&:after
 			content: '\270C'
@@ -36,7 +35,7 @@
 			transition: 2s ease
 		
 		&:nth-child(2n) 
-			margin-top: 4.16%
+			margin-top: ($desktop-margin / 2)
 
 			+media-sm-and-less
 				margin-top: 0

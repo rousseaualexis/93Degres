@@ -4,16 +4,17 @@
 
 .first-post 
 	font-size: 0
-	min-height: 70vh
+	min-height: 75vh
 	padding-top: 120px
 	padding-bottom: 12.5%
-	margin-bottom: -8.33%
-	min-height: 75vh
+	margin-bottom: -$desktop-margin
 	display: table
 	cursor: initial
 
 	+media-sm-and-less
-		padding-bottom: 25%
+		padding-bottom: 0
+		margin-bottom: $mobile-margin
+		padding-top: 0
 
 	&.post 
 		&-article
@@ -30,10 +31,12 @@
 		float: none
 		vertical-align: middle
 		z-index: 2
-		padding-top: 8.33%
-		padding-bottom: 8.33%
+		padding-top: $desktop-margin
+		padding-bottom: $desktop-margin
 		+media-sm-and-less
-			padding-top: 50%
+			padding-top: 25%
+			padding-bottom: 25%
+			float: left
 
 		h1 
 			z-index: 2
@@ -44,13 +47,15 @@
 			line-height: 7.2vw
 			padding-top: 1vw
 
+			+media-sm-and-less
+				font-size: 16vw
+				line-height: 16vw
+
 			span
 				width: 100%
 				display: block
 
 			& > div
-
-				
 
 				&:nth-child(1)
 					
@@ -61,17 +66,19 @@
 					
 					display: block
 					position: relative
-					margin-left: 16.66%
+					margin-left: ($desktop-margin * 2)
 
 				&:nth-child(3)
 					
 					display: block
 					position: relative
-					margin-left: 8.33%
+					margin-left: $desktop-margin
 
 				&:nth-last-child(1)
 					display: initial
 					float: left
+					+media-sm-and-less
+						float: none
 
 				.trait
 					top: 3.85vw
@@ -79,8 +86,11 @@
 					position: absolute
 					height: 6px
 					background: $white
-					width: 16.66%
+					width: ($desktop-margin * 2)
 					left: -20%
+
+					+media-sm-and-less
+						top: 6.85vw
 
 				.wordsplit
 					padding-top: 1vw
@@ -106,6 +116,8 @@
 			+media-sm-and-less
 				font-size: 40px
 				line-height: normal
+				position: relative
+				margin: auto
 
 			strong
 				font-size: 24px
@@ -119,10 +131,9 @@
 		
 
 		.categories 
-			top: 12.5%
 			float: none
 			display: inline-block
-			position: absolute
+			position: relative
 
 		.a-cta
 			display: block
@@ -133,6 +144,8 @@
 			border: none
 			background: $white
 			margin-top: 40px
+
+			+media-sm-and-less
 
 
 
@@ -147,10 +160,10 @@
 
 		+media-sm-and-less
 			position: absolute
-			display: block
 			float: left
-			top: 4.25%
-			left: 0
+			left: -$desktop-margin
+			right: -$desktop-margin
+			width: initial
 
 		.image
 			height: 100%
@@ -173,9 +186,9 @@
 	
 
 #destinations
-	margin-top: 8.33%
+	margin-top: $desktop-margin
 	padding-top: 12.5%
-	padding-bottom: 8.33%
+	padding-bottom: $desktop-margin
 	text-align: center
 	background: $color-base-light
 	
@@ -183,14 +196,14 @@
 		font-family: $leaguegothic
 		font-size: 12vw
 		color: $color-93degres
-		margin-bottom: 4.16%
+		margin-bottom: ($desktop-margin / 2)
 		position: absolute
 		top: -7vw
 		overflow: hidden
 
 
 		+media-sm-and-less
-			font-size: 60px
+			font-size: $mobile-margin
 	
 	li 
 		vertical-align: middle
@@ -211,7 +224,7 @@
 
 
 	.cta 
-		margin-top: 4.16%
+		margin-top: ($desktop-margin / 2)
 		border-color: $color-93degres
 
 		&:after

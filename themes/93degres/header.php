@@ -3,6 +3,9 @@
         <div id="logo" class="col-xs-8 col-xs-offset-2 col-sm-5 col-md-3 col-md-offset-4">
             <a href="<?php echo get_bloginfo( 'wpurl' );?>"><img src="<?php bloginfo('template_url') ?>/assets/img/logo_grey.png" alt="93degres"/></a>
         </div>
+        <div id="mobile-menu" class="mobile-menu">
+            <span></span>
+        </div>
             <?php 
             $args = array(
             'depth'       => 0,
@@ -16,4 +19,5 @@
             'link_after'  => ''
             );
             wp_nav_menu( $args ); ?>
+
     </div>

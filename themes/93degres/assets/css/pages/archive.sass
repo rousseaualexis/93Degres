@@ -1,6 +1,9 @@
 .cover-archive
 	height: 30%
-	margin-bottom: 8.33%
+	margin-bottom: $desktop-margin
+
+	+media-sm-and-less
+		margin-bottom: $mobile-margin
 
 	&--carnets
 		background: $color-base-light

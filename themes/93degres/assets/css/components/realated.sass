@@ -1,12 +1,12 @@
 #realated 
 	text-align: center
-	padding-top: 6.25%
-	padding-bottom: 2.25%
-	margin-top: 6.25%
+	padding-top: ($desktop-margin / 2)
+	padding-bottom: ($desktop-margin / 2)
+	margin-top: $desktop-margin
 	background: $color-base-light
 
 	+media-sm-and-less
-		padding-top: 16.66%
+		padding-top: ($desktop-margin * 2)
 	
 	.trait 
 		height: 80px
@@ -24,10 +24,10 @@
 			text-align: center
 			float: none
 			background: none
-			padding-bottom: 4.16%
+			padding-bottom: ($desktop-margin / 2)
 
 			+media-sm-and-less
-				padding-bottom: 8.33%
+				padding-bottom: $desktop-margin
 		
 	.post
 		.categories
