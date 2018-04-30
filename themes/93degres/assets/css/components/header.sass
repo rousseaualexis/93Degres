@@ -13,12 +13,10 @@
 		z-index: 2
 
 		+media-sm-and-less
-			margin-top: 15px
+			margin-top: 25px
 	img 
 		width: 80px
 
-		+media-sm-and-less
-			width: 100px
 
 
 .menu-principal-container 
@@ -29,10 +27,15 @@
 	left: -80px
 
 	+media-sm-and-less
+
+		position: absolute
 		left: 0
 		height: 100vh
+		transition: all .45s cubic-bezier(.4,0,0,1)
+		transition-delay: 0.1s
+		display: table
 		background: $color-93degres
-		display: none
+		top: 100vh
 	
 	ul 
 		display: inline-block
@@ -124,9 +127,7 @@
 
 
 .active-menu
-	display: table
 	top: 0
-	position: absolute
 
 
 			

@@ -129,7 +129,7 @@ var site = (function() {
             }
         });
 
-        $("#mobile-menu").on('click', function() {
+            $("#mobile-menu").on('click', function() {
             $('.menu-principal-container').toggleClass('active-menu');
         });
     }
@@ -356,7 +356,7 @@ var introduction = function(){
             $categories = $("#introduction .categories");
             var splitTitle = new SplitText($title,{charsClass: "charsplit", wordsClass: "wordsplit"});
             var splitSubtitle = new SplitText($subtitle,{charsClass: "charsplit", wordsClass: "wordsplit"});
-            var splitSummary = new SplitText($summary,{wordsClass: "wordsplit"});
+            //var splitSummary = new SplitText($summary,{wordsClass: "wordsplit"});
             var splitCategories = new SplitText($categories.find('div'),{charsClass: "charsplit", wordsClass: "wordsplit"});
                 var tl = new TimelineLite();
 
@@ -364,7 +364,7 @@ var introduction = function(){
                 tl.staggerFrom($categories.find('.wordsplit'), 1, {y:'250%', ease:Power2.easeOut}, 0.1, '-=0.8');
                 tl.staggerFrom($title.find('.charsplit'), 1, {y:'250%', ease:Power2.easeOut}, 0.01, '-=1.4');
                 tl.staggerFrom($subtitle.find('.charsplit'), 1, {y:'250%', ease:Power2.easeOut}, 0.01, '-=1');
-                tl.staggerFrom($summary.find('.wordsplit'), 1, {y:'250%', ease:Power2.easeOut}, 0.012, '-=1.2');
+                tl.staggerFrom($summary, 1.5, {y:'300%', ease:Power2.easeOut}, 0.4, '-=1.2');
 
      
     }
@@ -377,7 +377,7 @@ var introduction = function(){
 
         if ($el.is('.deux-tiers')) {
             tl = new TimelineLite();
-            tl.staggerFrom($el, 1.8, {alpha: 0, bottom:'100%', ease:Power4.easeOut}, 0.2);
+            tl.staggerFrom($el, 1.8, {alpha: 0, y:'100%', ease:Power4.easeOut}, 0.2);
         }
 
         else if ($el.is('.un-tiers')) {
@@ -388,7 +388,7 @@ var introduction = function(){
         else if ($el.is('#introduction__thumbnail .image')) {
                 
             tl = new TimelineLite();
-            tl.staggerFrom($el, 1.8, {alpha: 0, height:'0', ease:Power4.easeOut}, 0.1, 0.2);
+            tl.staggerFrom($el, 1.8, {alpha: 0, y:'100%', ease:Power4.easeOut}, 0.1, 0.2);
         }
 
         else if ($el.is('.full-width blockquote')) {

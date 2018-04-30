@@ -16,12 +16,12 @@
 		background: $color-carnet-dark
 
 	#layout
-
-		.deux-tiers__chapter ~ .deux-tiers__paragraph
-
-			&:first-of-type
-				&:first-letter
-					color: $color-carnet-dark
+		.deux-tiers--un-tiers
+			&:nth-child(1), &:nth-child(2)
+				.deux-tiers__paragraph
+					&:first-of-type
+						&:first-letter
+							color: $color-carnet-dark
 
 #guide
 	overflow: hidden
@@ -40,13 +40,14 @@
 	#introduction h4
 		background: $color-guide-dark
 
+
 	#layout
-
-		.deux-tiers__chapter ~ .deux-tiers__paragraph
-
-			&:first-of-type
-				&:first-letter
-					color: $color-guide-dark
+		.deux-tiers--un-tiers
+			&:nth-child(1), &:nth-child(2)
+				.deux-tiers__paragraph
+					&:first-of-type
+						&:first-letter
+							color: $color-guide-dark
 
 #conseil
 	overflow: hidden
@@ -66,12 +67,12 @@
 		background: $color-conseil-dark
 
 	#layout
-
-		.deux-tiers__chapter ~ .deux-tiers__paragraph
-
-			&:first-of-type
-				&:first-letter
-					color: $color-conseil-dark
+		.deux-tiers--un-tiers
+			&:nth-child(1), &:nth-child(2)
+				.deux-tiers__paragraph
+					&:first-of-type
+						&:first-letter
+							color: $color-conseil-dark
 
 
 #article, #guide, #conseil
@@ -91,6 +92,9 @@
 
 	+media-sm-and-less
 		overflow: initial;
+
+	#summary
+		overflow: hidden
 
 	&-title
 		padding-bottom: ($desktop-margin / 2)
@@ -127,6 +131,10 @@
 		font-size: 20px
 		line-height: 40px
 		text-align: center
+		width: 102%
+		position: relative
+		left: -1%
+		margin-bottom: 30px
 
 		&>div
 			overflow: hidden
@@ -190,17 +198,18 @@
 
 
 #layout
+	.deux-tiers--un-tiers
+		&:nth-child(1), &:nth-child(2)
 
-	.deux-tiers__chapter ~ .deux-tiers__paragraph
-
-		&:first-of-type
-			&:first-letter
-				float: left
-				font-weight: 900
-				font-size: 4em
-				margin-top: 7px
-				margin-right: 0.20em
-				line-height: 90%
+			.deux-tiers__paragraph
+				&:first-of-type
+					&:first-letter
+						float: left
+						font-weight: 900
+						font-size: 4em
+						margin-top: 7px
+						margin-right: 0.20em
+						line-height: 90%
 
 #realated
 	.post

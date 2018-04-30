@@ -5,13 +5,14 @@
                 $thumbnail_url = $thumbnail['sizes']['thumbnail'];
                 $id = get_the_id();
                 $terms = get_the_terms( $id, 'category' );
+                if (isset($terms)){
                     foreach($terms as $term) {
                         $destination_code = get_field('destination_code', $term);
                         $flag = get_field('flag', $term);
                         $flag_url = $flag['sizes']['thumbnail'];
                         $term_url = get_term_link($term);
                         $term_name = $term->name;
-                    }
+                    }}
             ?>  
             <a href="<?php the_permalink(); ?>">
                 <div class="image image--3-2 image_thumbnail" style="background-image: url('<?php echo $thumbnail_url;?>');" title="<?php echo $thumbnail['alt']; ?>">

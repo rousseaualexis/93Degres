@@ -7,6 +7,7 @@
     endif;
     $id = get_the_id();
     $terms = get_the_terms( $id, 'category' );
+    if (isset($terms)){
         foreach($terms as $term) {
             $destination_code = get_field('destination_code', $term);
             $flag = get_field('flag', $term);
@@ -14,6 +15,7 @@
             $term_url = get_term_link($term);
             $term_name = $term->name;
         }
+    }
 ?>
 
 
@@ -35,7 +37,7 @@
             </div>
             <h1><?php the_title(); ?></h1><?php if(!empty(get_field('subtitle'))){echo '<h4>' . wp_encode_emoji(get_field('subtitle')) . '</h4>';}?>
         </div>
-        <div class="col-xs-42 col-xs-offset-3 col-md-28 col-md-offset-10"><?php echo get_field('introduction');?></div>
+        <div id="summary" class="col-xs-42 col-xs-offset-3 col-md-28 col-md-offset-10"><?php echo get_field('introduction');?></div>
      </div>
 
     <div id="introduction__thumbnail" class="col-xs-48">
