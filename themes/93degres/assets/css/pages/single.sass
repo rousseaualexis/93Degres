@@ -89,6 +89,7 @@
 	text-align: center
 	padding-top: 12.5%
 	padding-bottom: ($desktop-margin * 2)
+	overflow: hidden
 
 	+media-sm-and-less
 		overflow: initial;
@@ -97,7 +98,8 @@
 		overflow: hidden
 
 	&-title
-		padding-bottom: ($desktop-margin / 2)
+		margin-bottom: ($desktop-margin / 2)
+		overflow: hidden
 
 		.categories
 			display: inline-block
@@ -131,9 +133,7 @@
 		font-size: 20px
 		line-height: 40px
 		text-align: center
-		width: 102%
 		position: relative
-		left: -1%
 		margin-bottom: 30px
 
 		&>div
@@ -142,50 +142,53 @@
 	.country-code 
 
 		position: absolute
-		left: 33%
+		left: 66%
 		right: 33%
-		top: 33%
-		bottom: 0
+		top: -4.16%
+		bottom: 100%
 		line-height: 0
 		text-align: left
 		z-index: 0
 		
 		h5 
-			left: 200%
-			transition: all 1.2s cubic-bezier(.4,0,.2,1)
-			transition-delay: 200ms
+			transform: translateY(300%)
+			//transition: all 1.2s cubic-bezier(.4,0,.2,1)
+			//transition-delay: 200ms
 			font-size: 24vw
-			letter-spacing: 0;
+			line-height: 24vw
+			letter-spacing: 0
 			opacity: 0.3
 			
 		
 	.label
 
 		position: absolute
-		top: -50%
-		bottom: 100%
-		left: 33%
-		right: 65%
+		top: 12.5%
+		bottom: 50%
+		left: 8.33%
+		right: 75%
 		z-index: 0
 		
 		img
 
-			left: -200%
-			top: -200%
-			transition: all 1.2s cubic-bezier(.4,0,.2,1)
-			transition-delay: 200ms
+
+			transform: translateX(1000%)
+			transform: translateY(800%)
+			//transition: all 1.2s cubic-bezier(.4,0,.2,1)
+			//transition-delay: 200ms
 			width: 100px
 			opacity: 0.5
 		
 	.date
 		position: absolute
-		top: 80%
-		bottom: 10%
+		top: 50%
+		bottom: 50%
 		left: 40%
 		right: 40%
 		z-index: 0
 
 		h5	
+			transform: translateY(2000%)
 			font-size: 30px
 			letter-spacing: 0.2em
 			opacity: 0.75	

@@ -1444,7 +1444,7 @@ table {
       margin-bottom: 60px;
       padding-top: 0; } }
   .first-post.post-article {
-    background: #ffe08c; }
+    background: #ffdcb4; }
   .first-post.post-guide {
     background: #99bb6f; }
   .first-post.post-conseil {
@@ -1578,7 +1578,7 @@ table {
     z-index: 1; }
     .first-post .country-code h5 {
       font-size: 49vw;
-      opacity: 0.15;
+      opacity: 0.25;
       padding-right: 19vw; }
 
 #destinations {
@@ -1631,17 +1631,17 @@ table {
 #article {
   overflow: hidden; }
   #article .country-code h5, #article .categories, #article .date h5, #article .deux-tiers__chapter h3, #article .deux-tiers__aside h3, #article .title-content h5, #article p a:hover {
-    color: #ffbc00; }
+    color: #f7911d; }
   #article #introduction, #article .un-tiers__text {
-    background: #ffe08c; }
+    background: #ffdcb4; }
   #article p a {
-    background-image: linear-gradient(45deg, #ffbc00, #ffbc00); }
+    background-image: linear-gradient(45deg, #f7911d, #f7911d); }
     #article p a:hover {
-      color: #ffbc00; }
+      color: #f7911d; }
   #article #introduction h4 {
-    background: #ffbc00; }
+    background: #f7911d; }
   #article #layout .deux-tiers--un-tiers:nth-child(1) .deux-tiers__paragraph:first-of-type:first-letter, #article #layout .deux-tiers--un-tiers:nth-child(2) .deux-tiers__paragraph:first-of-type:first-letter {
-    color: #ffbc00; }
+    color: #f7911d; }
 
 #guide {
   overflow: hidden; }
@@ -1681,14 +1681,16 @@ table {
 #introduction {
   text-align: center;
   padding-top: 12.5%;
-  padding-bottom: 16.66%; }
+  padding-bottom: 16.66%;
+  overflow: hidden; }
   @media only screen and (max-width: 767px) {
     #introduction {
       overflow: initial; } }
   #introduction #summary {
     overflow: hidden; }
   #introduction-title {
-    padding-bottom: 4.165%; }
+    margin-bottom: 4.165%;
+    overflow: hidden; }
     #introduction-title .categories {
       display: inline-block;
       position: relative;
@@ -1713,59 +1715,55 @@ table {
     display: inline-block;
     overflow: hidden;
     color: #ffffff;
-    background: #3c2626; }
+    background: #000000; }
   #introduction p {
     font-size: 20px;
     line-height: 40px;
     text-align: center;
-    width: 102%;
     position: relative;
-    left: -1%;
     margin-bottom: 30px; }
     #introduction p > div {
       overflow: hidden; }
   #introduction .country-code {
     position: absolute;
-    left: 33%;
+    left: 66%;
     right: 33%;
-    top: 33%;
-    bottom: 0;
+    top: -4.16%;
+    bottom: 100%;
     line-height: 0;
     text-align: left;
     z-index: 0; }
     #introduction .country-code h5 {
-      left: 200%;
-      -webkit-transition: all 1.2s cubic-bezier(0.4, 0, 0.2, 1);
-      transition: all 1.2s cubic-bezier(0.4, 0, 0.2, 1);
-      -webkit-transition-delay: 200ms;
-              transition-delay: 200ms;
+      -webkit-transform: translateY(300%);
+              transform: translateY(300%);
       font-size: 24vw;
+      line-height: 24vw;
       letter-spacing: 0;
       opacity: 0.3; }
   #introduction .label {
     position: absolute;
-    top: -50%;
-    bottom: 100%;
-    left: 33%;
-    right: 65%;
+    top: 12.5%;
+    bottom: 50%;
+    left: 8.33%;
+    right: 75%;
     z-index: 0; }
     #introduction .label img {
-      left: -200%;
-      top: -200%;
-      -webkit-transition: all 1.2s cubic-bezier(0.4, 0, 0.2, 1);
-      transition: all 1.2s cubic-bezier(0.4, 0, 0.2, 1);
-      -webkit-transition-delay: 200ms;
-              transition-delay: 200ms;
+      -webkit-transform: translateX(1000%);
+              transform: translateX(1000%);
+      -webkit-transform: translateY(800%);
+              transform: translateY(800%);
       width: 100px;
       opacity: 0.5; }
   #introduction .date {
     position: absolute;
-    top: 80%;
-    bottom: 10%;
+    top: 50%;
+    bottom: 50%;
     left: 40%;
     right: 40%;
     z-index: 0; }
     #introduction .date h5 {
+      -webkit-transform: translateY(2000%);
+              transform: translateY(2000%);
       font-size: 30px;
       letter-spacing: 0.2em;
       opacity: 0.75; }
@@ -1962,7 +1960,7 @@ table {
 
 h1 {
   font-family: "leaguegothic", "impact", sans-serif;
-  color: #3c2626;
+  color: #000000;
   font-size: 100px;
   line-height: 100px;
   text-transform: uppercase; }
@@ -1973,7 +1971,7 @@ h2, blockquote {
   line-height: 5.25vw;
   font-weight: 600;
   letter-spacing: -0.05em;
-  color: #3c2626; }
+  color: #000000; }
   @media only screen and (max-width: 767px) {
     h2, blockquote {
       font-size: 6.4vw;
@@ -1985,7 +1983,7 @@ h3 {
   line-height: 40px;
   font-style: italic;
   letter-spacing: -0.03em;
-  color: #3c2626; }
+  color: #000000; }
   h3 em {
     font-style: normal; }
 
@@ -1995,13 +1993,13 @@ h4 {
   text-transform: uppercase;
   line-height: 28px;
   letter-spacing: 0.2em;
-  color: #3c2626; }
+  color: #000000; }
 
 h5 {
   font-family: "leaguegothic-condensed", "impact", sans-serif;
   font-size: 49vw;
   text-transform: uppercase;
-  color: #3c2626;
+  color: #000000;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
@@ -2075,7 +2073,7 @@ a {
     left: 4px; }
   .categories:hover {
     background-size: 100% 4px;
-    color: #3c2626 !important; }
+    color: #000000 !important; }
 
 p {
   font-family: "Montserrat", sans-serif;
@@ -2083,7 +2081,7 @@ p {
   font-size: 14px;
   line-height: 32px;
   letter-spacing: -0.03em;
-  color: #3c2626; }
+  color: #000000; }
   p strong {
     font-weight: 600; }
   p a {
@@ -2153,7 +2151,7 @@ li {
   position: absolute;
   background-size: cover;
   background-position: center;
-  background: #3c2626;
+  background: #000000;
   opacity: 0.25;
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0, rgba(0, 0, 0, 0.33)), to(black));
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0.33) 0, black 100%);
@@ -2190,7 +2188,7 @@ li {
   text-align: center;
   top: 8.33%; }
   #list-sous-cat a {
-    color: #3c2626;
+    color: #000000;
     text-transform: uppercase;
     letter-spacing: 0.3em;
     padding: 12px;
@@ -2207,7 +2205,7 @@ li {
       background-size: 100% 5px; }
   #list-sous-cat span {
     font-family: "leaguegothic", "impact", sans-serif;
-    color: #3c2626;
+    color: #000000;
     text-transform: uppercase;
     letter-spacing: 0.4em;
     font-size: 12px;
@@ -2280,7 +2278,7 @@ li {
         margin: 10px 0; } }
   .menu-principal-container a {
     padding: 12px 6px 12px 10px;
-    color: #3c2626;
+    color: #000000;
     cursor: pointer;
     font-weight: normal;
     display: block; }
@@ -2289,14 +2287,14 @@ li {
     font-weight: 700;
     font-size: 10px;
     padding: 12px 11px 12px 15px;
-    color: #3c2626;
-    border: 1px solid #3c2626;
+    color: #000000;
+    border: 1px solid #000000;
     text-decoration: none;
     display: block;
     line-height: 1; }
   .menu-principal-container .current {
     color: #ffffff;
-    background: #3c2626; }
+    background: #000000; }
 
 .menu {
   display: none; }
@@ -2378,17 +2376,17 @@ li {
           margin-top: 0; } }
 
 .post-article a .cta {
-  color: #ffbc00;
-  border-color: #ffbc00; }
+  color: #f7911d;
+  border-color: #f7911d; }
 
 .post-article .country-code h5, .post-article .categories, .post-article .date h5 {
-  color: #ffbc00; }
+  color: #f7911d; }
 
 .post-article a .image .image_thumbnail--hover {
-  background: #ffe08c; }
+  background: #ffdcb4; }
 
 .post-article .first-post-texte strong {
-  background: #ffbc00; }
+  background: #f7911d; }
 
 .post-guide a .cta {
   color: #5f8f24;
@@ -2662,7 +2660,7 @@ li {
   #realated .trait {
     height: 80px;
     width: 2px;
-    background: #3c2626;
+    background: #000000;
     position: absolute;
     left: -50%;
     right: -50%;
@@ -2785,9 +2783,9 @@ li {
   line-height: 20px;
   font-weight: 800;
   text-decoration: none;
-  color: #3c2626; }
+  color: #000000; }
   .fn a {
-    color: #3c2626;
+    color: #000000;
     font-size: 12px; }
 
 .comment-meta {
@@ -2799,12 +2797,12 @@ li {
     margin-top: 3px;
     font-size: 16px;
     line-height: 16px;
-    color: #3c2626;
+    color: #000000;
     font-weight: 400;
     font-size: 12px;
     font-family: "leaguegothic", "impact", sans-serif; }
   .comment-meta a {
-    color: #3c2626;
+    color: #000000;
     font-weight: 400;
     font-size: 12px; }
 
@@ -2813,7 +2811,7 @@ li {
   position: relative;
   top: -15px; }
   .reply a {
-    color: #3c2626;
+    color: #000000;
     font-weight: 800;
     font-size: 12px; }
 
@@ -2826,7 +2824,7 @@ li {
   display: block;
   font-size: 12px;
   font-weight: 800;
-  color: #3c2626; }
+  color: #000000; }
 
 .children {
   margin-left: 70px;
@@ -2901,5 +2899,5 @@ button:focus {
   text-transform: uppercase;
   letter-spacing: 0.4em;
   color: #f7f2ea;
-  background: #3c2626;
+  background: #000000;
   cursor: pointer; }

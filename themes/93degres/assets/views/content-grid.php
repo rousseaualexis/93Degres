@@ -24,7 +24,7 @@
                             <h5 class="randomize"><?php echo $destination_code; ?></h5>
                         </div>
                         <div class="label">
-                            <img class="randomize" src="<?php bloginfo('template_url') ?>/assets/img/label__guide.png"/>
+                            <img class="randomize" src="<?php bloginfo('template_url') ?>/assets/img/label__nos-petites-adresses.svg"/>
                         </div>
                         <div class="date">
                             <h5 class="randomize"> <?php the_time(get_option('date_format')); ?></h5>
@@ -63,7 +63,7 @@
                             <h5 class="randomize"><?php echo $destination_code; ?></h5>
                         </div>
                         <div class="label">
-                            <img class="randomize" src="<?php bloginfo('template_url') ?>/assets/img/label__conseil.png"/>
+                            <img class="randomize" src="<?php bloginfo('template_url') ?>/assets/img/label__conseils.svg"/>
                         </div>
                         <div class="date">
                             <h5 class="randomize"> <?php the_time(get_option('date_format')); ?></h5>
@@ -104,7 +104,7 @@
                             <h5 class="randomize"><?php echo $destination_code; ?></h5>
                         </div>
                         <div class="label">
-                            <img class="randomize" src="<?php bloginfo('template_url') ?>/assets/img/label__carnet-de-voyage.png"/>
+                            <img class="randomize" src="<?php bloginfo('template_url') ?>/assets/img/label__carnets-de-voyage.svg"/>
                         </div>
                         <div class="date">
                             <h5 class="randomize"> <?php the_time(get_option('date_format')); ?></h5>

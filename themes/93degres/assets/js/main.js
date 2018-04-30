@@ -1,6 +1,6 @@
 
 // ====================================== RANDOMIZE ================================== //
-$( document ).ready(function() {
+/*$( document ).ready(function() {
     $( '.randomize' ).each(function() {
         $minRotate = -45;
         $maxRotate = 45;
@@ -21,6 +21,7 @@ $( document ).ready(function() {
            });        
     })
 });
+*/
 
 
 
@@ -240,6 +241,15 @@ var homepage = (function() {
     var init = function() {
         firstPost();
         $('body').on('reveal', '.scroll-reveal', scrollRevealHandler);
+         var tl = new TimelineLite();
+    $( '.randomize' ).each(function() {
+        $minRotate = -45;
+        $maxRotate = 45;
+        $randomX = Math.floor( Math.random() * 60 ) + "%"
+        $randomY = Math.floor( Math.random() * 60 ) + "%"
+        $degree = Math.floor(Math.random()*( $maxRotate - $minRotate + 1 ) + $minRotate);
+        tl.to($(this), 1.5, {rotation:$degree, y:$randomY, x:$randomX, ease:Power2.easeOut}, 0.6);
+    })
     }
 
     var scrollRevealHandler = function(){
@@ -288,6 +298,7 @@ var homepage = (function() {
             splitCategories = new SplitText($categories,{charsClass: "charsplit", wordsClass: "wordsplit"});
         $("h1 > div:nth-child(2)").append('<div class="trait"></div>');
         var tl = new TimelineLite();
+
 
             tl.from($el.find('.image'), 1.8, {y:'200%', ease:Power4.easeOut}, 0.2);
             tl.from($el.find('.categories img'), 0.6, {y:'300%', ease:Power2.easeOut}, '-=1.2');
@@ -360,11 +371,23 @@ var introduction = function(){
             var splitCategories = new SplitText($categories.find('div'),{charsClass: "charsplit", wordsClass: "wordsplit"});
                 var tl = new TimelineLite();
 
-                tl.staggerFrom($categories.find('img'), 1, {y:'250%', ease:Power2.easeOut}, 0.1, 0.8);
+    $( '.randomize' ).each(function() {
+        $minRotate = -45;
+        $maxRotate = 45;
+        $randomX = Math.floor( Math.random() * 100 ) + "%"
+        $randomY = Math.floor( Math.random() * 100 ) + "%"
+        $degree = Math.floor(Math.random()*( $maxRotate - $minRotate + 1 ) + $minRotate);
+        tl.to($(this), 1.5, {rotation:$degree, y:$randomY, x:$randomX, ease:Power2.easeOut}, 0.6);
+    })
+
+                tl.staggerFrom($categories.find('img'), 1, {y:'250%', ease:Power2.easeOut}, 0.1, 1.8);
                 tl.staggerFrom($categories.find('.wordsplit'), 1, {y:'250%', ease:Power2.easeOut}, 0.1, '-=0.8');
                 tl.staggerFrom($title.find('.charsplit'), 1, {y:'250%', ease:Power2.easeOut}, 0.01, '-=1.4');
+                tl.staggerFrom($subtitle, 1, {y: '200%', ease:Power2.easeOut}, 0.01, '-=1.4');
                 tl.staggerFrom($subtitle.find('.charsplit'), 1, {y:'250%', ease:Power2.easeOut}, 0.01, '-=1');
                 tl.staggerFrom($summary, 1.5, {y:'300%', ease:Power2.easeOut}, 0.4, '-=1.2');
+
+
 
      
     }

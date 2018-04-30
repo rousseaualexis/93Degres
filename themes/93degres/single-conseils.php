@@ -1,3 +1,5 @@
+<?php include'head.php'; ?>
+<body class="single">
 <?php get_header(); ?>
 <?php $thumbnail = get_field('thumbnail');
     if ($thumbnail) :
