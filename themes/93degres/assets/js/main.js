@@ -245,8 +245,8 @@ var homepage = (function() {
     $( '.randomize' ).each(function() {
         $minRotate = -45;
         $maxRotate = 45;
-        $randomX = Math.floor( Math.random() * 60 ) + "%"
-        $randomY = Math.floor( Math.random() * 60 ) + "%"
+        $randomX = Math.floor( Math.random() * 100 ) + "%"
+        $randomY = Math.floor( Math.random() * 100 ) + "%"
         $degree = Math.floor(Math.random()*( $maxRotate - $minRotate + 1 ) + $minRotate);
         tl.to($(this), 1.5, {rotation:$degree, y:$randomY, x:$randomX, ease:Power2.easeOut}, 0.6);
     })
@@ -365,6 +365,7 @@ var introduction = function(){
             $subtitle = $("#introduction h4"),
             $summary = $("#introduction p");
             $categories = $("#introduction .categories");
+            $categoriesImg = $("#introduction .categories img");
             var splitTitle = new SplitText($title,{charsClass: "charsplit", wordsClass: "wordsplit"});
             var splitSubtitle = new SplitText($subtitle,{charsClass: "charsplit", wordsClass: "wordsplit"});
             //var splitSummary = new SplitText($summary,{wordsClass: "wordsplit"});
@@ -378,10 +379,10 @@ var introduction = function(){
                     $degree = Math.floor(Math.random()*( $maxRotate - $minRotate + 1 ) + $minRotate);
                     tl.to($(this), 1.5, {rotation:$degree, y:$randomY, x:$randomX, ease:Power2.easeOut}, 0.6);
                 })
-                tl.from($categories.find('img'), 1, {y:'250%', ease:Power2.easeOut}, 0.1, 1.8);
+                tl.from($categoriesImg, 1, {y:'250%', ease:Power2.easeOut}, 1.8);
                 tl.staggerFrom($categories.find('.wordsplit'), 1, {y:'250%', ease:Power2.easeOut}, 0.1, '-=0.8');
                 tl.staggerFrom($title.find('.charsplit'), 1, {y:'250%', ease:Power2.easeOut}, 0.01, '-=1.4');
-                tl.from($subtitle, 1, {y: '200%', ease:Power2.easeOut}, 0.01, '-=1.4');
+                tl.from($subtitle, 1, {y: '200%', ease:Power2.easeOut}, '-=1.4');
                 tl.staggerFrom($subtitle.find('.charsplit'), 1, {y:'250%', ease:Power2.easeOut}, 0.01, '-=1');
                 tl.staggerFrom($summary, 1.5, {y:'300%', ease:Power2.easeOut}, 0.4, '-=1.2');
 
@@ -409,7 +410,7 @@ var introduction = function(){
         else if ($el.is('#introduction__thumbnail .image')) {
                 
             tl = new TimelineLite();
-            tl.from($el, 1.8, {alpha: 0, y:'100%', ease:Power4.easeOut}, 0.1, 0.2);
+            tl.from($el, 1.8, {alpha: 0, y:'100%', ease:Power4.easeOut}, 0.2);
         }
 
         else if ($el.is('.full-width blockquote')) {

@@ -7,8 +7,10 @@
 	#introduction, .un-tiers__text
 		background: $color-carnet-light
 
-	p a
+	p a, #introduction .categories
 		background-image: linear-gradient(45deg, $color-carnet-dark, $color-carnet-dark)
+		
+	p a 
 		&:hover
 			color: $color-carnet-dark
 
@@ -32,8 +34,10 @@
 	#introduction, .un-tiers__text
 		background: $color-guide-light
 
-	p a
+	p a, #introduction .categories
 		background-image: linear-gradient(45deg, $color-guide-dark, $color-guide-dark)
+	
+	p a
 		&:hover
 			color: $color-guide-dark
 
@@ -58,8 +62,10 @@
 	#introduction, .un-tiers__text
 		background: $color-conseil-light
 
-	p a
+	p a, #introduction .categories
 		background-image: linear-gradient(45deg, $color-conseil-dark, $color-conseil-dark)
+	
+	p a
 		&:hover
 			color: $color-conseil-dark
 
@@ -83,6 +89,9 @@
 			+media-sm-and-less
 				font-size: 45px
 				line-height: 56px
+		.categories
+			img
+				margin-top: -1px
 
 
 #introduction
@@ -144,7 +153,7 @@
 		position: absolute
 		left: 66%
 		right: 33%
-		top: -4.16%
+		top: -8.33%
 		bottom: 100%
 		line-height: 0
 		text-align: left
@@ -201,6 +210,12 @@
 
 
 #layout
+	p
+		del
+			line-height: 0
+			font-size: 20px
+			text-decoration: none
+
 	.deux-tiers--un-tiers
 		&:nth-child(1), &:nth-child(2)
 

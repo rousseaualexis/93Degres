@@ -1,6 +1,6 @@
 *
 	&::selection
-    	background-color: $color-93degres
+    	background-color: rgba(0,0,0,0.05)
 h1 
 	font-family: $leaguegothic
 	color: $color-dark
@@ -101,24 +101,25 @@ a
 	cursor: pointer
 	text-transform: uppercase
 	user-select: none
-	background-size: 0 4px
-	transition: all .45s cubic-bezier(.4,0,0,1) 0s
+	background-size: 0% 2px
 	background-repeat: no-repeat
 	background-image: linear-gradient(45deg, $color-93degres, $color-93degres )
-	background-position: 50% 47%
-	padding: 15px 4px 15px 34px
-	left: -4px
+	background-position: 50% 100%
+	padding: 14px 0px 6px 30px
 	overflow: hidden
+	//left: -12px
+	transition: all .45s cubic-bezier(.4,0,0,1) 0s
 
 	img 
 		width: 20px
 		position: absolute
-		top: 14px
-		left: 4px
+		margin-top: 1px
+		left: 0px
 	
-	&:hover 
-		background-size: 100% 4px
-		color: $color-dark !important
+	&:hover
+		//left: 0
+		background-size: 100% 2px
+		//color: $white !important
 
 
 p 

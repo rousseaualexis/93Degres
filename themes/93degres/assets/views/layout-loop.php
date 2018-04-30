@@ -27,7 +27,7 @@
                 
                 if( get_row_layout() == 'full_width' ):
                     if (have_rows('full_width')) :
-                        echo '<div class="full-width--container col-md-48">';
+                        echo '<div class="full-width--container col-xs-48">';
                         while (have_rows('full_width')): the_row();
                             $template = get_sub_field('bloc');
                             get_template_part('assets/views/template-parts/fullwidth', $template);

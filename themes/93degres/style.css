@@ -1540,6 +1540,8 @@ table {
       float: none;
       display: inline-block;
       position: relative; }
+      .first-post-texte .categories img {
+        margin-top: -1px; }
     .first-post-texte .a-cta {
       display: block;
       clear: both; }
@@ -1590,7 +1592,7 @@ table {
   #destinations h5 {
     font-family: "leaguegothic", "impact", sans-serif;
     font-size: 12vw;
-    color: #ffbc00;
+    color: red;
     margin-bottom: 4.165%;
     position: absolute;
     top: -7vw;
@@ -1604,7 +1606,7 @@ table {
     #destinations li a {
       text-transform: uppercase;
       font-size: 18px;
-      padding: 10px 6px 10px 11px; }
+      padding: 14px 16px 12px 20px; }
 
 #about {
   padding-bottom: 30px; }
@@ -1612,7 +1614,7 @@ table {
     overflow: hidden; }
   #about .cta {
     margin-top: 4.165%;
-    border-color: #ffbc00; }
+    border-color: red; }
     #about .cta:after {
       content: '👌'; }
     @media only screen and (max-width: 767px) {
@@ -1621,7 +1623,7 @@ table {
 
 .mask {
   position: fixed;
-  background: #ffbc00;
+  background: red;
   z-index: 200;
   top: 0;
   bottom: 0;
@@ -1634,10 +1636,10 @@ table {
     color: #f7911d; }
   #article #introduction, #article .un-tiers__text {
     background: #ffdcb4; }
-  #article p a {
+  #article p a, #article #introduction .categories {
     background-image: linear-gradient(45deg, #f7911d, #f7911d); }
-    #article p a:hover {
-      color: #f7911d; }
+  #article p a:hover {
+    color: #f7911d; }
   #article #introduction h4 {
     background: #f7911d; }
   #article #layout .deux-tiers--un-tiers:nth-child(1) .deux-tiers__paragraph:first-of-type:first-letter, #article #layout .deux-tiers--un-tiers:nth-child(2) .deux-tiers__paragraph:first-of-type:first-letter {
@@ -1649,10 +1651,10 @@ table {
     color: #5f8f24; }
   #guide #introduction, #guide .un-tiers__text {
     background: #99bb6f; }
-  #guide p a {
+  #guide p a, #guide #introduction .categories {
     background-image: linear-gradient(45deg, #5f8f24, #5f8f24); }
-    #guide p a:hover {
-      color: #5f8f24; }
+  #guide p a:hover {
+    color: #5f8f24; }
   #guide #introduction h4 {
     background: #5f8f24; }
   #guide #layout .deux-tiers--un-tiers:nth-child(1) .deux-tiers__paragraph:first-of-type:first-letter, #guide #layout .deux-tiers--un-tiers:nth-child(2) .deux-tiers__paragraph:first-of-type:first-letter {
@@ -1664,10 +1666,10 @@ table {
     color: #0080ff; }
   #conseil #introduction, #conseil .un-tiers__text {
     background: #e8f0f3; }
-  #conseil p a {
+  #conseil p a, #conseil #introduction .categories {
     background-image: linear-gradient(45deg, #0080ff, #0080ff); }
-    #conseil p a:hover {
-      color: #0080ff; }
+  #conseil p a:hover {
+    color: #0080ff; }
   #conseil #introduction h4 {
     background: #0080ff; }
   #conseil #layout .deux-tiers--un-tiers:nth-child(1) .deux-tiers__paragraph:first-of-type:first-letter, #conseil #layout .deux-tiers--un-tiers:nth-child(2) .deux-tiers__paragraph:first-of-type:first-letter {
@@ -1677,6 +1679,9 @@ table {
   #article #introduction h1, #guide #introduction h1, #conseil #introduction h1 {
     font-size: 45px;
     line-height: 56px; } }
+
+#article #introduction .categories img, #guide #introduction .categories img, #conseil #introduction .categories img {
+  margin-top: -1px; }
 
 #introduction {
   text-align: center;
@@ -1728,7 +1733,7 @@ table {
     position: absolute;
     left: 66%;
     right: 33%;
-    top: -4.16%;
+    top: -8.33%;
     bottom: 100%;
     line-height: 0;
     text-align: left;
@@ -1771,6 +1776,11 @@ table {
     margin-bottom: 4.165%;
     margin-top: -6.25%;
     overflow: hidden; }
+
+#layout p del {
+  line-height: 0;
+  font-size: 20px;
+  text-decoration: none; }
 
 #layout .deux-tiers--un-tiers:nth-child(1) .deux-tiers__paragraph:first-of-type:first-letter, #layout .deux-tiers--un-tiers:nth-child(2) .deux-tiers__paragraph:first-of-type:first-letter {
   float: left;
@@ -1846,7 +1856,7 @@ table {
         left: -12px;
         width: 25px;
         height: 4px;
-        background: #ffbc00; }
+        background: red; }
       #why-we-like__content h4:before {
         top: 0; }
       #why-we-like__content h4:after {
@@ -1881,7 +1891,7 @@ table {
       left: -12px;
       width: 25px;
       height: 4px;
-      background: #ffbc00; }
+      background: red; }
     #what-we-like h4:before {
       top: 0; }
     #what-we-like h4:after {
@@ -1928,14 +1938,14 @@ table {
       font-size: 16vw;
       left: -1vw;
       line-height: 14vw;
-      color: #ffbc00; }
+      color: red; }
       @media only screen and (max-width: 767px) {
         .about--content h1 {
           position: relative;
           float: left;
           left: 6.25%; } }
     .about--content h3 {
-      color: #ffbc00; }
+      color: red; }
     .about--content #social, .about--content #contact {
       margin-bottom: 30px; }
     .about--content #summary {
@@ -1953,10 +1963,10 @@ table {
     background: #f7f2ea; }
 
 *::-moz-selection {
-  background-color: #ffbc00; }
+  background-color: rgba(0, 0, 0, 0.05); }
 
 *::selection {
-  background-color: #ffbc00; }
+  background-color: rgba(0, 0, 0, 0.05); }
 
 h1 {
   font-family: "leaguegothic", "impact", sans-serif;
@@ -2057,23 +2067,21 @@ a {
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
-  background-size: 0 4px;
-  -webkit-transition: all 0.45s cubic-bezier(0.4, 0, 0, 1) 0s;
-  transition: all 0.45s cubic-bezier(0.4, 0, 0, 1) 0s;
+  background-size: 0% 2px;
   background-repeat: no-repeat;
-  background-image: linear-gradient(45deg, #ffbc00, #ffbc00);
-  background-position: 50% 47%;
-  padding: 15px 4px 15px 34px;
-  left: -4px;
-  overflow: hidden; }
+  background-image: linear-gradient(45deg, red, red);
+  background-position: 50% 100%;
+  padding: 14px 0px 6px 30px;
+  overflow: hidden;
+  -webkit-transition: all 0.45s cubic-bezier(0.4, 0, 0, 1) 0s;
+  transition: all 0.45s cubic-bezier(0.4, 0, 0, 1) 0s; }
   .categories img {
     width: 20px;
     position: absolute;
-    top: 14px;
-    left: 4px; }
+    margin-top: 1px;
+    left: 0px; }
   .categories:hover {
-    background-size: 100% 4px;
-    color: #000000 !important; }
+    background-size: 100% 2px; }
 
 p {
   font-family: "Montserrat", sans-serif;
@@ -2094,13 +2102,13 @@ p {
     color: inherit;
     background-size: 100% 2px;
     background-repeat: no-repeat;
-    background-image: linear-gradient(45deg, #ffbc00, #ffbc00);
+    background-image: linear-gradient(45deg, red, red);
     background-position: center bottom;
     cursor: pointer;
     -webkit-transition: all 0.45s cubic-bezier(0.4, 0, 0, 1);
     transition: all 0.45s cubic-bezier(0.4, 0, 0, 1); }
     p a:hover {
-      color: #ffbc00; }
+      color: red; }
 
 blockquote {
   quotes: none; }
@@ -2199,7 +2207,7 @@ li {
     transition: transform 0.45s cubic-bezier(0.4, 0, 0, 1) 0s;
     transition: transform 0.45s cubic-bezier(0.4, 0, 0, 1) 0s, -webkit-transform 0.45s cubic-bezier(0.4, 0, 0, 1) 0s;
     background-repeat: no-repeat;
-    background-image: linear-gradient(45deg, #ffbc00, #ffbc00);
+    background-image: linear-gradient(45deg, red, red);
     background-position: 50% 50%; }
     #list-sous-cat a:hover {
       background-size: 100% 5px; }
@@ -2253,7 +2261,7 @@ li {
       -webkit-transition-delay: 0.1s;
               transition-delay: 0.1s;
       display: table;
-      background: #ffbc00;
+      background: red;
       top: 100vh; } }
   .menu-principal-container ul {
     display: inline-block;
@@ -2342,12 +2350,12 @@ li {
   text-align: center; }
   #instagram h3 {
     margin-bottom: 2.0825%;
-    color: #ffbc00; }
+    color: red; }
     @media only screen and (max-width: 767px) {
       #instagram h3 {
         margin-bottom: 30px; } }
   #instagram .cta {
-    border-color: #ffbc00;
+    border-color: red;
     margin-top: 4.165%; }
     #instagram .cta:after {
       content: '\270C'; }
@@ -2388,6 +2396,9 @@ li {
 .post-article .first-post-texte strong {
   background: #f7911d; }
 
+.post-article .categories {
+  background-image: linear-gradient(45deg, #f7911d, #f7911d); }
+
 .post-guide a .cta {
   color: #5f8f24;
   border-color: #5f8f24; }
@@ -2401,6 +2412,9 @@ li {
 .post-guide .first-post-texte strong {
   background: #5f8f24; }
 
+.post-guide .categories {
+  background-image: linear-gradient(45deg, #5f8f24, #5f8f24); }
+
 .post-conseil a .cta {
   color: #0080ff;
   border-color: #0080ff; }
@@ -2413,6 +2427,9 @@ li {
 
 .post-conseil .first-post-texte strong {
   background: #0080ff; }
+
+.post-conseil .categories {
+  background-image: linear-gradient(45deg, #0080ff, #0080ff); }
 
 .post {
   cursor: pointer;
@@ -2431,6 +2448,13 @@ li {
     line-height: normal;
     margin-top: -15px;
     position: relative; }
+    .post h1 span {
+      font-size: 20px;
+      position: relative;
+      display: block; }
+    @media only screen and (max-width: 767px) {
+      .post h1 {
+        width: 100%; } }
   .post .image_thumbnail {
     position: relative;
     overflow: hidden; }
@@ -2487,7 +2511,7 @@ li {
       top: 10%;
       bottom: 75%;
       left: 25%;
-      right: 10%; }
+      right: 40%; }
       .post .image_thumbnail--hover .date h5 {
         -webkit-transform: rotate(0deg);
                 transform: rotate(0deg);
@@ -2674,12 +2698,12 @@ li {
     @media only screen and (max-width: 767px) {
       #realated .title h3 {
         padding-bottom: 8.33%; } }
-  #realated .post .categories {
-    left: 20px; }
   #realated .post h1 {
     width: 100%; }
   #realated .post h4 {
     width: 100%; }
+  #realated .categories {
+    left: 0; }
 
 #pagination_container {
   text-align: center;
