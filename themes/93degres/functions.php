@@ -487,22 +487,6 @@ function pressPagination($pages = '', $range = 2)
  
 }
  /////////////////////////
-
-/* Plugin Name: TinyMCE break instead of paragraph */
-function mytheme_tinymce_settings( $tinymce_init_settings ) {
-    $tinymce_init_settings['forced_root_block'] = false;
-    return $tinymce_init_settings;
-}
-add_filter( 'tiny_mce_before_init', 'mytheme_tinymce_settings' );
-
-
-remove_filter ( 'the_content', 'wpautop' );
-add_filter ( 'the_content', 'add_newlines_to_post_content' );
-function add_newlines_to_post_content( $content ) {
-    return nl2br( $content );
-}
-
-
 /**
  * Wordpress has a known bug with the posts_per_page value and overriding it using
  * query_posts. The result is that although the number of allowed posts_per_page
