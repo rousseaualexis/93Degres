@@ -11,7 +11,7 @@
   ],
   "author": "Rousseau Alexis",
   "devDependencies": {
-    "browser-sync": "^2.23.6",
+    "browser-sync": "^2.24.1",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^5.0.0",
     "gulp-cache": "^1.0.2",
@@ -28,13 +28,13 @@
     "gulp-rename": "^1.2.2",
     "gulp-rimraf": "^0.2.2",
     "gulp-run-sequence": "^0.3.2",
-    "gulp-sass": "^3.2.1",
+    "gulp-sass": "^4.0.1",
     "gulp-sourcemaps": "^2.6.4",
     "gulp-uglify": "^3.0.0",
     "gulp-uglifycss": "^1.0.9",
     "gulp-zip": "^4.1.0"
   },
   "dependencies": {
-    "npm": "^5.8.0"
+    "npm": "^6.0.0"
   }
 }

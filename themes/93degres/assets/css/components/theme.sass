@@ -101,14 +101,14 @@ a
 	cursor: pointer
 	text-transform: uppercase
 	user-select: none
-	background-size: 0% 2px
+	background-size: 100% 0
 	background-repeat: no-repeat
 	background-image: linear-gradient(45deg, $color-93degres, $color-93degres )
-	background-position: 50% 100%
-	padding: 14px 0px 6px 30px
+	background-position: 25px 50%
+	padding: 2px 2px 1px 30px
 	overflow: hidden
 	//left: -12px
-	transition: all .45s cubic-bezier(.4,0,0,1) 0s
+	transition: all 0.2s ease 0s
 
 	img 
 		width: 20px
@@ -117,9 +117,10 @@ a
 		left: 0px
 	
 	&:hover
+		cursor: pointer
 		//left: 0
-		background-size: 100% 2px
-		//color: $white !important
+		background-size: 100% 100%
+		color: $white !important
 
 
 p 
