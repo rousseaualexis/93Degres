@@ -373,7 +373,7 @@ var single = (function() {
             tl.staggerFrom($title.find('.charsplit'), 1.5, {y:'250%', ease:Power4.easeOut}, 0.01, '-=1.4');
             tl.from($subtitle, 1.5, {y: '200%', ease:Power4.easeOut}, '-=1.4');
             tl.staggerFrom($subtitle.find('.charsplit'), 1, {y:'250%', ease:Power4.easeOut}, 0.01, '-=1');
-            tl.staggerFrom($summary, 1.2, {y:'300%', ease:Power2.easeOut}, 0.4, '-=1.2');
+            tl.staggerFrom($summary, 1.2, {y:'500%', ease:Power2.easeOut}, 0.4, '-=1.2');
     }
 
     var scrollRevealHandler = function(){
