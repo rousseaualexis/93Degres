@@ -29,7 +29,7 @@ add_action( 'init', 'remove_pages_editor' );
 
 // FUNCTIONS TO REMOVE BASE POST FROM THE ADMIN
 function remove_menus(){
-  //remove_menu_page( 'edit.php');                   //Posts  
+  //remove_menu_page( 'edit.php');                   //Posts
 }
 add_action( 'admin_menu', 'remove_menus' );
 
