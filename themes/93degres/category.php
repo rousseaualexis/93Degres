@@ -1,5 +1,5 @@
 <?php include'head.php'; ?>
-<body>
+<body class="destinations">
 <?php
 get_header(); 
 $term = get_queried_object();
@@ -28,8 +28,8 @@ $term = get_queried_object();
         </div>
     </div>
 </div>
-<div class="overflow col-xs-48">
-    <div id="list-sous-cat" class="col-xs-offset-3 col-xs-42">    
+    <div id="sous-cat" class="col-xs-40 col-xs-offset-4">
+    <div id="list-sous-cat">    
         <?php 
     $this_category = get_category( $cat );
     $child_categories=get_categories( array( 
@@ -38,66 +38,63 @@ $term = get_queried_object();
         'taxonomy' => 'category',
         'hide_empty' => 1));
     foreach ($child_categories as $category) {
-        $category_link = sprintf('<div class="list-sous-cat-element">
-            <a href="%1$s" alt="%2$s">%3$s</a>
-            <span>(%4$s)</span>  
-        </div>
-        
-        ', esc_url(get_category_link($category->term_id)), esc_attr(sprintf(__('View all posts in %s', 'textdomain'), $category->name)), esc_html($category->name), esc_html($category->category_count));
-        echo sprintf(esc_html__('%s', 'textdomain'), $category_link); }
+        $category_link = sprintf('
+            <a href="%1$s" alt="%2$s">%3$s<span>(%4$s)</span></a>',
+            esc_url(get_category_link($category->term_id)), esc_attr(sprintf(__('View all posts in %s', 'textdomain'), $category->name)),
+            esc_html($category->name), esc_html($category->category_count));
+            echo sprintf(esc_html__('%s', 'textdomain'), $category_link); }
 
     ?>
     </div>
 </div>
 
-<div class="overflow col-xs-48">
-    <div class="col-md-push-3 col-xs-48">
-            <?php 
-                if (isset($_GET['type'])){
-                    $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
-                    $title = get_the_archive_title();
-                    $args = array('post_type'=> array($_GET['type']),
-                                  'category_name' => $title,
-                                  'paged' => $paged );
-                    $wp_query = new WP_Query($args);
-                        if ( have_posts() ) :
-                    
-                            while ( have_posts() ) : the_post();
-                                get_template_part( 'assets/views/content-grid' );
-                            endwhile;
-                                //<!-- pagination here -->
-                            get_template_part('assets/views/content-pagination');
-                            wp_reset_postdata();
-                        else : ?>
-                            <p>
-                                <?php _e( 'Sorry, no posts matched your criteria.' ); ?>
-                            </p>
-                        <?php endif;}
-                else{
-                    $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
-                    $title = get_the_archive_title();
-                    $args = array('post_type'=> array('carnets' , 'guides', 'conseils'),
-                                  'category_name' => $title,
-                                  'paged' => $paged );
-                    $wp_query = new WP_Query($args);       
-                    
-                        if ( have_posts() ) :
-                    
-                            while ( have_posts() ) : the_post();
-                                get_template_part( 'assets/views/content-grid' );
-                            endwhile;
-                                //<!-- pagination here -->
-                            get_template_part('assets/views/content-pagination');
-                            wp_reset_postdata();
-                        else : ?>
-                            <p>
-                                <?php _e( 'Sorry, no posts matched your criteria.' ); ?>
-                            </p>
-                        <?php endif; }?>
+<div class="grid scroll-reveal col-xs-48 col-md-push-3 col-md-44">
+    <?php 
+        if (isset($_GET['type'])){
+            $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+            $title = get_the_archive_title();
+            $args = array('post_type'=> array($_GET['type']),
+                          'category_name' => $title,
+                          'paged' => $paged );
+            $wp_query = new WP_Query($args);
+                if ( have_posts() ) :
+            
+                    while ( have_posts() ) : the_post();
+                        get_template_part( 'assets/views/content-grid' );
+                    endwhile;
+                        //<!-- pagination here -->
+                    get_template_part('assets/views/content-pagination');
+                    wp_reset_postdata();
+                else : ?>
+                    <p>
+                        <?php _e( 'Sorry, no posts matched your criteria.' ); ?>
+                    </p>
+                <?php endif;}
+        else{
+            $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+            $title = get_the_archive_title();
+            $args = array('post_type'=> array('carnets' , 'guides', 'conseils'),
+                          'category_name' => $title,
+                          'paged' => $paged );
+            $wp_query = new WP_Query($args);       
+            
+                if ( have_posts() ) :
+            
+                    while ( have_posts() ) : the_post();
+                        get_template_part( 'assets/views/content-grid' );
+                    endwhile;
+                        //<!-- pagination here -->
+                    get_template_part('assets/views/content-pagination');
+                    wp_reset_postdata();
+                else : ?>
+                    <p>
+                        <?php _e( 'Sorry, no posts matched your criteria.' ); ?>
+                    </p>
+                <?php endif; }?>
                                              
                                                                     
-        </div>
-    </div>
+</div>
+
 <?php
     $why_we_like = get_field('why_we_like', $term);
     if (!empty($why_we_like)) :
