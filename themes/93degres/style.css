@@ -1656,6 +1656,8 @@ table {
       text-transform: uppercase;
       font-size: 18px;
       padding: 14px 16px 12px 20px; }
+  #destinations .categories {
+    background-position: 0 0; }
 
 #about {
   padding-bottom: 30px; }
