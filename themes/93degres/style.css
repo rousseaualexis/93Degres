@@ -1588,7 +1588,7 @@ table {
     z-index: 1; }
     @media only screen and (max-width: 767px) {
       .first-post .country-code {
-        display: none; } }
+        opacity: 0; } }
     .first-post .country-code h5 {
       font-size: 49vw;
       opacity: 0.25;
