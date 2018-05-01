@@ -377,14 +377,14 @@ var introduction = function(){
                     $randomX = Math.floor( Math.random() * 100 ) + "%"
                     $randomY = Math.floor( Math.random() * 100 ) + "%"
                     $degree = Math.floor(Math.random()*( $maxRotate - $minRotate + 1 ) + $minRotate);
-                    tl.to($(this), 1.5, {rotation:$degree, y:$randomY, x:$randomX, ease:Power2.easeOut}, 0.6);
+                    tl.to($(this), 2, {rotation:$degree, y:$randomY, x:$randomX, ease:Power4.easeOut}, 0.6);
                 })
-                tl.from($categoriesImg, 1, {y:'250%', ease:Power2.easeOut}, 1.8);
-                tl.staggerFrom($categories.find('.wordsplit'), 1, {y:'250%', ease:Power2.easeOut}, 0.1, '-=0.8');
-                tl.staggerFrom($title.find('.charsplit'), 1, {y:'250%', ease:Power2.easeOut}, 0.01, '-=1.4');
-                tl.from($subtitle, 1, {y: '200%', ease:Power2.easeOut}, '-=1.4');
-                tl.staggerFrom($subtitle.find('.charsplit'), 1, {y:'250%', ease:Power2.easeOut}, 0.01, '-=1');
-                tl.staggerFrom($summary, 1.5, {y:'300%', ease:Power2.easeOut}, 0.4, '-=1.2');
+                tl.from($categoriesImg, 0.6, {y:'250%', ease:Power2.easeOut}, 1.8);
+                tl.staggerFrom($categories.find('.wordsplit'), 0.6, {y:'250%', ease:Power2.easeOut}, 0.1, '-=0.8');
+                tl.staggerFrom($title.find('.charsplit'), 1.5, {y:'250%', ease:Power4.easeOut}, 0.01, '-=1.4');
+                tl.from($subtitle, 1.5, {y: '200%', ease:Power4.easeOut}, '-=1.4');
+                tl.staggerFrom($subtitle.find('.charsplit'), 1, {y:'250%', ease:Power4.easeOut}, 0.01, '-=1');
+                tl.staggerFrom($summary, 1.2, {y:'300%', ease:Power2.easeOut}, 0.4, '-=1.2');
 
 
 
@@ -418,7 +418,7 @@ var introduction = function(){
             var splitQuote = new SplitText($el,{charsClass: "charsplit", wordsClass: "wordsplit"});
                 
             tl = new TimelineLite();
-            tl.staggerFrom($el.find('.wordsplit'), 1, {y:'250%', ease:Power2.easeOut}, 0.02, 0.3);
+            tl.staggerFrom($el.find('.wordsplit'), 1.5, {y:'250%', ease:Power4.easeOut}, 0.02, 0.3);
         }
     }
 
@@ -448,7 +448,7 @@ var summary = function(){
             var $summaryline = $("#summary > div");
                 var tl = new TimelineLite();
 
-                tl.staggerFrom($title.find('.charsplit'), 1, {y:'250%', ease:Power2.easeOut}, 0.05, 0.6);
+                tl.staggerFrom($title.find('.charsplit'), 1.2, {y:'250%', ease:Power4.easeOut}, 0.05, 0.6);
 
      
     }

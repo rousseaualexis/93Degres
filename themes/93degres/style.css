@@ -1682,8 +1682,10 @@ table {
     font-size: 45px;
     line-height: 56px; } }
 
-#article #introduction .categories img, #guide #introduction .categories img, #conseil #introduction .categories img {
-  margin-top: -1px; }
+#article #introduction .categories, #guide #introduction .categories, #conseil #introduction .categories {
+  padding-top: 4px; }
+  #article #introduction .categories img, #guide #introduction .categories img, #conseil #introduction .categories img {
+    margin-top: -1px; }
 
 #introduction {
   text-align: center;
@@ -1755,25 +1757,24 @@ table {
     right: 75%;
     z-index: 0; }
     #introduction .label img {
-      -webkit-transform: translateX(1000%);
-              transform: translateX(1000%);
-      -webkit-transform: translateY(800%);
-              transform: translateY(800%);
+      -webkit-transform: translateY(800%) rotate(90deg);
+              transform: translateY(800%) rotate(90deg);
       width: 100px;
       opacity: 0.5; }
   #introduction .date {
     position: absolute;
-    top: 50%;
+    top: 45%;
     bottom: 50%;
-    left: 40%;
-    right: 40%;
+    left: 0%;
+    right: 30%;
     z-index: 0; }
     #introduction .date h5 {
-      -webkit-transform: translateY(2000%);
-              transform: translateY(2000%);
+      -webkit-transform: translateY(2000%) rotate(-45deg);
+              transform: translateY(2000%) rotate(-45deg);
       font-size: 30px;
       letter-spacing: 0.2em;
-      opacity: 0.75; }
+      opacity: 0.75;
+      display: inline-block; }
   #introduction__thumbnail {
     margin-bottom: 4.165%;
     margin-top: -6.25%;
