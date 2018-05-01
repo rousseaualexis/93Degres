@@ -1441,13 +1441,24 @@ table {
     .first-post {
       padding-bottom: 0;
       margin-bottom: 60px;
-      padding-top: 0; } }
+      padding-top: 0;
+      background: none;
+      min-height: initial; } }
   .first-post.post-article {
     background: #ffdcb4; }
+    @media only screen and (max-width: 767px) {
+      .first-post.post-article {
+        background: none; } }
   .first-post.post-guide {
     background: #99bb6f; }
+    @media only screen and (max-width: 767px) {
+      .first-post.post-guide {
+        background: none; } }
   .first-post.post-conseil {
     background: #e8f0f3; }
+    @media only screen and (max-width: 767px) {
+      .first-post.post-conseil {
+        background: none; } }
   .first-post-texte {
     display: table-cell;
     float: none;
@@ -1569,9 +1580,6 @@ table {
     .first-post-image .image {
       height: 100%;
       position: relative; }
-      @media only screen and (max-width: 767px) {
-        .first-post-image .image {
-          padding-bottom: 50%; } }
   .first-post .country-code {
     position: absolute;
     top: 43%;
@@ -1579,6 +1587,9 @@ table {
     left: 25%;
     width: 100%;
     z-index: 1; }
+    @media only screen and (max-width: 767px) {
+      .first-post .country-code {
+        display: none; } }
     .first-post .country-code h5 {
       font-size: 49vw;
       opacity: 0.25;

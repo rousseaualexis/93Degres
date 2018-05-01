@@ -15,16 +15,25 @@
 		padding-bottom: 0
 		margin-bottom: $mobile-margin
 		padding-top: 0
+		background: none
+		min-height: initial
 
 	&.post 
 		&-article
 			background: $color-carnet-light
+			+media-sm-and-less
+				background: none
 
 		&-guide
 			background: $color-guide-light
+			+media-sm-and-less
+				background: none
 
 		&-conseil
 			background: $color-conseil-light
+			+media-sm-and-less
+				background: none
+
 
 	&-texte
 		display: table-cell
@@ -173,8 +182,6 @@
 		.image
 			height: 100%
 			position: relative
-			+media-sm-and-less
-				padding-bottom: 50%
 
 	.country-code
 		position: absolute
@@ -183,6 +190,9 @@
 		left: 25%
 		width: 100%
 		z-index: 1
+
+		+media-sm-and-less
+			display: none
 		
 		h5 
 			font-size: 49vw
