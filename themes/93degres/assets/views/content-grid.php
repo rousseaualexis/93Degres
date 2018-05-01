@@ -18,7 +18,7 @@
                 <div class="image image--3-2 image_thumbnail" style="background-image: url('<?php echo $thumbnail_url;?>');" title="<?php echo $thumbnail['alt']; ?>">
                     <div class="image_thumbnail--hover">
                         <div class="table">
-                            <div class="table-cell">👁</div>
+                            <div class="table-cell">&#x1F441</div>
                         </div>
                         <div class="country-code">
                             <h5 class="randomize"><?php echo $destination_code; ?></h5>
@@ -57,7 +57,7 @@
                 <div class="image image--3-2 image_thumbnail" style="background-image: url('<?php echo $thumbnail_url;?>');" title="<?php echo $thumbnail['alt']; ?>">
                     <div class="image_thumbnail--hover">
                         <div class="table">
-                            <div class="table-cell">👁</div>
+                            <div class="table-cell">&#x1F441</div>
                         </div>
                         <div class="country-code">
                             <h5 class="randomize"><?php echo $destination_code; ?></h5>
@@ -96,9 +96,7 @@
                 <div class="image image--3-2 image_thumbnail" style="background-image: url('<?php echo $thumbnail_url;?>');" title="<?php echo $thumbnail['alt']; ?>">
                     <div class="image_thumbnail--hover">
                         <div class="table">
-                            <div class="table-cell">
-                            👁
-                            </div>
+                            <div class="table-cell">&#x1F441</div>
                         </div>
                         <div class="country-code">
                             <h5 class="randomize"><?php echo $destination_code; ?></h5>
