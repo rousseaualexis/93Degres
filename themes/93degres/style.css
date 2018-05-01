@@ -1674,7 +1674,7 @@ table {
 
 .mask {
   position: fixed;
-  background: #ffbc00;
+  background: #f7f2ea;
   z-index: 200;
   top: 0;
   bottom: 0;
@@ -2323,6 +2323,15 @@ li {
     display: inline-block;
     margin: 12px 20px; }
 
+.mask {
+  position: fixed;
+  background: #f7f2ea;
+  z-index: 200;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0; }
+
 #header {
   display: block;
   position: absolute;
@@ -2484,7 +2493,7 @@ li {
   color: #f7911d;
   border-color: #f7911d; }
 
-.post-article .country-code h5, .post-article .categories, .post-article .date h5 {
+.post-article .country-code h5, .post-article .date h5 {
   color: #f7911d; }
 
 .post-article a .image .image_thumbnail--hover {
@@ -2500,7 +2509,7 @@ li {
   color: #487215;
   border-color: #487215; }
 
-.post-guide .country-code h5, .post-guide .categories, .post-guide .date h5 {
+.post-guide .country-code h5, .post-guide .date h5 {
   color: #487215; }
 
 .post-guide a .image .image_thumbnail--hover {
@@ -2516,7 +2525,7 @@ li {
   color: #0080ff;
   border-color: #0080ff; }
 
-.post-conseil .country-code h5, .post-conseil .categories, .post-conseil .date h5 {
+.post-conseil .country-code h5, .post-conseil .date h5 {
   color: #0080ff; }
 
 .post-conseil a .image .image_thumbnail--hover {
