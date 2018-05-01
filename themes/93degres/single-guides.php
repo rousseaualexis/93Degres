@@ -36,7 +36,6 @@
             <h5 class="random"><? the_time(get_option('date_format')); ?></h5>
         </div>
         <div id="summary" class="col-xs-42 col-xs-offset-3 col-md-28 col-md-offset-10"><?php echo get_field('introduction');?></div>
-        <h3 class="col-xs-42 col-xs-offset-3 col-md-32 col-md-offset-8"><?php echo strip_tags(get_field('introduction'), '<br><em><strong>');?></h3>
      </div>
 
     <div id="introduction__thumbnail" class="col-xs-48">

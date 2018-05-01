@@ -7,6 +7,7 @@
     endif;
     $id = get_the_id();
     $terms = get_the_terms( $id, 'category' );
+    if (isset($terms)){
         foreach($terms as $term) {
             $destination_code = get_field('destination_code', $term);
             $flag = get_field('flag', $term);
@@ -14,6 +15,7 @@
             $term_url = get_term_link($term);
             $term_name = $term->name;
         }
+    }
 ?>
 
 <div id="conseil" class="container col-xs-48">
@@ -37,7 +39,6 @@
             <h5 class="random"><? the_time(get_option('date_format')); ?></h5>
         </div>
         <div id="summary" class="col-xs-42 col-xs-offset-3 col-md-28 col-md-offset-10"><?php echo get_field('introduction');?></div>
-        <h3 class="col-xs-42 col-xs-offset-3 col-md-32 col-md-offset-8"><?php echo get_field('introduction');?></h3>
      </div>
 
     <div id="introduction__thumbnail" class="col-xs-48">
