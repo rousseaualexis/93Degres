@@ -48,6 +48,7 @@
     <?php include'assets/views/layout-loop.php'; ?>
 </div>
 
+<?php get_template_part('assets/views/content-realated', $template); ?>
 <?php include'assets/views/comments.php'; ?>
 
 <?php get_footer(); ?>

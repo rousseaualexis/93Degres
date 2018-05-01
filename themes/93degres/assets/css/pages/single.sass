@@ -1,43 +1,22 @@
 #article
 	overflow: hidden
+	
+	.country-code h5, .categories, .date h5, .deux-tiers__chapter h3, .deux-tiers__aside h3, .title-content h5, p a:hover
+		color: $color-article-dark
 
 	#introduction, .un-tiers__text
-		background: $color-carnet-light
+		background: $color-article-light
 
-	#introduction
-		h4
-			background: $color-carnet-dark
-		.country-code h5, .categories, .date h5, 
-			color: $color-carnet-dark
+	p a, #introduction .categories
+		background-image: linear-gradient(45deg, $color-article-dark, $color-article-dark)
+	
+	p a
+		&:hover
+			color: $color-article-dark
 
-	#layout
-		.deux-tiers--un-tiers
-			&:nth-child(1), &:nth-child(2)
-				.deux-tiers__paragraph
-					&:first-of-type
-						&:first-letter
-							color: $color-carnet-dark
-							
-		p a, #introduction .categories
-			background-image: linear-gradient(45deg, $color-carnet-dark, $color-carnet-dark)
-		
-		p a 
-			&:hover
-				color: $color-carnet-dark
+	#introduction h4
+		background: $color-article-dark
 
-		.deux-tiers__chapter h3, .deux-tiers__aside h3, .title-content h5
-			color: $color-carnet-dark
-#guide
-	overflow: hidden
-
-	#introduction, .un-tiers__text
-		background: $color-guide-light
-
-	#introduction
-		h4
-			background: $color-guide-dark
-		.country-code h5, .categories, .date h5, 
-			color: $color-guide-dark
 
 	#layout
 		.deux-tiers--un-tiers
@@ -46,28 +25,53 @@
 					&:first-of-type
 						&:first-letter
 							color: $color-guide-dark
-							
-		p a, #introduction .categories
-			background-image: linear-gradient(45deg, $color-guide-dark, $color-guide-dark)
-		
-		p a 
-			&:hover
-				color: $color-guide-dark
 
-		.deux-tiers__chapter h3, .deux-tiers__aside h3, .title-content h5
+#guide
+	overflow: hidden
+	
+	.country-code h5, .categories, .date h5, .deux-tiers__chapter h3, .deux-tiers__aside h3, .title-content h5, p a:hover
+		color: $color-guide-dark
+
+	#introduction, .un-tiers__text
+		background: $color-guide-light
+
+	p a, #introduction .categories
+		background-image: linear-gradient(45deg, $color-guide-dark, $color-guide-dark)
+	
+	p a
+		&:hover
 			color: $color-guide-dark
+
+	#introduction h4
+		background: $color-guide-dark
+
+
+	#layout
+		.deux-tiers--un-tiers
+			&:nth-child(1), &:nth-child(2)
+				.deux-tiers__paragraph
+					&:first-of-type
+						&:first-letter
+							color: $color-guide-dark
 
 #conseil
 	overflow: hidden
+	
+	.country-code h5, .categories, .date h5, .deux-tiers__chapter h3, .deux-tiers__aside h3, .title-content h5, p a:hover
+		color: $color-conseil-dark
 
 	#introduction, .un-tiers__text
 		background: $color-conseil-light
 
-	#introduction
-		h4
-			background: $color-conseil-dark
-		.country-code h5, .categories, .date h5, 
+	p a, #introduction .categories
+		background-image: linear-gradient(45deg, $color-conseil-dark, $color-conseil-dark)
+	
+	p a
+		&:hover
 			color: $color-conseil-dark
+
+	#introduction h4
+		background: $color-conseil-dark
 
 	#layout
 		.deux-tiers--un-tiers
@@ -76,16 +80,7 @@
 					&:first-of-type
 						&:first-letter
 							color: $color-conseil-dark
-							
-		p a, #introduction .categories
-			background-image: linear-gradient(45deg, $color-conseil-dark, $color-conseil-dark)
-		
-		p a 
-			&:hover
-				color: $color-conseil-dark
 
-		.deux-tiers__chapter h3, .deux-tiers__aside h3, .title-content h5
-			color: $color-conseil-dark
 
 #article, #guide, #conseil
 
