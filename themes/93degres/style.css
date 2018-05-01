@@ -1634,47 +1634,53 @@ table {
 
 #article {
   overflow: hidden; }
-  #article .country-code h5, #article .categories, #article .date h5, #article .deux-tiers__chapter h3, #article .deux-tiers__aside h3, #article .title-content h5, #article p a:hover {
-    color: #f7911d; }
   #article #introduction, #article .un-tiers__text {
     background: #ffdcb4; }
-  #article p a, #article #introduction .categories {
-    background-image: linear-gradient(45deg, #f7911d, #f7911d); }
-  #article p a:hover {
-    color: #f7911d; }
   #article #introduction h4 {
     background: #f7911d; }
+  #article #introduction .country-code h5, #article #introduction .categories, #article #introduction .date h5 {
+    color: #f7911d; }
   #article #layout .deux-tiers--un-tiers:nth-child(1) .deux-tiers__paragraph:first-of-type:first-letter, #article #layout .deux-tiers--un-tiers:nth-child(2) .deux-tiers__paragraph:first-of-type:first-letter {
+    color: #f7911d; }
+  #article #layout p a, #article #layout #introduction .categories {
+    background-image: linear-gradient(45deg, #f7911d, #f7911d); }
+  #article #layout p a:hover {
+    color: #f7911d; }
+  #article #layout .deux-tiers__chapter h3, #article #layout .deux-tiers__aside h3, #article #layout .title-content h5 {
     color: #f7911d; }
 
 #guide {
   overflow: hidden; }
-  #guide .country-code h5, #guide .categories, #guide .date h5, #guide .deux-tiers__chapter h3, #guide .deux-tiers__aside h3, #guide .title-content h5, #guide p a:hover {
-    color: #5f8f24; }
   #guide #introduction, #guide .un-tiers__text {
     background: #99bb6f; }
-  #guide p a, #guide #introduction .categories {
-    background-image: linear-gradient(45deg, #5f8f24, #5f8f24); }
-  #guide p a:hover {
-    color: #5f8f24; }
   #guide #introduction h4 {
     background: #5f8f24; }
+  #guide #introduction .country-code h5, #guide #introduction .categories, #guide #introduction .date h5 {
+    color: #5f8f24; }
   #guide #layout .deux-tiers--un-tiers:nth-child(1) .deux-tiers__paragraph:first-of-type:first-letter, #guide #layout .deux-tiers--un-tiers:nth-child(2) .deux-tiers__paragraph:first-of-type:first-letter {
+    color: #5f8f24; }
+  #guide #layout p a, #guide #layout #introduction .categories {
+    background-image: linear-gradient(45deg, #5f8f24, #5f8f24); }
+  #guide #layout p a:hover {
+    color: #5f8f24; }
+  #guide #layout .deux-tiers__chapter h3, #guide #layout .deux-tiers__aside h3, #guide #layout .title-content h5 {
     color: #5f8f24; }
 
 #conseil {
   overflow: hidden; }
-  #conseil .country-code h5, #conseil .categories, #conseil .date h5, #conseil .deux-tiers__chapter h3, #conseil .deux-tiers__aside h3, #conseil .title-content h5, #conseil p a:hover {
-    color: #0080ff; }
   #conseil #introduction, #conseil .un-tiers__text {
     background: #e8f0f3; }
-  #conseil p a, #conseil #introduction .categories {
-    background-image: linear-gradient(45deg, #0080ff, #0080ff); }
-  #conseil p a:hover {
-    color: #0080ff; }
   #conseil #introduction h4 {
     background: #0080ff; }
+  #conseil #introduction .country-code h5, #conseil #introduction .categories, #conseil #introduction .date h5 {
+    color: #0080ff; }
   #conseil #layout .deux-tiers--un-tiers:nth-child(1) .deux-tiers__paragraph:first-of-type:first-letter, #conseil #layout .deux-tiers--un-tiers:nth-child(2) .deux-tiers__paragraph:first-of-type:first-letter {
+    color: #0080ff; }
+  #conseil #layout p a, #conseil #layout #introduction .categories {
+    background-image: linear-gradient(45deg, #0080ff, #0080ff); }
+  #conseil #layout p a:hover {
+    color: #0080ff; }
+  #conseil #layout .deux-tiers__chapter h3, #conseil #layout .deux-tiers__aside h3, #conseil #layout .title-content h5 {
     color: #0080ff; }
 
 @media only screen and (max-width: 767px) {
