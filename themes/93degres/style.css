@@ -1930,40 +1930,37 @@ table {
     height: 100%;
     display: block; }
 
-.about {
-  overflow: hidden;
-  width: 100%; }
-  .about--content {
-    background: #f7f2ea;
-    margin-bottom: 8.33%;
-    padding-top: 16.66%;
-    padding-bottom: 8.33%;
-    position: relative; }
+.about--content {
+  background: #f7f2ea;
+  margin-bottom: 8.33%;
+  padding-top: 16.66%;
+  padding-bottom: 8.33%;
+  position: relative; }
+  @media only screen and (max-width: 767px) {
+    .about--content {
+      margin-top: 120px; } }
+  .about--content h1 {
+    overflow: hidden;
+    padding-top: 2vw;
+    margin-top: -2vw;
+    position: absolute;
+    font-size: 16vw;
+    left: -1vw;
+    line-height: 14vw;
+    color: #ffbc00; }
     @media only screen and (max-width: 767px) {
-      .about--content {
-        margin-top: 120px; } }
-    .about--content h1 {
-      overflow: hidden;
-      padding-top: 2vw;
-      margin-top: -2vw;
-      position: absolute;
-      font-size: 16vw;
-      left: -1vw;
-      line-height: 14vw;
-      color: #ffbc00; }
-      @media only screen and (max-width: 767px) {
-        .about--content h1 {
-          position: relative;
-          float: left;
-          left: 6.25%; } }
-    .about--content h3 {
-      color: #ffbc00; }
-    .about--content #social, .about--content #contact {
+      .about--content h1 {
+        position: relative;
+        float: left;
+        left: 6.25%; } }
+  .about--content h3 {
+    color: #ffbc00; }
+  .about--content #social, .about--content #contact {
+    margin-bottom: 30px; }
+  .about--content #summary {
+    overflow: hidden; }
+    .about--content #summary p {
       margin-bottom: 30px; }
-    .about--content #summary {
-      overflow: hidden; }
-      .about--content #summary p {
-        margin-bottom: 30px; }
 
 .cover-archive {
   height: 30%;

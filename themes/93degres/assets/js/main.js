@@ -417,7 +417,7 @@ var about = (function() {
     
     var init = function() {
         summary();
-        $('body').on('reveal', '.scroll-reveal', scrollRevealHandler);
+        //$('body').on('reveal', '.scroll-reveal', scrollRevealHandler);
     }
 
 
@@ -432,6 +432,7 @@ var about = (function() {
             var tl = new TimelineLite();
             tl.staggerFrom($title.find('.charsplit'), 1.2, {y:'250%', ease:Power4.easeOut}, 0.05, 0.6);
     }
+
 
     return {
         init: init
