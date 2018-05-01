@@ -2641,7 +2641,7 @@ li {
         display: table-cell;
         vertical-align: middle; }
   .un-tiers--container p {
-    opacity: 0.65; }
+    color: #aaa7a5; }
     .un-tiers--container p a {
       opacity: 1; }
     .un-tiers--container p .title-content {
