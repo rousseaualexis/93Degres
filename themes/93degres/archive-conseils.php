@@ -8,7 +8,7 @@ Template Name: Conseils
 <?php get_header(); ?>
 
 
-<div class="cover-archive cover-archive--conseils col-xs-48"><h5>Nos petites adresses</h5></div>
+<div class="cover-archive cover-archive--conseils col-xs-48"><h5>Nos conseils</h5></div>
     <div id="sous-cat" class="col-xs-40 col-xs-offset-4">
         <div id="list-sous-cat">
             <?php

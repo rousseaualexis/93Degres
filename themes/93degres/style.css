@@ -2241,20 +2241,21 @@ li {
   visibility: visible; }
 
 #sous-cat {
-  display: table; }
+  overflow: hidden;
+  display: table;
+  padding-bottom: 50px;
+  padding-top: 50px; }
+  @media only screen and (max-width: 767px) {
+    #sous-cat {
+      padding-top: 0;
+      padding-bottom: 0; } }
 
 #list-sous-cat {
   display: table-cell;
   vertical-align: middle;
-  padding-top: 50px;
-  padding-bottom: 50px;
   float: none;
   text-align: center;
   top: 8.33%; }
-  @media only screen and (max-width: 767px) {
-    #list-sous-cat {
-      padding-top: 0;
-      padding-bottom: 0; } }
   #list-sous-cat a {
     position: relative;
     display: inline-block;

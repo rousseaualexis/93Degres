@@ -306,7 +306,19 @@ var homepage = (function() {
 var archive = (function() {
     
     var init = function() {
+        top();
         $('body').on('reveal', '.scroll-reveal', scrollRevealHandler);
+    }
+
+    var top = function(){
+        
+        var $coverArchive = $('.cover-archive h5'),
+            $sousCat = $('#list-sous-cat'),
+            split = new SplitText($coverArchive,{charsClass: "charsplit", wordsClass: "wordsplit"});
+        var tl = new TimelineLite();
+
+            tl.staggerFrom($coverArchive.find('.charsplit'), 1.2, {y:'300%', ease:Power4.easeOut}, 0.02, 0.6);
+            tl.from($sousCat, 0.8, {y: '400%', ease:Power2.easeOut}, '-=0.8');
     }
 
     var scrollRevealHandler = function(){

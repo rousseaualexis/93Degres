@@ -238,20 +238,22 @@ li
 .scroll-reveal--revealed
 	visibility: visible
 #sous-cat
+	overflow: hidden
 	display: table
+	padding-bottom: 50px
+	padding-top: 50px
+	+media-sm-and-less
+		padding-top: 0
+		padding-bottom: 0
 #list-sous-cat
 	display: table-cell
 	vertical-align: middle
-	padding-top: 50px
-	padding-bottom: 50px
 	float: none
 	text-align: center
 	top: $desktop-margin
 	transform .45s cubic-bezier(.4,0,0,1)
 
-	+media-sm-and-less
-		padding-top: 0
-		padding-bottom: 0
+
 	
 	a 
 		position: relative
