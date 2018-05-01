@@ -1549,7 +1549,6 @@ table {
       float: none;
       display: inline-block;
       position: relative;
-      margin-bottom: -10px;
       padding-top: 4px;
       z-index: 4; }
       .first-post-texte .categories img {
