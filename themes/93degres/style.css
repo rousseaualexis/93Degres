@@ -1649,17 +1649,17 @@ table {
 #guide {
   overflow: hidden; }
   #guide .country-code h5, #guide .categories, #guide .date h5, #guide .deux-tiers__chapter h3, #guide .deux-tiers__aside h3, #guide .title-content h5, #guide p a:hover {
-    color: #5f8f24; }
+    color: #487215; }
   #guide #introduction, #guide .un-tiers__text {
     background: #99bb6f; }
   #guide p a, #guide #introduction .categories {
-    background-image: linear-gradient(45deg, #5f8f24, #5f8f24); }
+    background-image: linear-gradient(45deg, #487215, #487215); }
   #guide p a:hover {
-    color: #5f8f24; }
+    color: #487215; }
   #guide #introduction h4 {
-    background: #5f8f24; }
+    background: #487215; }
   #guide #layout .deux-tiers--un-tiers:nth-child(1) .deux-tiers__paragraph:first-of-type:first-letter, #guide #layout .deux-tiers--un-tiers:nth-child(2) .deux-tiers__paragraph:first-of-type:first-letter {
-    color: #5f8f24; }
+    color: #487215; }
 
 #conseil {
   overflow: hidden; }
@@ -1957,12 +1957,34 @@ table {
 
 .cover-archive {
   height: 30%;
-  margin-bottom: 8.33%; }
+  margin-bottom: 4.165%; }
   @media only screen and (max-width: 767px) {
     .cover-archive {
       margin-bottom: 60px; } }
   .cover-archive--carnets {
-    background: #f7f2ea; }
+    background: #ffdcb4; }
+    .cover-archive--carnets h5 {
+      color: #f7911d; }
+  .cover-archive--guides {
+    background: #99bb6f; }
+    .cover-archive--guides h5 {
+      color: #487215; }
+  .cover-archive--conseils {
+    background: #e8f0f3; }
+    .cover-archive--conseils h5 {
+      color: #0080ff; }
+  .cover-archive h5 {
+    overflow: hidden;
+    font-size: 10vw;
+    padding: 1vw 0;
+    text-align: center;
+    bottom: -6.3vw;
+    left: 0;
+    right: 0;
+    position: absolute; }
+
+.archive .grid {
+  margin-top: 4.165%; }
 
 *::-moz-selection {
   background-color: rgba(0, 0, 0, 0.05); }
@@ -2074,9 +2096,7 @@ a {
   background-image: linear-gradient(45deg, #ffbc00, #ffbc00);
   background-position: 25px 50%;
   padding: 2px 2px 1px 30px;
-  overflow: hidden;
-  -webkit-transition: all 0.2s ease 0s;
-  transition: all 0.2s ease 0s; }
+  overflow: hidden; }
   .categories img {
     width: 20px;
     position: absolute;
@@ -2193,39 +2213,40 @@ li {
 .scroll-reveal--revealed {
   visibility: visible; }
 
+#sous-cat {
+  display: table; }
+
 #list-sous-cat {
-  margin-top: 50px;
-  margin-bottom: 50px;
-  float: left;
+  display: table-cell;
+  vertical-align: middle;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  float: none;
   text-align: center;
   top: 8.33%; }
   #list-sous-cat a {
+    position: relative;
+    display: inline-block;
     color: #000000;
     text-transform: uppercase;
-    letter-spacing: 0.3em;
-    padding: 12px;
-    padding-right: 6px;
-    background-size: 0 5px;
-    -webkit-transition: -webkit-transform 0.45s cubic-bezier(0.4, 0, 0, 1) 0s;
-    transition: -webkit-transform 0.45s cubic-bezier(0.4, 0, 0, 1) 0s;
-    transition: transform 0.45s cubic-bezier(0.4, 0, 0, 1) 0s;
-    transition: transform 0.45s cubic-bezier(0.4, 0, 0, 1) 0s, -webkit-transform 0.45s cubic-bezier(0.4, 0, 0, 1) 0s;
-    background-repeat: no-repeat;
-    background-image: linear-gradient(45deg, #ffbc00, #ffbc00);
-    background-position: 50% 50%; }
+    letter-spacing: 0.2em;
+    font-size: 20px;
+    -webkit-transition: all 0.45s cubic-bezier(0.4, 0, 0, 1) 0s;
+    transition: all 0.45s cubic-bezier(0.4, 0, 0, 1) 0s;
+    margin: 10px 30px 10px 30px; }
     #list-sous-cat a:hover {
-      background-size: 100% 5px; }
+      color: #ffbc00; }
   #list-sous-cat span {
     font-family: "leaguegothic", "impact", sans-serif;
-    color: #000000;
     text-transform: uppercase;
     letter-spacing: 0.4em;
     font-size: 12px;
     padding: 12px 0;
     display: inline;
     letter-spacing: 0.1em;
-    position: relative;
-    bottom: 9px; }
+    position: absolute;
+    bottom: 0px;
+    margin-left: 4px; }
   #list-sous-cat .list-sous-cat-element {
     display: inline-block;
     margin: 12px 20px; }
@@ -2404,20 +2425,20 @@ li {
   background-image: linear-gradient(45deg, #f7911d, #f7911d); }
 
 .post-guide a .cta {
-  color: #5f8f24;
-  border-color: #5f8f24; }
+  color: #487215;
+  border-color: #487215; }
 
 .post-guide .country-code h5, .post-guide .categories, .post-guide .date h5 {
-  color: #5f8f24; }
+  color: #487215; }
 
 .post-guide a .image .image_thumbnail--hover {
   background: #99bb6f; }
 
 .post-guide .first-post-texte strong {
-  background: #5f8f24; }
+  background: #487215; }
 
 .post-guide .categories {
-  background-image: linear-gradient(45deg, #5f8f24, #5f8f24); }
+  background-image: linear-gradient(45deg, #487215, #487215); }
 
 .post-conseil a .cta {
   color: #0080ff;
@@ -2441,7 +2462,8 @@ li {
   float: none;
   vertical-align: top;
   margin-bottom: 6.25%;
-  z-index: 1; }
+  z-index: 1;
+  overflow: hidden; }
   @media only screen and (max-width: 767px) {
     .post {
       margin-bottom: 60px; } }
@@ -2461,7 +2483,8 @@ li {
         width: 100%; } }
   .post .image_thumbnail {
     position: relative;
-    overflow: hidden; }
+    overflow: hidden;
+    z-index: 3; }
     @media only screen and (max-width: 767px) {
       .post .image_thumbnail {
         padding-bottom: 50%; } }

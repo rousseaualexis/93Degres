@@ -151,31 +151,6 @@ function custom_post_type_cat_filter($query) {
 
 add_action('pre_get_posts','custom_post_type_cat_filter');
 
-/*
-
-function wp_list_categories_for_post_type($post_type, $args = '') {
-    $exclude = array();
-
-    // Check ALL categories for posts of given post type
-    foreach (get_categories() as $category) {
-        $posts = get_posts(array('post_type' => $post_type, 'category' => $category->cat_ID));
-
-        // If no posts found, ...
-        if (empty($posts))
-            // ...add category to exclude list
-            $exclude[] = $category->cat_ID;
-    }
-
-    // Set up args
-    if (! empty($exclude)) {
-        $args .= ('' === $args) ? '' : '&';
-        $args .= 'exclude='.implode(',', $exclude);
-    }
-
-    // List categories
-    wp_list_categories($args);
-}
-*/
 
 // REMOVE WP EMOJI
 remove_action('wp_head', 'print_emoji_detection_script', 7);
@@ -543,4 +518,47 @@ function mysite_custom_columns( $column ) {
       break;
   }
 
+}
+
+
+/*--------------------------------------------------------------------------------
+    list categories to custom post type
+--------------------------------------------------------------------------------*/
+add_filter( 'terms_clauses', 'jdn_post_type_terms_clauses', 10, 3 );
+function jdn_post_type_terms_clauses( $clauses, $taxonomy, $args ) {
+ // Make sure we have a post_type argument to run with.
+ if( !isset( $args['post_type'] ) || empty( $args['post_type'] ) )
+ return $clauses;
+ 
+ global $wpdb;
+ // Setup the post types in an array
+ $post_types = array();
+ 
+ // If the argument is an array, check each one and cycle through the post types
+ if( is_array( $args['post_type'] ) ) {
+ 
+ // All possible, public post types
+ $possible_post_types = get_post_types( array( 'public' => true ) );
+ 
+ // Cycle through the post types, add them to our array if they are public
+ foreach( $args['post_type'] as $post_type ) {
+ if( in_array( $post_type, $possible_post_types ) )
+ $post_types[] = "'" . esc_attr( $post_type ) . "\'";
+ }
+ 
+ // If the post type argument is a string, not an array
+ } elseif( is_string( $args['post_type'] ) ) {
+ $post_types[] = "'" . esc_attr( $args['post_type'] ) . "'";
+ }
+ // If we have valid post types, build the new sql
+ if( !empty( $post_types ) ) {
+ $post_types_string = implode( ',', $post_types );
+ $fields = str_replace( 'tt.*', 'tt.term_taxonomy_id, tt.term_id, tt.taxonomy, tt.description, tt.parent', $clauses['fields'] );
+ 
+ $clauses['fields'] = 'DISTINCT ' . esc_sql( $fields ) . ', COUNT(t.term_id) AS count';
+ $clauses['join'] .= ' INNER JOIN ' . $wpdb->term_relationships . ' AS r ON r.term_taxonomy_id = tt.term_taxonomy_id INNER JOIN ' . $wpdb->posts . ' AS p ON p.ID = r.object_id';
+ $clauses['where'] .= ' AND p.post_type IN (' . $post_types_string . ')';
+ $clauses['orderby'] = 'GROUP BY t.term_id ' . $clauses['orderby'];
+ }
+ return $clauses;
 }

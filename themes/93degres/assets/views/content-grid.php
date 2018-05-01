@@ -1,5 +1,5 @@
 <?php if ('guides' === get_post_type()): ?>
-    <div class="scroll-reveal post post-guide col-xs-42 col-xs-offset-3 col-md-14 col-md-offset-1 ">
+    <div class="post post-guide col-xs-42 col-xs-offset-3 col-md-14 col-md-offset-1 ">
             <?php
                 $thumbnail = get_field('thumbnail');
                 $thumbnail_url = $thumbnail['sizes']['thumbnail'];
@@ -39,7 +39,7 @@
                 </a>
     </div>
 <?php elseif ('conseils' === get_post_type()): ?>
-    <div class="scroll-reveal post post-conseil col-xs-42 col-xs-offset-3 col-md-14 col-md-offset-1 ">
+    <div class="post post-conseil col-xs-42 col-xs-offset-3 col-md-14 col-md-offset-1 ">
             <?php
                 $thumbnail = get_field('thumbnail');
                 $thumbnail_url = $thumbnail['sizes']['thumbnail'];
@@ -78,7 +78,7 @@
                 </a>
     </div>
 <?php elseif ('carnets' === get_post_type()): ?>
-    <div class="scroll-reveal post post-article col-xs-42 col-xs-offset-3 col-md-14 col-md-offset-1 ">
+    <div class="post post-article col-xs-42 col-xs-offset-3 col-md-14 col-md-offset-1 ">
             <?php
                 $thumbnail = get_field('thumbnail');
                 $thumbnail_url = $thumbnail['sizes']['thumbnail'];

@@ -7,55 +7,34 @@ Template Name: Conseils
 <body class="archive">
 <?php get_header(); ?>
 
-<div class="cover-archive cover-archive--carnets overflow col-xs-48">
-    <div id="list-sous-cat" class="col-md-push-4 col-xs-42">
-<?php
-            //list terms in a given taxonomy using wp_list_categories  (also useful as a widget)
-            $post_type = 'conseils';
-            $taxonomy = 'category';
-            $args = array(
-                          'taxonomy' => $taxonomy,
-                          'post_type' => $post_type
-        );?>
-        <?php
-            $categories = get_categories($args);
-            foreach( $categories as $cat ) {
-                
-                // Get current category's children
-                $children = get_categories('show_count=1&child_of='.$cat->cat_ID);
-                $child_count = 0;
-                if ($children != '') {
-                    foreach ($children as $child)
-                    {
-                        // Count the childrens post and add to total sum
-                        $child_count = $child_count + $child->category_count;
-                    }
-                }
-                $catlink = get_category_link( $cat->cat_ID );
-                $catname = $cat->cat_name;
-                $count = $cat->category_count;
-                // Sum of count and all childrens counts
-                $count = $count + $child_count;
-                if ($count >= $options['min'])
-                {
-                    $counts{$catname} = $count;
-                    $catlinks{$catname} = $catlink;
-                    $category_link = sprintf( 
-                    '<a href="%1$s?type=conseils" alt="%2$s">%3$s<span>(%4$s)</span></a>',
-                    esc_url( $catlink),
-                    esc_attr( sprintf( __( 'View all posts in %s', 'textdomain' ), $catname ) ),
-                    esc_html( $catname ),
-                    esc_html( $count )
+
+<div class="cover-archive cover-archive--conseils col-xs-48"><h5>Nos petites adresses</h5></div>
+    <div id="sous-cat" class="col-xs-40 col-xs-offset-4">
+        <div id="list-sous-cat">
+            <?php
+                $post_type = 'conseils';
+                $taxonomy = 'category';
+                $args = array(
+                    'taxonomy' => $taxonomy,
+                    'post_type' => $post_type
                 );
-                echo sprintf( esc_html__( '%s', 'textdomain' ), $category_link );
-                }
-            } 
+                $categories = get_categories($args);
+                foreach( $categories as $category ) {
+                    $category_link = sprintf( 
+                        '<a href="%1$s?type=conseils" alt="%2$s">%3$s<span>(%4$s)</span></a>',
+                        esc_url( get_category_link( $category->term_id ) ),
+                        esc_attr( sprintf( __( 'View all posts in %s', 'textdomain' ), $category->name ) ),
+                        esc_html( $category->name ),
+                        esc_html( $category->category_count )
+                    );
+                    echo sprintf( esc_html__( '%s', 'textdomain' ), $category_link );
+                } 
             ?>   
-            </div>
+        </div>
+    </div>
 </div>
 
-<div class="overflow col-xs-48">
-    <div class="col-md-push-3 col-xs-48">
+    <div class="grid scroll-reveal col-md-push-3 col-xs-48">
             <?php $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 $args = array( 'post_type' => array('conseils'), 'posts_per_page' => 6, 'paged' => $paged );
 $wp_query = new WP_Query($args);
@@ -67,7 +46,6 @@ while ( have_posts() ) : the_post(); ?>
             endwhile;?>
         
 </div>
-        </div>
 
 
 
