@@ -1644,7 +1644,7 @@ table {
   #article #introduction h4 {
     background: #f7911d; }
   #article #layout .deux-tiers--un-tiers:nth-child(1) .deux-tiers__paragraph:first-of-type:first-letter, #article #layout .deux-tiers--un-tiers:nth-child(2) .deux-tiers__paragraph:first-of-type:first-letter {
-    color: #5f8f24; }
+    color: #f7911d; }
 
 #guide {
   overflow: hidden; }
