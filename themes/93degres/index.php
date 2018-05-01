@@ -6,7 +6,12 @@ Template Name: Homepage
 <?php include'head.php'; ?>
 <body class="homepage">
 <?php get_header(); ?>
-
+<div class="rotate">
+    <div class="scroll-down"></div>
+    <div id="link--about"><a href="<?php echo get_bloginfo( 'wpurl' );?>/a-propos">À propos</a></div>
+    <a id="link--instagram" href="https://www.instagram.com/93.degres/" target="_blank"></a>
+    <a id="link--twitter" href="https://twitter.com/93degres" target="_blank"></a>
+</div>
 <div id="home-posts" class="overflow col-xs-48">
     <div class="col-xs-48 col-xs-push-0 col-md-push-3">
         <?php
@@ -46,31 +51,29 @@ Template Name: Homepage
                                 <a class="a-cta col-xs-offset-0 col-sm-offset-13 col-md-offset-14" href="<?php the_permalink(); ?>"><div class="cta">Découvrir</div>
                                 </a>
                                 <?php 
-                            $thumbnail = get_field( 'thumbnail' );
-                            $thumbnail_url = $thumbnail['sizes']['large'];
-                        ?>
-                            <div class="first-post-image col-xs-42 col-xs-offset-0 col-md-offset-0">
-                                <div class="image" style="background-image: url('<?php echo $thumbnail_url;?>');" title="<?php echo $thumbnail['alt']; ?>">
+                                    $thumbnail = get_field( 'thumbnail' );
+                                    $thumbnail_url = $thumbnail['sizes']['large'];
+                                ?>
+                                <div class="first-post-image col-xs-42 col-xs-offset-0 col-md-offset-0">
+                                    <div class="image" style="background-image: url('<?php echo $thumbnail_url;?>');" title="<?php echo $thumbnail['alt']; ?>">
+                                    </div>
                                 </div>
                             </div>
-                            </div>
-                        
                             <div class="country-code">
-                          <div id="marquee" class="marquee3k" data-speed="1.5" data-reverse="true">
-
-                        <h5><?php echo $destination_code; ?></h5>
+                                <div id="marquee" class="marquee3k" data-speed="1.5" data-reverse="true">
+                                    <h5><?php echo $destination_code; ?></h5>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-        </div>
-        <div class="grid scroll-reveal" style="width: 100%; float: left; position: relative;">
-        <?php
-                    else :
-                            get_template_part( 'assets/views/content-grid' );
-                    endif;
+                        <div class="grid scroll-reveal" style="width: 100%; float: left; position: relative;">
+                            <?php
+                            else :
+                                get_template_part( 'assets/views/content-grid' );
+                            endif;
                 endwhile;
             endif;
         ?>
-    </div>
+                        </div>
     </div>
 </div>
 <div id="destinations" class="container col-xs-48">

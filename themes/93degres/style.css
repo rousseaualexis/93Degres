@@ -1425,6 +1425,44 @@ table {
   font-weight: normal;
   font-style: normal; }
 
+.rotate {
+  position: absolute;
+  z-index: 10;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0; }
+  .rotate #link--instagram {
+    position: absolute;
+    background-image: url(assets/img/logo--instagram.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 20px;
+    height: 20px;
+    right: 4.16%;
+    margin-right: -8px;
+    top: 120px; }
+  .rotate #link--twitter {
+    position: absolute;
+    background-image: url(assets/img/logo--twitter.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 20px;
+    height: 20px;
+    right: 4.16%;
+    margin-right: -8px;
+    top: 160px; }
+  .rotate #link--about {
+    position: absolute;
+    text-transform: uppercase;
+    -webkit-transform: rotate(-90deg);
+            transform: rotate(-90deg);
+    right: 4.16%;
+    margin-right: -27px;
+    top: 225px; }
+
 @media only screen and (max-width: 767px) {
   #home-posts {
     margin-top: 100px; } }
@@ -2549,7 +2587,7 @@ li {
                 transition-delay: 0.05s;
         font-size: 24vw;
         letter-spacing: 0;
-        opacity: 0.15; }
+        opacity: 0.25; }
     .post .image_thumbnail--hover .label {
       position: absolute;
       top: 0;
@@ -2564,7 +2602,7 @@ li {
         -webkit-transition-delay: 0.05s;
                 transition-delay: 0.05s;
         width: 200px;
-        opacity: 0.5; }
+        opacity: 1; }
     .post .image_thumbnail--hover .date {
       position: absolute;
       top: 10%;

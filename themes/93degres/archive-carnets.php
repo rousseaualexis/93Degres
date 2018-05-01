@@ -8,7 +8,7 @@ Template Name: Guides
 <?php get_header(); ?>
 
 
-<div class="cover-archive cover-archive--carnets col-xs-48"><h5>Nos petites adresses</h5></div>
+<div class="cover-archive cover-archive--carnets col-xs-48"><h5>Carnets de voyage</h5></div>
     <div id="sous-cat" class="col-xs-40 col-xs-offset-4">
         <div id="list-sous-cat">
             <?php
