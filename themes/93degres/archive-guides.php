@@ -34,7 +34,7 @@ Template Name: Guides
         </div>
     </div>
 </div>
-    <div class="grid scroll-reveal col-md-push-3 col-xs-44">
+    <div class="grid scroll-reveal col-xs-48 col-md-push-3 col-md-44">
         <?php $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
             $args = array('post_type' => array('guides'), 'posts_per_page' => 6, 'paged' => $paged );
             $wp_query = new WP_Query($args);

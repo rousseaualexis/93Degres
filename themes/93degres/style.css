@@ -1982,9 +1982,17 @@ table {
     left: 0;
     right: 0;
     position: absolute; }
+    @media only screen and (max-width: 767px) {
+      .cover-archive h5 {
+        font-size: 60px;
+        padding: 20px 0;
+        bottom: -52px; } }
 
 .archive .grid {
   margin-top: 4.165%; }
+  @media only screen and (max-width: 767px) {
+    .archive .grid {
+      margin-top: 60px; } }
 
 *::-moz-selection {
   background-color: rgba(0, 0, 0, 0.05); }
@@ -2224,6 +2232,10 @@ li {
   float: none;
   text-align: center;
   top: 8.33%; }
+  @media only screen and (max-width: 767px) {
+    #list-sous-cat {
+      padding-top: 0;
+      padding-bottom: 0; } }
   #list-sous-cat a {
     position: relative;
     display: inline-block;
