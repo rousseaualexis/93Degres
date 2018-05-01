@@ -1495,7 +1495,7 @@ table {
         width: 12.5%; }
         @media only screen and (max-width: 767px) {
           .first-post-texte h1 .trait {
-            top: 6.85vw; } }
+            top: 25.5vw; } }
       .first-post-texte h1 > div:nth-child(2) {
         display: block;
         position: relative; }
