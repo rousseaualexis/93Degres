@@ -55,20 +55,31 @@
 				width: 100%
 				display: block
 
+			.trait
+				top: 12.25vw
+				margin-top: 3px
+				position: absolute
+				height: 6px
+				background: $white
+				width: 12.5%
+
+				+media-sm-and-less
+					top: 6.85vw
+
 			& > div
 
-				&:nth-child(1)
+				&:nth-child(2)
 					
 					display: block
 					position: relative
 				    
-				&:nth-child(2)
+				&:nth-child(3)
 					
 					display: block
 					position: relative
 					margin-left: ($desktop-margin * 2)
 
-				&:nth-child(3)
+				&:nth-child(4)
 					
 					display: block
 					position: relative
@@ -79,18 +90,6 @@
 					float: left
 					+media-sm-and-less
 						float: none
-
-				.trait
-					top: 3.85vw
-					margin-top: 3px
-					position: absolute
-					height: 6px
-					background: $white
-					width: ($desktop-margin * 2)
-					left: -20%
-
-					+media-sm-and-less
-						top: 6.85vw
 
 				.wordsplit
 					padding-top: 1vw

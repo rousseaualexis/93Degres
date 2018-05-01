@@ -296,7 +296,7 @@ var homepage = (function() {
             $categories = $el.find('.categories div'),
             split = new SplitText($text,{charsClass: "charsplit", wordsClass: "wordsplit"}),
             splitCategories = new SplitText($categories,{charsClass: "charsplit", wordsClass: "wordsplit"});
-        $("h1 > div:nth-child(2)").append('<div class="trait"></div>');
+        $("h1").prepend('<div class="trait"></div>');
         var tl = new TimelineLite();
 
 

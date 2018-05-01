@@ -1476,14 +1476,24 @@ table {
       .first-post-texte h1 span {
         width: 100%;
         display: block; }
-      .first-post-texte h1 > div:nth-child(1) {
+      .first-post-texte h1 .trait {
+        top: 12.25vw;
+        margin-top: 3px;
+        position: absolute;
+        height: 6px;
+        background: #ffffff;
+        width: 12.5%; }
+        @media only screen and (max-width: 767px) {
+          .first-post-texte h1 .trait {
+            top: 6.85vw; } }
+      .first-post-texte h1 > div:nth-child(2) {
         display: block;
         position: relative; }
-      .first-post-texte h1 > div:nth-child(2) {
+      .first-post-texte h1 > div:nth-child(3) {
         display: block;
         position: relative;
         margin-left: 16.66%; }
-      .first-post-texte h1 > div:nth-child(3) {
+      .first-post-texte h1 > div:nth-child(4) {
         display: block;
         position: relative;
         margin-left: 8.33%; }
@@ -1493,17 +1503,6 @@ table {
         @media only screen and (max-width: 767px) {
           .first-post-texte h1 > div:nth-last-child(1) {
             float: none; } }
-      .first-post-texte h1 > div .trait {
-        top: 3.85vw;
-        margin-top: 3px;
-        position: absolute;
-        height: 6px;
-        background: #ffffff;
-        width: 16.66%;
-        left: -20%; }
-        @media only screen and (max-width: 767px) {
-          .first-post-texte h1 > div .trait {
-            top: 6.85vw; } }
       .first-post-texte h1 > div .wordsplit {
         padding-top: 1vw;
         padding-bottom: 1vw;
