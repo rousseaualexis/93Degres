@@ -29,13 +29,13 @@
             <h1><?php the_title(); ?></h1><?php if(!empty(get_field('subtitle'))){echo '<h4>' . wp_encode_emoji(get_field('subtitle')) . '</h4>';}?>
         </div>
         <div id="country-code" class="country-code">
-            <h5 class="randomize"><?php echo $destination_code; ?></h5>
+            <h5 class="random"><?php echo $destination_code; ?></h5>
         </div>
         <div id="label" class="label">
-            <img class="randomize" src="<?php bloginfo('template_url') ?>/assets/img/label__carnets-de-voyage.svg"/>
+            <img class="random" src="<?php bloginfo('template_url') ?>/assets/img/label__carnets-de-voyage.svg"/>
         </div>
         <div id="date" class="date">
-            <h5 class="randomize"><? the_time(get_option('date_format')); ?></h5>
+            <h5 class="random"><? the_time(get_option('date_format')); ?></h5>
         </div>
         <div id="summary" class="col-xs-42 col-xs-offset-3 col-md-28 col-md-offset-10"><?php echo get_field('introduction');?></div>
      </div>

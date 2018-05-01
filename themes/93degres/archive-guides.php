@@ -2,12 +2,13 @@
 /*
 Template Name: Guides
 */
-?><?php include'head.php';?>
-<body class="all-articles">
+?>
+<?php include'head.php';?>
+<body class="archive">
 <?php get_header(); ?>
 
 
-<div class="overflow col-xs-48">
+<div class="cover-archive cover-archive--carnets overflow col-xs-48">
     <div id="list-sous-cat" class="col-md-push-4 col-xs-42">
 <?php
 $paged = ( get_query_var( 'paged' ) ) ? absint( get_query_var( 'paged' ) ) : 1;

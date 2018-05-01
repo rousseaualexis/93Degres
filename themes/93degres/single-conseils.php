@@ -25,17 +25,18 @@
                 <?php echo $term_name; ?>
 
             </a>
-            <div id="country-code" class="country-code">
-                <h5 class="randomize"><?php echo $destination_code; ?></h5>
-            </div>
-            <div id="label" class="label">
-                <img class="randomize" src="<?php bloginfo('template_url') ?>/assets/img/label__conseils.png"/>
-            </div>
-            <div id="date" class="date">
-                <h5 class="randomize"><? the_time(get_option('date_format')); ?></h5>
-            </div>
             <h1><?php the_title(); ?><?php if(!empty(get_field('subtitle'))){echo '<br><span>' . get_field('subtitle') . '</span>';}?></h1>
         </div>
+        <div id="country-code" class="country-code">
+            <h5 class="random"><?php echo $destination_code; ?></h5>
+        </div>
+        <div id="label" class="label">
+            <img class="random" src="<?php bloginfo('template_url') ?>/assets/img/label__conseils.svg"/>
+        </div>
+        <div id="date" class="date">
+            <h5 class="random"><? the_time(get_option('date_format')); ?></h5>
+        </div>
+        <div id="summary" class="col-xs-42 col-xs-offset-3 col-md-28 col-md-offset-10"><?php echo get_field('introduction');?></div>
         <h3 class="col-xs-42 col-xs-offset-3 col-md-32 col-md-offset-8"><?php echo get_field('introduction');?></h3>
      </div>
 

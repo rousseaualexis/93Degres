@@ -2,11 +2,12 @@
 /*
 Template Name: Conseils
 */
-?><?php include'head.php';?>
-<body class="all-articles">
+?>
+<?php include'head.php';?>
+<body class="archive">
 <?php get_header(); ?>
 
-<div class="overflow col-xs-48">
+<div class="cover-archive cover-archive--carnets overflow col-xs-48">
     <div id="list-sous-cat" class="col-md-push-4 col-xs-42">
 <?php
             //list terms in a given taxonomy using wp_list_categories  (also useful as a widget)
