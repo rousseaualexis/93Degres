@@ -1430,7 +1430,7 @@ table {
   z-index: 10;
   top: 0;
   bottom: 0;
-  left: 0;
+  left: 91.66%;
   right: 0; }
   .rotate #link--instagram {
     position: absolute;
@@ -1440,7 +1440,7 @@ table {
     background-position: center;
     width: 20px;
     height: 20px;
-    right: 4.16%;
+    right: 50%;
     margin-right: -8px;
     top: 120px; }
   .rotate #link--twitter {
@@ -1451,7 +1451,7 @@ table {
     background-position: center;
     width: 20px;
     height: 20px;
-    right: 4.16%;
+    right: 50%;
     margin-right: -8px;
     top: 160px; }
   .rotate #link--about {
@@ -1459,7 +1459,7 @@ table {
     text-transform: uppercase;
     -webkit-transform: rotate(-90deg);
             transform: rotate(-90deg);
-    right: 4.16%;
+    right: 50%;
     margin-right: -27px;
     top: 225px; }
 
