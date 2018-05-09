@@ -297,7 +297,7 @@ var archive = (function() {
 
     var top = function(){     
         var $coverArchive = $('.cover-archive h5'),
-            $sousCat = $('#list-sous-cat'),
+            $sousCat = $('.list-sous-cat'),
             split = new SplitText($coverArchive,{charsClass: "charsplit", wordsClass: "wordsplit"});
         var tl = new TimelineLite();
             tl.staggerFrom($coverArchive.find('.charsplit'), 1.2, {y:'300%', ease:Power4.easeOut}, 0.02, 0.6);

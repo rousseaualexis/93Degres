@@ -1,4 +1,4 @@
-.post-article 
+.post--article 
 
 	a .cta 
 		color: $color-carnet-dark
@@ -20,7 +20,7 @@
 		background-image: linear-gradient(45deg, $color-carnet-dark, $color-carnet-dark )
 
 
-.post-guide 
+.post--guide 
 	
 	a .cta 
 		color: $color-guide-dark
@@ -41,7 +41,7 @@
 	.categories
 		background-image: linear-gradient(45deg, $color-guide-dark, $color-guide-dark )
 
-.post-conseil 
+.post--conseil 
 	
 	a .cta 
 		color: $color-conseil-dark
@@ -127,7 +127,7 @@
 				transition-delay: 0.05s
 				font-size: 24vw
 				letter-spacing: 0;
-				opacity: 0.65
+				opacity: 0.3
 			
 		
 		.label
@@ -175,6 +175,7 @@
 		margin: auto
 		top: 25px
 		z-index: 2
+		transition: background 0.45s cubic-bezier(0.4, 0, 0, 1), color 0.45s cubic-bezier(0.4, 0, 0, 1)
 	
 	p 
 		display: block

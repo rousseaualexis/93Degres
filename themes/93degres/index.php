@@ -27,13 +27,13 @@ Template Name: Homepage
                     if($count == 1) :
         ?>
                     <?php if('guides' === get_post_type()): ?>
-                        <div class="first-post post-guide col-xs-pull-0 col-xs-48 col-md-pull-15">
+                        <div class="first-post post post--guide col-xs-pull-0 col-xs-48 col-md-pull-15">
                     <?php elseif('conseils' === get_post_type()): ?>
-                        <div class="first-post post-conseil col-xs-pull-0 col-xs-48 col-md-pull-15">
+                        <div class="first-post post post--conseil col-xs-pull-0 col-xs-48 col-md-pull-15">
                     <?php elseif('carnets' === get_post_type()):  ?>
-                        <div class="first-post post-article col-xs-pull-0 col-xs-48 col-md-pull-15">
+                        <div class="first-post post post--article col-xs-pull-0 col-xs-48 col-md-pull-15">
                     <?php endif; ?>
-                            <div class="first-post-texte col-xs-42 col-xs-pull-0 col-xs-offset-3 col-sm-24 col-sm-push-6 col-md-push-19 col-md-offset-12 col-md-20">
+                            <div class="first-post-texte col-xs-42 col-xs-pull-0 col-xs-offset-3 col-sm-24 col-sm-push-6 col-md-push-19 col-md-offset-0 col-md-20">
                                 <?php
                                     $id = get_the_id();
                                     $terms = get_the_terms( $id, 'category' );
@@ -58,12 +58,13 @@ Template Name: Homepage
                                     <div class="image" style="background-image: url('<?php echo $thumbnail_url;?>');" title="<?php echo $thumbnail['alt']; ?>">
                                     </div>
                                 </div>
-                            </div>
-                            <div class="country-code">
+                                <div class="country-code">
                                 <div id="marquee" class="marquee3k" data-speed="1.5" data-reverse="true">
                                     <h5><?php echo $destination_code; ?></h5>
                                 </div>
                             </div>
+                            </div>
+                            
                         </div>
                         <div class="grid scroll-reveal" style="width: 100%; float: left; position: relative;">
                             <?php

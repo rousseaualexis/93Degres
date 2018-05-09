@@ -9,8 +9,8 @@ Template Name: Guides
 
 
 <div class="cover-archive cover-archive--carnets col-xs-48"><h5>Carnets de voyage</h5></div>
-    <div id="sous-cat" class="col-xs-40 col-xs-offset-4">
-        <div id="list-sous-cat">
+    <div class="sous-cat sous-cat__carnets col-xs-40 col-xs-offset-4">
+        <div class="list-sous-cat">
             <?php
                 $post_type = 'carnets';
                 $taxonomy = 'category';

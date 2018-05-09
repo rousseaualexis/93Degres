@@ -10,8 +10,8 @@ Template Name: Guides
 
 
 <div class="cover-archive cover-archive--guides col-xs-48"><h5>Nos petites adresses</h5></div>
-    <div id="sous-cat" class="col-xs-40 col-xs-offset-4">
-        <div id="list-sous-cat">
+    <div class="sous-cat sous-cat__guides col-xs-40 col-xs-offset-4">
+        <div class="list-sous-cat">
             <?php
                 $post_type = 'guides';
                 $taxonomy = 'category';

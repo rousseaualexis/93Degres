@@ -9,8 +9,8 @@ Template Name: Conseils
 
 
 <div class="cover-archive cover-archive--conseils col-xs-48"><h5>Nos conseils</h5></div>
-    <div id="sous-cat" class="col-xs-40 col-xs-offset-4">
-        <div id="list-sous-cat">
+    <div class="sous-cat sous-cat__conseils col-xs-40 col-xs-offset-4">
+        <div class="list-sous-cat">
             <?php
                 $post_type = 'conseils';
                 $taxonomy = 'category';

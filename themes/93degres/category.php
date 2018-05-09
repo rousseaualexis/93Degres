@@ -28,8 +28,8 @@ $term = get_queried_object();
         </div>
     </div>
 </div>
-    <div id="sous-cat" class="col-xs-40 col-xs-offset-4">
-    <div id="list-sous-cat">    
+    <div class="sous-cat col-xs-40 col-xs-offset-4">
+    <div class="list-sous-cat">    
         <?php 
     $this_category = get_category( $cat );
     $child_categories=get_categories( array( 
