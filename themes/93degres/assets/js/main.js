@@ -407,7 +407,7 @@ var about = (function() {
     
     var init = function() {
         summary();
-        //$('body').on('reveal', '.scroll-reveal', scrollRevealHandler);
+        $('body').on('reveal', '.scroll-reveal', scrollRevealHandler);
     }
 
     var summary = function(){
@@ -419,6 +419,28 @@ var about = (function() {
         var $summaryline = $("#summary > div");
             var tl = new TimelineLite();
             tl.staggerFrom($title.find('.charsplit'), 1.2, {y:'250%', ease:Power4.easeOut}, 0.05, 0.6);
+    }
+
+    var scrollRevealHandler = function(){
+        var $el = $(this);
+
+        if ($el.hasClass('scroll-reveal--revealed'))
+            return;
+
+        if ($el.is('.instagram_shots')) {
+            tl = new TimelineLite();
+            tl.staggerFrom($el.find('li'), 1.8, {y:'250%', ease:Power4.easeOut}, 0.12, 0);
+            /*$('.post').each(function(index, element){
+                if ($('.post').hasClass('scroll-reveal--revealed'))
+                    return false;
+                else{tl = new TimelineLite();
+            tl.staggerFrom($el.find('.post .image'), 1.8, {y:'200%', ease:Power4.easeOut}, 0.2, 0.2);
+            tl.staggerFrom($el.find('.post .categories'), 1.8, {alpha:'0', ease:Power4.easeOut}, 0.2, 0.4);
+            tl.staggerFrom($el.find('.post h1'), 1.8, {y:'200%', ease:Power4.easeOut}, 0.2, 0.8);
+            tl.staggerFrom($el.find('.post p'), 1.8, {y:'200%', ease:Power4.easeOut}, 0.2, 1.2);
+                }  
+            })*/
+        }
     }
 
 

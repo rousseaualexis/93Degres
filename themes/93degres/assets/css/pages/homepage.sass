@@ -1,71 +1,16 @@
-.rotate
-	position: absolute
-	z-index: 10
-	top: 0
-	bottom: 0
-	left: 91.66%
-	right: 0
-
-	a
-		display: block
-		-webkit-font-smoothing: antialiased
-		transition: all .45s cubic-bezier(.4,0,0,1)
-
-		&:hover
-			transform: scale(1.2)
-
-		&:active
-			transform: scale(1.05)
-
-	#scroll-down
-		
-	#link--instagram
-		position: absolute
-		background-image: url(assets/img/logo--instagram.svg)
-		background-size: contain
-		background-repeat: no-repeat
-		background-position: center
-		width: 20px
-		height: 20px
-		right: 50%
-		margin-right: -8px
-		top: 120px
-		&:hover
-			transform: scale(1.35)
-
-	#link--twitter
-		position: absolute
-		background-image: url(assets/img/logo--twitter.svg)
-		background-size: contain
-		background-repeat: no-repeat
-		background-position: center
-		width: 20px
-		height: 20px
-		right: 50%
-		margin-right: -8px
-		top: 160px
-		&:hover
-			transform: scale(1.35)
-
-	#link--about		
-		position: absolute
-		text-transform: uppercase
-		transform: rotate(-90deg)
-		right: 50%
-		margin-right: -27px
-		top: 225px
-
 #home-posts
 	+media-sm-and-less
-		margin-top: 100px
+		margin-top: $header-height
 
 .first-post 
 	font-size: 0
-	padding-top: 120px
-	padding-bottom: 12.5%
-	margin-bottom: -$desktop-margin
 	cursor: initial
 	overflow: initial
+	display: table
+	min-height: 100vh
+	padding-bottom: 12.5vh
+	margin-bottom: -8.33vh
+
 
 	+media-sm-and-less
 		padding-bottom: 0
@@ -180,12 +125,22 @@
 
 	&-texte
 		z-index: 2
-		padding-top: $desktop-margin
-		padding-bottom: $desktop-margin
+		padding-top: 140px
+		padding-bottom: 140px
+		top: 60px
+		display: table-cell
+		vertical-align: middle
+		float: none
+
 		+media-sm-and-less
 			padding-top: 25%
 			padding-bottom: 25%
 			float: left
+			top: 0
+
+		#title
+			width: 100%
+			display: inline-block
 
 		h1 
 			z-index: 2
@@ -268,6 +223,8 @@
 			padding-top: 4px
 			z-index: 4
 			top: initial
+			+media-sm-and-less
+				margin-bottom: 30px
 
 			img
 				margin-top: -1px
@@ -275,6 +232,7 @@
 		.a-cta
 			display: block
 			clear: both
+			position: absolute
 
 		.cta 
 			float: none
@@ -288,9 +246,8 @@
 
 	&-image
 		position: absolute
-		top: 0%
-		bottom: 0%
-		width: 150%
+		top: 120px
+		bottom: 12.5vh
 		left: 35%
 		z-index: -1
 		overflow: hidden
@@ -300,6 +257,8 @@
 			float: left
 			left: -$desktop-margin
 			right: -$desktop-margin
+			top: 0
+			bottom: 0
 			width: initial
 
 		.image
@@ -345,6 +304,9 @@
 	li 
 		vertical-align: middle
 		margin: 20px 20px
+		+media-sm-and-less
+			margin: 10px 0
+			width: 100%
 			
 		a 
 			text-transform: uppercase

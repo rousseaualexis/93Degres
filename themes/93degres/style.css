@@ -1453,7 +1453,7 @@ h2, blockquote {
 h3 {
   font-family: "Montserrat", sans-serif;
   font-size: 30px;
-  line-height: 50px;
+  line-height: 45px;
   letter-spacing: -0.03em;
   color: #000000; }
   h3 em {
@@ -1711,7 +1711,7 @@ li {
 
 #header {
   display: block;
-  position: absolute;
+  position: fixed;
   z-index: 99;
   margin-top: 30px; }
   @media only screen and (max-width: 767px) {
@@ -1719,7 +1719,8 @@ li {
       position: fixed;
       height: 100px;
       background: #ffffff;
-      margin-top: 0; } }
+      margin-top: 0;
+      border-bottom: solid 1px #f7f2ea; } }
   #header #logo {
     z-index: 2; }
     @media only screen and (max-width: 767px) {
@@ -1730,10 +1731,9 @@ li {
 
 .menu-principal-container {
   position: relative;
-  width: 100%;
-  text-align: center;
-  font-size: 16px;
-  left: -80px; }
+  text-align: right;
+  right: 8.33%;
+  margin-right: -10px; }
   @media only screen and (max-width: 767px) {
     .menu-principal-container {
       position: absolute;
@@ -1759,7 +1759,6 @@ li {
     margin: 10px 10px 0 10px;
     padding: 0;
     float: left;
-    font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.4em; }
     @media only screen and (max-width: 767px) {
@@ -1839,6 +1838,67 @@ li {
 .active-menu {
   top: 0; }
 
+.rotate {
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  bottom: 0;
+  left: 91.66%;
+  right: 0;
+  text-align: left;
+  overflow: hidden; }
+  .rotate a {
+    display: block;
+    -webkit-font-smoothing: antialiased;
+    -webkit-transition: all 0.45s cubic-bezier(0.4, 0, 0, 1);
+    transition: all 0.45s cubic-bezier(0.4, 0, 0, 1); }
+    .rotate a:hover {
+      -webkit-transform: scale(1.2);
+              transform: scale(1.2); }
+    .rotate a:active {
+      -webkit-transform: scale(1.05);
+              transform: scale(1.05); }
+  .rotate #link--instagram {
+    position: absolute;
+    background-image: url(assets/img/logo--instagram.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 12px;
+    height: 12px;
+    right: 50%;
+    margin-right: -8px;
+    bottom: 8.33%;
+    margin-bottom: 35px; }
+    .rotate #link--instagram:hover {
+      -webkit-transform: scale(1.35);
+              transform: scale(1.35); }
+  .rotate #link--twitter {
+    position: absolute;
+    background-image: url(assets/img/logo--twitter.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 12px;
+    height: 12px;
+    right: 50%;
+    margin-right: -8px;
+    bottom: 8.33%; }
+    .rotate #link--twitter:hover {
+      -webkit-transform: scale(1.35);
+              transform: scale(1.35); }
+  .rotate #link--about {
+    position: absolute;
+    text-transform: uppercase;
+    -webkit-transform: rotate(-90deg);
+            transform: rotate(-90deg);
+    right: 50%;
+    margin-right: -27px;
+    bottom: 8.33%;
+    margin-bottom: 100px; }
+    .rotate #link--about a {
+      font-size: 12px; }
+
 #instagram {
   text-align: center; }
   #instagram h3 {
@@ -1858,13 +1918,16 @@ li {
 
 .instagram_shots {
   text-align: center;
-  font-size: 0; }
+  font-size: 0;
+  width: 100%;
+  overflow: hidden; }
   .instagram_shots li {
     float: left;
     width: 25%;
     overflow: hidden; }
     @media only screen and (max-width: 767px) {
       .instagram_shots li {
+        margin-bottom: -3px;
         width: 50%; } }
     .instagram_shots li img {
       width: 100%;
@@ -1965,9 +2028,6 @@ li {
     position: relative;
     overflow: hidden;
     z-index: 3; }
-    @media only screen and (max-width: 767px) {
-      .post .image_thumbnail {
-        padding-bottom: 50%; } }
   .post .image_thumbnail--hover {
     position: absolute;
     text-align: center;
@@ -1998,6 +2058,9 @@ li {
         font-size: 24vw;
         letter-spacing: 0;
         opacity: 0.2; }
+        @media only screen and (max-width: 767px) {
+          .post .image_thumbnail--hover .country-code h5 {
+            font-size: 28vw; } }
     .post .image_thumbnail--hover .label {
       position: absolute;
       top: 0;
@@ -2071,6 +2134,9 @@ li {
       font-size: 14vw;
       -webkit-transform: rotate(0deg);
               transform: rotate(0deg); }
+      @media only screen and (max-width: 767px) {
+        .post:hover .image_thumbnail--hover .country-code h5 {
+          font-size: 28vw; } }
     .post:hover .image_thumbnail--hover .date h5 {
       font-size: 30px;
       -webkit-transform: rotate(0deg);
@@ -2434,72 +2500,18 @@ button:focus {
   background: #000000;
   cursor: pointer; }
 
-.rotate {
-  position: absolute;
-  z-index: 10;
-  top: 0;
-  bottom: 0;
-  left: 91.66%;
-  right: 0; }
-  .rotate a {
-    display: block;
-    -webkit-font-smoothing: antialiased;
-    -webkit-transition: all 0.45s cubic-bezier(0.4, 0, 0, 1);
-    transition: all 0.45s cubic-bezier(0.4, 0, 0, 1); }
-    .rotate a:hover {
-      -webkit-transform: scale(1.2);
-              transform: scale(1.2); }
-    .rotate a:active {
-      -webkit-transform: scale(1.05);
-              transform: scale(1.05); }
-  .rotate #link--instagram {
-    position: absolute;
-    background-image: url(assets/img/logo--instagram.svg);
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    width: 20px;
-    height: 20px;
-    right: 50%;
-    margin-right: -8px;
-    top: 120px; }
-    .rotate #link--instagram:hover {
-      -webkit-transform: scale(1.35);
-              transform: scale(1.35); }
-  .rotate #link--twitter {
-    position: absolute;
-    background-image: url(assets/img/logo--twitter.svg);
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    width: 20px;
-    height: 20px;
-    right: 50%;
-    margin-right: -8px;
-    top: 160px; }
-    .rotate #link--twitter:hover {
-      -webkit-transform: scale(1.35);
-              transform: scale(1.35); }
-  .rotate #link--about {
-    position: absolute;
-    text-transform: uppercase;
-    -webkit-transform: rotate(-90deg);
-            transform: rotate(-90deg);
-    right: 50%;
-    margin-right: -27px;
-    top: 225px; }
-
 @media only screen and (max-width: 767px) {
   #home-posts {
     margin-top: 100px; } }
 
 .first-post {
   font-size: 0;
-  padding-top: 120px;
-  padding-bottom: 12.5%;
-  margin-bottom: -8.33%;
   cursor: initial;
-  overflow: initial; }
+  overflow: initial;
+  display: table;
+  min-height: 100vh;
+  padding-bottom: 12.5vh;
+  margin-bottom: -8.33vh; }
   @media only screen and (max-width: 767px) {
     .first-post {
       padding-bottom: 0;
@@ -2582,13 +2594,21 @@ button:focus {
           left: 16.66%; } }
   .first-post-texte {
     z-index: 2;
-    padding-top: 8.33%;
-    padding-bottom: 8.33%; }
+    padding-top: 140px;
+    padding-bottom: 140px;
+    top: 60px;
+    display: table-cell;
+    vertical-align: middle;
+    float: none; }
     @media only screen and (max-width: 767px) {
       .first-post-texte {
         padding-top: 25%;
         padding-bottom: 25%;
-        float: left; } }
+        float: left;
+        top: 0; } }
+    .first-post-texte #title {
+      width: 100%;
+      display: inline-block; }
     .first-post-texte h1 {
       z-index: 2;
       position: relative;
@@ -2658,11 +2678,15 @@ button:focus {
       padding-top: 4px;
       z-index: 4;
       top: initial; }
+      @media only screen and (max-width: 767px) {
+        .first-post-texte .categories {
+          margin-bottom: 30px; } }
       .first-post-texte .categories img {
         margin-top: -1px; }
     .first-post-texte .a-cta {
       display: block;
-      clear: both; }
+      clear: both;
+      position: absolute; }
     .first-post-texte .cta {
       float: none;
       border: none;
@@ -2670,9 +2694,8 @@ button:focus {
       margin-top: 40px; }
   .first-post-image {
     position: absolute;
-    top: 0%;
-    bottom: 0%;
-    width: 150%;
+    top: 120px;
+    bottom: 12.5vh;
     left: 35%;
     z-index: -1;
     overflow: hidden; }
@@ -2682,6 +2705,8 @@ button:focus {
         float: left;
         left: -8.33%;
         right: -8.33%;
+        top: 0;
+        bottom: 0;
         width: initial; } }
     .first-post-image .image {
       height: 100%;
@@ -2720,6 +2745,10 @@ button:focus {
   #destinations li {
     vertical-align: middle;
     margin: 20px 20px; }
+    @media only screen and (max-width: 767px) {
+      #destinations li {
+        margin: 10px 0;
+        width: 100%; } }
     #destinations li a {
       text-transform: uppercase;
       font-size: 18px;
@@ -2797,6 +2826,10 @@ button:focus {
     background: #307f8f; }
   #conseil #layout .deux-tiers--un-tiers:nth-child(1) .deux-tiers__paragraph:first-of-type:first-letter, #conseil #layout .deux-tiers--un-tiers:nth-child(2) .deux-tiers__paragraph:first-of-type:first-letter {
     color: #307f8f; }
+
+@media only screen and (max-width: 767px) {
+  #article, #guide, #conseil {
+    margin-top: 100px; } }
 
 @media only screen and (max-width: 767px) {
   #article #introduction h1, #guide #introduction h1, #conseil #introduction h1 {
@@ -3064,7 +3097,7 @@ button:focus {
   position: relative; }
   @media only screen and (max-width: 767px) {
     .about--content {
-      margin-top: 120px; } }
+      margin-top: 100px; } }
   .about--content h1 {
     overflow: hidden;
     padding-top: 2vw;
@@ -3093,7 +3126,8 @@ button:focus {
   margin-bottom: 4.165%; }
   @media only screen and (max-width: 767px) {
     .cover-archive {
-      margin-bottom: 60px; } }
+      margin-bottom: 60px;
+      margin-top: 100px; } }
   .cover-archive--carnets {
     background: -webkit-gradient(linear, left top, right bottom, from(#ffdcb6), to(#fff4e9));
     background: linear-gradient(to bottom right, #ffdcb6, #fff4e9); }

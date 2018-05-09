@@ -33,7 +33,7 @@ Template Name: Guides
     </div>
 </div>
 
-<div class="grid scroll-reveal col-xs-48 col-md-push-3 col-md-44">
+<div class="grid scroll-reveal col-xs-48 col-md-push-4 col-md-42">
     <?php $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
         $args = array('post_type' => array('carnets'), 'posts_per_page' => 9, 'paged' => $paged );
         $wp_query = new WP_Query($args);

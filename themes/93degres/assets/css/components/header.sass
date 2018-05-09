@@ -1,14 +1,15 @@
 #header 
 	display: block
-	position: absolute
+	position: fixed
 	z-index: 99
 	margin-top: 30px
 
 	+media-sm-and-less
 		position: fixed
-		height: 100px;
+		height: $header-height
 		background: $color-white
 		margin-top: 0
+		border-bottom: solid 1px $color-base-light
 	#logo
 		z-index: 2
 
@@ -21,10 +22,9 @@
 
 .menu-principal-container 
 	position: relative
-	width: 100%
-	text-align: center
-	font-size: 16px
-	left: -80px
+	text-align: right
+	right: 8.33%
+	margin-right: -10px
 
 	+media-sm-and-less
 
@@ -51,7 +51,6 @@
 		margin: 10px 10px 0 10px
 		padding: 0
 		float: left
-		font-weight: 700
 		text-transform: uppercase
 		letter-spacing: 0.4em
 
@@ -140,9 +139,66 @@
 .active-menu
 	top: 0
 
+.rotate
+	position: fixed
+	z-index: 10
+	top: 0
+	bottom: 0
+	left: 91.66%
+	right: 0
+	text-align: left
+	overflow: hidden
 
-			
+	a
+		display: block
+		-webkit-font-smoothing: antialiased
+		transition: all .45s cubic-bezier(.4,0,0,1)
 
-	
+		&:hover
+			transform: scale(1.2)
 
+		&:active
+			transform: scale(1.05)
 
+	#scroll-down
+		
+	#link--instagram
+		position: absolute
+		background-image: url(assets/img/logo--instagram.svg)
+		background-size: contain
+		background-repeat: no-repeat
+		background-position: center
+		width: 12px
+		height: 12px
+		right: 50%
+		margin-right: -8px
+		bottom: 8.33%
+		margin-bottom: 35px
+		&:hover
+			transform: scale(1.35)
+
+	#link--twitter
+		position: absolute
+		background-image: url(assets/img/logo--twitter.svg)
+		background-size: contain
+		background-repeat: no-repeat
+		background-position: center
+		width: 12px
+		height: 12px
+		right: 50%
+		margin-right: -8px
+		bottom: 8.33%
+		&:hover
+			transform: scale(1.35)
+
+	#link--about
+		position: absolute
+		text-transform: uppercase
+		transform: rotate(-90deg)
+		right: 50%
+		margin-right: -27px
+		bottom: 8.33%
+		margin-bottom: 100px
+
+		a
+			font-size: 12px

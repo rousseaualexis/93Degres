@@ -20,4 +20,11 @@
             );
             wp_nav_menu( $args ); ?>
 
+
     </div>
+     <div class="rotate">
+    <div class="scroll-down"></div>
+    <div id="link--about"><a href="<?php echo get_bloginfo( 'wpurl' );?>/a-propos">À propos</a></div>
+    <a id="link--instagram" href="https://www.instagram.com/93.degres/" target="_blank"></a>
+    <a id="link--twitter" href="https://twitter.com/93degres" target="_blank"></a>
+</div>

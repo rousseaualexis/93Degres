@@ -17,9 +17,9 @@ $indata = json_decode($json_object);
 // echo $indata->data[3]->images->thumbnail->url;      //for thumbnail
 //for standard res echo $indata->data[3]->images->standard_resolution->url; 
 ?>
-<div id="instagram" class="container col-xs-42 col-xs-offset-3">
+<div id="instagram" class="container col-xs-40 col-xs-offset-4">
     <h3 class="col-xs-48">Actuellement sur Instagram</h3>
-    <ul class="instagram_shots">
+    <ul class="scroll-reveal instagram_shots">
         <li class="anime">
             <a href="<?php echo $indata->data[0]->link; ?>" class="instalink" target="_blank">
                 <img src="<?php echo $indata->data[0]->images->low_resolution->url; ?>" />
