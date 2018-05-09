@@ -34,15 +34,16 @@ Template Name: Guides
         </div>
     </div>
 </div>
-    <div class="grid scroll-reveal col-xs-48 col-md-push-3 col-md-44">
-        <?php $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
-            $args = array('post_type' => array('guides'), 'posts_per_page' => 6, 'paged' => $paged );
-            $wp_query = new WP_Query($args);
-            while ( have_posts() ) : the_post();
-                get_template_part('assets/views/content-grid');
-            endwhile;
+<div class="grid scroll-reveal col-xs-48 col-md-push-3 col-md-44">
+    <?php $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+        $args = array('post_type' => array('guides'), 'posts_per_page' => 9, 'paged' => $paged );
+        $wp_query = new WP_Query($args);
+        while ( have_posts() ) : the_post();
+            get_template_part('assets/views/content-grid');
+        endwhile;
+        get_template_part('assets/views/content-pagination');
         ?>    
-    </div>
+</div>
 
 <?php get_template_part('assets/views/content-pagination'); ?>
 <?php get_footer(); ?>

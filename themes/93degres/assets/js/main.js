@@ -90,15 +90,9 @@ var site = (function() {
         }, 100);
     }
 
-
-
     var init = function() {
-        // Tools
-        //tools.init();
+
         onClick();
-        // init modules that requires being init only once
-        //modulesOnce();
-        // Init page
         pageInit();
     }
 
@@ -108,9 +102,6 @@ var site = (function() {
         var url = $(this).attr('href');
         var isblank = this.target === '_blank';
         // check if the link has a hash
-
-
-
                 if (isblank) {
                 e.preventDefault();
                 // if the link has only "#"
@@ -129,7 +120,6 @@ var site = (function() {
                     }});        
             }
         });
-
             $("#mobile-menu").on('click', function() {
             $('.menu-principal-container').toggleClass('active-menu');
         });
@@ -140,7 +130,6 @@ var site = (function() {
      */
     var pageInit = function() {
         setTimeout(function(){
-            //$(document).scrollTop(0)
             allModules();
         }, 200);
     }
@@ -207,7 +196,6 @@ var site = (function() {
                     $self.trigger('reveal');
                     $self.addClass('scroll-reveal--revealed')
                 }, 400);
-               
             }
         });
         //on scroll
@@ -227,7 +215,6 @@ var site = (function() {
                         }   
             });
          });
-
     }
 
     return {
@@ -269,7 +256,6 @@ var homepage = (function() {
                 else{
                 TweenLite.from(element, 1.8, {y: 150, delay: index * 0.1, ease:Power4.easeOut})
                 }
-                
             })
         }
 
@@ -281,13 +267,12 @@ var homepage = (function() {
     }
 
     var firstPost = function(){
-        
         var $el = $('.first-post-texte'),
             $text = $("#title h1"),
             $categories = $el.find('.categories div'),
             split = new SplitText($text,{charsClass: "charsplit", wordsClass: "wordsplit"}),
             splitCategories = new SplitText($categories,{charsClass: "charsplit", wordsClass: "wordsplit"});
-        $("h1").prepend('<div class="trait"></div>');
+            $("h1").prepend('<div class="trait"></div>');
         var tl = new TimelineLite();
             tl.from($el.find('.image'), 1.8, {y:'200%', ease:Power4.easeOut}, 0.2);
             tl.from($el.find('.categories img'), 0.6, {y:'300%', ease:Power2.easeOut}, '-=1.2');
@@ -310,13 +295,11 @@ var archive = (function() {
         $('body').on('reveal', '.scroll-reveal', scrollRevealHandler);
     }
 
-    var top = function(){
-        
+    var top = function(){     
         var $coverArchive = $('.cover-archive h5'),
             $sousCat = $('#list-sous-cat'),
             split = new SplitText($coverArchive,{charsClass: "charsplit", wordsClass: "wordsplit"});
         var tl = new TimelineLite();
-
             tl.staggerFrom($coverArchive.find('.charsplit'), 1.2, {y:'300%', ease:Power4.easeOut}, 0.02, 0.6);
             tl.from($sousCat, 0.8, {y: '400%', ease:Power2.easeOut}, '-=0.8');
     }
@@ -333,7 +316,6 @@ var archive = (function() {
             tl.staggerFrom($el.find('.post .categories'), 1.8, {alpha:'0', ease:Power4.easeOut}, 0.2, 0.4);
             tl.staggerFrom($el.find('.post h1'), 1.8, {y:'200%', ease:Power4.easeOut}, 0.2, 0.8);
             tl.staggerFrom($el.find('.post p'), 1.8, {y:'200%', ease:Power4.easeOut}, 0.2, 1.2);
-
             /*$('.post').each(function(index, element){
                 if ($('.post').hasClass('scroll-reveal--revealed'))
                     return false;
@@ -359,9 +341,7 @@ var single = (function() {
         $('body').on('reveal', '.scroll-reveal', scrollRevealHandler);
     }
 
-
     var introduction = function(){
-        
         var $title = $("#introduction h1"),
         $subtitle = $("#introduction h4"),
         $summary = $("#introduction p");
@@ -404,16 +384,13 @@ var single = (function() {
             tl.from($el, 1.8, {alpha: 0, y:'100%', ease:Power4.easeOut}, 0.2);
         }
 
-        else if ($el.is('#introduction__thumbnail .image')) {
-                
+        else if ($el.is('#introduction__thumbnail .image')) {    
             tl = new TimelineLite();
             tl.from($el, 1.8, {alpha: 0, y:'100%', ease:Power4.easeOut}, 0.2);
         }
 
         else if ($el.is('.full-width blockquote')) {
-
-            var splitQuote = new SplitText($el,{charsClass: "charsplit", wordsClass: "wordsplit"});
-                
+            var splitQuote = new SplitText($el,{charsClass: "charsplit", wordsClass: "wordsplit"});  
             tl = new TimelineLite();
             tl.staggerFrom($el.find('.wordsplit'), 1.5, {y:'250%', ease:Power4.easeOut}, 0.02, 0.3);
         }
@@ -432,9 +409,7 @@ var about = (function() {
         //$('body').on('reveal', '.scroll-reveal', scrollRevealHandler);
     }
 
-
     var summary = function(){
-        
         var $title = $(".about--content h1"),
         $social = $("#social"),
         $summary = $("#summary p");

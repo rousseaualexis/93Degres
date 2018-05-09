@@ -60,19 +60,98 @@
 
 	&.post 
 		&-article
-			background: $color-carnet-light
+			background: $color-carnet-gradient
 			+media-sm-and-less
 				background: none
+
+			h1
+				.trait
+					top: 12.25vw
+
+					+media-sm-and-less
+						top: 25.5vw
+
+				& > div
+
+					&:nth-child(2)
+	
+					    
+					&:nth-child(3)
+	
+						margin-left: ($desktop-margin * 2)
+						+media-sm-and-less
+							margin-left: 0
+							left: ($desktop-margin * 2)
+
+					&:nth-child(4)
+						
+						margin-left: $desktop-margin
+						+media-sm-and-less
+							margin-left: 0
+							left: $desktop-margin
+						
+						
 
 		&-guide
 			background: $color-guide-light
 			+media-sm-and-less
 				background: none
 
+			h1
+				.trait
+					top: 5vw
+
+					+media-sm-and-less
+						top: 8.5vw
+
+				& > div
+
+					&:nth-child(2)
+						
+						margin-left: ($desktop-margin * 2)
+						+media-sm-and-less
+							margin-left: 0
+							left: ($desktop-margin * 2)
+					    
+					&:nth-child(3)
+						
+
+					&:nth-child(4)
+						
+						margin-left: $desktop-margin
+						+media-sm-and-less
+							margin-left: 0
+							left: $desktop-margin
+
 		&-conseil
 			background: $color-conseil-light
 			+media-sm-and-less
 				background: none
+
+			h1
+				.trait
+					top: 12.25vw
+
+					+media-sm-and-less
+						top: 25.5vw
+
+				& > div
+
+					&:nth-child(2)
+						margin-left: $desktop-margin
+						+media-sm-and-less
+							margin-left: 0
+							left: $desktop-margin
+	
+					    
+					&:nth-child(3)
+	
+						margin-left: ($desktop-margin * 2)
+						+media-sm-and-less
+							margin-left: 0
+							left: ($desktop-margin * 2)
+
+					&:nth-child(4)
 
 
 	&-texte
@@ -90,7 +169,7 @@
 		h1 
 			z-index: 2
 			position: relative
-			color: $white
+			color: $color-white
 			width: auto
 			font-size: 7.2vw
 			line-height: 7.2vw
@@ -105,34 +184,17 @@
 				display: block
 
 			.trait
-				top: 12.25vw
 				margin-top: 3px
 				position: absolute
 				height: 6px
-				background: $white
+				background: $color-white
 				width: 12.5%
 
-				+media-sm-and-less
-					top: 25.5vw
 
 			& > div
 
-				&:nth-child(2)
-					
-					display: block
-					position: relative
-				    
-				&:nth-child(3)
-					
-					display: block
-					position: relative
-					margin-left: ($desktop-margin * 2)
-
-				&:nth-child(4)
-					
-					display: block
-					position: relative
-					margin-left: $desktop-margin
+				display: block
+				position: relative
 
 				&:nth-last-child(1)
 					display: initial
@@ -195,7 +257,7 @@
 		.cta 
 			float: none
 			border: none
-			background: $white
+			background: $color-white
 			margin-top: 40px
 
 			+media-sm-and-less
@@ -234,8 +296,9 @@
 			opacity: 0
 		
 		h5 
+			color: $color-white
 			font-size: 49vw
-			opacity: 0.25
+			opacity: 0.2
 			padding-right: 19vw
 	
 
@@ -288,14 +351,4 @@
 
 		+media-sm-and-less
 			margin-top: 30px
-
-
-.mask
-	position: fixed
-	background: $color-base-light
-	z-index: 200
-	top: 0
-	bottom: 0
-	left: 0
-	right: 0
 	
