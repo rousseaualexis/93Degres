@@ -1880,24 +1880,24 @@ li {
   background-image: linear-gradient(45deg, #e7824a, #e7824a); }
 
 .post--guide a .cta {
-  color: #95c3b0;
-  border-color: #95c3b0; }
+  color: #73b298;
+  border-color: #73b298; }
 
 .post--guide .country-code h5 {
-  color: #95c3b0; }
+  color: #73b298; }
 
 .post--guide .date h5 {
-  color: #95c3b0; }
+  color: #73b298; }
 
 .post--guide a .image .image_thumbnail--hover {
   background: -webkit-gradient(linear, left top, right bottom, from(#cee9b5), to(#f0f8e9));
   background: linear-gradient(to bottom right, #cee9b5, #f0f8e9); }
 
 .post--guide .first-post-texte strong {
-  background: #95c3b0; }
+  background: #73b298; }
 
 .post--guide .categories {
-  background-image: linear-gradient(45deg, #95c3b0, #95c3b0); }
+  background-image: linear-gradient(45deg, #73b298, #73b298); }
 
 .post--conseil a .cta {
   color: #307f8f;
@@ -2504,7 +2504,7 @@ button:focus {
       .first-post.post--guide {
         background: none; } }
     .first-post.post--guide h5 {
-      color: #95c3b0; }
+      color: #73b298; }
     .first-post.post--guide h1 .trait {
       top: 5vw; }
       @media only screen and (max-width: 767px) {
@@ -2724,17 +2724,17 @@ button:focus {
 #guide {
   overflow: hidden; }
   #guide .country-code h5, #guide .categories, #guide .date h5, #guide .deux-tiers__chapter h3, #guide .deux-tiers__aside h3, #guide .title-content h5, #guide p a:hover {
-    color: #95c3b0; }
+    color: #73b298; }
   #guide #introduction, #guide .un-tiers__text {
     background: #cee9b5; }
   #guide p a, #guide #introduction .categories {
-    background-image: linear-gradient(45deg, #95c3b0, #95c3b0); }
+    background-image: linear-gradient(45deg, #73b298, #73b298); }
   #guide p a:hover {
-    color: #95c3b0; }
+    color: #73b298; }
   #guide #introduction h4 {
-    background: #95c3b0; }
+    background: #73b298; }
   #guide #layout .deux-tiers--un-tiers:nth-child(1) .deux-tiers__paragraph:first-of-type:first-letter, #guide #layout .deux-tiers--un-tiers:nth-child(2) .deux-tiers__paragraph:first-of-type:first-letter {
-    color: #95c3b0; }
+    color: #73b298; }
 
 #conseil {
   overflow: hidden; }
@@ -3056,7 +3056,7 @@ button:focus {
     background: -webkit-gradient(linear, left top, right bottom, from(#cee9b5), to(#f0f8e9));
     background: linear-gradient(to bottom right, #cee9b5, #f0f8e9); }
     .cover-archive--guides h5 {
-      color: #95c3b0; }
+      color: #73b298; }
     .cover-archive--guides .list-sous-cat a:hover {
       color: #e7824a; }
   .cover-archive--conseils {
