@@ -7,7 +7,6 @@ Template Name: Conseils
 <body class="archive">
 <?php get_header(); ?>
 
-
 <div class="cover-archive cover-archive--conseils col-xs-48"><h5>Nos conseils</h5></div>
     <div class="sous-cat sous-cat__conseils col-xs-40 col-xs-offset-4">
         <div class="list-sous-cat">
@@ -45,9 +44,5 @@ Template Name: Conseils
         ?>    
 </div>
 
-
-
-
-<?php get_template_part('assets/views/content-pagination'); ?>
 <?php get_footer(); ?>
 <?php include'end.php' ?>

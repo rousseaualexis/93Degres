@@ -7,8 +7,6 @@ Template Name: Guides
 <body class="archive">
 <?php get_header(); ?>
 
-
-
 <div class="cover-archive cover-archive--guides col-xs-48"><h5>Nos petites adresses</h5></div>
     <div class="sous-cat sous-cat__guides col-xs-40 col-xs-offset-4">
         <div class="list-sous-cat">
@@ -34,6 +32,7 @@ Template Name: Guides
         </div>
     </div>
 </div>
+
 <div class="grid scroll-reveal col-xs-48 col-md-push-3 col-md-44">
     <?php $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
         $args = array('post_type' => array('guides'), 'posts_per_page' => 9, 'paged' => $paged );
@@ -45,6 +44,5 @@ Template Name: Guides
         ?>    
 </div>
 
-<?php get_template_part('assets/views/content-pagination'); ?>
 <?php get_footer(); ?>
 <?php include'end.php' ?>

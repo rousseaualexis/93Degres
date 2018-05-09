@@ -9,30 +9,16 @@
 		background: $color-carnet-gradient
 		h5
 			color: $color-carnet-dark
-		.list-sous-cat
-			a
-				&:hover
-					color: $color-carnet-dark
-
 	
 	&--guides
 		background: $color-guide-gradient
 		h5
 			color: $color-guide-dark
-		.list-sous-cat
-			a
-				&:hover
-					color: $color-carnet-dark
-
 
 	&--conseils
 		background: $color-conseil-gradient
 		h5
 			color: $color-conseil-dark
-		.list-sous-cat
-			a
-				&:hover
-					color: $color-carnet-dark
 
 	h5	
 		overflow: hidden
@@ -48,6 +34,20 @@
 			font-size: 60px
 			padding: 20px 0
 			bottom: -52px
+
+.sous-cat
+	&__carnets
+		a
+			&:hover
+				color: $color-carnet-dark
+	&__guides
+		a
+			&:hover
+				color: $color-guide-dark
+	&__conseils
+		a
+			&:hover
+				color: $color-conseil-dark
 
 .archive
 	.grid

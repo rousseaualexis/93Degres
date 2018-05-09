@@ -3050,22 +3050,16 @@ button:focus {
     background: linear-gradient(to bottom right, #ffdcb6, #fff4e9); }
     .cover-archive--carnets h5 {
       color: #e7824a; }
-    .cover-archive--carnets .list-sous-cat a:hover {
-      color: #e7824a; }
   .cover-archive--guides {
     background: -webkit-gradient(linear, left top, right bottom, from(#cee9b5), to(#f0f8e9));
     background: linear-gradient(to bottom right, #cee9b5, #f0f8e9); }
     .cover-archive--guides h5 {
       color: #73b298; }
-    .cover-archive--guides .list-sous-cat a:hover {
-      color: #e7824a; }
   .cover-archive--conseils {
     background: -webkit-gradient(linear, left top, right bottom, from(#c8ebf2), to(#eef9fb));
     background: linear-gradient(to bottom right, #c8ebf2, #eef9fb); }
     .cover-archive--conseils h5 {
       color: #307f8f; }
-    .cover-archive--conseils .list-sous-cat a:hover {
-      color: #e7824a; }
   .cover-archive h5 {
     overflow: hidden;
     font-size: 10vw;
@@ -3080,6 +3074,15 @@ button:focus {
         font-size: 60px;
         padding: 20px 0;
         bottom: -52px; } }
+
+.sous-cat__carnets a:hover {
+  color: #e7824a; }
+
+.sous-cat__guides a:hover {
+  color: #73b298; }
+
+.sous-cat__conseils a:hover {
+  color: #307f8f; }
 
 .archive .grid {
   margin-top: 4.165%; }
