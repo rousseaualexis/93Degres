@@ -186,11 +186,11 @@ var site = (function() {
             windowWidth = $(window).width(),
             initialScroll = $(window).scrollTop(),
             items = $('.scroll-reveal'),
-            bottomScreen = windowHeight + initialScroll
+            bottomScreen = initialScroll + windowHeight
             scroll;
         //hide anything not in the viewport
         items.each(function(){
-            if(bottomScreen > $(this).offset().top){
+            if( (bottomScreen - 35) > $(this).offset().top){
                 var $self = $(this);
                 setTimeout(function(){
                     $self.trigger('reveal');

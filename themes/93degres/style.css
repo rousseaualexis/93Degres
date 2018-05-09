@@ -2461,11 +2461,9 @@ button:focus {
 
 .first-post {
   font-size: 0;
-  min-height: 75vh;
   padding-top: 120px;
   padding-bottom: 12.5%;
   margin-bottom: -8.33%;
-  display: table;
   cursor: initial;
   overflow: initial; }
   @media only screen and (max-width: 767px) {
@@ -2549,8 +2547,6 @@ button:focus {
           margin-left: 0;
           left: 16.66%; } }
   .first-post-texte {
-    display: table-cell;
-    vertical-align: middle;
     z-index: 2;
     padding-top: 8.33%;
     padding-bottom: 8.33%; }
