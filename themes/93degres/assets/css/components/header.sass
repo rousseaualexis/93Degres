@@ -41,19 +41,21 @@
 		display: inline-block
 		padding: 0
 		margin: auto
+		overflow: hidden
 
 		+media-sm-and-less
 			display: table-cell
 			vertical-align: middle
 
 	li 
-		margin: 10px 0 0 20px
+		margin: 10px 10px 0 10px
 		padding: 0
 		float: left
 		font-weight: 700
 		text-transform: uppercase
 		letter-spacing: 0.4em
-		overflow: hidden
+
+
 
 		+media-sm-and-less
 			display: inline-block
@@ -67,6 +69,15 @@
 		cursor: pointer
 		font-weight: normal
 		display: block
+		transition: all .45s cubic-bezier(.4,0,0,1)
+		backface-visibility: hidden
+
+		&:hover
+			transform: scale(1.2)
+
+		&:active
+			transform: scale(1.05)
+
 	
 	span 
 		font-family: $montserrat

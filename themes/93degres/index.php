@@ -90,7 +90,7 @@ Template Name: Homepage
             $category_link = get_category_link( $category );
     ?>
         <li class="scroll-reveal">
-            <a class="categories" href="<?php echo esc_url( $category_link ); ?>"> <?php echo $category->name; ?></a>
+            <a href="<?php echo esc_url( $category_link ); ?>"> <?php echo $category->name; ?></a>
         </li>
     <?php } ?>
 </div>

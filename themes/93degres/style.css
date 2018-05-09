@@ -1501,7 +1501,9 @@ a {
         -ms-user-select: none;
             user-select: none;
     -webkit-transition: all 0.45s cubic-bezier(0.4, 0, 0, 1);
-    transition: all 0.45s cubic-bezier(0.4, 0, 0, 1); }
+    transition: all 0.45s cubic-bezier(0.4, 0, 0, 1);
+    -webkit-backface-visibility: hidden;
+            backface-visibility: hidden; }
     a .cta:after {
       content: '\01F449';
       font-size: 20px;
@@ -1675,9 +1677,15 @@ li {
     text-transform: uppercase;
     letter-spacing: 0.2em;
     font-size: 20px;
-    -webkit-transition: all 0.45s cubic-bezier(0.4, 0, 0, 1) 0s;
-    transition: all 0.45s cubic-bezier(0.4, 0, 0, 1) 0s;
+    -webkit-transition: all 0.45s cubic-bezier(0.4, 0, 0, 1);
+    transition: all 0.45s cubic-bezier(0.4, 0, 0, 1);
     margin: 10px 30px 10px 30px; }
+    .list-sous-cat a:hover {
+      -webkit-transform: scale(1.2);
+              transform: scale(1.2); }
+    .list-sous-cat a:active {
+      -webkit-transform: scale(1.05);
+              transform: scale(1.05); }
   .list-sous-cat span {
     font-family: "leaguegothic", "impact", sans-serif;
     text-transform: uppercase;
@@ -1742,19 +1750,19 @@ li {
   .menu-principal-container ul {
     display: inline-block;
     padding: 0;
-    margin: auto; }
+    margin: auto;
+    overflow: hidden; }
     @media only screen and (max-width: 767px) {
       .menu-principal-container ul {
         display: table-cell;
         vertical-align: middle; } }
   .menu-principal-container li {
-    margin: 10px 0 0 20px;
+    margin: 10px 10px 0 10px;
     padding: 0;
     float: left;
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 0.4em;
-    overflow: hidden; }
+    letter-spacing: 0.4em; }
     @media only screen and (max-width: 767px) {
       .menu-principal-container li {
         display: inline-block;
@@ -1765,7 +1773,17 @@ li {
     color: #000000;
     cursor: pointer;
     font-weight: normal;
-    display: block; }
+    display: block;
+    -webkit-transition: all 0.45s cubic-bezier(0.4, 0, 0, 1);
+    transition: all 0.45s cubic-bezier(0.4, 0, 0, 1);
+    -webkit-backface-visibility: hidden;
+            backface-visibility: hidden; }
+    .menu-principal-container a:hover {
+      -webkit-transform: scale(1.2);
+              transform: scale(1.2); }
+    .menu-principal-container a:active {
+      -webkit-transform: scale(1.05);
+              transform: scale(1.05); }
   .menu-principal-container span {
     font-family: "Montserrat", sans-serif;
     font-weight: 700;
@@ -2424,6 +2442,18 @@ button:focus {
   bottom: 0;
   left: 91.66%;
   right: 0; }
+  .rotate a {
+    display: block;
+    -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+    -webkit-transition: all 0.45s cubic-bezier(0.4, 0, 0, 1);
+    transition: all 0.45s cubic-bezier(0.4, 0, 0, 1); }
+    .rotate a:hover {
+      -webkit-transform: scale(1.2);
+              transform: scale(1.2); }
+    .rotate a:active {
+      -webkit-transform: scale(1.05);
+              transform: scale(1.05); }
   .rotate #link--instagram {
     position: absolute;
     background-image: url(assets/img/logo--instagram.svg);
@@ -2435,6 +2465,9 @@ button:focus {
     right: 50%;
     margin-right: -8px;
     top: 120px; }
+    .rotate #link--instagram:hover {
+      -webkit-transform: scale(1.35);
+              transform: scale(1.35); }
   .rotate #link--twitter {
     position: absolute;
     background-image: url(assets/img/logo--twitter.svg);
@@ -2446,6 +2479,9 @@ button:focus {
     right: 50%;
     margin-right: -8px;
     top: 160px; }
+    .rotate #link--twitter:hover {
+      -webkit-transform: scale(1.35);
+              transform: scale(1.35); }
   .rotate #link--about {
     position: absolute;
     text-transform: uppercase;
@@ -2689,9 +2725,19 @@ button:focus {
     #destinations li a {
       text-transform: uppercase;
       font-size: 18px;
-      padding: 14px 16px 12px 20px; }
-  #destinations .categories {
-    background-position: 0 0; }
+      padding: 14px 16px 12px 20px;
+      -webkit-transition: all 0.45s cubic-bezier(0.4, 0, 0, 1);
+      transition: all 0.45s cubic-bezier(0.4, 0, 0, 1);
+      display: block;
+      -webkit-backface-visibility: hidden;
+              backface-visibility: hidden; }
+      #destinations li a:hover {
+        -webkit-transform: scale(1.2);
+                transform: scale(1.2);
+        color: #ffbc00; }
+      #destinations li a:active {
+        -webkit-transform: scale(1.05);
+                transform: scale(1.05); }
 
 #about {
   padding-bottom: 30px; }

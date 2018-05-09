@@ -75,6 +75,7 @@ a
 		padding: 17px 23px 15px 25px
 		user-select: none
 		transition: all .45s cubic-bezier(.4,0,0,1)
+		backface-visibility: hidden
 		
 		&:after
 			content: '\01F449'
@@ -263,8 +264,15 @@ li
 		letter-spacing: 0.2em
 		font-size: 20px
 
-		transition: all .45s cubic-bezier(.4,0,0,1) 0s
+		transition: all .45s cubic-bezier(.4,0,0,1)
 		margin: 10px 30px 10px 30px
+		
+		
+		&:hover
+			transform: scale(1.2)
+
+		&:active
+			transform: scale(1.05)
 
 	span 
 		font-family: $leaguegothic

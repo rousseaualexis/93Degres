@@ -6,6 +6,17 @@
 	left: 91.66%
 	right: 0
 
+	a
+		display: block
+		backface-visibility: hidden
+		transition: all .45s cubic-bezier(.4,0,0,1)
+
+		&:hover
+			transform: scale(1.2)
+
+		&:active
+			transform: scale(1.05)
+
 	#scroll-down
 		
 	#link--instagram
@@ -19,6 +30,9 @@
 		right: 50%
 		margin-right: -8px
 		top: 120px
+		&:hover
+			transform: scale(1.35)
+
 	#link--twitter
 		position: absolute
 		background-image: url(assets/img/logo--twitter.svg)
@@ -30,6 +44,9 @@
 		right: 50%
 		margin-right: -8px
 		top: 160px
+		&:hover
+			transform: scale(1.35)
+
 	#link--about		
 		position: absolute
 		text-transform: uppercase
@@ -333,9 +350,18 @@
 			text-transform: uppercase
 			font-size: 18px
 			padding: 14px 16px 12px 20px
-	.categories
-		background-position: 0 0
-	
+			transition: all 0.45s cubic-bezier(0.4, 0, 0, 1)
+			display: block
+			backface-visibility: hidden
+
+
+			&:hover
+				transform: scale(1.2)
+				color: $color-93degres
+
+			&:active
+				transform: scale(1.05)
+
 
 #about
 	padding-bottom: 30px
