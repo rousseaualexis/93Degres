@@ -1974,7 +1974,8 @@ li {
   .instagram_shots li {
     float: left;
     width: 25%;
-    overflow: hidden; }
+    overflow: hidden;
+    cursor: pointer; }
     @media only screen and (max-width: 767px) {
       .instagram_shots li {
         margin-bottom: -3px;
@@ -1982,7 +1983,9 @@ li {
     .instagram_shots li img {
       width: 100%;
       -webkit-transition: 2s ease;
-      transition: 2s ease; }
+      transition: 2s ease;
+      -webkit-transition: all 0.45s cubic-bezier(0.4, 0, 0, 1);
+      transition: all 0.45s cubic-bezier(0.4, 0, 0, 1); }
     .instagram_shots li:nth-child(2n) {
       margin-top: 4.165%; }
       @media only screen and (max-width: 767px) {
@@ -2789,7 +2792,8 @@ button:focus {
     position: absolute;
     top: 53%;
     line-height: 0;
-    width: 100%;
+    width: 250%;
+    left: -35%;
     z-index: -1; }
     @media only screen and (max-width: 767px) {
       .first-post .country-code {
