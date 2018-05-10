@@ -21,13 +21,13 @@ Template Name: Homepage
                     if($count == 1) :
         ?>
                     <?php if('guides' === get_post_type()): ?>
-                        <div class="first-post post post--guide col-xs-pull-0 col-xs-48 col-md-pull-15">
+                        <div class="first-post post post--guide col-xs-pull-0 col-xs-48 col-md-pull-12">
                     <?php elseif('conseils' === get_post_type()): ?>
-                        <div class="first-post post post--conseil col-xs-pull-0 col-xs-48 col-md-pull-15">
+                        <div class="first-post post post--conseil col-xs-pull-0 col-xs-48 col-md-pull-12">
                     <?php elseif('carnets' === get_post_type()):  ?>
-                        <div class="first-post post post--article col-xs-pull-0 col-xs-48 col-md-pull-15">
+                        <div class="first-post post post--article col-xs-pull-0 col-xs-48 col-md-pull-12">
                     <?php endif; ?>
-                            <div class="first-post-texte col-xs-42 col-xs-pull-0 col-xs-offset-3 col-sm-24 col-sm-push-6 col-md-push-19 col-md-offset-0 col-md-20">
+                            <div class="first-post-texte col-xs-42 col-xs-pull-0 col-xs-offset-3 col-sm-24 col-sm-push-6 col-md-push-16 col-md-offset-0 col-md-20">
                                 <?php
                                     $id = get_the_id();
                                     $terms = get_the_terms( $id, 'category' );
@@ -67,7 +67,7 @@ Template Name: Homepage
                                 </div>
                             </div>
                             </div>
-                            <div class="first-post-image col-xs-30 col-xs-offset-0 col-md-offset-26">
+                            <div class="first-post-image col-xs-31 col-xs-offset-0 col-md-offset-23">
                                 <div class="image" style="background-image: url('<?php echo $thumbnail_url;?>');" title="<?php echo $thumbnail['alt']; ?>">
                                 </div>
                             </div>
@@ -84,9 +84,9 @@ Template Name: Homepage
                         </div>
     </div>
 </div>
-<div id="destinations" class="container col-xs-48">
+<div id="destinations" class="all-destinations container col-xs-48">
     <h5 class="scroll-reveal col-xs-48">Destinations</h5>
-    <div class="col-xs-42 col-xs-offset-3">
+   <!--<div class="col-xs-42 col-xs-offset-3">
     <?php
         $args = array(
         'orderby' => 'name',
@@ -99,6 +99,34 @@ Template Name: Homepage
         <li class="scroll-reveal">
             <a href="<?php echo esc_url( $category_link ); ?>"> <?php echo $category->name; ?></a>
         </li>
+    <?php } ?>
+</div> !-->
+<div class="auto-slide grid col-xs-48">
+<?php
+$cat = get_query_var('cat');
+$args = array(
+    'child_of' => $cat,
+    'orderby' => 'name',
+    'order' => 'ASC',
+    
+  'hierarchical' => 0,
+  'taxonomy' => 'category',
+  'hide_empty' => 1,
+    );
+    
+    $categories = get_categories($args);
+    foreach($categories as $category) { 
+
+            $thumbnail = get_field('thumbnail', $category);
+            $thumbnail_url = $thumbnail['sizes']['large'];
+        ?>
+        <div class="scroll-reveal col-xs-42 col-xs-offset-0 col-xs-push-0 col-sm-12 col-sm-offset-0 col-md-13 col-md-offset-3">
+            <a href=" <?php echo get_category_link( $category->term_id ); ?> " >
+                <h4><?php echo $category->name; ?></h4>
+                <div class="image" style="background-image: url('<?php echo $thumbnail_url; ?>')"></div>
+            </a>
+        </div>
+    
     <?php } ?>
 </div>
 </div>
@@ -113,5 +141,14 @@ Template Name: Homepage
 <?php get_footer(); ?>
 <script type="text/javascript">
 Marquee3k.init();Marquee3k.refreshAll();
+$(function(){$('.auto-slide').infiniteslide({
+    speed: 50,
+    direction: 'left',
+    clone: 2,
+    pauseonhover: false
+
+})});
+
+
 </script>
 <?php include'end.php'; ?>

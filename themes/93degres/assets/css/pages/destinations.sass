@@ -1,0 +1,33 @@
+.all-destinations
+	.grid
+		& > div
+			text-align: center
+			overflow: hidden
+			padding-bottom: 33.33%
+
+			&:hover
+				.image
+					transform: scale(1.2)
+
+			&:active
+				.image
+					transform: scale(1.05)
+
+		.image
+			height: 100%
+			position: absolute
+			transition: all 0.45s cubic-bezier(0.4, 0, 0, 1)
+			left: 0
+			top: 0
+
+
+		h4
+			font-size: 28px
+			width: 100%
+			position: absolute
+			bottom: 20%
+			z-index: 2
+			color: $color-white
+
+	
+	

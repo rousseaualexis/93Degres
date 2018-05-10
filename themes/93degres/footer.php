@@ -3,4 +3,5 @@
 <script src="<?php bloginfo('template_url') ?>/assets/js/marquee3k.js"></script>
 <script src="<?php bloginfo('template_url') ?>/assets/js/spliddit.js" type="text/javascript"></script>
 <script src="<?php bloginfo('template_url') ?>/assets/js/txtsplitr.min.js" type="text/javascript"></script>
+<script src="<?php bloginfo('template_url') ?>/assets/js/infiniteslidev2.js" type="text/javascript"></script>
 <script src="<?php bloginfo('template_url') ?>/assets/js/main.js"></script>

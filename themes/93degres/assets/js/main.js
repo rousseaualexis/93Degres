@@ -250,12 +250,12 @@ var homepage = (function() {
             tl.staggerFrom($el.find('.charsplit'), 1.2, {y:'200%', ease:Power4.easeOut}, 0.04, 0.2);
         }
 
-        else if ($el.is('#destinations li')) {
-            $('#destinations li').each(function(index, element){
-                if ($('#destinations li').hasClass('scroll-reveal--revealed'))
+        else if ($el.is('#destinations .grid > div')) {
+            $('#destinations .grid > div').each(function(index, element){
+                if ($('#destinations .grid > div').hasClass('scroll-reveal--revealed'))
                     return false;
                 else{
-                TweenLite.from(element, 1.8, {y: 150, delay: index * 0.1, ease:Power4.easeOut})
+                TweenLite.from(element, 1.8, {y:'800', delay: index * 0.1, ease:Power4.easeOut})
                 }
             })
         }
@@ -264,6 +264,10 @@ var homepage = (function() {
             var split = new SplitText($el,{charsClass: "charsplit", wordsClass: "wordsplit"});
             tl = new TimelineLite();
             tl.staggerFrom($el.find('.wordsplit'), 1, {y:'200%', ease:Power4.easeOut}, 0.05, 0.2);
+        }
+        else if ($el.is('.instagram_shots')) {
+            tl = new TimelineLite();
+            tl.staggerFrom($el.find('li'), 1.8, {y:'250%', ease:Power4.easeOut}, 0.12, 0);
         }
     }
 
@@ -275,15 +279,16 @@ var homepage = (function() {
             splitCategories = new SplitText($categories,{charsClass: "charsplit", wordsClass: "wordsplit"});
             $("h1").prepend('<div class="trait"></div>');
         var tl = new TimelineLite();
-            tl.from($el.find('.country-code'), 1.8, { alpha:'0', ease:Power4.easeOut}, '+=0.6');
-            tl.from($el.find('.first-post-image'), 1.8, {y:'200%', ease:Power4.easeOut}, '-=1.6');
+
+            tl.staggerFrom($el.find('.country-code h5'), 1.8, { y:'800', ease: Power4.easeOut}, 0.2, '+=0.8');
+            tl.from($el.find('.first-post-image .image'), 1.8, {y:'200%', ease:Power4.easeOut}, '-=1.6');
             tl.from($el.find('.categories img'), 0.6, {y:'300%', ease:Power2.easeOut}, '-=1.2');
             tl.staggerFrom($el.find('.categories .wordsplit'), 0.6, {y:'300%', ease:Power2.easeOut}, 0.1, '-=1.1');
             tl.staggerFrom($el.find('h1 .charsplit'), 1.2, {y:'150%', ease:Power4.easeOut}, 0.01, '-=1');
             tl.from($el.find('strong'), 0.8, {left:'-120%', ease:Power4.easeOut}, '-=0.8');
-            tl.from($el.find('.label'), 0.8, {scale:'1.6', alpha:'0', ease:Power4.easeOut}, '-=1.2');
+            tl.from($el.find('.a-cta'), 1, {opacity:0, y:'300%', ease:Power4.easeOut}, '-=0.8');
             tl.from($el.find('.trait'), 0.6, {scaleX:'0', transformOrigin:"left", ease:Power4.easeOut}, '-=0.4');
-            tl.from($el.find('.a-cta'), 1, {opacity:0, y:'300%', ease:Power4.easeOut}, '-=1.6');
+            tl.from($el.find('.label'), 0.4, {scale:'1.6', alpha:'0', ease:Power2.easeOut}, '+=0.1');
     }
 
     return {
