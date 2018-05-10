@@ -55,7 +55,7 @@ Template Name: Homepage
                                     </div>
                                 <?php endif; ?>
                                 <h1><?php the_title(); ?></h1><?php if(!empty(get_field('subtitle'))){echo '<p><strong>' . get_field('subtitle') . '</strong></p>';}?></div>
-                                <a class="a-cta col-xs-offset-0 col-sm-offset-13 col-md-offset-14" href="<?php the_permalink(); ?>"><div class="cta">Découvrir</div>
+                                <a class="a-cta col-xs-offset-0 col-sm-offset-13 col-md-offset-12" href="<?php the_permalink(); ?>"><div class="cta">Découvrir</div>
                                 </a>
                                 <?php 
                                     $thumbnail = get_field( 'thumbnail' );
