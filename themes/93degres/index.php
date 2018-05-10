@@ -67,7 +67,7 @@ Template Name: Homepage
                                 </div>
                             </div>
                             </div>
-                                                            <div class="first-post-image col-xs-30 col-xs-offset-0 col-md-offset-9">
+                                                            <div class="first-post-image col-xs-30 col-xs-offset-0 col-md-offset-26">
                                     <div class="image" style="background-image: url('<?php echo $thumbnail_url;?>');" title="<?php echo $thumbnail['alt']; ?>">
                                     </div>
                                 </div>
