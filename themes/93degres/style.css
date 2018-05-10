@@ -1485,7 +1485,7 @@ a {
   text-decoration: none;
   color: inherit;
   letter-spacing: 0.2em;
-  font-size: 14px; }
+  font-size: 12px; }
   a h1 {
     letter-spacing: 0; }
   a .cta {
@@ -1494,7 +1494,7 @@ a {
     position: relative;
     border: solid 2px;
     border-radius: 100px;
-    padding: 17px 23px 15px 25px;
+    padding: 15px 23px 15px 25px;
     -webkit-user-select: none;
        -moz-user-select: none;
         -ms-user-select: none;
@@ -1535,12 +1535,12 @@ a {
   background-repeat: no-repeat;
   background-image: linear-gradient(45deg, #ffbc00, #ffbc00);
   background-position: 25px 50%;
-  padding: 2px 2px 1px 30px;
+  padding: 2px 2px 2px 30px;
   overflow: hidden; }
   .categories img {
     width: 20px;
     position: absolute;
-    margin-top: 1px;
+    margin-top: 2px;
     left: 0px; }
   .categories:hover {
     cursor: pointer;
@@ -2906,7 +2906,7 @@ button:focus {
     #introduction p > div {
       overflow: hidden; }
   #introduction .country-code {
-    position: absolute;
+    position: fixed;
     left: 66%;
     right: 33%;
     top: -8.33%;
@@ -2922,7 +2922,7 @@ button:focus {
       letter-spacing: 0;
       opacity: 0.2; }
   #introduction .label {
-    position: absolute;
+    position: fixed;
     top: 12.5%;
     bottom: 50%;
     left: 8.33%;
@@ -2934,7 +2934,7 @@ button:focus {
       width: 100px;
       opacity: 1; }
   #introduction .date {
-    position: absolute;
+    position: fixed;
     top: 45%;
     bottom: 50%;
     left: 0%;

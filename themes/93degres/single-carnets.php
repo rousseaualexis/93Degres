@@ -52,30 +52,4 @@
 <?php include'assets/views/comments.php'; ?>
 
 <?php get_footer(); ?>
-<script>/*
-window.requestAnimationFrame = window.requestAnimationFrame
-|| window.mozRequestAnimationFrame
-|| window.webkitRequestAnimationFrame
-|| window.msRequestAnimationFrame
-|| function(f){setTimeout(f, 1000/60)}
-
-var country_code = document.getElementById('country-code')
-var label = document.getElementById('label')
-var date = document.getElementById('date')
-
-function parallax(){
-var scrolltop = window.pageYOffset // get number of pixels document has scrolled vertically 
-country_code.style.marginTop = scrolltop * .5 + 'px' // move b_lines at 20% of scroll rate
-label.style.marginTop = scrolltop * .15 + 'px' // move b_lines at 20% of scroll rate
-date.style.marginTop = scrolltop * .1 + 'px' // move b_lines at 20% of scroll rate
-country_code.style.transform = 'rotate(' + -scrolltop * .025 + 'deg)' // move b_lines at 20% of scroll rate
-label.style.transform = 'rotate(' +scrolltop * 0.03 + 'deg)' // move b_lines at 20% of scroll rate
-date.style.transform = 'rotate(' +scrolltop * 0.01 + 'deg)' // move b_lines at 20% of scroll rate
-}
-
-window.addEventListener('scroll', function(){ // on page scroll
- requestAnimationFrame(parallax) // call parallaxbubbles() on next available screen paint
-}, false);
-*/
-</script>
 <?php include'end.php'; ?>

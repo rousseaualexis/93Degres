@@ -370,6 +370,39 @@ var single = (function() {
             tl.staggerFrom($summary, 1.2, {y:'500%', ease:Power2.easeOut}, 0.4, '-=1.2');
     }
 
+    
+    $(window).bind('scroll',function(e){
+        parallaxScroll();
+    });
+
+    function parallaxScroll(){
+        var scrolled = $(window).scrollTop();
+        $('#label').css('margin-top',(0-(scrolled*.3))+'px');
+        $('#date').css('margin-top',(0-(scrolled*.75))+'px');
+        $('#country-code').css('margin-top',(0-(scrolled*.5))+'px');
+        $('#label').css({
+            '-webkit-transform' : 'rotate(' + (-scrolled*.03) + 'deg)',
+            '-moz-transform'    : 'rotate(' + (-scrolled*.03) + 'deg)',
+            '-ms-transform'     : 'rotate(' + (-scrolled*.03) + 'deg)',
+            '-o-transform'      : 'rotate(' + (-scrolled*.03) + 'deg)',
+            'transform'         : 'rotate(' + (-scrolled*.03) + 'deg)'
+        });
+        $('#date').css({
+            '-webkit-transform' : 'rotate(' + (scrolled*.03) + 'deg)',
+            '-moz-transform'    : 'rotate(' + (scrolled*.03) + 'deg)',
+            '-ms-transform'     : 'rotate(' + (scrolled*.03) + 'deg)',
+            '-o-transform'      : 'rotate(' + (scrolled*.03) + 'deg)',
+            'transform'         : 'rotate(' + (scrolled*.03) + 'deg)'
+        });
+        $('#country-code').css({
+            '-webkit-transform' : 'rotate(' + (-scrolled*.02) + 'deg)',
+            '-moz-transform'    : 'rotate(' + (-scrolled*.02) + 'deg)',
+            '-ms-transform'     : 'rotate(' + (-scrolled*.02) + 'deg)',
+            '-o-transform'      : 'rotate(' + (-scrolled*.02) + 'deg)',
+            'transform'         : 'rotate(' + (-scrolled*.02) + 'deg)'
+        });
+    }
+
     var scrollRevealHandler = function(){
         var $el = $(this);
 
