@@ -41,7 +41,7 @@
      </div>
 
     <div id="introduction__thumbnail" class="col-xs-48">
-        <div class="cover-image col-xs-42 col-xs-offset-3 col-md-40 col-md-offset-4">
+        <div class="cover-image col-xs-42 col-xs-offset-3">
             <div class="scroll-reveal image image--1-2" style="background-image: url('<?php echo $thumbnail_url; ?>');"></div>
         </div>
     </div>

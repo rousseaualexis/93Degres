@@ -73,7 +73,7 @@ Template Name: Homepage
                             </div>
 
                         </div>
-                        <div class="grid scroll-reveal" style="width: 100%; float: left; position: relative;">
+                        <div class="grid scroll-reveal col-md-46 col-md-pull-1">
                             <?php
                             else :
                                 get_template_part( 'assets/views/content-grid' );

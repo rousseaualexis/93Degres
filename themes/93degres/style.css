@@ -1722,13 +1722,13 @@ li {
       margin-top: 0;
       border-bottom: solid 1px #f7f2ea; } }
   #header #logo {
-    margin-top: 0px;
+    margin-top: 20px;
     z-index: 2; }
     @media only screen and (max-width: 767px) {
       #header #logo {
         margin-top: 25px; } }
   #header img {
-    width: 95px; }
+    width: 70px; }
 
 .menu-principal-container {
   position: relative;
@@ -1940,6 +1940,14 @@ li {
         margin-right: auto;
         bottom: auto;
         margin-bottom: auto; } }
+
+#footer {
+  background: #f7f2ea;
+  padding-top: 8.33%;
+  padding-bottom: 4.165%; }
+  #footer p {
+    text-align: center;
+    margin-top: 4.165%; }
 
 #instagram {
   text-align: center; }
@@ -2262,14 +2270,14 @@ li {
         margin-right: 15px;
         display: table-cell;
         vertical-align: middle; }
-  .un-tiers--container p {
-    color: #aaa7a5; }
-    .un-tiers--container p a {
-      opacity: 1; }
-    .un-tiers--container p .title-content {
-      display: table-cell;
+    .un-tiers--container .un-tiers p {
+      color: #aaa7a5;
       vertical-align: middle; }
-    .un-tiers--container p__image img {
+      .un-tiers--container .un-tiers p a {
+        opacity: 1; }
+      .un-tiers--container .un-tiers p .title-content {
+        display: table-cell; }
+    .un-tiers--container .un-tiers__image img {
       width: 100%; }
 
 .full-width--container {
