@@ -27,7 +27,7 @@ Template Name: Homepage
                     <?php elseif('carnets' === get_post_type()):  ?>
                         <div class="first-post post post--article col-xs-pull-0 col-xs-48 col-md-pull-12">
                     <?php endif; ?>
-                            <div class="first-post-texte col-xs-42 col-xs-pull-0 col-xs-offset-3 col-sm-24 col-sm-push-6 col-md-push-16 col-md-offset-0 col-md-20">
+                            <div class="first-post-texte col-xs-42 col-xs-pull-0 col-xs-offset-3 col-sm-24 col-sm-push-6 col-md-push-16 col-md-offset-0">
                                 <?php
                                     $id = get_the_id();
                                     $terms = get_the_terms( $id, 'category' );
