@@ -267,7 +267,7 @@ var homepage = (function() {
     }
 
     var firstPost = function(){
-        var $el = $('.first-post-texte'),
+        var $el = $('.first-post'),
             $text = $("#title h1"),
             $categories = $el.find('.categories div'),
             split = new SplitText($text,{charsClass: "charsplit", wordsClass: "wordsplit"}),
@@ -275,11 +275,12 @@ var homepage = (function() {
             $("h1").prepend('<div class="trait"></div>');
         var tl = new TimelineLite();
             tl.from($el.find('.country-code'), 1.8, { alpha:'0', ease:Power4.easeOut}, '+=0.6');
-            tl.from($el.find('.image'), 1.8, {y:'200%', ease:Power4.easeOut}, '-=1.6');
+            tl.from($el.find('.first-post-image'), 1.8, {y:'200%', ease:Power4.easeOut}, '-=1.6');
             tl.from($el.find('.categories img'), 0.6, {y:'300%', ease:Power2.easeOut}, '-=1.2');
             tl.staggerFrom($el.find('.categories .wordsplit'), 0.6, {y:'300%', ease:Power2.easeOut}, 0.1, '-=1.1');
             tl.staggerFrom($el.find('h1 .charsplit'), 1.2, {y:'150%', ease:Power4.easeOut}, 0.01, '-=1');
             tl.from($el.find('strong'), 0.8, {left:'-120%', ease:Power4.easeOut}, '-=0.8');
+            tl.from($el.find('.label'), 0.8, {scale:'1.6', alpha:'0', ease:Power4.easeOut}, '-=1.2');
             tl.from($el.find('.trait'), 0.6, {scaleX:'0', transformOrigin:"left", ease:Power4.easeOut}, '-=0.4');
             tl.from($el.find('.a-cta'), 1, {opacity:0, y:'300%', ease:Power4.easeOut}, '-=1.6');
     }

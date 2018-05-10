@@ -8,8 +8,8 @@
 	overflow: initial
 	display: table
 	min-height: 100vh
-	padding-bottom: 12.5vh
-	margin-bottom: -8.33vh
+	padding-bottom: 12.5vw
+	margin-bottom: -4.16vw
 
 
 	+media-sm-and-less
@@ -26,6 +26,10 @@
 				background: none
 			h5
 				color: $color-carnet-dark
+
+			.label
+				bottom: 8.33%
+				left: -4.16%
 
 			h1
 				.trait
@@ -63,6 +67,10 @@
 			h5
 				color: $color-guide-dark
 
+			.label
+				bottom: -8.33%
+				left: -4.16%
+
 			h1
 				.trait
 					top: 5vw
@@ -96,6 +104,10 @@
 
 			h5
 				color: $color-conseil-dark
+			
+			.label
+				top: 8.33%
+				left: -4.16%
 
 			h1
 				.trait
@@ -127,7 +139,7 @@
 		z-index: 2
 		padding-top: 140px
 		padding-bottom: 140px
-		top: 60px
+		top: 0
 		display: table-cell
 		vertical-align: middle
 		float: none
@@ -141,6 +153,13 @@
 		#title
 			width: 100%
 			display: inline-block
+			position: relative
+
+			.label
+				z-index: 3
+				opacity: 0.65
+				width: 16.66%
+				position: absolute
 
 		h1 
 			z-index: 2
@@ -247,7 +266,7 @@
 	&-image
 		position: absolute
 		top: 120px
-		bottom: 12.5vh
+		bottom: 12.5vw
 		left: 35%
 		z-index: -1
 		overflow: hidden
@@ -268,6 +287,7 @@
 	.country-code
 		position: absolute
 		top: 53%
+		margin-top: 60px
 		line-height: 0
 		width: 100%
 		z-index: -1

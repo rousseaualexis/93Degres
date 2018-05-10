@@ -41,6 +41,19 @@ Template Name: Homepage
                                 ?>
                                 <a class="categories" href="<?php echo $term_url; ?>"><img src="<?php echo $flag_url;?>" alt="<?php echo $flag['alt'];?>"/ ><div><?php echo $term_name; ?></div></a>
                                 <div id="title">
+                                <?php if('guides' === get_post_type()): ?>
+                                    <div class="label">
+                                        <img src="<?php bloginfo('template_url') ?>/assets/img/label__nos-petites-adresses.svg"/>
+                                    </div>
+                                <?php elseif('conseils' === get_post_type()): ?>
+                                    <div class="label">
+                                        <img src="<?php bloginfo('template_url') ?>/assets/img/label__conseils.svg"/>
+                                    </div>
+                                <?php elseif('carnets' === get_post_type()):  ?>
+                                    <div class="label">
+                                        <img src="<?php bloginfo('template_url') ?>/assets/img/label__carnets-de-voyage.svg"/>
+                                    </div>
+                                <?php endif; ?>
                                 <h1><?php the_title(); ?></h1><?php if(!empty(get_field('subtitle'))){echo '<p><strong>' . get_field('subtitle') . '</strong></p>';}?></div>
                                 <a class="a-cta col-xs-offset-0 col-sm-offset-13 col-md-offset-14" href="<?php the_permalink(); ?>"><div class="cta">Découvrir</div>
                                 </a>
