@@ -370,7 +370,7 @@ var single = (function() {
             tl.staggerFrom($summary, 1.2, {y:'500%', ease:Power2.easeOut}, 0.4, '-=1.2');
     }
 
-    
+
     $(window).bind('scroll',function(e){
         parallaxScroll();
     });
@@ -378,29 +378,9 @@ var single = (function() {
     function parallaxScroll(){
         var scrolled = $(window).scrollTop();
         $('#label').css('margin-top',(0-(scrolled*.3))+'px');
-        $('#date').css('margin-top',(0-(scrolled*.75))+'px');
+        $('#date').css('margin-top',(0-(scrolled*.65))+'px');
         $('#country-code').css('margin-top',(0-(scrolled*.5))+'px');
-        $('#label').css({
-            '-webkit-transform' : 'rotate(' + (-scrolled*.03) + 'deg)',
-            '-moz-transform'    : 'rotate(' + (-scrolled*.03) + 'deg)',
-            '-ms-transform'     : 'rotate(' + (-scrolled*.03) + 'deg)',
-            '-o-transform'      : 'rotate(' + (-scrolled*.03) + 'deg)',
-            'transform'         : 'rotate(' + (-scrolled*.03) + 'deg)'
-        });
-        $('#date').css({
-            '-webkit-transform' : 'rotate(' + (scrolled*.03) + 'deg)',
-            '-moz-transform'    : 'rotate(' + (scrolled*.03) + 'deg)',
-            '-ms-transform'     : 'rotate(' + (scrolled*.03) + 'deg)',
-            '-o-transform'      : 'rotate(' + (scrolled*.03) + 'deg)',
-            'transform'         : 'rotate(' + (scrolled*.03) + 'deg)'
-        });
-        $('#country-code').css({
-            '-webkit-transform' : 'rotate(' + (-scrolled*.02) + 'deg)',
-            '-moz-transform'    : 'rotate(' + (-scrolled*.02) + 'deg)',
-            '-ms-transform'     : 'rotate(' + (-scrolled*.02) + 'deg)',
-            '-o-transform'      : 'rotate(' + (-scrolled*.02) + 'deg)',
-            'transform'         : 'rotate(' + (-scrolled*.02) + 'deg)'
-        });
+
     }
 
     var scrollRevealHandler = function(){
@@ -428,6 +408,14 @@ var single = (function() {
             var splitQuote = new SplitText($el,{charsClass: "charsplit", wordsClass: "wordsplit"});  
             tl = new TimelineLite();
             tl.staggerFrom($el.find('.wordsplit'), 1.5, {y:'250%', ease:Power4.easeOut}, 0.02, 0.3);
+        }
+
+        else if ($el.is('.grid')) {
+            tl = new TimelineLite();
+            tl.staggerFrom($el.find('.post .image'), 1.8, {y:'250%', ease:Power4.easeOut}, 0.2, 0.2);
+            tl.staggerFrom($el.find('.post .categories'), 1.8, {alpha:'0', ease:Power4.easeOut}, 0.2, 0.4);
+            tl.staggerFrom($el.find('.post h1'), 1.8, {y:'200%', ease:Power4.easeOut}, 0.2, 0.8);
+            tl.staggerFrom($el.find('.post p'), 1.8, {y:'200%', ease:Power4.easeOut}, 0.2, 1.2);
         }
     }
 

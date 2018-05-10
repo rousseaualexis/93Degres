@@ -4,6 +4,7 @@ if ($posts): ?>
 <div id="realated" class="col-xs-48">
     <div class="title"><h3>Découvrir</h3></div>
     <div class="trait"></div>
+    <div class="grid scroll-reveal" style="width: 100%; float: left; position: relative;">
 <?php 
     foreach($posts as $post): // variable must be called $post (IMPORTANT)
         setup_postdata($post);
@@ -11,6 +12,7 @@ if ($posts): ?>
     endforeach;
     wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly
 ?>
+</div>
 </div>
 <?
 endif;
