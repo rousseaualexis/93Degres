@@ -2595,7 +2595,7 @@ button:focus {
       bottom: 8.33%;
       left: -4.16%; }
     .first-post.post--article h1 .trait {
-      top: 12.25vw; }
+      top: 14.25vw; }
       @media only screen and (max-width: 767px) {
         .first-post.post--article h1 .trait {
           top: 25.5vw; } }
@@ -2622,7 +2622,7 @@ button:focus {
       bottom: -8.33%;
       left: -4.16%; }
     .first-post.post--guide h1 .trait {
-      top: 5vw; }
+      top: 7vw; }
       @media only screen and (max-width: 767px) {
         .first-post.post--guide h1 .trait {
           top: 8.5vw; } }
@@ -2649,7 +2649,7 @@ button:focus {
       top: 8.33%;
       left: -4.16%; }
     .first-post.post--conseil h1 .trait {
-      top: 12.25vw; }
+      top: 14.25vw; }
       @media only screen and (max-width: 767px) {
         .first-post.post--conseil h1 .trait {
           top: 25.5vw; } }
@@ -2693,8 +2693,8 @@ button:focus {
       position: relative;
       color: #ffffff;
       width: auto;
-      font-size: 7.2vw;
-      line-height: 7.2vw;
+      font-size: 9.2vw;
+      line-height: 9.2vw;
       padding-top: 1vw; }
       @media only screen and (max-width: 767px) {
         .first-post-texte h1 {
