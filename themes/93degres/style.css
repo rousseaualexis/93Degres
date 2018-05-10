@@ -2177,7 +2177,7 @@ li {
           margin-bottom: 8.33%; } }
       .deux-tiers--container .deux-tiers__paragraph h4 {
         font-family: "Montserrat", sans-serif;
-        font-style: initial;
+        text-transform: initial;
         letter-spacing: initial;
         font-size: 22px;
         margin-bottom: 4.165%; }
