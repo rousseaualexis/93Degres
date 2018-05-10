@@ -288,7 +288,7 @@ var homepage = (function() {
             tl.from($el.find('strong'), 0.8, {left:'-120%', ease:Power4.easeOut}, '-=0.8');
             tl.from($el.find('.a-cta'), 1, {opacity:0, y:'300%', ease:Power4.easeOut}, '-=0.8');
             tl.from($el.find('.trait'), 0.6, {scaleX:'0', transformOrigin:"left", ease:Power4.easeOut}, '-=0.4');
-            tl.from($el.find('.label'), 0.4, {scale:'1.6', alpha:'0', ease:Power2.easeOut}, '+=0.1');
+            tl.from($el.find('.label'), 0.4, {scale:'1.6', alpha:'0', ease:Power2.easeOut}, '-=0.6');
     }
 
     return {

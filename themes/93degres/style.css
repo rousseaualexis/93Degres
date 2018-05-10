@@ -2563,14 +2563,13 @@ button:focus {
   #home-posts {
     margin-top: 100px; } }
 
-#home-posts > div {
-  margin-top: 180px; }
-
 .first-post {
   font-size: 0;
   cursor: initial;
   overflow: initial;
   display: table;
+  min-height: 75vh;
+  padding-top: 120px;
   padding-bottom: 16.66vw;
   margin-bottom: -8.33vw; }
   @media only screen and (max-width: 767px) {
@@ -2664,8 +2663,8 @@ button:focus {
           left: 16.66%; } }
   .first-post-texte {
     z-index: 2;
-    padding-top: 12.5%;
-    padding-bottom: 12.5%;
+    padding-top: 8.33%;
+    padding-bottom: 8.33%;
     top: 0;
     display: table-cell;
     vertical-align: middle;
@@ -2769,8 +2768,8 @@ button:focus {
       margin-top: 40px; }
   .first-post-image {
     position: absolute;
-    top: -60px;
-    bottom: 12.5vw;
+    top: 120px;
+    bottom: 16.66vw;
     left: 0;
     z-index: -1;
     overflow: hidden; }
