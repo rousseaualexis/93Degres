@@ -1738,14 +1738,19 @@ li {
     .menu-principal-container {
       position: absolute;
       left: 0;
-      height: 100vh;
+      height: 70vh;
+      padding-bottom: 30vh;
+      width: 100%;
+      text-align: center;
       -webkit-transition: all 0.45s cubic-bezier(0.4, 0, 0, 1);
       transition: all 0.45s cubic-bezier(0.4, 0, 0, 1);
       -webkit-transition-delay: 0.1s;
               transition-delay: 0.1s;
       display: table;
       background: #f7f2ea;
-      top: 100vh; } }
+      top: 100vh; }
+      .menu-principal-container.active-menu {
+        top: 100px; } }
   .menu-principal-container ul {
     display: inline-block;
     padding: 0;
@@ -1835,9 +1840,6 @@ li {
 .mobile-menu span:before {
   bottom: -8px; }
 
-.active-menu {
-  top: 0; }
-
 .rotate {
   position: fixed;
   z-index: 10;
@@ -1847,11 +1849,25 @@ li {
   right: 0;
   text-align: left;
   overflow: hidden; }
+  @media only screen and (max-width: 767px) {
+    .rotate {
+      -webkit-transition: all 0.45s cubic-bezier(0.4, 0, 0, 1) 0.1s;
+      transition: all 0.45s cubic-bezier(0.4, 0, 0, 1) 0.1s;
+      left: 0;
+      text-align: center;
+      top: 100vh;
+      z-index: 99;
+      height: 15vh; }
+      .rotate.active-menu {
+        top: 85vh; } }
   .rotate a {
     display: block;
     -webkit-font-smoothing: antialiased;
     -webkit-transition: all 0.45s cubic-bezier(0.4, 0, 0, 1);
     transition: all 0.45s cubic-bezier(0.4, 0, 0, 1); }
+    @media only screen and (max-width: 767px) {
+      .rotate a {
+        display: inline-block; } }
     .rotate a:hover {
       -webkit-transform: scale(1.2);
               transform: scale(1.2); }
@@ -1873,6 +1889,14 @@ li {
     .rotate #link--instagram:hover {
       -webkit-transform: scale(1.35);
               transform: scale(1.35); }
+    @media only screen and (max-width: 767px) {
+      .rotate #link--instagram {
+        position: relative;
+        margin: 30px 20px;
+        right: auto;
+        bottom: auto;
+        width: 20px;
+        height: 20px; } }
   .rotate #link--twitter {
     position: absolute;
     background-image: url(assets/img/logo--twitter.svg);
@@ -1887,6 +1911,14 @@ li {
     .rotate #link--twitter:hover {
       -webkit-transform: scale(1.35);
               transform: scale(1.35); }
+    @media only screen and (max-width: 767px) {
+      .rotate #link--twitter {
+        position: relative;
+        margin: 30px 20px;
+        right: auto;
+        bottom: auto;
+        width: 20px;
+        height: 20px; } }
   .rotate #link--about {
     position: absolute;
     text-transform: uppercase;
@@ -1898,6 +1930,15 @@ li {
     margin-bottom: 100px; }
     .rotate #link--about a {
       font-size: 12px; }
+    @media only screen and (max-width: 767px) {
+      .rotate #link--about {
+        -webkit-transform: none;
+                transform: none;
+        position: relative;
+        right: auto;
+        margin-right: auto;
+        bottom: auto;
+        margin-bottom: auto; } }
 
 #instagram {
   text-align: center; }

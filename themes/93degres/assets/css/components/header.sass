@@ -30,12 +30,18 @@
 
 		position: absolute
 		left: 0
-		height: 100vh
+		height: 70vh
+		padding-bottom: 30vh
+		width: 100%
+		text-align: center
 		transition: all .45s cubic-bezier(.4,0,0,1)
 		transition-delay: 0.1s
 		display: table
 		background: $color-base-light
 		top: 100vh
+	
+		&.active-menu
+			top: $header-height
 	
 	ul 
 		display: inline-block
@@ -135,10 +141,6 @@
 	&:before
 		bottom: -8px
 
-
-.active-menu
-	top: 0
-
 .rotate
 	position: fixed
 	z-index: 10
@@ -149,10 +151,24 @@
 	text-align: left
 	overflow: hidden
 
+	+media-sm-and-less
+		transition: all .45s cubic-bezier(.4,0,0,1) 0.1s
+		left: 0
+		text-align: center
+		top: 100vh
+		z-index: 99
+		height: 15vh
+	
+		&.active-menu
+			top: 85vh
+
 	a
 		display: block
 		-webkit-font-smoothing: antialiased
 		transition: all .45s cubic-bezier(.4,0,0,1)
+
+		+media-sm-and-less
+			display: inline-block
 
 		&:hover
 			transform: scale(1.2)
@@ -177,6 +193,14 @@
 		&:hover
 			transform: scale(1.35)
 
+		+media-sm-and-less
+			position: relative
+			margin: 30px 20px
+			right: auto
+			bottom: auto
+			width: 20px
+			height: 20px
+
 	#link--twitter
 		position: absolute
 		background-image: url(assets/img/logo--twitter.svg)
@@ -191,6 +215,14 @@
 		&:hover
 			transform: scale(1.35)
 
+		+media-sm-and-less
+			position: relative
+			margin: 30px 20px
+			right: auto
+			bottom: auto
+			width: 20px
+			height: 20px
+
 	#link--about
 		position: absolute
 		text-transform: uppercase
@@ -202,3 +234,11 @@
 
 		a
 			font-size: 12px
+
+		+media-sm-and-less
+			transform: none
+			position: relative
+			right: auto
+			margin-right: auto
+			bottom: auto
+			margin-bottom: auto

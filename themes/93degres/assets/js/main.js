@@ -122,6 +122,7 @@ var site = (function() {
         });
             $("#mobile-menu").on('click', function() {
             $('.menu-principal-container').toggleClass('active-menu');
+            $('.rotate').toggleClass('active-menu');
         });
     }
 
