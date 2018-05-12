@@ -2861,8 +2861,7 @@ button:focus {
   #article .country-code h5, #article .categories, #article .date h5, #article .deux-tiers__chapter h3, #article .deux-tiers__aside h3, #article .title-content h5, #article p a:hover {
     color: #e7824a; }
   #article #introduction, #article .un-tiers__text {
-    background: -webkit-gradient(linear, left top, right bottom, from(#ffdcb6), to(#fff4e9));
-    background: linear-gradient(to bottom right, #ffdcb6, #fff4e9); }
+    background: #f7efe1; }
   #article p a, #article #introduction .categories {
     background-image: linear-gradient(45deg, #e7824a, #e7824a); }
   #article p a:hover {
@@ -2877,8 +2876,7 @@ button:focus {
   #guide .country-code h5, #guide .categories, #guide .date h5, #guide .deux-tiers__chapter h3, #guide .deux-tiers__aside h3, #guide .title-content h5, #guide p a:hover {
     color: #73b298; }
   #guide #introduction, #guide .un-tiers__text {
-    background: -webkit-gradient(linear, left top, right bottom, from(#cee9b5), to(#f0f8e9));
-    background: linear-gradient(to bottom right, #cee9b5, #f0f8e9); }
+    background: #f7efe1; }
   #guide p a, #guide #introduction .categories {
     background-image: linear-gradient(45deg, #73b298, #73b298); }
   #guide p a:hover {
@@ -2893,8 +2891,7 @@ button:focus {
   #conseil .country-code h5, #conseil .categories, #conseil .date h5, #conseil .deux-tiers__chapter h3, #conseil .deux-tiers__aside h3, #conseil .title-content h5, #conseil p a:hover {
     color: #307f8f; }
   #conseil #introduction, #conseil .un-tiers__text {
-    background: -webkit-gradient(linear, left top, right bottom, from(#c8ebf2), to(#eef9fb));
-    background: linear-gradient(to bottom right, #c8ebf2, #eef9fb); }
+    background: #f7efe1; }
   #conseil p a, #conseil #introduction .categories {
     background-image: linear-gradient(45deg, #307f8f, #307f8f); }
   #conseil p a:hover {
