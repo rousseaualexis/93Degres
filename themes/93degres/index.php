@@ -84,13 +84,14 @@ Template Name: Homepage
                         </div>
     </div>
 </div>
-<div id="destinations" class="all-destinations container col-xs-48">
+<div id="destinations" class="container col-xs-48">
     
-   <!--<div class="col-xs-42 col-xs-offset-3">
+<h5 class="scroll-reveal col-xs-48">Destinations</h5>
+   <div class="col-xs-42 col-xs-offset-3">
     <?php
         $args = array(
         'orderby' => 'name',
-        'parent' => 0
+        'parent' => 0,
         );
         $categories = get_categories( $args );
         foreach ( $categories as $category ) {
@@ -100,9 +101,8 @@ Template Name: Homepage
             <a href="<?php echo esc_url( $category_link ); ?>"> <?php echo $category->name; ?></a>
         </li>
     <?php } ?>
-</div> !-->
-
-<h5 class="scroll-reveal col-xs-48">Destinations</h5>
+</div>
+<!--
 <div class="auto-slide grid col-xs-48">
 <?php
 $cat = get_query_var('cat');
@@ -131,6 +131,7 @@ $args = array(
     
     <?php } ?>
 </div>
+!-->
 </div>
 <div id="about" class="container col-xs-48">
     <div class="texte--center col-xs-42 col-xs-offset-3 col-sm-32 col-sm-offset-8">

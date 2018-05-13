@@ -342,6 +342,60 @@ var archive = (function() {
     }
 })();
 
+var destinations = (function() {
+    
+    var init = function() {
+        top();
+        $('body').on('reveal', '.scroll-reveal', scrollRevealHandler);
+    }
+
+    var top = function(){     
+        var $coverDestinations = $('#cover-container-text h1'),
+            $sousCat = $('.list-sous-cat'),
+            split = new SplitText($coverDestinations,{charsClass: "charsplit", wordsClass: "wordsplit"});
+        var tl = new TimelineLite();
+
+            tl.staggerFrom($coverDestinations.find('.charsplit'), 1.2, {y:'300%', ease:Power4.easeOut}, 0.02, 0.6);
+            tl.from($sousCat, 0.8, {y: '400%', ease:Power2.easeOut}, '-=0.8');
+    }
+
+    var scrollRevealHandler = function(){
+        var $el = $(this);
+
+        if ($el.hasClass('scroll-reveal--revealed'))
+            return;
+
+        if ($el.is('.grid')) {
+            tl = new TimelineLite();
+            tl.staggerFrom($el.find('.post .image'), 1.8, {y:'250%', ease:Power4.easeOut}, 0.2, 0.2);
+            tl.staggerFrom($el.find('.post .categories'), 1.8, {alpha:'0', ease:Power4.easeOut}, 0.2, 0.4);
+            tl.staggerFrom($el.find('.post h1'), 1.8, {y:'200%', ease:Power4.easeOut}, 0.2, 0.8);
+            tl.staggerFrom($el.find('.post p'), 1.8, {y:'200%', ease:Power4.easeOut}, 0.2, 1.2);
+        }
+    }
+
+    return {
+            init: init
+    }
+})();
+
+var allDestinations = (function() {
+    
+    var init = function() {
+        top();
+    }
+
+    var top = function(){     
+        var $coverDestinations = $('.all-destinations--title h1'),
+            split = new SplitText($coverDestinations,{charsClass: "charsplit", wordsClass: "wordsplit"});
+        var tl = new TimelineLite();
+            tl.staggerFrom($coverDestinations.find('.charsplit'), 1.2, {y:'300%', ease:Power4.easeOut}, 0.02, 0.6);
+    }
+    return {
+            init: init
+    }
+})();
+
 var single = (function() {
     
     var init = function() {
@@ -493,6 +547,18 @@ window.onload = function(){
 
         setTimeout(function(){
             archive.init();
+        }, 200);
+    };
+
+    if( $('body').hasClass('destinations') === true ){
+
+        setTimeout(function(){
+            destinations.init();
+        }, 200);
+    };
+    if( $('body').hasClass('all-destinations') === true ){
+        setTimeout(function(){
+            allDestinations.init();
         }, 200);
     };
 

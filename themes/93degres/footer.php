@@ -2,12 +2,6 @@
     <div id="logo_footer" class="col-xs-4 col-xs-offset-22">
         <a href="<?php echo get_bloginfo( 'wpurl' );?>"><img class="image" src="<?php bloginfo('template_url') ?>/assets/img/logo_grey.png"/></a>
     </div>
-
-    <div id="instagram_footer" class="col-xs-9">
-    <a href="https://www.instagram.com/93.degres/" target="_blank" >
-            <img src="<?php bloginfo('template_url') ?>/img/instagram.png"/> </a>
-    
-        </div>
     <p class="col-xs-48"> ©93.Degrés – by Alexis & Agathe</p>
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
