@@ -250,14 +250,9 @@ var homepage = (function() {
             tl.staggerFrom($el.find('.charsplit'), 1.2, {y:'200%', ease:Power4.easeOut}, 0.04, 0.2);
         }
 
-        else if ($el.is('#destinations .grid > div')) {
-            $('#destinations .grid > div').each(function(index, element){
-                if ($('#destinations .grid > div').hasClass('scroll-reveal--revealed'))
-                    return false;
-                else{
-                TweenLite.from(element, 1.8, {y:'800', delay: index * 0.1, ease:Power4.easeOut})
-                }
-            })
+        else if ($el.is('#destinations li')) {
+            tl = new TimelineLite();
+            tl.staggerFrom($el, 1.8, {y:'250%', ease:Power4.easeOut}, 0.12, 0);
         }
 
         else if ($el.is('#about h2')) {
