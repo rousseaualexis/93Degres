@@ -2012,14 +2012,14 @@ li {
       line-height: normal;
       margin-top: -15px;
       position: relative;
-      float: left; }
+      float: left;
+      margin-bottom: 15px; }
       .grid .post h1 span {
         font-size: 20px;
         position: relative;
         display: block;
         padding: 5px 7px;
         float: left;
-        margin-bottom: 15px;
         color: #ffffff; }
       @media only screen and (max-width: 767px) {
         .grid .post h1 {
