@@ -1,6 +1,160 @@
 .grid
 	font-size: 0
 
+	.post 
+		cursor: pointer
+		display: inline-block
+		float: none
+		vertical-align: top
+		margin-bottom: 6.25%
+		z-index: 1
+		overflow: hidden;
+
+		+media-sm-and-less
+			margin-bottom: 60px
+
+		h1
+			padding-top: 60px
+			width: 85%
+			font-size: 30px
+			line-height: normal
+			margin-top: -15px
+			position: relative
+
+			span
+				font-size: 20px
+				position: relative;
+				display: block;
+				padding:
+
+			+media-sm-and-less
+				width: 100%
+		
+		.image_thumbnail 
+			position: relative
+			overflow: hidden
+			z-index: 3
+		
+		.image_thumbnail--hover 
+			position: absolute
+			text-align: center
+			top: 10px
+			bottom: 10px
+			left: 10px
+			right: 10px
+			opacity: 0
+			transition: all .45s cubic-bezier(.4,0,0,1)
+			transition-delay: 0.1s
+			
+			.country-code 
+				position: absolute
+				left: -10%
+				right: 50%
+				top: 50%
+				bottom: 1vw
+				line-height: 0
+				text-align: left
+				
+				h5 
+					transform: rotate(30deg)
+					transition: all .45s cubic-bezier(.4,0,0,1)
+					transition-delay: 0.05s
+					font-size: 24vw
+					letter-spacing: 0;
+					opacity: 0.2
+
+					+media-sm-and-less
+						font-size: 28vw
+
+			.label
+				position: absolute
+				top: 0
+				bottom: 65%
+				left: 0
+				right: 66%
+				
+				img
+					transform: rotate(0deg)
+					transition: all .45s cubic-bezier(.4,0,0,1)
+					transition-delay: 0.05s
+					width: 200px
+					opacity: 1
+			
+			.date
+				position: absolute
+				top: 10%
+				bottom: 75%
+				left: 25%
+				right: 40%
+				
+				h5	
+					transform: rotate(0deg)
+					transition: all .45s cubic-bezier(.4,0,0,1)
+					transition-delay: 0.05s
+					font-size: 60px
+					opacity: 1
+					opacity: 0.65
+
+			.table-cell 
+				font-size: 72px
+				line-height: 0
+				position: relative
+				z-index: 2
+			
+			h5 
+				padding-right: 0
+				letter-spacing: 0
+			
+		
+		.categories 
+			position: relative
+			margin: auto
+			top: 25px
+			z-index: 2
+			transition: background 0.45s cubic-bezier(0.4, 0, 0, 1), color 0.45s cubic-bezier(0.4, 0, 0, 1)
+		
+		p 
+			display: block
+			font-style: italic
+			padding-top: 15px
+			padding-bottom: 20px
+			width: 85%
+
+			+media-sm-and-less
+				width: 100%
+
+		h5 
+			display: block
+		
+		&:hover
+
+			.image_thumbnail--hover 
+				opacity: 1
+				top: 10px
+				bottom: 10px
+				left: 10px
+				right: 10px
+				transition-delay: 0s
+				
+				.label 
+					img
+						transform: rotate(0deg)
+						width: 100px
+				
+				.country-code
+					h5
+						font-size: 14vw
+						transform: rotate(0deg) 
+
+						+media-sm-and-less
+							font-size: 28vw
+				.date 
+					
+					h5
+						font-size: 30px
+						transform: rotate(0deg)
+
+
 .post--article 
 
 	a .cta 
@@ -66,161 +220,6 @@
 
 	.categories
 		background-image: linear-gradient(45deg, $color-conseil-dark, $color-conseil-dark )
-
-		
-
-.post 
-	cursor: pointer
-	display: inline-block
-	float: none
-	vertical-align: top
-	margin-bottom: 6.25%
-	z-index: 1
-	overflow: hidden;
-
-	+media-sm-and-less
-		margin-bottom: 60px
-
-	h1
-		padding-top: 60px
-		width: 85%
-		font-size: 30px
-		line-height: normal
-		margin-top: -15px
-		position: relative
-
-		span
-			font-size: 20px
-			position: relative;
-			display: block;
-			padding:
-
-		+media-sm-and-less
-			width: 100%
-	
-	.image_thumbnail 
-		position: relative
-		overflow: hidden
-		z-index: 3
-	
-	.image_thumbnail--hover 
-		position: absolute
-		text-align: center
-		top: 10px
-		bottom: 10px
-		left: 10px
-		right: 10px
-		opacity: 0
-		transition: all .45s cubic-bezier(.4,0,0,1)
-		transition-delay: 0.1s
-		
-		.country-code 
-			position: absolute
-			left: -10%
-			right: 50%
-			top: 50%
-			bottom: 1vw
-			line-height: 0
-			text-align: left
-			
-			h5 
-				transform: rotate(30deg)
-				transition: all .45s cubic-bezier(.4,0,0,1)
-				transition-delay: 0.05s
-				font-size: 24vw
-				letter-spacing: 0;
-				opacity: 0.2
-
-				+media-sm-and-less
-					font-size: 28vw
-
-		.label
-			position: absolute
-			top: 0
-			bottom: 65%
-			left: 0
-			right: 66%
-			
-			img
-				transform: rotate(0deg)
-				transition: all .45s cubic-bezier(.4,0,0,1)
-				transition-delay: 0.05s
-				width: 200px
-				opacity: 1
-		
-		.date
-			position: absolute
-			top: 10%
-			bottom: 75%
-			left: 25%
-			right: 40%
-			
-			h5	
-				transform: rotate(0deg)
-				transition: all .45s cubic-bezier(.4,0,0,1)
-				transition-delay: 0.05s
-				font-size: 60px
-				opacity: 1
-				opacity: 0.65
-
-		.table-cell 
-			font-size: 72px
-			line-height: 0
-			position: relative
-			z-index: 2
-		
-		h5 
-			padding-right: 0
-			letter-spacing: 0
-		
-	
-	.categories 
-		position: relative
-		margin: auto
-		top: 25px
-		z-index: 2
-		transition: background 0.45s cubic-bezier(0.4, 0, 0, 1), color 0.45s cubic-bezier(0.4, 0, 0, 1)
-	
-	p 
-		display: block
-		font-style: italic
-		padding-top: 15px
-		padding-bottom: 20px
-		width: 85%
-
-		+media-sm-and-less
-			width: 100%
-
-	h5 
-		display: block
-	
-	&:hover
-
-		.image_thumbnail--hover 
-			opacity: 1
-			top: 10px
-			bottom: 10px
-			left: 10px
-			right: 10px
-			transition-delay: 0s
-			
-			.label 
-				img
-					transform: rotate(0deg)
-					width: 100px
-			
-			.country-code
-				h5
-					font-size: 14vw
-					transform: rotate(0deg) 
-
-					+media-sm-and-less
-						font-size: 28vw
-			.date 
-				
-				h5
-					font-size: 30px
-					transform: rotate(0deg)
 
 
 
