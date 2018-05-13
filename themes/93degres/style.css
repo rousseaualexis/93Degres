@@ -2011,11 +2011,16 @@ li {
       font-size: 30px;
       line-height: normal;
       margin-top: -15px;
-      position: relative; }
+      position: relative;
+      float: left; }
       .grid .post h1 span {
         font-size: 20px;
         position: relative;
-        display: block; }
+        display: block;
+        padding: 5px 7px;
+        float: left;
+        margin-bottom: 15px;
+        color: #ffffff; }
       @media only screen and (max-width: 767px) {
         .grid .post h1 {
           width: 100%; } }
@@ -2152,7 +2157,7 @@ li {
   background: linear-gradient(to bottom right, #ffdcb6, #fff4e9);
   background: #f7efe1; }
 
-.post--article .first-post-texte strong {
+.post--article .first-post-texte strong, .post--article h1 span {
   background: #e66335; }
 
 .post--article .categories {
@@ -2173,7 +2178,7 @@ li {
   background: linear-gradient(to bottom right, #cee9b5, #f0f8e9);
   background: #f7efe1; }
 
-.post--guide .first-post-texte strong {
+.post--guide .first-post-texte strong, .post--guide h1 span {
   background: #2e7b5b; }
 
 .post--guide .categories {
@@ -2194,7 +2199,7 @@ li {
   background: linear-gradient(to bottom right, #c8ebf2, #eef9fb);
   background: #f7efe1; }
 
-.post--conseil .first-post-texte strong {
+.post--conseil .first-post-texte strong, .post--conseil h1 span {
   background: #307f8f; }
 
 .post--conseil .categories {
