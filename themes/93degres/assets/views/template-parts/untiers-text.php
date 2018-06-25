@@ -20,7 +20,7 @@
             <?php endif; ?>
         </div>
    <?php else :?>
-    <div class="scroll-reveal un-tiers col-xs-40 col-md-36">
+    <div class="un-tiers col-xs-40 col-md-36">
 
    <?php endif;
     echo $paragraph ?>

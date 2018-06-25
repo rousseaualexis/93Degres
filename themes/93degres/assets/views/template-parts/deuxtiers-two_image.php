@@ -7,7 +7,7 @@
     $image_02_caption = $image_02['caption'];
 ?> 
     
-<div class="deux-tiers scroll-reveal">
+<div class="deux-tiers">
     <div class="deux-tiers__two-image col-xs-48 col-xs-offset-0  col-sm-15 col-sm-offset-3 col-md-22 col-md-offset-0">
         <img src="<?php echo $image_01_url; ?>"/>
         <?php if (!empty($image_01_caption)): ?>

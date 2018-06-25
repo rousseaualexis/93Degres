@@ -1,6 +1,6 @@
 <?php
 $page_id = '5748305008';
-$access_token = '5748305008.7751660.d4c596bc9ec14a42870583e4ebf8c773';
+$access_token = '5748305008.1677ed0.5b2118fbb69246c8b6a8e05ebe512287';
 $json_object = @file_get_contents('https://api.instagram.com/v1/users/' . $page_id . 
 '/media/recent/?access_token=' . $access_token . '&count=4');
 $indata = json_decode($json_object);

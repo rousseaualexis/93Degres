@@ -81,7 +81,8 @@ var site = (function() {
      */
     var showPreloader = function() {
 
-        TweenLite.to($(".mask"), 0.5, {bottom:"100%", delay:0.75, onComplete:function(){
+        TweenLite.to($(".mask"), 0.8, {y:"-100%", ease:Power2.easeOut, delay:0.75, onComplete:function(){
+        
             $(".mask").remove();
         }});
 
@@ -172,12 +173,12 @@ var site = (function() {
     var randomize = function(){
         var tl = new TimelineLite();
         $( '.randomize' ).each(function() {
-            $minRotate = -45;
-            $maxRotate = 45;
-            $randomX = Math.floor( Math.random() * 100 ) + "%"
-            $randomY = Math.floor( Math.random() * 100 ) + "%"
-            $degree = Math.floor(Math.random()*( $maxRotate - $minRotate + 1 ) + $minRotate);
-            tl.to($(this), 0.1, {rotation:$degree, y:$randomY, x:$randomX, ease:Power2.easeOut}, 0.1);
+            var minRotate = -45,
+            maxRotate = 45,
+            randomX = Math.floor( Math.random() * 100 ) + "%",
+            randomY = Math.floor( Math.random() * 100 ) + "%",
+            degree = Math.floor(Math.random()*( maxRotate - minRotate + 1 ) + minRotate);
+            tl.to($(this), 0.1, {rotation:degree, y:randomY, x:randomX, ease:Power2.easeOut}, 0.1);
         })
     }
 
@@ -401,28 +402,36 @@ var single = (function() {
     var introduction = function(){
         var $title = $("#introduction h1"),
         $subtitle = $("#introduction h4"),
-        $summary = $("#introduction p");
-        $categories = $("#introduction .categories");
-        $categoriesImg = $("#introduction .categories img");
-        var splitTitle = new SplitText($title,{charsClass: "charsplit", wordsClass: "wordsplit"});
+        $categories = $("#introduction .categories"),
+        $categoriesImg = $("#introduction .categories img"),
+        $thumbnail = $("#introduction__thumbnail");
+        var splitTitle = new SplitText($title,{wordsClass: "wordsplit"});
         var splitSubtitle = new SplitText($subtitle,{charsClass: "charsplit", wordsClass: "wordsplit"});
         //var splitSummary = new SplitText($summary,{wordsClass: "wordsplit"});
         var splitCategories = new SplitText($categories.find('div'),{charsClass: "charsplit", wordsClass: "wordsplit"});
+
+            
             var tl = new TimelineLite();
             $( '.random' ).each(function() {
                 $minRotate = -45;
                 $maxRotate = 45;
-                $randomX = Math.floor( Math.random() * 100 ) + "%"
-                $randomY = Math.floor( Math.random() * 100 ) + "%"
+                $randomX = Math.floor( Math.random() * 50 ) + "%"
+                $randomY = Math.floor( Math.random() * 50 ) + "%"
                 $degree = Math.floor(Math.random()*( $maxRotate - $minRotate + 1 ) + $minRotate);
-                tl.to($(this), 2, {rotation:$degree, y:$randomY, x:$randomX, ease:Power4.easeOut}, 0.6);
+                tl.to($(this), 2, {rotation:$degree, y:$randomY, x:$randomX, ease:Power4.easeOut}, 0.5);
             })
-            tl.from($categoriesImg, 0.6, {y:'250%', ease:Power2.easeOut}, 1.8);
-            tl.staggerFrom($categories.find('.wordsplit'), 0.6, {y:'250%', ease:Power2.easeOut}, 0.1, '-=0.8');
-            tl.staggerFrom($title.find('.charsplit'), 1.5, {y:'250%', ease:Power4.easeOut}, 0.01, '-=1.4');
-            tl.from($subtitle, 1.5, {y: '200%', ease:Power4.easeOut}, '-=1.4');
-            tl.staggerFrom($subtitle.find('.charsplit'), 1, {y:'250%', ease:Power4.easeOut}, 0.01, '-=1');
-            tl.staggerFrom($summary, 1.2, {y:'500%', ease:Power2.easeOut}, 0.4, '-=1.2');
+           $( '.random--rotate' ).each(function() {
+                minRotate = -10;
+                maxRotate = 10;
+                degree = Math.floor(Math.random()*( maxRotate - minRotate + 1 ) + minRotate);
+                tl.to($(this), 2, {rotation:degree, ease:Power4.easeOut}, 0);
+            })
+            tl.from($thumbnail.find('.image'), 2.5, {y:'100%', rotation: -10, ease:Power4.easeOut}, '-=2');
+            tl.from($categoriesImg, 0.6, {y:'250%', ease:Power4.easeOut}, '-=2');
+            tl.staggerFrom($categories.find('.wordsplit'), 0.6, {y:'200%', ease:Power2.easeOut}, 0.07, '-=1.8');
+            tl.staggerFrom($title.find('.wordsplit'), 1.2, {y:'250%', ease:Power4.easeOut}, 0.07, '-=1.8');
+            tl.staggerFrom($subtitle.find('.charsplit'), 1, {y:'250%', ease:Power4.easeOut}, 0.01, '-=0.8');
+            
     }
 
 
@@ -432,9 +441,9 @@ var single = (function() {
 
     function parallaxScroll(){
         var scrolled = $(window).scrollTop();
-        $('#label').css('margin-top',(0-(scrolled*.3))+'px');
-        $('#date').css('margin-top',(0-(scrolled*.65))+'px');
-        $('#country-code').css('margin-top',(0-(scrolled*.5))+'px');
+        $('#date').css({"transform" : "translateY(" + (0-(scrolled* 1.2))+"px)"});
+        $('#country-code').css({"transform":"translateY(" + (0-(scrolled* 0.9))+"px)"});
+        $('#introduction__thumbnail').css({"transform":"translateY(" + (0-(scrolled*1.4))+"px)" + "rotate(" + (0+(scrolled*0.02)) + "deg)"});
 
     }
 
@@ -462,7 +471,7 @@ var single = (function() {
         else if ($el.is('.full-width blockquote')) {
             var splitQuote = new SplitText($el,{charsClass: "charsplit", wordsClass: "wordsplit"});  
             tl = new TimelineLite();
-            tl.staggerFrom($el.find('.wordsplit'), 1.5, {y:'250%', ease:Power4.easeOut}, 0.02, 0.3);
+            tl.staggerFrom($el.find('>div'), 1.5, {y:'250%', ease:Power4.easeOut}, 0.1, 0.3);
         }
 
         else if ($el.is('.grid')) {

@@ -25,11 +25,7 @@
 
 	&.post 
 		&--article
-			//background: $color-carnet-gradient
-			+media-sm-and-less
-				background: none
-			h5
-				color: $color-carnet-dark
+
 
 			.label
 				bottom: 8.33%
@@ -64,12 +60,7 @@
 						
 
 		&--guide
-			//background: $color-guide-light
-			+media-sm-and-less
-				background: none
 
-			h5
-				color: $color-guide-dark
 
 			.label
 				bottom: -8.33%
@@ -102,12 +93,7 @@
 							left: $desktop-margin
 
 		&--conseil
-			//background: $color-conseil-light
-			+media-sm-and-less
-				background: none
 
-			h5
-				color: $color-conseil-dark
 			
 			.label
 				top: 8.33%
@@ -170,9 +156,6 @@
 			position: relative
 			color: $color-white
 			width: auto
-			font-size: 9.2vw
-			line-height: 9.2vw
-			padding-top: 1vw
 
 			+media-sm-and-less
 				font-size: 16vw
@@ -292,15 +275,16 @@
 		line-height: 0
 		width: 250%
 		left: -35%
-		z-index: -1
+		z-index: -4
 
 		+media-sm-and-less
 			opacity: 0
 		
 		h5 
 			font-size: 36vw
-			opacity: 0.15
 			padding-right: 19vw
+			-webkit-text-stroke: 2px $color-93degres
+			-webkit-text-fill-color: transparent
 	
 
 #destinations

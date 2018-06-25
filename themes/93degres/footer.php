@@ -5,6 +5,7 @@
     <p class="col-xs-48"> ©93.Degrés – by Alexis & Agathe</p>
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="<?php bloginfo('template_url') ?>/assets/js/jquery.nicescroll.min.js"></script>
 <script src="<?php bloginfo('template_url') ?>/assets/js/TweenMax.min.js"></script>
 <script src="<?php bloginfo('template_url') ?>/assets/js/marquee3k.js"></script>
 <script src="<?php bloginfo('template_url') ?>/assets/js/spliddit.js" type="text/javascript"></script>
