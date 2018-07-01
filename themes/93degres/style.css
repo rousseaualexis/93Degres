@@ -1465,7 +1465,8 @@ h1 {
   color: #2e2c29;
   padding-top: 1vw;
   font-size: 6vw;
-  line-height: 5.3vw; }
+  line-height: 5.3vw;
+  letter-spacing: -0.01em; }
 
 h2, blockquote {
   font-family: "HKGrotesk", sans-serif;
@@ -1514,8 +1515,8 @@ a {
   color: inherit;
   letter-spacing: 0.2em;
   font-size: 14px; }
-  a h1, a p {
-    letter-spacing: 0; }
+  a p {
+    letter-spacing: initial; }
   a .cta {
     text-transform: uppercase;
     display: inline-block;
